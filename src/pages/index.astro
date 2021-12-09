@@ -12,8 +12,16 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     
     <link rel="stylesheet" href={Astro.resolve('../assets/styles/_global.scss')}>
-    <style>
-        
+    <style lang="scss">
+        @use '../assets/styles/breakpoints' as *;
+
+        h1 {
+            text-align: center;
+
+            @include breakpoint(md) {
+                text-align: left;
+            }
+        }
     </style>
 </head>
 
@@ -21,8 +29,13 @@
     <main>
         <header>
             <Navigation />
+            
             <div>
-                <h1>Hi, I'm Erik. I'm a CRO &amp; SEM Expert.</h1>
+                <h1>
+                    Hi, I'm Erik.<br />
+                    I'm a CRO &amp;<br />
+                    SEM Expert.
+                </h1>
             </div>
         </header>
     </main>

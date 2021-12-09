@@ -1,3 +1,5 @@
+@use 'breakpoints' as *;
+
 :root {
     --font-family: 'Hebbo', sans-serif;
 
@@ -27,18 +29,22 @@ body {
     color: var(--color-text);
 }
 
-h1, h2, h3, h4, form legend {
+h1, h2, h3, h4 {
     line-height: var(--heading-line-height);
     color: var(--color-text-heading);
 }
 
 /* text size */
-h1{
-    font-size: var(--text-4xl);
+h1 {
+    font-size: var(--text-3xl);
     font-weight: 900;
     letter-spacing: var(--letter-spacing-sm);
     line-height: var(--line-height-sm);
-    color: var(--grayscale-100);
+    color: var(--grayscale-90);
+
+    @include breakpoint(md) {
+        font-size: var(--text-4xl);
+    }
 }
 
 h2 {

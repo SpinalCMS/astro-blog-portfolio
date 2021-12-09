@@ -1,3 +1,4 @@
+@use 'breakpoints';
 @use 'typography';
 @use 'colors';
 @use 'layout';
@@ -12,7 +13,11 @@
     src: url("../fonts/Heebo-Variable.ttf") format("truetype-variations");
 }
 
+body {
+    margin: var(--side-margins)
+}
+
 main {
-    max-width: 900px;
+    max-width: breakpoints.$bp-lg;
     margin: var(--body-top-margin) auto 0 auto;
 }

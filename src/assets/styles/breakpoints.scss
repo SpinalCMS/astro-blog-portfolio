@@ -1,0 +1,12 @@
+$bp-lg: 768px;
+$bp-md: 480px;
+
+/* declare breakpoints */
+@mixin breakpoint($width) {
+    @if $width == md {
+        @media (min-width: $bp-md) { @content; }
+    }
+    @else if $width == lg {
+        @media (min-width: $bp-lg) { @content; }
+    }
+}
