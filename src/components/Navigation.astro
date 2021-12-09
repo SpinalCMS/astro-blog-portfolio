@@ -1,0 +1,26 @@
+---
+// data
+import navItems from '../data/navigation.json'
+import settings from '../data/settings.json'
+---
+
+<div>
+    {navItems.map((item) => (
+        <div>
+            <a href={item.url}>
+                {item.display}
+            </a>
+        </div>
+    ))}
+</div>
+
+<style lang="scss">
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+    }
+    div a { margin-right: var(--space-md); }
+    div:last-child { margin-right: 0; }
+</style>

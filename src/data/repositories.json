@@ -1,0 +1,17 @@
+[
+    {
+        "title": "tailwind-hot-reload",
+        "description": "A dead simple webpack hotreload server with Tailwind CSS 2.0 running. A simple way to serve plain HTML files with Tailwind.",
+        "url": "https://github.com/tusamni/tailwind-hot-reload"
+    },
+    {
+        "title": "picture-source-builder",
+        "description": "An opiniated tool to quickly take a folder full of images, resize them and reformat them using Sharp.",
+        "url": "https://github.com/tusamni/picture-source-builder"
+    },
+    {
+        "title": "astro",
+        "description": "My personal portfolio, blog and professional resume. Built with Astro JS and Tailwind CSS. All design credit goes to Kevin Clark.",
+        "url": "https://github.com/tusamni/astro"
+    }
+]

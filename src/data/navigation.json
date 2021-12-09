@@ -1,0 +1,22 @@
+[
+    {
+        "display": "About",
+        "url": "/about",
+        "order": 1
+    },
+    {
+        "display": "Photography",
+        "url": "/photography",
+        "order": 2
+    },
+    {
+        "display": "Articles",
+        "url": "/articles",
+        "order": 3
+    },
+    {
+        "display": "Contact",
+        "url": "/contact",
+        "order": 4
+    }
+]

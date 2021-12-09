@@ -1,0 +1,18 @@
+@use 'typography';
+@use 'colors';
+@use 'layout';
+@use 'spacing';
+
+@font-face {
+    font-family: "Hebbo";
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: "Regular";
+    src: url("../fonts/Heebo-Variable.ttf") format("truetype-variations");
+}
+
+main {
+    max-width: 900px;
+    margin: var(--body-top-margin) auto 0 auto;
+}
