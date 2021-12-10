@@ -47,27 +47,16 @@ h1 {
     }
 }
 
-h2 {
-    font-size: var(--text-xl);
-}
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+h4 { font-size: var(--text-md); }
+h5 { font-size: var(--text-sm); }
+h6 { font-size: var(--text-xs); }
 
-h3 {
+p {
     font-size: var(--text-lg);
+    line-height: var(--line-height-lg);
 }
-
-h4 {
-    font-size: var(--text-md);
-}
-
-h5 {
-    font-size: var(--text-sm);
-}
-
-h6 {
-    font-size: var(--text-xs);
-}
-
-p {}
 
 a {
     color: var(--color-link);

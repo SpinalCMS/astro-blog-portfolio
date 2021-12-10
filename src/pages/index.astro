@@ -16,10 +16,30 @@
         @use '../assets/styles/breakpoints' as *;
 
         h1 {
-            text-align: center;
-
             @include breakpoint(md) {
                 text-align: left;
+            }
+        }
+
+        header div {
+            text-align: center;
+        }
+
+        header p {
+            color: var(--grayscale-70);
+        }
+
+        .circle-bg {
+            background-color: var(--secondary-10);
+            width: 150px;
+            height: 150px;
+            position: relative;
+            margin: 0 auto;
+
+            img {
+                position: absolute;
+                top: -10px;
+                right: -4px;
             }
         }
     </style>
@@ -29,13 +49,18 @@
     <main>
         <header>
             <Navigation />
-            
+
             <div>
+                <div class="circle-bg img-round">
+                    <img src="/assets/me.jpg" width="150" height="150" class="img-round" />
+                </div>
+
                 <h1>
                     Hi, I'm Erik.<br />
                     I'm a CRO &amp;<br />
                     SEM Expert.
                 </h1>
+                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
             </div>
         </header>
     </main>
