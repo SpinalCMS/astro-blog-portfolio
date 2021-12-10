@@ -30,11 +30,20 @@
                 margin-bottom: 2rem;
             }
 
+            p {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
             @include breakpoint(md) {
                 text-align: left;
 
+                h1 {
+                    margin-top: 0;
+                }
                 p {
                     max-width: 25rem;
+                    margin: 0;
                 }
             }
             @include breakpoint(lg) {
@@ -80,26 +89,103 @@
             }
         }
 
-        .posts {
-            background-color: var(--secondary-10);
-            padding-top: var(--section-spacing-sm);
-            padding-bottom: var(--space-md);
-
-            @include breakpoint(md) {
-                padding-top: var(--section-spacing-lg);
-            }
-        }
-
         .headline {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: var(--space-sm);
 
             a {
                 color: var(--secondary-50)
             }
         }
+
+        .recent-posts, .recent-shoots {
+            padding-top: var(--section-spacing-sm);
+            padding-bottom: var(--section-spacing-sm);
+
+            @include breakpoint(md) {
+                padding-top: var(--section-spacing-lg);
+                padding-bottom: var(--section-spacing-lg);
+            }
+
+            h3 {
+                font-size: var(--text-xl);
+                line-height: var(--line-height-md);
+            }
+
+            .post, .shoot {
+                .meta {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--space-xs);
+                    color: var(--grayscale-50);
+
+                    @include breakpoint(lg) {
+                        flex-direction: row;
+                        gap: var(--space-md);
+                    }
+                }
+
+                .tags, .time {
+                    display: flex;
+                    flex-direction: row;
+                    gap: var(--space-xs);
+                }
+            }
+        }
+
+        .recent-posts {
+            background-color: var(--secondary-10);
+
+            .posts {
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-md);
+
+                .post {
+                    border-radius: .4rem;
+                    background-color: var(--white);
+                    padding: var(--space-md) var(--space-lg);
+                }
+
+                @include breakpoint(lg) {
+                    flex-direction: row;
+                }
+            }
+        }
+
+        .recent-shoots {
+            .shoot {
+                @include breakpoint(md) {
+                    display: flex;
+                    gap: var(--space-md);
+                }
+
+                .cover {
+                    img {
+                        border-radius: .4rem;
+                        object-fit: cover;
+                        height: 200px;
+                        width: 100%;
+                    }
+
+                    @include breakpoint(md) {
+                        flex-grow: 1;
+                        
+
+                        img { 
+                            max-height: 100%;
+                            min-width: 100%;
+                            object-fit: cover;
+                            vertical-align: bottom;
+                        }
+                    }
+                }
+            }
+        }
+
         h2 { 
             font-size: var(--text-xl);
             font-weight: 400;
@@ -131,11 +217,75 @@
             </div>
         </header>
 
-        <section class="posts">
+        <section class="recent-posts">
             <div class="container">
                 <div class="headline">
                     <h2>Recent Posts</h2>
                     <a href="/">View All</a>
+                </div>
+
+                <div class="posts">
+                    <div class="post">
+                        <a href="/">
+                            <h3>Dynamic Bookmarks in Google Chrome</h3>
+                        </a>
+                        <div>
+                            <div class="meta">
+                                <time>12 Feb 2020</time>
+
+                                <div class="tags">
+                                    <span>Figma</span>
+                                    <span>Icon Design</span>
+                                </div>
+                            </div>
+
+                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <a href="/">
+                            <h3>Dynamic Bookmarks in Google Chrome</h3>
+                        </a>
+                        <div>
+                            <div class="meta">
+                                <time>12 Feb 2020</time>
+
+                                <div class="tags">
+                                    <span>Figma</span>
+                                    <span>Icon Design</span>
+                                </div>
+                            </div>
+
+                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-shoots">
+            <div class="container">
+                <div class="headline">
+                    <h2>Recent Posts</h2>
+                    <a href="/">View All</a>
+                </div>
+
+                <div class="shoot">
+                    <div class="cover">
+                        <img src="/assets/930.jpg" />
+                    </div>
+
+                    <div>
+                        <h3>930 Slantnose Shoot</h3>
+                        
+                        <div class="meta">
+                            <time>12 Feb 2020</time>
+                            <span class="tags">Car Show</span>
+                        </div>
+
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                    </div>
                 </div>
             </div>
         </section>

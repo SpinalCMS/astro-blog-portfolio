@@ -21,3 +21,11 @@ body {
         margin: var(--body-top-margin-lg) 0 0 0;
     }
 }
+
+a {
+    color: var(--color-link);
+
+    &:visited {
+        color: var(--color-link-visited);
+    }
+}

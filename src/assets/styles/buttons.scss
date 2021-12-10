@@ -3,7 +3,7 @@
     --btn-radius: 0.3rem;
 }
 
-.btn {
+a.btn {
     display: inline-flex;
     position: relative;
     white-space: nowrap;
@@ -13,12 +13,18 @@
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--btn-radius);
     font-size: var(--btn-font-size);
+    transition-property: background-color;
+    transition-duration: 400ms;
+    transition-delay: none;
 }
 
-.btn-primary { 
+a.btn-primary { 
     background-color: var(--primary-60);
     color: var(--white);
 
+    &:visited {
+        color: var(--white);
+    }
     &:hover {
         background-color: var(--primary-50);
     }
