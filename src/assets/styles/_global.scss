@@ -1,9 +1,10 @@
-@use 'breakpoints';
+@use 'breakpoints' as *;
 @use 'typography';
 @use 'colors';
 @use 'layout';
 @use 'spacing';
 @use 'images';
+@use 'buttons';
 
 @font-face {
     font-family: "Hebbo";
@@ -15,10 +16,5 @@
 }
 
 body {
-    margin: var(--side-margins)
-}
-
-main {
-    max-width: breakpoints.$site-width;
-    margin: var(--body-top-margin) auto 0 auto;
+    margin: 0;
 }

@@ -54,17 +54,13 @@ h5 { font-size: var(--text-sm); }
 h6 { font-size: var(--text-xs); }
 
 p {
-    font-size: var(--text-lg);
+    font-size: var(--text-md);
     line-height: var(--line-height-lg);
+    color: var(--grayscale-70);
 }
 
 a {
-    color: var(--color-link);
     text-decoration: none;
-
-    &:visited {
-        color: var(--color-link-visited);
-    }
 }
 
 b, strong {
