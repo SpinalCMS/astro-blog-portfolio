@@ -158,6 +158,12 @@
 
         .recent-shoots {
             .shoot {
+                margin-bottom: var(--space-xl);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
                 @include breakpoint(md) {
                     display: flex;
                     gap: var(--space-md);
@@ -172,14 +178,11 @@
                     }
 
                     @include breakpoint(md) {
-                        flex-grow: 1;
+                        width: 100%;
                         
-
                         img { 
-                            max-height: 100%;
-                            min-width: 100%;
                             object-fit: cover;
-                            vertical-align: bottom;
+                            height: 100%;
                         }
                     }
                 }
@@ -269,6 +272,23 @@
                 <div class="headline">
                     <h2>Recent Posts</h2>
                     <a href="/">View All</a>
+                </div>
+
+                <div class="shoot">
+                    <div class="cover">
+                        <img src="/assets/930.jpg" />
+                    </div>
+
+                    <div>
+                        <h3>930 Slantnose Shoot</h3>
+                        
+                        <div class="meta">
+                            <time>12 Feb 2020</time>
+                            <span class="tags">Car Show</span>
+                        </div>
+
+                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                    </div>
                 </div>
 
                 <div class="shoot">
