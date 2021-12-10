@@ -24,10 +24,11 @@ import navItems from '../data/navigation.json'
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-bottom: var(--section-bottom-margin);
+        margin-bottom: var(--section-spacing-sm);
 
         @include breakpoint(md) {
             justify-content: flex-end;
+            margin-bottom: var(--section-spacing-lg);
         }
     }
     div a {

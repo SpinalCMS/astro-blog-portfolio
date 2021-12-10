@@ -1,8 +1,11 @@
 @use 'breakpoints' as *;
 
 :root {
-    --body-top-margin: 5rem; // how far from the top of the window should layout start?
-    --section-bottom-margin: 6rem; // how much spacing after each section?
+    --body-top-margin-sm: 3rem; // how far from the top of the window should layout start?
+    --body-top-margin-lg: calc(var(--body-top-margin-sm) * 2); // for large devices
+    
+    --section-spacing-sm: 3rem; // how much spacing before / after each section?
+    --section-spacing-lg: calc(var(--section-spacing-sm) * 2);; // for large devices
     
     --side-margins-sm: 16px; // margins to apply to the l/r boundaries of the site on mobile
     --side-margins-lg: 24px; // margins to apply to the l/r boundaries of the site on tablet / desktop
@@ -10,7 +13,7 @@
 
 .container {
     max-width: $site-width;
-    margin: var(--body-top-margin) auto 0 auto;
+    margin: 0 auto;
     padding: 0 var(--side-margins-sm);
 
     @include breakpoint(md) {

@@ -1,6 +1,6 @@
-$site-width: 900px;
-$bp-lg: 768px;
-$bp-md: 480px;
+$site-width: 900px; // max width of the container
+$bp-lg: 768px; // large breakpoint
+$bp-md: 480px; // tablet breakpoint
 
 /* declare breakpoints */
 @mixin breakpoint($width) {
