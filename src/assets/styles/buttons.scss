@@ -19,13 +19,15 @@ a.btn {
 }
 
 a.btn-primary { 
-    background-color: var(--primary-60);
-    color: var(--white);
+    background-color: var(--color-yellow);
+    color: var(--color-grayscale-80);
+    font-weight: 500;
 
     &:visited {
-        color: var(--white);
+        color: var(--color-grayscale-80);
     }
     &:hover {
-        background-color: var(--primary-50);
+        background-color: var(--color-yellow-70);
+        color: var(--color-grayscale-60);
     }
 }

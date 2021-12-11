@@ -1,0 +1,59 @@
+---
+var colors = [
+    'grayscale',
+    'pink',
+    'yellow',
+    'green',
+    'blue',
+    'midnight'
+];
+var steps = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Color Schemes</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href={Astro.resolve('../assets/styles/_global.scss')}>
+    <style lang="scss">
+        .flex {
+            display: flex;
+            flex-direction: col;
+            margin-bottom: var(--space-lg);
+        }
+        .heading { font-weight: 600; }
+        .box {
+            height: 100px;
+            width: 100px;
+        }
+        .step {
+            margin-top: var(--space-xs);
+        }
+
+        h1 { font-size: var(--text-3xl)}
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            {colors.map((color) => (
+                <p class="heading">{color}</p>
+                <div class="flex">
+                    {steps.map((step) => (
+                        <div class="color">
+                            <div class="box" style={`background-color: var(--color-${color}-${step});`}></div>
+                            <div class="step">{step}</div>
+                        </div>
+                    ))}
+                    <div class="color" style={`background-color: var(--color-${color});`}></div>
+                </div>
+            ))}
+        </div>
+    </main>
+</body>
+</html>
