@@ -27,8 +27,9 @@ body {
     font-size: var(--text-sm);
     font-family: var(--font-family);
     line-height: var(--line-height-md);
-    color: var(--color-text);
 }
+a { text-decoration: none; }
+b, strong { font-weight: bold; }
 
 h1, .h1,
 h2, .h2, 
@@ -37,6 +38,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
     line-height: var(--line-height-md);
+    color: var(--color-grayscale-90);
 }
 
 /* text size */
@@ -45,7 +47,6 @@ h1, .h1 {
     font-weight: 900;
     letter-spacing: var(--letter-spacing-xs);
     line-height: var(--line-height-sm);
-    color: var(--grayscale-90);
 
     @include breakpoint(md) {
         font-size: var(--text-4xl);
@@ -76,16 +77,13 @@ h6, .h6 {
     font-weight: 400;
 }
 
+.subheading {
+    font-size: var(--text-xl);
+    font-weight: 300;
+}
+
 p {
     font-size: var(--text-md);
     line-height: var(--line-height-lg);
     color: var(--grayscale-70);
-}
-
-a {
-    text-decoration: none;
-}
-
-b, strong {
-    font-weight: bold;
 }

@@ -11,12 +11,21 @@
     --side-margins-lg: 24px; // margins to apply to the l/r boundaries of the site on tablet / desktop
 }
 
+img { width: 100%; }
+
 .container {
     max-width: $site-width;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
     padding: 0 var(--side-margins-sm);
 
     @include breakpoint(md) {
         padding: 0 var(--side-margins-lg);
     }
+}
+.constraint-sm {
+    max-width: 500px;
+}
+.constraint-lg {
+    max-width: 650px;
 }

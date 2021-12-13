@@ -4,6 +4,8 @@
 @use 'layout';
 @use 'spacing';
 @use 'buttons';
+@use 'images';
+@use 'forms';
 
 @font-face {
     font-family: "Hebbo";
@@ -12,6 +14,10 @@
     font-style: normal;
     font-named-instance: "Regular";
     src: url("/fonts/Heebo-Variable.ttf") format("truetype-variations");
+}
+
+:root {
+    --site-radius: 0.3rem;
 }
 
 body {
@@ -26,5 +32,55 @@ a {
 
     &:visited {
         color: var(--color-link-visited);
+    }
+}
+
+header {
+    margin-bottom: var(--section-spacing-sm);
+    
+    @include breakpoint(md) {
+        margin-bottom: var(--section-spacing-lg);
+    }
+}
+
+/* post display */
+.posts {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-xl);
+
+    @include breakpoint(lg) {
+        gap: var(--space-xl);
+    }
+
+    .post {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+
+        @include breakpoint(lg) {
+            flex-direction: column;
+        }
+
+        h3 { margin: 0; }
+        p { margin: 0; }
+        
+        .meta {
+            display: flex;
+            flex-direction: row;
+            gap: var(--space-xs);
+            color: var(--color-grayscale-60);
+
+            @include breakpoint(lg) {
+                flex-direction: row;
+                gap: var(--space-md);
+            }
+        }
+
+        .tags, .time {
+            display: flex;
+            flex-direction: row;
+            gap: var(--space-xs);
+        }
     }
 }

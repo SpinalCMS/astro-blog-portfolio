@@ -1,6 +1,7 @@
 ---
     // components
     import Navigation from '../components/Navigation.astro'
+    import PostSnippet from '../components/articles/Snippet.astro'
 ---
 
 <html lang="en">
@@ -15,16 +16,21 @@
     <style lang="scss">
         @use '../assets/styles/breakpoints' as *;
 
-        header {
-            margin-bottom: var(--section-spacing-sm);
-            
-            @include breakpoint(md) {
-                margin-bottom: var(--section-spacing-lg);
-            }
-        }
-
         .intro {
             text-align: center;
+
+            img {
+                width: 150px;
+                height: 150px;
+
+                @include breakpoint(lg) {
+                    order: 1;
+                    align-self: center;
+                    justify-self: end;
+                    width: 220px;
+                    height: 220px;
+                }
+            }
 
             *:not(:last-child) {
                 margin-bottom: 2rem;
@@ -55,40 +61,6 @@
             }
         }
 
-        .circle-bg {
-            border-radius: 50%;
-            background-color: var(--color-pink);
-            width: 150px;
-            height: 150px;
-            position: relative;
-            margin: 0 auto;
-
-            img {
-                border-radius: 50%;
-                position: absolute;
-                top: -10px;
-                right: 4px;
-                width: 150px;
-                height: 150px;
-            }
-
-            @include breakpoint(md) {
-                margin: 0;
-            }
-            @include breakpoint(lg) {
-                order: 1;
-                align-self: center;
-                justify-self: end;
-                width: 220px;
-                height: 220px;
-
-                img {
-                    width: 220px;
-                    height: 220px;
-                }
-            }
-        }
-
         .headline {
             display: flex;
             flex-direction: row;
@@ -109,45 +81,14 @@
                 padding-top: var(--section-spacing-lg);
                 padding-bottom: var(--section-spacing-lg);
             }
-
-            .post, .shoot {
-                .meta {
-                    display: flex;
-                    flex-direction: row;
-                    gap: var(--space-xs);
-                    color: var(--color-grayscale-60);
-
-                    @include breakpoint(lg) {
-                        flex-direction: row;
-                        gap: var(--space-md);
-                    }
-                }
-
-                .tags, .time {
-                    display: flex;
-                    flex-direction: row;
-                    gap: var(--space-xs);
-                }
-            }
         }
 
         .recent-posts {
             background-color: var(--color-blue-10);
 
             .posts {
-                display: flex;
-                flex-direction: column;
-                gap: var(--space-xs);
-
-                .post {
-                    border-radius: .4rem;
-                    //background-color: var(--white);
-                    //padding: var(--space-md) var(--space-lg);
-                }
-
                 @include breakpoint(lg) {
-                    flex-direction: row;
-                    gap: var(--space-xl);
+                    grid-template-columns: repeat(2, 1fr);
                 }
             }
         }
@@ -193,9 +134,7 @@
             <Navigation />
 
             <div class="intro">
-                <div class="circle-bg">
-                    <img src="/images/me.jpg" class="img-round" />
-                </div>
+                <img src="/images/me.jpg" class="solid-shadow-pink" />
 
                 <div>
                     <h1>
@@ -219,41 +158,8 @@
                 </div>
 
                 <div class="posts">
-                    <div class="post">
-                        <a href="/">
-                            <h3 class="h4">Dynamic Bookmarks in Google Chrome</h3>
-                        </a>
-                        <div>
-                            <div class="meta">
-                                <time>12 Feb 2020</time>
-
-                                <div class="tags">
-                                    <span>Figma</span>
-                                    <span>Icon Design</span>
-                                </div>
-                            </div>
-
-                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <a href="/">
-                            <h3 class="h4">Dynamic Bookmarks in Google Chrome</h3>
-                        </a>
-                        <div>
-                            <div class="meta">
-                                <time>12 Feb 2020</time>
-
-                                <div class="tags">
-                                    <span>Figma</span>
-                                    <span>Icon Design</span>
-                                </div>
-                            </div>
-
-                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
-                        </div>
-                    </div>
+                    <PostSnippet />
+                    <PostSnippet />
                 </div>
             </div>
         </section>
@@ -267,7 +173,7 @@
 
                 <div class="shoot">
                     <div class="cover">
-                        <img src="/images/930.jpg" />
+                        <img src="/images/930.jpg" class="solid-shadow-green" />
                     </div>
 
                     <div>
@@ -284,7 +190,7 @@
 
                 <div class="shoot">
                     <div class="cover">
-                        <img src="/images/930.jpg" />
+                        <img src="/images/930.jpg" class="solid-shadow-green" />
                     </div>
 
                     <div>

@@ -1,0 +1,68 @@
+---
+    // components
+    import Navigation from '../components/Navigation.astro'
+    import PostSnippet from '../components/articles/Snippet.astro'
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dev</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href={Astro.resolve('../assets/styles/_global.scss')}>
+    <style lang="scss">
+        @use '../assets/styles/breakpoints' as *;
+
+        .search {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-xl);
+
+            input {
+                flex-grow: 1;
+            }
+
+            @include breakpoint(lg) {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header class="container">
+            <Navigation />
+
+            <div class="constraint-sm">
+                <h1>Articles</h1>
+                <p>
+                    Occasionally you'll catch me writing down my thoughts on the intersection of digital marketing, photography and cars (as if there is such a thing).
+                </p>
+            </div>
+        </header>
+
+        <section class="container">
+            <div class="constraint-sm">
+                <form>
+                    <div class="search">
+                        <input type="text" placeholder="Search Posts" />
+                        <button class="btn btn-secondary" type="submit">Search</button>
+                    </div>
+                </form>
+
+                <div class="posts">
+                    <PostSnippet />
+                    <PostSnippet />
+                    <PostSnippet />
+                    <PostSnippet />
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
