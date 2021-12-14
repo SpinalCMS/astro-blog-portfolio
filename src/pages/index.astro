@@ -1,7 +1,9 @@
 ---
     // components
-    import Navigation from '../components/Navigation.astro'
+    import Header from '../components/Header.astro'
+    import Footer from '../components/Footer.astro'
     import PostSnippet from '../components/articles/Snippet.astro'
+    import ShootSnippet from '../components/shoots/Snippet.astro'
 ---
 
 <html lang="en">
@@ -63,17 +65,22 @@
 
         .headline {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: var(--space-xs);
+            gap: var(--space-xs);
+            margin-bottom: var(--space-xl);
 
-            a {
-                color: var(--color-blue-90)
+            @include breakpoint(md) {
+                flex-direction: row;
+                justify-content: space-between;
             }
+
+            h2 { margin: 0; }
+            a { color: var(--color-blue-90); }
         }
 
-        .recent-posts, .recent-shoots {
+        .recent-posts {
+            background-color: var(--color-blue-10);
             padding-top: var(--section-spacing-sm);
             padding-bottom: var(--section-spacing-sm);
 
@@ -81,10 +88,6 @@
                 padding-top: var(--section-spacing-lg);
                 padding-bottom: var(--section-spacing-lg);
             }
-        }
-
-        .recent-posts {
-            background-color: var(--color-blue-10);
 
             .posts {
                 @include breakpoint(lg) {
@@ -94,35 +97,10 @@
         }
 
         .recent-shoots {
-            .shoot {
-                margin-bottom: var(--space-xl);
+            padding-top: var(--section-spacing-sm);
 
-                &:last-child {
-                    margin-bottom: 0;
-                }
-
-                @include breakpoint(md) {
-                    display: flex;
-                    gap: var(--space-md);
-                }
-
-                .cover {
-                    img {
-                        border-radius: .4rem;
-                        object-fit: cover;
-                        height: 200px;
-                        width: 100%;
-                    }
-
-                    @include breakpoint(md) {
-                        width: 100%;
-                        
-                        img { 
-                            object-fit: cover;
-                            height: 100%;
-                        }
-                    }
-                }
+            @include breakpoint(md) {
+                padding-top: var(--section-spacing-lg);
             }
         }
     </style>
@@ -131,7 +109,7 @@
 <body>
     <main>
         <header class="container">
-            <Navigation />
+            <Header />
 
             <div class="intro">
                 <img src="/images/me.jpg" class="solid-shadow-pink" />
@@ -143,8 +121,9 @@
                         SEM Expert.
                     </h1>
                     <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+
                     <a href="/" class="btn btn-primary">
-                        Contact Me
+                        <span>Contact Me</span>
                     </a>
                 </div>
             </div>
@@ -171,41 +150,14 @@
                     <a href="/">View All</a>
                 </div>
 
-                <div class="shoot">
-                    <div class="cover">
-                        <img src="/images/930.jpg" class="solid-shadow-green" />
-                    </div>
-
-                    <div>
-                        <h3 class="h4">930 Slantnose Shoot</h3>
-                        
-                        <div class="meta">
-                            <time>12 Feb 2020</time>
-                            <span class="tags">Car Show</span>
-                        </div>
-
-                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                    </div>
-                </div>
-
-                <div class="shoot">
-                    <div class="cover">
-                        <img src="/images/930.jpg" class="solid-shadow-green" />
-                    </div>
-
-                    <div>
-                        <h3 class="h4">930 Slantnose Shoot</h3>
-                        
-                        <div class="meta">
-                            <time>12 Feb 2020</time>
-                            <span class="tags">Car Show</span>
-                        </div>
-
-                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                    </div>
+                <div class="shoots">
+                    <ShootSnippet />
+                    <ShootSnippet />
                 </div>
             </div>
         </section>
+
+        <Footer />
     </main>
 </body>
 </html>

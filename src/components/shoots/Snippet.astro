@@ -1,0 +1,74 @@
+---
+
+---
+
+<div class="shoot">
+    <div class="cover">
+        <img src="/images/930.jpg" class="solid-shadow-green" />
+    </div>
+
+    <div class="content">
+        <h3 class="h4">930 Slantnose Shoot</h3>
+        
+        <div class="meta">
+            <time>12 Feb 2020</time>
+            <div class="category">Car Show</div>
+        </div>
+
+        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+    </div>
+</div>
+
+<style lang="scss">
+    @use '../../assets/styles/breakpoints' as *;
+
+    .shoot {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-lg);
+
+        @include breakpoint(md) {
+            flex-direction: row;
+        }
+
+        .cover {
+            img {
+                border-radius: .4rem;
+                object-fit: cover;
+                height: 200px;
+                width: 100%;
+            }
+
+            @include breakpoint(md) {
+                width: 100%;
+                
+                img { 
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            gap: var(--space-sm);
+            
+            h3 { margin: 0; }
+            p { margin: 0; }
+
+            .meta {
+                display: flex;
+                flex-direction: row;
+                gap: var(--space-xs);
+                color: var(--color-grayscale-60);
+
+                @include breakpoint(lg) {
+                    flex-direction: row;
+                    gap: var(--space-md);
+                }
+            }
+        }
+    }
+</style>

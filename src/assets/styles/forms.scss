@@ -10,8 +10,8 @@ textarea {
 	display:inline-block;
 	vertical-align:middle;
 	white-space:normal;
+    line-height: 1em;
 	background:none;
-	line-height:1;
     font-size: var(--text-sm);
 	font-family: var(--font-family);
 }
@@ -73,12 +73,12 @@ select[multiple] {
 /* end reset */
 
 input[type="text"] {
-    border: 1px solid var(--color-grayscale-20);
+    border: 1px solid var(--color-grayscale-10);
     border-radius: var(--site-radius);
-    color: var(--color-grayscale-40);
+    color: var(--color-grayscale-60);
     padding: var(--space-sm);
 
     &::placeholder {
-        color: var(--color-grayscale-40);
+        color: var(--color-grayscale-60);
     }
 }

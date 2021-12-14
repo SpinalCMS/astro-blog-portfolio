@@ -3,41 +3,42 @@
 }
 
 .btn {
-    white-space: nowrap;
-    text-decoration: none;
-    line-height: 1;
-
-    padding: var(--space-sm) var(--space-md);
+    font-weight: 500;
     border-radius: var(--site-radius);
-    font-size: var(--btn-font-size);
-    transition-property: background-color;
-    transition-duration: 400ms;
-    transition-delay: none;
+    display: inline-flex;
+    
+    span {
+        border-radius: var(--site-radius);
+        border-style: solid;
+        padding: var(--space-xs) var(--space-md);
+        cursor: pointer;
+        text-transform: uppercase;
+        
+        transform: translate3d(-.3em, -0.3em, 0);
+        transition: transform 240ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        transition-delay: 150ms;
+    }
+    &:active, &.click {
+        span {
+            transform: translate3d(0, 0, 0);
+            transition: transform 120ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+        }
+    }  
 }
 
-.btn-primary { 
-    background-color: var(--color-yellow-70);
-    color: var(--color-grayscale-80);
-    font-weight: 500;
-    border-bottom:5px solid var(--color-yellow-90);
+.btn-primary {
+    background-color: var(--color-yellow);
 
-    &:visited {
-        color: var(--color-grayscale-80);
-    }
-    &:hover {
+    span {
         background-color: var(--color-yellow-50);
+        border-color: var(--color-yellow-50);
     }
 }
-.btn-secondary { 
-    background-color: var(--color-pink-70);
-    color: var(--color-white);
-    font-weight: 500;
-    border-bottom:5px solid var(--color-pink-90);
+.btn-secondary {
+    background-color: var(--color-pink);
 
-    &:visited {
-        color: var(--color-white);
-    }
-    &:hover {
-        background-color: var(--color-pink-50);
+    span {
+        background-color: var(--color-yellow);
+        border-color: var(--color-yellow);
     }
 }

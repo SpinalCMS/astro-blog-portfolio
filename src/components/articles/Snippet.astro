@@ -8,12 +8,33 @@
     </a>
     <div class="meta">
         <time>12 Feb 2020</time>
-
-        <div class="tags">
-            <span>Figma</span>
-            <span>Icon Design</span>
-        </div>
+        <div class="category">Figma</div>
     </div>
 
     <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
 </div>
+
+<style lang="scss">
+    @use '../../assets/styles/breakpoints' as *;
+
+    .post {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+
+        h3 { margin: 0; }
+        p { margin: 0; }
+        
+        .meta {
+            display: flex;
+            flex-direction: row;
+            gap: var(--space-xs);
+            color: var(--color-grayscale-60);
+
+            @include breakpoint(lg) {
+                flex-direction: row;
+                gap: var(--space-md);
+            }
+        }
+    }
+</style>

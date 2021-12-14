@@ -1,0 +1,44 @@
+---
+const { placeholder = "Search" } = Astro.props;
+---
+
+<form>
+    <div class="search">
+        <input type="text" placeholder={placeholder} />
+        
+        <button type="submit">
+            <span>Search</span>
+        </button>
+    </div>
+</form>
+
+<style lang="scss">
+    @use '../assets/styles/breakpoints' as *;
+
+    .search {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+        margin-bottom: var(--space-xl);
+
+        input {
+            flex-grow: 1;
+        }
+        button {
+            padding: var(--space-sm) var(--space-md);
+            background-color: var(--color-midnight-10);
+            font-weight: 500;
+            border-radius: var(--site-radius);
+            transition: background-color .5s;
+
+            &:hover {
+                background-color: var(--color-midnight-20);
+                cursor: pointer;
+            }
+        }
+
+        @include breakpoint(lg) {
+            flex-direction: row;
+        }
+    }
+</style>

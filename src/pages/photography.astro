@@ -1,0 +1,49 @@
+---
+    // components
+    import Header from '../components/Header.astro'
+    import Footer from '../components/Footer.astro'
+    import ShootSnippet from '../components/shoots/Snippet.astro'
+    import Search from '../components/Search.astro'
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dev</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href={Astro.resolve('../assets/styles/_global.scss')}>
+</head>
+
+<body>
+    <main>
+        <header class="container">
+            <Header />
+
+            <div class="constraint-lg">
+                <h1>Photography</h1>
+                <p>Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, let's chat!</p>
+                <p>If I have some free time, you might catch me over at Coffee With Cars in Dripping Springs, TX. It's currently hosted at Dreamland on the last Sunday of the month at 8am.</p>
+                <p>Currently I'm shooting with a Sony Alpha A7iii and a host of Zeiss Batis lenses. I'm also always on the lookout for new Peak Design gear, everything they make is incredible.</p>
+            </div>
+        </header>
+
+        <section class="container">
+            <div class="constraint-lg">
+                <Search placeholder="Search Shoots" />
+
+                <div class="posts">
+                    <ShootSnippet />
+                    <ShootSnippet />
+                    <ShootSnippet />
+                    <ShootSnippet />
+                </div>
+            </div>
+        </section>
+
+        <Footer />
+    </main>
+</body>
+</html>
