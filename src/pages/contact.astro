@@ -1,0 +1,96 @@
+---
+    // components
+    import Header from '../components/Header.astro'
+    import Footer from '../components/Footer.astro'
+    import PostSnippet from '../components/articles/Snippet.astro'
+    import Search from '../components/Search.astro'
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dev</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href={Astro.resolve('../assets/styles/_global.scss')}>
+
+    <style lang="scss">
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+        .group {
+            display: flex;
+            flex-direction: column;
+
+            .optional {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                span {
+                    color: var(--color-grayscale-40);
+                    font-weight: 300;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header class="container">
+            <Header />
+
+            <div class="constraint-sm">
+                <h1>Contact Me</h1>
+            </div>
+        </header>
+
+        <section class="container">
+            <div class="constraint-sm">
+                <form action="/contact/success/" name="Contact - Page" method="POST">
+                    <div class="group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" autocomplete="name" placeholder="Your name" required>
+                    </div>
+
+                    <div class="group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="group">
+                        <div class="optional">
+                            <label for="phone">Phone Number</label>
+                            <span>Optional</span>
+                        </div>
+                        
+                        <input type="text" name="phone" id="phone" autocomplete="tel" placeholder="(512) 867-5309">
+                    </div>
+                    
+                    <div class="group">
+                        <div class="optional">
+                            <label for="message">Message</label>
+                            <span>Optional</span>
+                        </div>
+                        
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary">
+                            <span>Let's talk</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <Footer />
+    </main>
+</body>
+</html>
