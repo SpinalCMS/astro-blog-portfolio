@@ -78,7 +78,6 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
             }
 
             h2 { margin: 0; }
-            a { color: var(--color-blue-90); }
         }
 
         .recent-posts {
@@ -118,8 +117,7 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
             <div class="intro">
                 <figure>
                     <picture>
-                        <Image file="me.jpg" classes="solid-shadow-pink" />
-                        <!-- <img data-src="/images/me.jpg" class="solid-shadow-pink" width="300" height="300" /> -->
+                        <Image file="me.jpg" classes="solid-shadow-pink" alt="Erik S. Olsen in Austin, TX" />
                     </picture>
                 </figure>
 
@@ -142,7 +140,7 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
             <div class="container">
                 <div class="headline">
                     <h2>Recent Posts</h2>
-                    <a href="/">View All</a>
+                    <a href="/" class="pill pill-primary">View All</a>
                 </div>
 
                 <div class="posts">
@@ -156,7 +154,7 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
             <div class="container">
                 <div class="headline">
                     <h2>Recent Posts</h2>
-                    <a href="/">View All</a>
+                    <a href="/" class="pill pill-primary">View All</a>
                 </div>
 
                 <div class="shoots">

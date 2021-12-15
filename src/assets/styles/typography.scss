@@ -87,6 +87,7 @@ p {
     font-size: var(--text-lg);
     line-height: var(--line-height-xl);
     color: var(--grayscale-70);
+    font-weight: 300;
 }
 p > a {
     background-image: linear-gradient(120deg, var(--color-yellow-20) 0%, var(--color-yellow-40) 100%);

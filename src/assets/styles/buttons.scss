@@ -32,6 +32,12 @@
     span {
         background-color: var(--color-yellow-50);
         border-color: var(--color-yellow-50);
+        transition: .5s;
+
+        &:hover {
+            background-color: var(--color-yellow-30);
+            border-color: var(--color-yellow-30);
+        }
     }
 }
 .btn-secondary {
@@ -40,5 +46,21 @@
     span {
         background-color: var(--color-yellow);
         border-color: var(--color-yellow);
+    }
+}
+
+.pill {
+    border-radius: var(--site-radius);
+    padding: var(--space-xs) var(--space-sm);
+    font-weight: 500;
+}
+
+a.pill-primary {
+    color: var(--color-white) !important;
+    background-color: var(--color-blue-60);
+    transition: all .5s;
+
+    &:hover {
+        background-color: var(--color-blue-50);
     }
 }
