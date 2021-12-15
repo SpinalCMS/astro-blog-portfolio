@@ -1,0 +1,24 @@
+---
+// props
+const { title, description } = Astro.props;
+---
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{title}</title>
+<meta name="description" content={description}>
+<meta name="author" content="Erik S. Olsen" />
+
+<link rel="stylesheet" href={Astro.resolve('../assets/styles/_global.scss')}>
+
+<script>
+    window.GUMLET_CONFIG = {
+        hosts: [{
+            current: "https://priceless-snyder-a15be8.netlify.app/",
+            gumlet: "https://eriksolsen.gumlet.io"
+        }],
+        lazy_load: true
+    };
+    (function(){d=document;s=d.createElement("script");s.src="https://cdn.gumlet.com/gumlet.js/2.1/gumlet.min.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+</script>

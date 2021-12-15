@@ -1,0 +1,35 @@
+---
+// modules
+import sizeOf from "image-size";
+
+// data
+import settings from "../../data/settings.json"
+
+// props
+export interface Props {
+    file: string;
+    imgClass?: string;
+    figClass?: string;
+}
+const { file, imgClass, figClass } = Astro.props;
+
+// build the file paths
+let localUrl = `${settings.image.directory.local}${file}`;
+let publicUrl = `/${settings.image.directory.public}${file}`;
+
+// get the image dimensions
+const dimensions = sizeOf(localUrl);
+---
+
+<figure class={figClass}>
+    <picture>
+        <img
+            data-src={publicUrl}
+            class={imgClass}
+            width={dimensions.width}
+            height={dimensions.height}
+        >
+    </picture>
+
+    <slot />
+</figure>

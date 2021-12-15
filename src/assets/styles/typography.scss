@@ -16,6 +16,7 @@
     --line-height-sm: 1em;
     --line-height-md: 1.25em;
     --line-height-lg: 1.5em;
+    --line-height-xl: 1.75em;
 
     --letter-spacing-xs: -.05em;
     --letter-spacing-sm: -.025em;
@@ -83,18 +84,18 @@ h6, .h6 {
 }
 
 p {
-    font-size: var(--text-md);
-    line-height: var(--line-height-lg);
+    font-size: var(--text-lg);
+    line-height: var(--line-height-xl);
     color: var(--grayscale-70);
 }
 p > a {
-    background-image: linear-gradient(120deg, var(--color-yellow-30) 0%, var(--color-yellow-50) 100%);
+    background-image: linear-gradient(120deg, var(--color-yellow-20) 0%, var(--color-yellow-40) 100%);
     background-repeat: no-repeat;
-    background-size: 100% 0.2em;
+    background-size: 100% 30%;
     background-position: 0 88%;
     transition: background-size 0.25s ease-in;
  
     &:hover {
-       background-size: 100% 30%;
+       background-size: 100% 40%;
     }
 }
