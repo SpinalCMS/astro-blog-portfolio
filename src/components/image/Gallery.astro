@@ -1,0 +1,30 @@
+---
+// modules
+import sizeOf from "image-size";
+
+// data
+import settings from "../../data/settings.json"
+
+// props
+export interface Props {
+    file: string;
+    rowHeight?: number;
+}
+const { file, rowHeight = 300 } = Astro.props;
+
+// build the file paths
+let localUrl = `${settings.image.directory.local}${file}`;
+
+// get the image dimensions
+const dimensions = sizeOf(localUrl);
+
+// set the image ratio
+let ratio = dimensions.width * rowHeight / dimensions.height;
+let padding = dimensions.height / dimensions.width * 100;
+
+---
+<div style={`width:${ratio}px; flex-grow:${ratio}`}>
+    <i style={`padding-bottom:${padding}%`}></i>
+    
+    <slot />
+</div>

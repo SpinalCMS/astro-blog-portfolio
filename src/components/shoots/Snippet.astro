@@ -1,24 +1,35 @@
 ---
 // components
 import Image from '../image/Image.astro'
+
+// modules
+import Moment from 'moment';
+
+// props
+export interface Props {
+    shoot: object
+}
+const { shoot } = Astro.props;
+
+const date = Moment(shoot.date).fromNow(); // format the date so it's easy to read*/
 ---
 
-<div class="shoot">
+<a href={shoot.url} class="shoot">
     <div class="cover">
-        <Image file="930.jpg" classes="solid-shadow-green" />
+        <Image file={shoot.hero} classes="solid-shadow-green" />
     </div>
 
     <div class="content">
-        <h3 class="h4">930 Slantnose Shoot</h3>
+        <h3 class="h4">{shoot.title}</h3>
         
         <div class="meta">
-            <time>12 Feb 2020</time>
-            <div class="category">Car Show</div>
+            <time>{date}</time>
+            <div class="category">{shoot.category}</div>
         </div>
 
-        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+        <p>{shoot.description}</p>
     </div>
-</div>
+</a>
 
 <style lang="scss">
     @use '../../assets/styles/breakpoints' as *;
@@ -33,11 +44,13 @@ import Image from '../image/Image.astro'
         }
 
         .cover {
+            flex-basis: max-content;
+
             :global(img) {
                 border-radius: .4rem;
                 object-fit: cover;
                 height: 200px;
-                width: 100%;
+                width: auto;
             }
 
             @include breakpoint(md) {
@@ -71,6 +84,10 @@ import Image from '../image/Image.astro'
                 @include breakpoint(lg) {
                     flex-direction: row;
                     gap: var(--space-md);
+                }
+
+                .category {
+                    text-transform: capitalize;
                 }
             }
         }

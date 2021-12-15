@@ -1,20 +1,16 @@
 ---
-    // components
-    import Header from '../components/Header.astro'
-    import Footer from '../components/Footer.astro'
-    import PostSnippet from '../components/articles/Snippet.astro'
-    import Search from '../components/Search.astro'
+// components
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import BaseHead from '../components/BaseHead.astro'
 ---
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Dev</title>
-
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    
-    <link rel="stylesheet" href={Astro.resolve('../assets/styles/_global.scss')}>
+    <BaseHead
+        title="Contact - I'm a Digital Marketing Expert and Car Photographer in Austin, TX"
+    />
 
     <style lang="scss">
         form {

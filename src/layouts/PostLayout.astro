@@ -1,0 +1,43 @@
+---
+// components
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Image from "../components/image/Image.astro"
+
+// props
+export interface Props {
+    content: {
+        hero?: string;
+    };
+}
+const { content } = Astro.props;
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead />
+</head>
+
+<body>
+    <main>
+        <header class="container">
+            <Header />
+
+            <div class="constraint-lg">
+                <h1>{content.title}</h1>
+                <p>{content.description}</p>
+            </div>
+        </header>
+
+        <section class="container">
+            <div class="constraint-lg">
+                <slot />
+            </div>
+        </section>
+
+        <Footer />
+    </main>
+</body>

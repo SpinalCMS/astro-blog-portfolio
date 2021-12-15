@@ -1,14 +1,9 @@
 {
-    "name": "Erik Olsen",
-    "title": "SEM &amp; CRO Director",
+    "name": "Erik S. Olsen",
     "url": "https://eriksolsen.com/",
-    "seo": {
-        "title": "I'm a Digital Marketing Expert and Car Photographer in Austin, TX",
-        "description": "Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. He's also an automotive photographer shooting photos at Austin car shows."
-    },
     "social": {
+        "rss": "https://www.instagram.com/erikstewartolsen/",
         "github": "https://github.com/tusamni",
-        "instagram": "https://www.instagram.com/erikstewartolsen/",
         "linkedin": "https://www.linkedin.com/in/erikstewartolsen/"
     },
     "image": {

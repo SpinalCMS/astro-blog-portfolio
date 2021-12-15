@@ -5,12 +5,17 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import ShootSnippet from '../components/shoots/Snippet.astro'
 import Search from '../components/Search.astro'
+
+const allShoots = await Astro.fetchContent("./shoots/shows/*.md").reverse();
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <BaseHead />
+    <BaseHead
+        title="Car Photography in Austin, TX"
+        description="During the summer months you'll catch me shootin photos at Cars and Coffee at COTA or Coffee With Cars in Dripping Springs. I also do freelance photography for Bring a Trailer auctions."
+    />
 </head>
 
 <body>
@@ -31,10 +36,7 @@ import Search from '../components/Search.astro'
                 <Search placeholder="Search Shoots" />
 
                 <div class="posts">
-                    <ShootSnippet />
-                    <ShootSnippet />
-                    <ShootSnippet />
-                    <ShootSnippet />
+                    {allShoots.map(s => <ShootSnippet shoot={s} /> )}
                 </div>
             </div>
         </section>

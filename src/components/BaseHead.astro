@@ -1,6 +1,16 @@
 ---
+// data
+import Settings from '../data/settings.json'
+
 // props
-const { title, description } = Astro.props;
+export interface Props {
+    title?: string,
+    description?: string
+}
+const {
+    title = "I'm a Digital Marketing Expert and Car Photographer in Austin, TX",
+    description = "Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. He's also an automotive photographer shooting photos at Austin car shows.",
+} = Astro.props;
 ---
 
 <meta charset="UTF-8">
@@ -8,7 +18,7 @@ const { title, description } = Astro.props;
 
 <title>{title}</title>
 <meta name="description" content={description}>
-<meta name="author" content="Erik S. Olsen" />
+<meta name="author" content={Settings.name} />
 
 <link rel="stylesheet" href={Astro.resolve('../assets/styles/_global.scss')}>
 

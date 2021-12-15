@@ -1,20 +1,17 @@
 ---
-    // components
-    import Header from '../components/Header.astro'
-    import Footer from '../components/Footer.astro'
-    import PostSnippet from '../components/articles/Snippet.astro'
-    import Search from '../components/Search.astro'
+// components
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import BaseHead from '../components/BaseHead.astro'
 ---
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Dev</title>
-
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    
-    <link rel="stylesheet" href={Astro.resolve('../assets/styles/_global.scss')}>
+    <BaseHead
+        title="Erik S. Olsen - I'm a Digital Marketing Expert located in Austin, TX"
+        description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. My expertise is designing and creating large-scale, data-driven marketing campaigns for e-commerce businesses."
+    />
 </head>
 
 <body>
@@ -23,7 +20,7 @@
             <Header />
 
             <div class="constraint-lg">
-                <h1>Articles</h1>
+                <h1>About Me</h1>
                 <p>My name is Erik, and I'm a digital marketing expert in Austin, TX. I'm currently running the SEM and CRO operations for <a href="http://www.icgamerica.com">ICG America</a>.</p>
             </div>
         </header>

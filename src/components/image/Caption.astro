@@ -1,0 +1,37 @@
+---
+// modules
+import fs from 'fs'
+import exifr from 'exifr'
+
+// data
+import settings from "../../data/settings.json"
+
+// props
+export interface Props {
+    file: string;
+    showDesc?: boolean;
+}
+const { file, showDesc = false } = Astro.props;
+
+let localUrl = `${settings.image.directory.local}${file}`;
+
+// collect all the exif and iptc data from the image
+let exifrOptions = {
+    iptc: ['ObjectName', 'Caption'],
+    exif: false,
+    ifd0: false,
+    gps: false,
+    mergeOutput: true
+}
+
+var fsFile = fs.readFileSync(localUrl);
+var metadata = await exifr.parse(fsFile, exifrOptions);
+
+let imgTitle = metadata.ObjectName;
+let imgCaption = metadata.Caption;
+---
+
+<figcaption class="flex flex-col pt-4 space-y-1 font-light">
+    <div class="text-sm font-normal text-gray-700 lg:text-lg">{imgTitle}</div>
+    { showDesc ? `<div class="text-sm font-light text-gray-500 lg:text-base">${imgCaption}</div>` : ``}
+</figcaption>

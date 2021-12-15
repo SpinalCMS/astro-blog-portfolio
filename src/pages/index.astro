@@ -6,6 +6,9 @@ import Footer from '../components/Footer.astro'
 import Image from "../components/image/Image.astro"
 import PostSnippet from '../components/articles/Snippet.astro'
 import ShootSnippet from '../components/shoots/Snippet.astro'
+
+const allPosts = await Astro.fetchContent("./articles/*.md").reverse().slice(0,2);
+const allShoots = await Astro.fetchContent("./shoots/shows/*.md").reverse().slice(0,4);
 ---
 
 <!DOCTYPE html>
@@ -117,7 +120,11 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
             <div class="intro">
                 <figure>
                     <picture>
-                        <Image file="me.jpg" classes="solid-shadow-pink" alt="Erik S. Olsen in Austin, TX" />
+                        <Image
+                            file="me.jpg"
+                            classes="solid-shadow-pink"
+                            alt="Erik S. Olsen in Austin, TX"
+                        />
                     </picture>
                 </figure>
 
@@ -144,8 +151,9 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
                 </div>
 
                 <div class="posts">
-                    <PostSnippet />
-                    <PostSnippet />
+                    {allPosts.map(p =>
+                        <PostSnippet post={p} />
+                    )}
                 </div>
             </div>
         </section>
@@ -158,8 +166,7 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
                 </div>
 
                 <div class="shoots">
-                    <ShootSnippet />
-                    <ShootSnippet />
+                    {allShoots.map(s => <ShootSnippet shoot={s} /> )}
                 </div>
             </div>
         </section>
