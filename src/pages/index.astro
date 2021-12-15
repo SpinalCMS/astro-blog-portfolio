@@ -26,7 +26,7 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
                     justify-self: end;
                 }
             }
-            .img {
+            :global(img) {
                 width: 150px;
                 height: 150px;
 
@@ -118,7 +118,8 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
             <div class="intro">
                 <figure>
                     <picture>
-                        <img data-src="/images/me.jpg" class="solid-shadow-pink img" />
+                        <Image file="me.jpg" classes="solid-shadow-pink" />
+                        <!-- <img data-src="/images/me.jpg" class="solid-shadow-pink" width="300" height="300" /> -->
                     </picture>
                 </figure>
 
