@@ -34,6 +34,10 @@ a {
         color: var(--color-link-visited);
     }
 }
+figure {
+    margin: 0;
+    padding: 0;
+}
 
 header {
     margin-bottom: var(--section-spacing-sm);

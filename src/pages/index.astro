@@ -18,15 +18,19 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
 
         .intro {
             text-align: center;
-
-            img {
-                width: 150px;
-                height: 150px;
-
+            
+            figure {
                 @include breakpoint(lg) {
                     order: 1;
                     align-self: center;
                     justify-self: end;
+                }
+            }
+            .img {
+                width: 150px;
+                height: 150px;
+
+                @include breakpoint(lg) {
                     width: 220px;
                     height: 220px;
                 }
@@ -112,11 +116,11 @@ import ShootSnippet from '../components/shoots/Snippet.astro'
 
         <header class="container">
             <div class="intro">
-                <img src="/images/me.jpg" class="solid-shadow-pink" />
-                <!-- <Image
-                    file="me.jpg"
-                    imgClass="solid-shadow-pink"
-                /> -->
+                <figure>
+                    <picture>
+                        <img data-src="/images/me.jpg" class="solid-shadow-pink img" />
+                    </picture>
+                </figure>
 
                 <div>
                     <h1>

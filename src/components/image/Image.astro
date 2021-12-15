@@ -8,10 +8,9 @@ import settings from "../../data/settings.json"
 // props
 export interface Props {
     file: string;
-    imgClass?: string;
-    figClass?: string;
+    classes?: string;
 }
-const { file, imgClass, figClass } = Astro.props;
+const { file, classes } = Astro.props;
 
 // build the file paths
 let localUrl = `${settings.image.directory.local}${file}`;
@@ -21,15 +20,9 @@ let publicUrl = `/${settings.image.directory.public}${file}`;
 const dimensions = sizeOf(localUrl);
 ---
 
-<figure class={figClass}>
-    <picture>
-        <img
-            data-src={publicUrl}
-            class={imgClass}
-            width={dimensions.width}
-            height={dimensions.height}
-        >
-    </picture>
-
-    <slot />
-</figure>
+<img
+    data-src={publicUrl}
+    class={classes}
+    width={dimensions.width}
+    height={dimensions.height}
+>
