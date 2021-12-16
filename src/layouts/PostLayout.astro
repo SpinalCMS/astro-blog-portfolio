@@ -19,6 +19,12 @@ const { content } = Astro.props;
 <html lang="en">
 <head>
     <BaseHead />
+
+    <style lang="scss">
+        :global(figure) {
+            margin-bottom: var(--space-xl);
+        }
+    </style>
 </head>
 
 <body>
@@ -41,3 +47,4 @@ const { content } = Astro.props;
         <Footer />
     </main>
 </body>
+</html>

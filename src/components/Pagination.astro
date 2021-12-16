@@ -1,3 +1,44 @@
 ---
-
+// props
+export interface Props {
+    page: object
+}
+const { page } = Astro.props;
 ---
+
+<style lang="scss">
+    .pagination {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .action {
+            display: flex;
+            flex-direction: row;
+            gap: var(--space-xl);
+        }
+    }
+</style>
+
+<div class="pagination">
+    <div class="count">
+        {page.start + 1} to {page.end + 1} of {page.total}
+    </div>
+
+    <div class="action">
+        <div>
+            { page.url.prev ? 
+                `<a href=${page.url.prev}#anchor class="pill pill-secondary">Previous</a>` :
+                `<span class="pill pill-disabled">Previous</span>`
+            }
+        </div>
+
+        <div>
+            { page.url.next ? 
+                `<a href=${page.url.next}#anchor class="pill pill-secondary">Next</a>` :
+                `<span class="pill pill-disabled">Next</span>`
+            }
+        </div>
+    </div>
+</div>

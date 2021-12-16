@@ -63,7 +63,6 @@ gallery01:
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_050.jpg
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_051.jpg
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_052.jpg
-
 gallery02:
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_053.jpg
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_054.jpg
@@ -72,7 +71,6 @@ gallery02:
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_057.jpg
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_058.jpg
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_059.jpg
-
 gallery03:
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_060.jpg
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_061.jpg
@@ -103,16 +101,14 @@ If you're like me and have never heard of the [LIT Show](https://www.lalitandtoy
 ### Let's Get it Started
 Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in Fallbrook, CA. CPR has been in the Porsche restoration business for 40 years. Their facility is massive, spanning across multiple buildings. Each building holding numerous customer cars awaiting restoration.
 
-</Prose>
-
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
-        <Gallery file={i}>
-            <Image
-                file={i}
-            />
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
             <Caption file={i} showDesc=true />
-        </Gallery>
+        </figure>
     )}
 </div>
 

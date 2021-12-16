@@ -18,3 +18,11 @@
     box-shadow: .5rem .5rem var(--color-midnight);
     border-radius: var(--site-radius);
 }
+
+.gallery {
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--site-radius);
+    }
+}

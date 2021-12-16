@@ -31,7 +31,23 @@ let imgTitle = metadata.ObjectName;
 let imgCaption = metadata.Caption;
 ---
 
-<figcaption class="flex flex-col pt-4 space-y-1 font-light">
-    <div class="text-sm font-normal text-gray-700 lg:text-lg">{imgTitle}</div>
-    { showDesc ? `<div class="text-sm font-light text-gray-500 lg:text-base">${imgCaption}</div>` : ``}
+<style lang="scss">
+    figcaption {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: var(--space-xs);
+
+        .title {
+            font-weight: 500;
+        }
+        .description { 
+            font-weight: 300;
+        }
+    }
+</style>
+
+<figcaption>
+    <div class="title">{imgTitle}</div>
+    { showDesc ? `<div class="description">${imgCaption}</div>` : ``}
 </figcaption>
