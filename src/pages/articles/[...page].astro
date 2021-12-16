@@ -8,7 +8,7 @@ import Search from '../../components/Search.astro'
 import Pagination from '../../components/Pagination.astro'
 
 export async function getStaticPaths({ paginate }) {
-    const posts = await Astro.fetchContent("./*.md");
+    const posts = await Astro.fetchContent("./*.md").reverse();
 
     return paginate(posts, { pageSize: 4 });
 }

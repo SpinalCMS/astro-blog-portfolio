@@ -9,8 +9,9 @@ import settings from '../../data/settings.json'
 export interface Props {
     file: string;
     classes?: string;
+    alt?: string;
 }
-const { file, classes } = Astro.props;
+const { file, classes, alt } = Astro.props;
 
 // build the file paths
 let localUrl = `${settings.image.directory.local}${file}`;
@@ -23,6 +24,7 @@ const dimensions = sizeOf(localUrl);
 <img
     data-src={publicUrl}
     class={classes}
+    alt={alt}
     width={dimensions.width}
     height={dimensions.height}
 >

@@ -18,7 +18,7 @@ description: For the last year or so I've absolutely loved my Batis lenses. Howe
 excerpt: For the last year or so I've absolutely loved my Batis lenses. However, I think it's time for a change to the Sony Zeiss. The whole point of going mirrorless was to keep size and weight down as much as possible. I'm really liking the design of the Sony Zeiss 35mm f/2.8. The Batis lenses aren't heavy per se, but they can't compare to the 35mm.
 
 # photos
-hero: /pages/about/me.jpg
+hero: /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_001.jpg
 ---
 
 ## What's a Downgrade

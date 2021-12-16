@@ -19,7 +19,7 @@ description: 2 camera bodies and 11 lenses later, I've finally settled on a comp
 excerpt: In the last three years I've been through three camera bodies, eleven different lenses (some twice!), and a host of camera accessories. I think it's time to settle down with a set of quality lenses and be content. The Zeiss Batis series fits my requirements and I've had personal experience with them.
 
 # photos
-hero: /pages/about/me.jpg
+hero: /posts/camera.jpg
 ---
 
 ## Back to Batis
