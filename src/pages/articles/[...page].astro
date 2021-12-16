@@ -6,7 +6,13 @@ import BaseHead from '../../components/BaseHead.astro'
 import PostSnippet from '../../components/articles/Snippet.astro'
 import Search from '../../components/Search.astro'
 
-const allPosts = await Astro.fetchContent("./*.md");
+export async function getStaticPaths({ paginate }) {
+    const posts = await Astro.fetchContent("./*.md");
+
+    return paginate(posts, { pageSize: 4 });
+}
+
+const { page } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,6 +21,15 @@ const allPosts = await Astro.fetchContent("./*.md");
     <BaseHead
         title="Articles - Digital Marketing, Jamstack Programming and Car Photography"
     />
+
+    <style lang="scss">
+        .pagination {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,9 +50,17 @@ const allPosts = await Astro.fetchContent("./*.md");
                 <Search placeholder="Search Postings" />
 
                 <div class="posts">
-                    {allPosts.map(p =>
+                    {page.data.map(p =>
                         <PostSnippet post={p} />
                     )}
+                </div>
+
+                <div class="pagination">
+                    <a href={page.url.prev} class={`pill ${page.url.prev ? 'pill-secondary' : 'pill-disabled'} `}>Previous</a>
+                    <div>
+                        {page.start + 1} to {page.end + 1} of {page.total}
+                    </div>
+                    <a href={page.url.next} class={`pill ${page.url.next ? 'pill-secondary' : 'pill-disabled'} `}>Next</a>
                 </div>
             </div>
         </section>

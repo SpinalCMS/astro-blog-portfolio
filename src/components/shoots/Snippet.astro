@@ -35,40 +35,43 @@ const date = Moment(shoot.date).fromNow(); // format the date so it's easy to re
     @use '../../assets/styles/breakpoints' as *;
 
     .shoot {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
         gap: var(--space-lg);
 
-        @include breakpoint(md) {
-            flex-direction: row;
-        }
-
         .cover {
-            flex-basis: max-content;
+            grid-column: 1 / span 3;
+
+            @include breakpoint (md) {
+                grid-column: 1;
+            }
 
             :global(img) {
                 border-radius: .4rem;
                 object-fit: cover;
-                height: 200px;
-                width: auto;
-            }
-
-            @include breakpoint(md) {
+                height: 150px;
                 width: 100%;
-                
-                img { 
-                    object-fit: cover;
+
+                @include breakpoint(md) {
+                    width: 100%;
                     height: 100%;
                 }
             }
         }
 
         .content {
+            grid-column: 1 / span 3;
             display: flex;
             flex-direction: column;
             align-self: center;
             gap: var(--space-sm);
             
+            @include breakpoint(md) {
+                grid-column: 2 / span 2;
+                
+            }
+
             h3 { margin: 0; }
             p {
                 margin: 0;
