@@ -2,6 +2,8 @@
 # imports 
 setup: |
   import Layout from "../../layouts/PostLayout.astro"
+  import Image from "../../components/image/Image.astro"
+  import Caption from "../../components/image/Caption.astro"
 
 # meta
 tags:
@@ -23,6 +25,16 @@ hero: /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_001.jpg
 
 ## What's a Downgrade
 I've owned the A7ii and Batis lenses for just over a year now. Great camera and lens combo, but for some reason I'm finding the itch to go smaller.
+
+<figure>
+    <picture>
+        <Image
+            file="/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_005.jpg"
+            classes="solid-shadow-blue"
+            alt="930 Turbo" />
+    </picture>
+    <Caption file="/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_005.jpg" />
+</figure>
 
 I've decided to downgrade (?) to a Zeiss Sonnar T* 35mm f/2.8. The form factor just can't be beat. I think that I'll be more apt to shoot if I'm not stuck carrying around a few primes. The Zony 35mm still has that Zeiss image and build quality, so I'm hopeful it won't feel like a "downgrade".
 
