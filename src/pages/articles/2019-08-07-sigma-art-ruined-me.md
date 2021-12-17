@@ -16,9 +16,6 @@ date: 2019-08-07
 title: Sigma Art Ruined Me
 description: On a whim I decided to try out a few of Sigma's Art Lenses. Now I have to own one. I'm blown away
 excerpt: While I'm very satisfied with my Sony 24-105 G, I had the opportunity to play around with a set of Sigma Art lenses. Despite the size and weight, I love them. It's a series of lenses that sacrifices everything in the pursuit of image quality.
-
-# photos
-hero: /pages/about/me.jpg
 ---
 
 ## The Wow Factor

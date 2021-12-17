@@ -47,15 +47,6 @@ const { content } = Astro.props;
             <div class="constraint-lg">
                 <h1>{content.title}</h1>
                 <p>{content.description}</p>
-
-                <figure>
-                    <picture>
-                        <Image file={content.hero} classes="solid-shadow-green" alt="Me with my A7ii and Batis lenses" />
-                    </picture>
-
-                    <Caption file={content.hero} />
-                </figure>
-                
             </div>
         </header>
 

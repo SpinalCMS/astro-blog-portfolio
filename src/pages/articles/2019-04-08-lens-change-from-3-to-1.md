@@ -16,9 +16,6 @@ date: 2019-04-08
 title: Lens Change - From 3 to 1
 description: I'm currently loaded up with three awesome Sony Zeiss lenses. But it's time to downsize to one long zoom
 excerpt: I'm currently loaded up with the awesome Sony Zeiss lenses, the 16-35mm f/4, 35mm f/2.8, 55mm f/1.8. It's a great trio. Lately I've been wondering if it's possible to roll those into one lens, mainly the Sony 24-105 G. If possible, there's a major size and weight advantage to a single zoom.
-
-# photos
-hero: /pages/about/me.jpg
 ---
 
 ## Why the Change?

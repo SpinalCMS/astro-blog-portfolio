@@ -16,9 +16,6 @@ date: 2018-08-11
 title: Car Photography Update
 description: I've started shooting lots of cars for Bring a Trailer auctions. That means I'm in need of a lens upgrade!
 excerpt: I've started shooting lots of cars for Bring a Trailer auctions. That means I'm in need of a lens upgrade! One single 35mm Sony Zeiss wasn't going to cut it. It's too wide for exteriors and not wide enough for interiors. I'm thinking one around the 50mm mark and something down around the 20mm mark.
-
-# photos
-hero: /pages/about/me.jpg
 ---
 
 ## I've Made a Huge Mistake
