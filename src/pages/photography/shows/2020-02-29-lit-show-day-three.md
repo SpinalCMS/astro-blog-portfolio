@@ -70,33 +70,27 @@ gallery03:
 
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
-        <Gallery file={i}>
             <Image
                 file={i}
             />
             <Caption file={i} showDesc=true />
-        </Gallery>
     )}
 </div>
 
 <div class="gallery">
     {frontmatter.gallery02.map(i =>
-        <Gallery file={i}>
             <Image
                 file={i}
             />
             <Caption file={i} showDesc=true />
-        </Gallery>
     )}
 </div>
 
 <div class="gallery">
     {frontmatter.gallery03.map(i =>
-        <Gallery file={i}>
             <Image
                 file={i}
             />
             <Caption file={i} showDesc=true />
-        </Gallery>
     )}
 </div>

@@ -50,11 +50,9 @@ gallery01:
 
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
-        <Gallery file={i}>
-            <Image
-                file={i}
-            />
-            <Caption file={i} showDesc=true />
-        </Gallery>
+        <Image
+            file={i}
+        />
+        <Caption file={i} showDesc=true />
     )}
 </div>

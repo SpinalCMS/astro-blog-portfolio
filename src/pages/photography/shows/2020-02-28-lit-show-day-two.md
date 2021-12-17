@@ -88,44 +88,36 @@ After a refreshing night stay at the Hilton Airport Hotel in Los Angeles (kiddin
 
 <div class="gallery">
 	{frontmatter.gallery01.map(i =>
-        <Gallery file={i}>
             <Image
                 file={i}
             />
             <Caption file={i} showDesc=true />
-        </Gallery>
     )}
 </div>
 
 <div class="gallery">
 	{frontmatter.gallery02.map(i =>
-        <Gallery file={i}>
             <Image
                 file={i}
             />
             <Caption file={i} showDesc=true />
-        </Gallery>
     )}
 </div>
 
 <div class="gallery">
 	{frontmatter.gallery03.map(i =>
-        <Gallery file={i}>
             <Image
                 file={i}
             />
             <Caption file={i} showDesc=true />
-        </Gallery>
     )}
 </div>
 
 <div class="gallery">
 	{frontmatter.gallery04.map(i =>
-        <Gallery file={i}>
             <Image
                 file={i}
             />
             <Caption file={i} showDesc=true />
-        </Gallery>
     )}
 </div>
