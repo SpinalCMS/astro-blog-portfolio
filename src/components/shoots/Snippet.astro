@@ -2,16 +2,14 @@
 // components
 import Image from '../image/Image.astro'
 
-// modules
-import Moment from 'moment';
+// functions
+import { timeAgo } from '@/functions/DateTime'
 
 // props
 export interface Props {
     shoot: object
 }
 const { shoot } = Astro.props;
-
-const date = Moment(shoot.date).fromNow(); // format the date so it's easy to read*/
 ---
 
 <a href={shoot.url} class="shoot">
@@ -23,7 +21,7 @@ const date = Moment(shoot.date).fromNow(); // format the date so it's easy to re
         <h3 class="h4">{shoot.title}</h3>
         
         <div class="meta">
-            <time>{date}</time>
+            <time>{timeAgo(shoot.date)}</time>
             <div class="category">{shoot.category}</div>
         </div>
 
