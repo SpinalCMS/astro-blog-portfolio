@@ -1,10 +1,8 @@
 ---
 // components
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import Image from "../components/image/Image.astro"
-import Caption from "../components/image/Caption.astro"
+import BaseHead from '@/components/BaseHead'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 // props
 export interface Props {
@@ -26,7 +24,7 @@ const { content } = Astro.props;
             margin-bottom: var(--space-sm);
         }
         :global(figure) {
-            margin-bottom: var(--space-xl);
+            margin: var(--space-xl) 0;
         }
     </style>
 

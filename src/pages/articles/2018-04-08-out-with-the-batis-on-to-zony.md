@@ -1,9 +1,9 @@
 ---
 # imports 
 setup: |
-  import Layout from "../../layouts/PostLayout.astro"
-  import Image from "../../components/image/Image.astro"
-  import Caption from "../../components/image/Caption.astro"
+  import Layout from "@/layouts/PostLayout"
+  import Image from "@/components/image/Image"
+  import Caption from "@/components/image/Caption"
 
 # meta
 tags:
@@ -26,7 +26,7 @@ I've owned the A7ii and Batis lenses for just over a year now. Great camera and 
 <figure>
     <picture>
         <Image
-            file="/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_005.jpg"
+            file="/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_003.jpg"
             classes="solid-shadow-blue"
             alt="930 Turbo" />
     </picture>
@@ -34,6 +34,16 @@ I've owned the A7ii and Batis lenses for just over a year now. Great camera and 
 </figure>
 
 I've decided to downgrade (?) to a Zeiss Sonnar T* 35mm f/2.8. The form factor just can't be beat. I think that I'll be more apt to shoot if I'm not stuck carrying around a few primes. The Zony 35mm still has that Zeiss image and build quality, so I'm hopeful it won't feel like a "downgrade".
+
+<figure>
+    <picture>
+        <Image
+            file="/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_014.jpg"
+            classes="solid-shadow-blue"
+            alt="930 Turbo" />
+    </picture>
+    <Caption file="/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_014.jpg" />
+</figure>
 
 ### Current Setup
 - Sony Alpha A7ii

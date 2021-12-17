@@ -1,7 +1,9 @@
 ---
 # imports
 setup: |
-  import Layout from "../../layouts/PostLayout.astro"
+  import Layout from "@/layouts/PostLayout"
+  import Image from "@/components/image/Image"
+  import Caption from "@/components/image/Caption"
 
 # meta
 tags:

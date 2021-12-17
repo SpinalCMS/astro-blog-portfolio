@@ -1,11 +1,11 @@
 ---
 // components
-import BaseHead from '../../components/BaseHead.astro'
-import Header from '../../components/Header.astro'
-import Footer from '../../components/Footer.astro'
-import PostSnippet from '../../components/articles/Snippet.astro'
-import Search from '../../components/Search.astro'
-import Pagination from '../../components/Pagination.astro'
+import BaseHead from '@/components/BaseHead'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import PostSnippet from '@/components/articles/Snippet'
+import Search from '@/components/Search'
+import Pagination from '@/components/Pagination'
 
 export async function getStaticPaths({ paginate }) {
     const posts = await Astro.fetchContent("./*.md").reverse();
