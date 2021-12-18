@@ -116,12 +116,10 @@ Once we finished at CPR Classic, we hopped in our van and drove through beautifu
 
 <div class="gallery">
     {frontmatter.gallery02.map(i =>
-        <Gallery file={i}>
             <Image
                 file={i}
             />
             <Caption file={i} showDesc=true />
-        </Gallery>
     )}
 </div>
 
@@ -132,11 +130,9 @@ We arrived to the open house later in the day, so we missed some vehicles, but i
 
 <div class="gallery">
     {frontmatter.gallery03.map(i =>
-        <Gallery file={i}>
             <Image
                 file={i}
             />
             <Caption file={i} showDesc=true />
-        </Gallery>
     )}
 </div>
