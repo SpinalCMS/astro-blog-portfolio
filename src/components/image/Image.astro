@@ -1,9 +1,5 @@
 ---
-// modules
-import sizeOf from 'image-size';
-
-// data
-import settings from '../../data/settings.json'
+import { getDimensions, buildPublicPath } from '../../functions/Image.js'
 
 // props
 export interface Props {
@@ -13,16 +9,12 @@ export interface Props {
 }
 const { file, classes, alt } = Astro.props;
 
-// build the file paths
-let localUrl = `${settings.image.directory.local}${file}`;
-let publicUrl = `/${settings.image.directory.public}${file}`;
-
-// get the image dimensions
-const dimensions = sizeOf(localUrl);
+const url = buildPublicPath(file);
+const dimensions = getDimensions(file); // get the image dimensions
 ---
 
 <img
-    data-src={publicUrl}
+    data-src={url}
     class={classes}
     alt={alt}
     width={dimensions.width}
