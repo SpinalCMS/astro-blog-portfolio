@@ -28,7 +28,7 @@ I've owned the A7ii and Batis lenses for just over a year now. Great camera and 
         <Image
             file="/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_003.jpg"
             classes="solid-shadow-blue"
-            alt="930 Turbo" />
+        />
     </picture>
     <Caption file="/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_003.jpg" />
 </figure>

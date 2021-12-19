@@ -85,7 +85,7 @@ input[type="text"], input[type="email"], textarea {
     padding: var(--space-sm);
 
     &:focus {
-        outline: 3px solid var(--color-blue-30);
+        outline: 3px solid var(--color-yellow-30);
     }
     &:-webkit-autofill, &:-webkit-autofill:focus {
         transition: background-color 600000s 0s, color 600000s 0s;

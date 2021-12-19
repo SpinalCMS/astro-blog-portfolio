@@ -25,7 +25,10 @@ excerpt: I think I've got a serious case of FOMO (fear of missing out) when it c
 
 <figure>
     <picture>
-        <Image file="posts/camera.jpg" alt="Me and my A7ii" classes="solid-shadow-pink" />
+        <Image
+            file="posts/camera.jpg"
+            classes="solid-shadow-yellow"
+        />
     </picture>
     <Caption file="posts/camera.jpg" />
 </figure>

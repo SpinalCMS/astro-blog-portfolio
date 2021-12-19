@@ -28,8 +28,9 @@ Yep, that's a click-bait title. I rented three Sigma Art and boy am I glad I did
         <Image
             file="/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_001.jpg"
             classes="solid-shadow-yellow"
-            alt="930 Turbo" />
+        />
     </picture>
+    <Caption file="/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_001.jpg" />
 </figure>
 
 I only have one major complaint with the Art line. They're so good I had to own one. Scratch that, two issues. They're amazing but also giant and heavy.
@@ -45,8 +46,9 @@ That's technically true. I used LensRentals.com (plug for an awesome company) to
         <Image
             file="/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_012.jpg"
             classes="solid-shadow-yellow"
-            alt="930 Turbo" />
+        />
     </picture>
+    <Caption file="/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_012.jpg" />
 </figure>
 
 <figure>
@@ -54,8 +56,9 @@ That's technically true. I used LensRentals.com (plug for an awesome company) to
         <Image
             file="/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_008.jpg"
             classes="solid-shadow-yellow"
-            alt="930 Turbo" />
+        />
     </picture>
+    <Caption file="/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_008.jpg" />
 </figure>
 
 From the first shot I was hooked. If you're solely concerned with image quality, go for the Sigma's. Outside of the G-Master line there's not much else that competes. Yes, they're absolutely huge and heavy. The 85mm is ridiculous in length and weight, and Sigma makes a 135mm!

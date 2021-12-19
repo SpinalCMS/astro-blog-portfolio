@@ -26,7 +26,7 @@ export function getDimensions(file) {
     return dimensions;
 }
 
-export async function getMetadata(file) {
+export async function getMetadata(file, data = "all") {
     const localPath = buildLocalPath(file);
 
     // collect all the exif, iptc and ifd0 data from the image
@@ -42,8 +42,7 @@ export async function getMetadata(file) {
     const metadata = await exifr.parse(fsFile, exifrOptions);
 
     // return the array to hold all the image data
-    //if (this.data == "all") {
-    return {
+    const imageData = {
         "filename": path.basename(localPath, '.jpg'),
         "date": metadata.DateTimeOriginal,
         "title": metadata.ObjectName,
@@ -57,5 +56,12 @@ export async function getMetadata(file) {
         "focalLength": metadata.FocalLength,
         "exposure": 1 / metadata.ExposureTime,
     };
-    //}
+
+    // return the whole array if data isn't specified
+    // otherwise return the specific piece of metadata
+    if (data == "all") {
+        return imageData;
+    } else {
+        return imageData[data];
+    }
 }

@@ -28,8 +28,9 @@ I've got three great lenses right now, the Sony Zeiss 16-35, Sony Zeiss 35mm and
         <Image
             file="/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_001.jpg"
             classes="solid-shadow-blue"
-            alt="930 Turbo" />
+        />
     </picture>
+    <Caption file="/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_001.jpg" />
 </figure>
 
 I felt that I was too heavy on the lower focal range. Three lenses under 55mm seemed like a waste. I wasn't using the 35mm f/2.8 as much as I should. I figured it'd be a great travel lens, small and lightweight. But, for most of my shoots, I'm driving to the location and don't have to worry about size and weight.
@@ -43,8 +44,9 @@ The 16-35mm was great and I loved it for interior shots. But sometimes I'd find 
         <Image
             file="/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg"
             classes="solid-shadow-blue"
-            alt="930 Turbo" />
+        />
     </picture>
+    <Caption file="/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg" />
 </figure>
 
 I've been eyeing the 24-70mm G Master. It seems too good to be true. But it's tough to stomach trading all my gear for a $2,300 lens. I'm not a professional, so I can't swallow that kind of price. Also, I'd be losing 8mm on the low side and only gaining about 15mm on the high side. Sure, it's nice having one lens instead of 3, but it's just not enough of an upgrade in regards to focal length.

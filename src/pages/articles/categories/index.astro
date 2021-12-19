@@ -5,13 +5,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Search from '@/components/Search'
 
-const allPosts = await Astro.fetchContent("../*.md").reverse();
-const tags = [...new Set(allPosts.map(post =>))]
-export async function getStaticPaths({ paginate }) {
-    
-
-    return paginate(posts, { pageSize: 4 });
-}
+const allPosts = await Astro.fetchContent("../*.md");
+const categories = allPosts.filter((post) => post.category)
 
 const { page } = Astro.props;
 ---

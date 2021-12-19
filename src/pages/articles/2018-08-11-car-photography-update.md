@@ -31,8 +31,9 @@ Over the past few months I've started shooting cars for Bring a Trailer auctions
         <Image
             file="/shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_004.jpg"
             classes="solid-shadow-blue"
-            alt="930 Turbo" />
+        />
     </picture>
+    <Caption file="/shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_004.jpg" />
 </figure>
 
 This is where I look back and shake my head when I made the foolish decision to get rid of my Zeiss Batis lenses. 25mm and 85mm would have been perfect. Rather than going back to that setup, I'll add two new lenses to my bag. I'm thinking the Sony Zeiss 16-35mm f/4 and the Sony Zeiss 55mm f/1.8.
@@ -42,8 +43,9 @@ This is where I look back and shake my head when I made the foolish decision to 
         <Image
             file="/shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_006.jpg"
             classes="solid-shadow-blue"
-            alt="930 Turbo" />
+        />
     </picture>
+    <Caption file="/shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_006.jpg" />
 </figure>
 
 I also would like to start shooting more video. Turns out the A7iii was just released and it's a serious video upgrade over the A7ii.

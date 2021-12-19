@@ -19,54 +19,21 @@ const metadata = await getMetadata(file);
     }
     .summary {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: var(--space-lg);
         margin-top: var(--space-xs);
         margin-bottom: var(--space-md);
-        font-size: var(--text-lg);
+        font-size: var(--text-sm);
 
-        .title {
-            font-weight: 500;
+        @include breakpoint(md) {
+            flex-direction: row;
+            justify-content: space-between;
         }
-    }
-
-    .metadata {
-        opacity: 0;
-        display: none;
-        flex-direction: column;
-        gap: var(--space-sm);
-        transform: scale(0);
-        transition: transform 1s ease-in-out, opacity .3s ease-in-out;
-        animation: anim .1s ease-in-out;
-
-        &.active {
-            display: flex;
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        div {
-            font-size: var(--text-sm);
-            font-weight: 300;
-        }
-        a {
-            margin-top: var(--space-sm);
-        }
-    }
-
-    @keyframes anim {
-        0% {
-            display: none;
-            opacity: 0;
-        }
-        1% {
-            display: block;
-            opacity: 0;
-            transform: translateY(-1em);
-        }
-        100% {
-            opacity: 1;
-            transform: tranlateY(0);
+        
+        .title { font-weight: 400; }
+        .caption {
+            font-weight: 350;
+            text-align: right;
         }
     }
 </style>
@@ -77,20 +44,8 @@ const metadata = await getMetadata(file);
             {metadata.title}
         </div>
 
-        <div class="actions">
-            <button onclick={`showMeta('${metadata.filename}')`} aria-label="Photo details toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                </svg>
-            </button>
+        <div class="caption">
+            {metadata.caption}
         </div>
-    </div>
-
-    <div class={`metadata ${metadata.filename}`}>
-        <div>{metadata.Caption}</div>
-        <div>Captured on {fullDate(metadata.date)}</div>
-        <div>Shot with a {metadata.lens} on a {metadata.cameraMake} {metadata.cameraModel}</div>
-        <div>{metadata.focalLength}mm&nbsp;&nbsp;f/{metadata.aperture}&nbsp;&nbsp;{metadata.iso} ISO&nbsp;&nbsp;1/{metadata.exposure}s</div>
     </div>
 </figcaption>
