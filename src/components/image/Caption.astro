@@ -1,12 +1,6 @@
 ---
-// modules
-import fs from 'fs'
-import path from 'path';
 import { fullDate } from '@/functions/DateTime'
-import exifr from 'exifr'
-
-// data
-import settings from "../../data/settings.json"
+import { getMetadata } from '@/functions/Image'
 
 // props
 export interface Props {
@@ -14,34 +8,7 @@ export interface Props {
 }
 const { file } = Astro.props;
 
-const localUrl = `${settings.image.directory.local}${file}`; // create path to image
-const fsFile = fs.readFileSync(localUrl); // read the image
-
-// collect all the exif, iptc and ifd0 data from the image
-const exifrOptions = {
-    iptc: ['ObjectName', 'Caption', 'Byline'],
-    exif: ['LensModel', 'FNumber', 'ISO', 'ExposureTime', 'DateTimeOriginal', 'FocalLength'],
-    ifd0: ['Make', 'Model'],
-    gps: false,
-    mergeOutput: true,
-}
-const metadata = await exifr.parse(fsFile, exifrOptions);
-
-// build the array to hold all the image data
-const imageData = {
-    "filename": path.basename(localUrl, '.jpg'),
-    "date": fullDate(metadata.DateTimeOriginal),
-    "title": metadata.ObjectName,
-    "caption": metadata.Caption,
-    "author": metadata.Byline,
-    "cameraMake": metadata.Make,
-    "cameraModel": metadata.Model,
-    "lens": metadata.LensModel,
-    "aperture": metadata.FNumber,
-    "iso": metadata.ISO,
-    "focalLength": metadata.FocalLength,
-    "exposure": 1 / metadata.ExposureTime,
-};
+const metadata = await getMetadata(file);
 ---
 
 <style lang="scss">
@@ -107,11 +74,11 @@ const imageData = {
 <figcaption>
     <div class="summary">
         <div class="title">
-            {imageData.title}
+            {metadata.title}
         </div>
 
         <div class="actions">
-            <button onclick={`showMeta('${imageData.filename}')`} aria-label="Photo details toggle">
+            <button onclick={`showMeta('${metadata.filename}')`} aria-label="Photo details toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
@@ -120,10 +87,10 @@ const imageData = {
         </div>
     </div>
 
-    <div class={`metadata ${imageData.filename}`}>
+    <div class={`metadata ${metadata.filename}`}>
         <div>{metadata.Caption}</div>
-        <div>Captured on {imageData.date}</div>
-        <div>Shot with a {metadata.LensModel} on a {metadata.Make} {metadata.Model}</div>
-        <div>f/{metadata.FNumber}&nbsp;&nbsp;{metadata.ISO} ISO&nbsp;&nbsp;1/{imageData.exposure}s</div>
+        <div>Captured on {fullDate(metadata.date)}</div>
+        <div>Shot with a {metadata.lens} on a {metadata.cameraMake} {metadata.cameraModel}</div>
+        <div>{metadata.focalLength}mm&nbsp;&nbsp;f/{metadata.aperture}&nbsp;&nbsp;{metadata.iso} ISO&nbsp;&nbsp;1/{metadata.exposure}s</div>
     </div>
 </figcaption>
