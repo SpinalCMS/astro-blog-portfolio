@@ -1,0 +1,57 @@
+---
+// components
+import BaseHead from '@/components/BaseHead'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import Search from '@/components/Search'
+
+const allPosts = await Astro.fetchContent("../*.md").reverse();
+const tags = [...new Set(allPosts.map(post =>))]
+export async function getStaticPaths({ paginate }) {
+    
+
+    return paginate(posts, { pageSize: 4 });
+}
+
+const { page } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead
+        title="Articles - Digital Marketing, Jamstack Programming and Car Photography"
+    />
+</head>
+
+<body>
+    <main>
+        <header class="container">
+            <Header />
+
+            <div class="constraint-sm">
+                <h1>Articles</h1>
+                <p>
+                    Occasionally you'll catch me writing down my thoughts on the intersection of <a href="#">digital marketing</a>, <a href="#">photography</a> and <a href="#">cars</a> (as if there is such a thing).
+                </p>
+            </div>
+        </header>
+
+        <section class="container">
+            <div class="constraint-sm">
+                <Search placeholder="Search Postings" />
+
+                <div class="posts" id="anchor">
+                    {page.data.map(p =>
+                        <PostSnippet post={p} />
+                    )}
+                </div>
+
+                <Pagination page={page} />
+            </div>
+        </section>
+
+        <Footer />
+    </main>
+</body>
+</html>
