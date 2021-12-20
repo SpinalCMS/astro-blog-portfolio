@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import Search from '@/components/Search'
 
 const allPosts = await Astro.fetchContent("../*.md");
-const categories = [...new Set(allPosts.map(post => post.category))];
+const tags = [...new Set([].concat.apply([], allPosts.map(post => post.tags)))];
 ---
 
 <!DOCTYPE html>
@@ -23,7 +23,7 @@ const categories = [...new Set(allPosts.map(post => post.category))];
             <Header />
 
             <div class="constraint-sm">
-                <h1>Categories</h1>
+                <h1>Tags</h1>
                 <p>
                     Occasionally you'll catch me writing down my thoughts on the intersection of <a href="#">digital marketing</a>, <a href="#">photography</a> and <a href="#">cars</a> (as if there is such a thing).
                 </p>
@@ -35,8 +35,8 @@ const categories = [...new Set(allPosts.map(post => post.category))];
                 <Search placeholder="Search Postings" />
 
                 <div class="" id="anchor">
-                    {categories.map(c =>
-                        `<a href="categories/${c}">${c}</a> <br />`
+                    {tags.map(t =>
+                        `<a href="tags/${t}">${t}</a> <br />`
                     )}
                 </div>
             </div>
