@@ -2,8 +2,16 @@
 import Search from '@/components/Search'
 ---
 
-<div style="position: sticky; top: 0; align-self: start">
-    <Search placeholder="Search Postings" />
-
-    
+<div class="sidebar">
+    <slot />
 </div>
+
+<style lang="scss">
+    @use '../assets/styles/breakpoints' as *;
+    
+    .sidebar {
+        position: sticky;
+        top: var(--space-lg);
+        align-self: start;
+    }
+</style>
