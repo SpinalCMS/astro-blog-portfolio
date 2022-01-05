@@ -37,10 +37,8 @@ const { page } = Astro.props;
             </div>
         </header>
 
-        <section class="container">
+        <section class="container" style="display: flex; justify-content: space-between;">
             <div class="constraint-sm">
-                <Search placeholder="Search Postings" />
-
                 <div class="posts" id="anchor">
                     {page.data.map(p =>
                         <PostSnippet post={p} />
@@ -48,6 +46,10 @@ const { page } = Astro.props;
                 </div>
 
                 <Pagination page={page} />
+            </div>
+
+            <div style="position: sticky; top: 0; align-self: start">
+                <Search placeholder="Search Postings" />
             </div>
         </section>
 
