@@ -54,7 +54,7 @@ header {
     grid-template-columns: repeat(1, 1fr);
     gap: var(--space-xl);
     margin-bottom: var(--space-xl);
-    margin-top: var(--space-xl);
+    //margin-top: var(--space-xl);
 
     @include breakpoint(lg) {
         gap: var(--space-xl);
