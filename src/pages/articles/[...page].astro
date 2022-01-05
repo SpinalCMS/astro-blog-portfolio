@@ -4,8 +4,8 @@ import BaseHead from '@/components/BaseHead'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PostSnippet from '@/components/articles/Snippet'
-import Search from '@/components/Search'
 import Pagination from '@/components/Pagination'
+import Sidebar from '@/components/Sidebar'
 
 export async function getStaticPaths({ paginate }) {
     const posts = await Astro.fetchContent("./*.md").reverse();
@@ -48,9 +48,7 @@ const { page } = Astro.props;
                 <Pagination page={page} />
             </div>
 
-            <div style="position: sticky; top: 0; align-self: start">
-                <Search placeholder="Search Postings" />
-            </div>
+            <Sidebar />
         </section>
 
         <Footer />
