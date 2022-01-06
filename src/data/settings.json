@@ -11,5 +11,6 @@
             "local": "public/images/",
             "public": "images/"
         }
-    }
+    },
+    "pageSize": 5
 }

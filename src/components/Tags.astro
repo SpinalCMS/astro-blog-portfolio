@@ -1,9 +1,10 @@
 ---
 // props
 export interface Props {
-    tag: object
+    tag: object,
+    url: string
 }
-const { tag } = Astro.props;
+const { tag, url } = Astro.props;
 ---
 
 <div class="tags">
@@ -11,7 +12,7 @@ const { tag } = Astro.props;
     
     <div>
         {tag.map(t =>
-            <a class="tag" href="/tag/${t}">{t}</a>
+            <a class="tag" href="/${url}/tags/${t}">{t}</a>
         )}
     </div>
 </div>

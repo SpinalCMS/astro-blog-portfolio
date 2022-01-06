@@ -1,15 +1,16 @@
 ---
 // props
 export interface Props {
-    category: object
+    category: object,
+    url: string
 }
-const { category } = Astro.props;
+const { category, url } = Astro.props;
 ---
 
 <div class="categories">
     <h4>Categories</h4>
     {category.map(c =>
-        <a class="category" href="/category/${c}">{c}</a>
+        <a class="category" href="/${url}/categories/${c}">{c}</a>
     )}
 </div>
 

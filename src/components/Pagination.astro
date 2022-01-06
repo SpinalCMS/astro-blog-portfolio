@@ -36,7 +36,7 @@ const { page } = Astro.props;
 
         <div>
             { page.url.next ? 
-                `<a href=${page.url.next}#anchor class="pill pill-secondary">Next</a>` :
+                `<a href=${page.url.next} class="pill pill-secondary">Next</a>` :
                 `<span class="pill pill-disabled">Next</span>`
             }
         </div>

@@ -5,22 +5,28 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PostSnippet from '@/components/articles/Snippet'
 import Pagination from '@/components/Pagination'
-import Sidebar from '@/components/Sidebar'
-import Tags from '@/components/Tags'
-import Categories from '@/components/Categories'
 import Settings from '@/data/settings'
 
 export async function getStaticPaths({ paginate }) {
-    const posts = await Astro.fetchContent("./*.md").reverse();
-
-    return paginate(posts, { pageSize: Settings.pageSize });
+    const allPosts = Astro.fetchContent('../../*.md');
+    const allTags = new Set();
+    
+    allPosts.map(post => {
+        post.tags && post.tags.map(tag => allTags.add(tag.toLowerCase()))
+    });
+    
+    return Array.from(allTags).map((tag) => {
+        const filteredPosts = allPosts.filter((post) => post.tags.includes(tag))
+        
+        return paginate(filteredPosts, {
+            params: { tag },
+            pageSize: Settings.pageSize
+        });
+    });
 }
 
-const allPosts = await Astro.fetchContent("./*.md");
-const categories = [...new Set(allPosts.map(post => post.category))];
-const tags = [...new Set([].concat.apply([], allPosts.map(post => post.tags)))];
-
-const { page } = Astro.props;
+const { page } = Astro.props
+const { params } = Astro.request
 ---
 
 <!DOCTYPE html>
@@ -37,10 +43,7 @@ const { page } = Astro.props;
             <Header />
 
             <div class="constraint-sm">
-                <h1>Articles</h1>
-                <p>
-                    Occasionally you'll catch me writing down my thoughts on the intersection of <a href="#">digital marketing</a>, <a href="#">photography</a> and <a href="#">cars</a> (as if there is such a thing).
-                </p>
+                <h1>Articles Tagged with "<span style="text-transform: capitalize">{params.tag}</span>"</h1>
             </div>
         </header>
 
@@ -54,11 +57,6 @@ const { page } = Astro.props;
 
                 <Pagination page={page} />
             </div>
-
-            <Sidebar>
-                <Categories category={categories} url="articles" />
-                <Tags tag={tags} url="articles" />
-            </Sidebar>
         </section>
 
         <Footer />
