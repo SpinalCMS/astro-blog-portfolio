@@ -6,6 +6,8 @@ import Footer from '@/components/Footer'
 import PostSnippet from '@/components/articles/Snippet'
 import Pagination from '@/components/Pagination'
 import Sidebar from '@/components/Sidebar'
+import Tags from '@/components/Tags'
+import Categories from '@/components/Categories'
 
 export async function getStaticPaths({ paginate }) {
     const posts = await Astro.fetchContent("./*.md").reverse();
@@ -53,19 +55,8 @@ const { page } = Astro.props;
             </div>
 
             <Sidebar>
-                <div class="categories">
-                    <h4>Categories</h4>
-                    {categories.map(c =>
-                        <a class="category" href="/category/${c}">{c}</a>
-                    )}
-                </div>
-
-                <div class="tags">
-                    <h4>Tags</h4>
-                    {tags.map(t =>
-                        <a class="tag" href="/tag/${t}">{t}</a>
-                    )}
-                </div>
+                <Categories category={categories} />
+                <Tags tag={tags} />
             </Sidebar>
         </section>
 
@@ -73,26 +64,3 @@ const { page } = Astro.props;
     </main>
 </body>
 </html>
-
-<style lang="scss">
-    @use '../../assets/styles/breakpoints' as *;
-
-    .categories {
-        h4 { margin-top: 0; }
-        
-        a {
-            :not(:last-child) {
-                margin-bottom: var(--space-xs);
-            }
-        }
-    }
-
-    .category {
-        display: block;
-        text-transform: capitalize;
-    }
-
-    .tag:not(:last-child)::after {
-        content: ', '
-    }
-</style>

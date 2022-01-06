@@ -1,0 +1,30 @@
+---
+// props
+export interface Props {
+    tag: object
+}
+const { tag } = Astro.props;
+---
+
+<div class="tags">
+    <h4>Tags</h4>
+    
+    <div>
+        {tag.map(t =>
+            <a class="tag" href="/tag/${t}">{t}</a>
+        )}
+    </div>
+</div>
+
+<style lang="scss">
+    @use '../assets/styles/breakpoints' as *;
+
+    .tags {
+        div {
+            line-height: var(--space-md);
+        }
+    }
+    .tag:not(:last-child)::after {
+        content: ', '
+    }
+</style>

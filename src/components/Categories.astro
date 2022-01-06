@@ -1,0 +1,31 @@
+---
+// props
+export interface Props {
+    category: object
+}
+const { category } = Astro.props;
+---
+
+<div class="categories">
+    <h4>Categories</h4>
+    {category.map(c =>
+        <a class="category" href="/category/${c}">{c}</a>
+    )}
+</div>
+
+<style lang="scss">
+    @use '../assets/styles/breakpoints' as *;
+
+    .categories {
+        h4 { margin-top: 0; }
+        
+        a:not(:last-child) {
+            margin-bottom: var(--space-xs);
+        }
+    }
+
+    .category {
+        display: block;
+        text-transform: capitalize;
+    }
+</style>
