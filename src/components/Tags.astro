@@ -21,6 +21,8 @@ const { tag, url } = Astro.props;
     @use '../assets/styles/breakpoints' as *;
 
     .tags {
+        h4 { margin: 0 0 var(--space-xs) 0; }
+        
         div {
             line-height: var(--space-md);
         }

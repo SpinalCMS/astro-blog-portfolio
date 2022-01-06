@@ -9,6 +9,7 @@ const { category, url } = Astro.props;
 
 <div class="categories">
     <h4>Categories</h4>
+    
     {category.map(c =>
         <a class="category" href="/${url}/categories/${c}">{c}</a>
     )}
@@ -18,7 +19,7 @@ const { category, url } = Astro.props;
     @use '../assets/styles/breakpoints' as *;
 
     .categories {
-        h4 { margin-top: 0; }
+        h4 { margin: 0 0 var(--space-xs) 0; }
         
         a:not(:last-child) {
             margin-bottom: var(--space-xs);

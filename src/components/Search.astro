@@ -5,9 +5,9 @@ export interface Props {
 const { placeholder = "Search" } = Astro.props;
 ---
 
-<form>
+<form id="search" action="/search">
     <div class="search">
-        <input type="text" placeholder={placeholder} />
+        <input type="text" name="query" placeholder={placeholder} />
         
         <button type="submit">
             <span>Search</span>
@@ -17,11 +17,16 @@ const { placeholder = "Search" } = Astro.props;
 
 <style lang="scss">
     @use '../assets/styles/breakpoints' as *;
+    
     .search {
         display: flex;
         flex-direction: column;
         gap: var(--space-sm);
-        margin-bottom: var(--space-xl);
+
+        @include breakpoint(lg) {
+            flex-direction: row;
+        }
+
         input {
             flex-grow: 1;
         }
@@ -36,9 +41,6 @@ const { placeholder = "Search" } = Astro.props;
                 background-color: var(--color-midnight-20);
                 cursor: pointer;
             }
-        }
-        @include breakpoint(lg) {
-            flex-direction: row;
         }
     }
 </style>

@@ -16,6 +16,9 @@
             ],
             "@/data/*": [
                 "src/data/*.json"
+            ],
+            "@/public/*": [
+                "public/*"
             ]
         }
     }
