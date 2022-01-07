@@ -8,7 +8,6 @@ import Pagination from '@/components/Pagination'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
 import Categories from '@/components/Categories'
-import Search from '@/components/Search'
 import Settings from '@/data/settings'
 
 export async function getStaticPaths({ paginate }) {
@@ -57,8 +56,6 @@ const { page } = Astro.props;
             </div>
 
             <Sidebar>
-                <Search placeholder="Search Posts" />
-                
                 <Categories category={categories} url="articles" />
                 <Tags tag={tags} url="articles" />
             </Sidebar>
