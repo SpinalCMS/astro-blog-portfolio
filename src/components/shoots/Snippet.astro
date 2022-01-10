@@ -13,8 +13,8 @@ const { shoot } = Astro.props;
 ---
 
 <a class="shoot" href={shoot.url} title={shoot.title}>
-    <div class="cover">
-        <Image file={shoot.hero} classes="solid-shadow-yellow" />
+    <div class="cover solid-shadow-yellow zoom">
+        <Image file={shoot.hero} classes="" />
     </div>
 
     <div class="content">
@@ -56,6 +56,11 @@ const { shoot } = Astro.props;
                     height: 175px;
                 }
             }
+            :hover {
+                :global(img) {
+                    transform: scale(1.1);
+                }
+            }
         }
 
         .content {
@@ -70,7 +75,7 @@ const { shoot } = Astro.props;
                 
             }
 
-            h3 { margin: 0; }
+            h2 { margin: 0; }
             p {
                 margin: 0;
                 font-size: var(--text-md);

@@ -10,6 +10,7 @@ tags:
     - photography
     - sony
     - zeiss
+    - cars
 category: photography
 featured: true
 date: 2018-08-11

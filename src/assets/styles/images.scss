@@ -1,3 +1,24 @@
+img {
+    vertical-align: top; // remove spacing underneath image
+    border-radius: var(--site-radius);
+}
+
+.zoom {
+    overflow:hidden;
+
+    img {
+        transition: all .3s ease-in-out;
+    }
+
+    &:hover {
+        img {
+            transition: all .3s ease-in-out;
+            transform: scale(1.05);
+        }
+    }
+}
+
+/* solid shadow styles */
 .solid-shadow-yellow {
     box-shadow: .5rem .5rem var(--color-yellow);
     border-radius: var(--site-radius);
