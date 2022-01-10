@@ -1,4 +1,7 @@
 ---
+// modules
+import { SEO } from "astro-seo";
+
 // components
 import BaseHead from '@/components/BaseHead'
 import Header from '@/components/Header'
@@ -18,7 +21,8 @@ const { page } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <BaseHead
+    <BaseHead />
+    <SEO
         title="Car Photography in Austin, TX"
         description="During the summer months you'll catch me shootin photos at Cars and Coffee at COTA or Coffee With Cars in Dripping Springs. I also do freelance photography for Bring a Trailer auctions."
     />

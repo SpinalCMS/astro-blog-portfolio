@@ -1,4 +1,7 @@
 ---
+// modules
+import { SEO } from "astro-seo";
+
 // components
 import BaseHead from '@/components/BaseHead'
 import Header from '@/components/Header'
@@ -18,6 +21,10 @@ const { content } = Astro.props;
 <html lang="en">
 <head>
     <BaseHead />
+    <SEO
+        title={content.title}
+        description={content.description}
+    />
 
     <style lang="scss">
         :global(img) {

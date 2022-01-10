@@ -1,4 +1,7 @@
 ---
+// modules
+import { SEO } from "astro-seo";
+
 // components
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -8,8 +11,10 @@ import BaseHead from '@/components/BaseHead'
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <BaseHead
+    <BaseHead />
+    <SEO
         title="Contact - I'm a Digital Marketing Expert and Car Photographer in Austin, TX"
+        description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. He&#39;s also an automotive photographer shooting photos at Austin car shows."
     />
 
     <style lang="scss">
