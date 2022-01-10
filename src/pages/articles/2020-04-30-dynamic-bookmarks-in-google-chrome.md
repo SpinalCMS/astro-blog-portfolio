@@ -104,7 +104,7 @@ javascript:function url() {
 window.open(url(), "_self");
 ```
 
-#### Bugs and Things to Note
+### Bugs and Things to Note
 - As of the time of writing this code, Google Chrome didn't like any comments. I assume that's because the bookmark in Google Chrome gets converted to one long string, so any comment in your code comments the rest of the code out.
 - For some reason if you open a new tab, then try to load the bookmark, nothing happens. If you try the bookmark in a loaded tab, it's fine. If you right click and open in a new tab, it's fine. Anyone have a fix for this?
 

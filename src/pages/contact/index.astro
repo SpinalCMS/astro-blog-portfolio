@@ -33,7 +33,7 @@ import BaseHead from '@/components/BaseHead'
                 justify-content: space-between;
 
                 span {
-                    color: var(--color-grayscale-40);
+                    color: var(--color-grayscale-80);
                     font-weight: 300;
                 }
             }
@@ -53,7 +53,7 @@ import BaseHead from '@/components/BaseHead'
 
         <section class="container">
             <div class="constraint-sm">
-                <form action="/contact/success/" name="Contact - Page" method="POST">
+                <form action="/contact/success/" name="Contact - Page" method="POST" data-netlify="true">
                     <div class="group">
                         <label for="name">Name</label>
                         <input type="text" name="name" id="name" autocomplete="name" placeholder="Your name" required>
