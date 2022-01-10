@@ -1,4 +1,7 @@
 ---
+// modules
+import { SEO } from "astro-seo";
+
 // components
 import BaseHead from '@/components/BaseHead'
 import Header from '@/components/Header'
@@ -15,6 +18,10 @@ const allShoots = await Astro.fetchContent("./photography/*.md").reverse().slice
 <html lang="en">
 <head>
     <BaseHead />
+    <SEO
+        title="I'm a Digital Marketing Expert and Car Photographer in Austin, TX"
+        description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. He&#39;s also an automotive photographer shooting photos at Austin car shows."
+    />
 
     <style lang="scss">
         @use '../assets/styles/breakpoints' as *;

@@ -1,6 +1,6 @@
 ---
 // data
-import navItems from '../data/navigation.json'
+import Navigation from '@/data/navigation'
 ---
 
 <nav>
@@ -11,7 +11,7 @@ import navItems from '../data/navigation.json'
         </svg>
     </a>
     
-    {navItems.map((item) => (
+    {Navigation.map((item) => (
         <a href={item.url}>
             {item.display}
         </a>

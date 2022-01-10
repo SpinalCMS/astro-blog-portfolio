@@ -1,4 +1,4 @@
-import settings from '../data/settings.json'
+import Settings from '@/data/settings'
 import fs from 'fs'
 import path from 'path';
 import sizeOf from 'image-size';
@@ -8,12 +8,12 @@ import exifr from 'exifr'
 // build the public image url
 // relative to the web root
 export function buildPublicPath(file) {
-    return `/${settings.image.directory.public}${file}`;
+    return `/${Settings.image.directory.public}${file}`;
 }
 // build the local path
 // relative to the 'public' directory
 export function buildLocalPath(file) {
-    return `${settings.image.directory.local}${file}`;
+    return `${Settings.image.directory.local}${file}`;
 }
 
 // get the width and height dimensions of an image

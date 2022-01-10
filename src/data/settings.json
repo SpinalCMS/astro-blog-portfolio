@@ -1,8 +1,9 @@
 {
     "name": "Erik S. Olsen",
     "url": "https://eriksolsen.com/",
+    "sitemap": "/sitemap.xml",
     "social": {
-        "rss": "https://www.instagram.com/erikstewartolsen/",
+        "rss": "/rss.xml",
         "github": "https://github.com/tusamni",
         "linkedin": "https://www.linkedin.com/in/erikstewartolsen/"
     },
