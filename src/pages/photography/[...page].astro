@@ -7,7 +7,7 @@ import ShootSnippet from '@/components/shoots/Snippet'
 import Pagination from '@/components/Pagination'
 
 export async function getStaticPaths({ paginate }) {
-    const shoots = await Astro.fetchContent("./shows/*.md");
+    const shoots = await Astro.fetchContent("./*.md");
 
     return paginate(shoots, { pageSize: 3 });
 }

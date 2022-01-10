@@ -8,7 +8,7 @@ import PostSnippet from '@/components/articles/Snippet'
 import ShootSnippet from '@/components/shoots/Snippet'
 
 const allPosts = await Astro.fetchContent("./articles/*.md").reverse().slice(0,2);
-const allShoots = await Astro.fetchContent("./photography/shows/*.md").reverse().slice(0,4);
+const allShoots = await Astro.fetchContent("./photography/*.md").reverse().slice(0,4);
 ---
 
 <!DOCTYPE html>
