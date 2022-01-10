@@ -5,18 +5,19 @@ import { getDimensions, buildPublicPath, getMetadata } from '@/functions/Image'
 export interface Props {
     file: string;
     classes?: string;
+    alt?: string;
 }
-const { file, classes } = Astro.props;
+const { file, classes, alt } = Astro.props;
 
 const url = buildPublicPath(file);
 const dimensions = getDimensions(file); // get the image dimensions
-const alt = await getMetadata(file, "caption"); // build the alt tag from the image caption
+const caption = await getMetadata(file, "caption"); // build the alt tag from the image caption
 ---
 
 <img
     data-src={url}
     class={classes}
-    alt={alt}
+    alt={alt ? alt : caption}
     width={dimensions.width}
     height={dimensions.height}
 >
