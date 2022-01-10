@@ -11,7 +11,7 @@ const { file, classes, alt } = Astro.props;
 
 const url = buildPublicPath(file);
 const dimensions = getDimensions(file); // get the image dimensions
-const caption = await getMetadata(file, "caption"); // build the alt tag from the image caption
+const caption = await getMetadata(file, "caption"); // grab the caption from the image to use as an alt tag
 ---
 
 <img

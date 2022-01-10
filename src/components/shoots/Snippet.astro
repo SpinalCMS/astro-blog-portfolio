@@ -12,7 +12,7 @@ export interface Props {
 const { shoot } = Astro.props;
 ---
 
-<a href={shoot.url} class="shoot">
+<a class="shoot" href={shoot.url} title={shoot.title}>
     <div class="cover">
         <Image file={shoot.hero} classes="solid-shadow-yellow" />
     </div>

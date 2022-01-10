@@ -9,7 +9,7 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<a class="post" href={post.url}>
+<a class="post" href={post.url} title={post.title}>
     <h2 class="h4">{post.title}</h2>
     
     <div class="meta">
