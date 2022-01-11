@@ -19,6 +19,23 @@ export async function getStaticPaths({paginate, rss}) {
     const posts = Astro.fetchContent("./*.md");
     const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+    rss({
+        // The RSS Feed title, description, and custom metadata.
+        title: 'Dons Blog',
+        description: 'An example blog on Astro',
+        customData: `<language>en-us</language>`,
+        // The list of items for your RSS feed, sorted.
+        items: sortedPosts.map(item => ({
+            title: item.title,
+            description: item.description,
+            link: item.url,
+            pubDate: item.date,
+        })),
+        // Optional: Customize where the file is written to.
+        // Defaults to "/rss.xml"
+        dest: "/rss.xml",
+    });
+
     return paginate(sortedPosts, { pageSize: Settings.pageSize });
 }
 
