@@ -14,8 +14,8 @@ import Categories from '@/components/Categories'
 import Settings from '@/data/settings'
 
 export async function getStaticPaths({ paginate, rss }) {
-    const posts = await Astro.fetchContent("./*.md");
-    const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const sortedPosts = await Astro.fetchContent("./*.md");
+    //const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     rss({
         title: `Erik S. Olsen`,
