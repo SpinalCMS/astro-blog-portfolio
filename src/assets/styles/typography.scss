@@ -93,7 +93,7 @@ p > a {
     background-repeat: no-repeat;
     background-size: 100% 30%;
     background-position: 0 88%;
-    transition: background-size 0.25s ease-in;
+    transition: background-size var(--site-transition) ease-in;
  
     &:hover {
        background-size: 100% 40%;

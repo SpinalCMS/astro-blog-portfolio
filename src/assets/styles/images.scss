@@ -7,43 +7,62 @@ img {
     overflow:hidden;
 
     img {
-        transition: all .3s ease-in-out;
+        transition: all var(--site-transition) ease-in-out;
     }
 
     &:hover {
         img {
-            transition: all .3s ease-in-out;
+            transition: all var(--site-transition) ease-in-out;
             transform: scale(1.05);
         }
     }
 }
 
 /* solid shadow styles */
+.solid-shadow-yellow, .solid-shadow-pink, .solid-shadow-green,
+.solid-shadow-blue, .solid-shadow-midnight {
+    border-radius: var(--site-radius);
+    transition: box-shadow var(--site-transition) ease-in-out;
+}
 .solid-shadow-yellow {
     box-shadow: .5rem .5rem var(--color-yellow);
-    border-radius: var(--site-radius);
+
+    &:hover { 
+        box-shadow: .5rem .5rem var(--color-yellow-70);
+    }
 }
 .solid-shadow-pink {
     box-shadow: .5rem .5rem var(--color-pink);
-    border-radius: var(--site-radius);
+
+    &:hover { 
+        box-shadow: .5rem .5rem var(--color-pink-70);
+    }
 }
 .solid-shadow-green {
     box-shadow: .5rem .5rem var(--color-green);
-    border-radius: var(--site-radius);
+
+    &:hover { 
+        box-shadow: .5rem .5rem var(--color-green-70);
+    }
 }
 .solid-shadow-blue {
     box-shadow: .5rem .5rem var(--color-blue);
-    border-radius: var(--site-radius);
+
+    &:hover { 
+        box-shadow: .5rem .5rem var(--color-blue-70);
+    }
 }
 .solid-shadow-midnight {
     box-shadow: .5rem .5rem var(--color-midnight);
-    border-radius: var(--site-radius);
+
+    &:hover { 
+        box-shadow: .5rem .5rem var(--color-midnight-70);
+    }
 }
 
 main.post, main.shoot {
     img {
         width: 100%;
         height: auto;
-        border-radius: var(--site-radius);
     }
 }

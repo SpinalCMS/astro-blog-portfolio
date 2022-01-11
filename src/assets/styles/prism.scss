@@ -25,10 +25,12 @@ pre[class*='language-'] {
 
 	font-family: 'Operator Mono', 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	font-weight: 400;
-	font-size: 17px;
+	font-size: var(--text-xs);
 	line-height: 25px;
 	letter-spacing: 0.5px;
 	text-shadow: 0 1px #222245;
+
+    border-radius: var(--site-radius);
 }
 
 pre[class*='language-']::-moz-selection,
