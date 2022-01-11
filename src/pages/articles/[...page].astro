@@ -15,7 +15,7 @@ import Categories from '@/components/Categories'
 // data
 import Settings from '@/data/settings'
 
-export async function getStaticPaths({ paginate, rss }) {
+export async function getStaticPaths(paginate) {
     const posts = await Astro.fetchContent("./*.md");
     //const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
