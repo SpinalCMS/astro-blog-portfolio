@@ -9,16 +9,18 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<a class="post" href={post.url} title={post.title}>
-    <h2 class="h4">{post.title}</h2>
+<div class="post">
+    <a href={post.url} title={post.title}>
+        <h2 class="h4">{post.title}</h2>
+    </a>
     
     <div class="meta">
         <time>{timeAgo(post.date)}</time>
-        <div class="category">{post.category}</div>
+        <a href=`/articles/categories/${post.category}` title={post.title} class="category">{post.category}</a>
     </div>
 
     <p>{post.description}</p>
-</a>
+</div>
 
 <style lang="scss">
     @use '../../assets/styles/breakpoints' as *;

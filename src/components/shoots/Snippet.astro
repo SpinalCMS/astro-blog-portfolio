@@ -12,22 +12,26 @@ export interface Props {
 const { shoot } = Astro.props;
 ---
 
-<a class="shoot" href={shoot.url} title={shoot.title}>
+<div class="shoot">
     <div class="cover solid-shadow-yellow zoom">
-        <Image file={shoot.hero} classes="" />
+        <a href={shoot.url} title={shoot.title}>
+            <Image file={shoot.hero} />
+        </a>
     </div>
 
     <div class="content">
-        <h2 class="h4">{shoot.title}</h2>
+        <a href={shoot.url} title={shoot.title}>
+            <h2 class="h4">{shoot.title}</h2>
+        </a>
         
         <div class="meta">
             <time>{timeAgo(shoot.date)}</time>
-            <div class="category">{shoot.category}</div>
+            <a class="category" href=`/photography/categories/${shoot.category}` title=`${shoot.category}`>{shoot.category}</a>
         </div>
 
         <p>{shoot.description}</p>
     </div>
-</a>
+</div>
 
 <style lang="scss">
     @use '../../assets/styles/breakpoints' as *;

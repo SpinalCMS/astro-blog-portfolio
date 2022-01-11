@@ -15,12 +15,16 @@ const metadata = await getMetadata(file);
     @use '../../assets/styles/breakpoints' as *;
 
     figcaption {
-        margin: 0 var(--space-md);
+        margin: 0 var(--space-xs);
+
+        @include breakpoint(md) {
+            margin: 0 var(--space-md);
+        }
     }
     .summary {
         display: flex;
         flex-direction: column;
-        gap: var(--space-lg);
+        gap: var(--space-sm);
         margin-top: var(--space-xs);
         margin-bottom: var(--space-md);
         font-size: var(--text-sm);
@@ -30,10 +34,11 @@ const metadata = await getMetadata(file);
             justify-content: space-between;
         }
         
-        .title { font-weight: 400; }
+        .title {
+            font-weight: 500;
+        }
         .caption {
             font-weight: 350;
-            text-align: right;
         }
     }
 </style>
