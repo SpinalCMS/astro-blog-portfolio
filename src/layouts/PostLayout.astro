@@ -7,6 +7,9 @@ import BaseHead from '@/components/BaseHead'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
+// functions
+import { timeAgo } from '@/functions/DateTime'
+
 // props
 export interface Props {
     content: {
@@ -27,6 +30,30 @@ const { content } = Astro.props;
     />
 
     <style lang="scss">
+        .intro {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+
+            .meta {
+                display: flex;
+                flex-direction: row;
+                gap: var(--space-sm);
+                
+                .category {
+                    text-transform: capitalize;
+                }
+            }
+        
+            h1, .description { margin: 0; }
+            .description {
+                font-size: var(--text-2xl);
+                color: var(--color-grayscale-40);
+                line-height: var(--line-height-md);
+                font-weight: 300;
+            }
+        }
+        
         :global(img) {
             margin-bottom: var(--space-sm);
         }
@@ -34,14 +61,6 @@ const { content } = Astro.props;
             margin: var(--space-xl) 0;
         }
     </style>
-
-    <script>
-        function showMeta(id) {
-            var element = document.querySelector('.'+id);
-            console.log(element);
-            element.classList.toggle("active");
-        }
-    </script>
 </head>
 
 <body>
@@ -49,9 +68,14 @@ const { content } = Astro.props;
         <header class="container">
             <Header />
 
-            <div class="constraint-lg">
+            <div class="constraint-lg intro">
+                <div class="meta">
+                    <time datetime={content.date}>{timeAgo(content.date)}</time>
+                    <div class="category">{content.category}</div>
+                </div>
+
                 <h1>{content.title}</h1>
-                <p>{content.description}</p>
+                <p class="description">{content.description}</p>
             </div>
         </header>
 
