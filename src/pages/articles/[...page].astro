@@ -19,17 +19,17 @@ export async function getStaticPaths({ paginate, rss }) {
     const posts = await Astro.fetchContent("./*.md");
     //const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    rss({
-        title: `Erik S. Olsen`,
-        description: `I write about car photography, programming and digital marketing.`,
-        customData: `<language>en-us</language>`,
-        items: posts.map(item => ({
-            title: item.title,
-            description: item.description,
-            link: item.url,
-            pubDate: item.date,
-        })),
-    })
+    // rss({
+    //     title: `Erik S. Olsen`,
+    //     description: `I write about car photography, programming and digital marketing.`,
+    //     customData: `<language>en-us</language>`,
+    //     items: posts.map(item => ({
+    //         title: item.title,
+    //         description: item.description,
+    //         link: item.url,
+    //         pubDate: item.date,
+    //     })),
+    // })
 
     return paginate(posts, { pageSize: Settings.pageSize });
 }
