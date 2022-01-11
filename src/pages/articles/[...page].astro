@@ -29,7 +29,7 @@ export async function getStaticPaths({ paginate, rss }) {
         })),
     })
 
-    return paginate(posts, { pageSize: Settings.pageSize });
+    return paginate(sortedPosts, { pageSize: Settings.pageSize });
 }
 
 const allPosts = await Astro.fetchContent("./*.md");
