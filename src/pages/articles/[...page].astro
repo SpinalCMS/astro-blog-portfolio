@@ -23,6 +23,8 @@ export async function getStaticPaths({paginate, rss}) {
         // The RSS Feed title, description, and custom metadata.
         title: 'Dons Blog',
         description: 'An example blog on Astro',
+        customData: '<language>en-us</language>',
+        // The list of items for your RSS feed, sorted.
         items: sortedPosts.map(item => ({
             title: item.title,
             description: item.description,
