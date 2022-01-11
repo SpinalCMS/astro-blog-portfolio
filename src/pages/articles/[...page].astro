@@ -14,8 +14,8 @@ import Categories from '@/components/Categories'
 import Settings from '@/data/settings'
 
 export async function getStaticPaths({ paginate }) {
-    const posts = await Astro.fetchContent("./*.md");
-    //const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const posts = Astro.fetchContent("./*.md");
+    const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     // rss({
     //     title: `Erik S. Olsen`,
@@ -29,7 +29,7 @@ export async function getStaticPaths({ paginate }) {
     //     })),
     // })
 
-    return paginate(posts, { pageSize: Settings.pageSize });
+    return paginate(sortedPosts, { pageSize: Settings.pageSize });
 }
 
 const allPosts = await Astro.fetchContent("./*.md");
