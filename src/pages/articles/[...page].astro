@@ -15,13 +15,13 @@ import Settings from '@/data/settings'
 
 export async function getStaticPaths({ paginate, rss }) {
     const posts = await Astro.fetchContent("./*.md");
-    const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    //const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     rss({
         title: `Erik S. Olsen`,
         description: `I write about car photography, programming and digital marketing.`,
         customData: `<language>en-us</language>`,
-        items: sortedPosts.map(item => ({
+        items: posts.map(item => ({
             title: item.title,
             description: item.description,
             link: item.url,
@@ -29,7 +29,7 @@ export async function getStaticPaths({ paginate, rss }) {
         })),
     })
 
-    return paginate(sortedPosts, { pageSize: Settings.pageSize });
+    return paginate(posts, { pageSize: Settings.pageSize });
 }
 
 const allPosts = await Astro.fetchContent("./*.md");
