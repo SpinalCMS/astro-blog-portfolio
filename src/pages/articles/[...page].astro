@@ -14,14 +14,14 @@ import Categories from '@/components/Categories'
 import Settings from '@/data/settings'
 
 export async function getStaticPaths({ paginate, rss }) {
-    const sortedPosts = await Astro.fetchContent("./*.md");
-    //const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const posts = await Astro.fetchContent("./*.md");
+    const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     rss({
         title: `Erik S. Olsen`,
         description: `I write about car photography, programming and digital marketing.`,
         customData: `<language>en-us</language>`,
-        items: posts.map(item => ({
+        items: sortedPosts.map(item => ({
             title: item.title,
             description: item.description,
             link: item.url,

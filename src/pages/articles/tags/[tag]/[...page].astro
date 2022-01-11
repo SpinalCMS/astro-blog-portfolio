@@ -19,9 +19,10 @@ export async function getStaticPaths({ paginate }) {
     });
     
     return Array.from(allTags).map((tag) => {
-        const filteredPosts = allPosts.filter((post) => post.tags.includes(tag))
+        const filteredPosts = allPosts.filter((post) => post.tags.includes(tag));
+        const sortedPosts = filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
         
-        return paginate(filteredPosts, {
+        return paginate(sortedPosts, {
             params: { tag },
             pageSize: Settings.pageSize
         });
