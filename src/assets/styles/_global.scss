@@ -61,3 +61,15 @@ header {
         gap: var(--space-xl);
     }
 }
+
+/* content area */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxl);
+
+    @include breakpoint(md) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

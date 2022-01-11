@@ -10,7 +10,7 @@ const { tag, url } = Astro.props;
 <div class="tags">
     <h4>Tags</h4>
     
-    <div>
+    <div class="tag-list">
         {tag.map(t =>
             <a class="tag" href="/${url}/tags/${t}">{t}</a>
         )}

@@ -16,7 +16,7 @@ import Categories from '@/components/Categories'
 import Settings from '@/data/settings'
 
 export async function getStaticPaths({paginate, rss}) {
-    const posts = Astro.fetchContent("./*.md");
+    const posts = await Astro.fetchContent("./*.md");
     const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     rss({
@@ -69,7 +69,7 @@ const { page } = Astro.props;
             </div>
         </header>
 
-        <section class="container" style="display: flex; justify-content: space-between; gap: var(--space-xl);">
+        <section class="container content">
             <div class="constraint-sm">
                 <div class="posts" id="anchor">
                     {page.data.map(p =>
