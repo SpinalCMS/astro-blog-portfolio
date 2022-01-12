@@ -65,10 +65,10 @@ header {
 .content {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
+    gap: var(--space-xxl);
 
     @include breakpoint(md) {
         flex-direction: row;
-        justify-content: space-between;
+        //justify-content: space-between;
     }
 }

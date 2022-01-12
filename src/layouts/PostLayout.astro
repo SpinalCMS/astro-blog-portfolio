@@ -37,12 +37,6 @@ const { content } = Astro.props;
             gap: var(--space-lg);
 
             h1, .description { margin: 0; }
-            .description {
-                font-size: var(--text-2xl);
-                color: var(--color-grayscale-40);
-                line-height: var(--line-height-md);
-                font-weight: 300;
-            }
         }
 
         .meta {
@@ -66,9 +60,9 @@ const { content } = Astro.props;
         <header class="container">
             <Header />
 
-            <div class="constraint-lg intro">
+            <div class="constraint-md intro">
                 <h1>{content.title}</h1>
-                <p class="description">{content.description}</p>
+                <p class="description">{content.excerpt}</p>
             </div>
         </header>
 
