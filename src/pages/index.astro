@@ -4,14 +4,14 @@ import { SEO } from "astro-seo";
 
 // components
 import BaseHead from '@/components/BaseHead'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import BaseLayout from '@/components/BaseLayout'
+import Content from '@/components/Content'
 import Image from "@/components/image/Image"
-import PostSnippet from '@/components/articles/Snippet'
-import ShootSnippet from '@/components/shoots/Snippet'
+import ArticleSnippet from '@/components/ArticleSnippet'
+import ShootSnippet from '@/components/ShootSnippet'
 
-const allPosts = await Astro.fetchContent("./articles/*.md").reverse().slice(0,2);
-const allShoots = await Astro.fetchContent("./photography/*.md").reverse().slice(0,4);
+const allPosts = await Astro.fetchContent("./articles/*.md").slice(0,2);
+const allShoots = await Astro.fetchContent("./photography/*.md").slice(0,4);
 ---
 
 <!DOCTYPE html>
@@ -28,6 +28,11 @@ const allShoots = await Astro.fetchContent("./photography/*.md").reverse().slice
 
         .intro {
             text-align: center;
+            padding-bottom: var(--section-spacing-sm);
+
+            @include breakpoint(md) {
+                padding-bottom: var(--section-spacing-md);
+            }
             
             figure {
                 @include breakpoint(lg) {
@@ -98,12 +103,11 @@ const allShoots = await Astro.fetchContent("./photography/*.md").reverse().slice
 
         .recent-posts {
             background-color: var(--color-blue-10);
-            padding-top: var(--section-spacing-sm);
-            padding-bottom: var(--section-spacing-sm);
+            padding: var(--space-xl) var(--space-lg);
+            border-radius: var(--site-radius);
 
             @include breakpoint(md) {
-                padding-top: var(--section-spacing-md);
-                padding-bottom: var(--section-spacing-md);
+                padding: var(--space-xxl) var(--space-xl);
             }
 
             .posts {
@@ -117,19 +121,15 @@ const allShoots = await Astro.fetchContent("./photography/*.md").reverse().slice
             padding-top: var(--section-spacing-sm);
 
             @include breakpoint(md) {
-                padding-top: var(--section-spacing-lg);
+                padding-top: var(--section-spacing-md);
             }
         }
     </style>
 </head>
 
 <body>
-    <main>
-        <div class="container">
-            <Header />
-        </div>
-
-        <header class="container">
+    <BaseLayout>
+        <Content cols="7">
             <div class="intro">
                 <figure>
                     <picture>
@@ -154,10 +154,8 @@ const allShoots = await Astro.fetchContent("./photography/*.md").reverse().slice
                     </a>
                 </div>
             </div>
-        </header>
 
-        <section class="recent-posts">
-            <div class="container">
+            <section class="recent-posts">
                 <div class="headline">
                     <h2>Recent Posts</h2>
                     <a href="/articles" class="pill pill-primary" title="View All Articles">View All</a>
@@ -165,28 +163,22 @@ const allShoots = await Astro.fetchContent("./photography/*.md").reverse().slice
 
                 <div class="posts">
                     {allPosts.map(p =>
-                        <PostSnippet post={p} />
+                        <ArticleSnippet post={p} />
                     )}
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="recent-shoots">
-            <div class="container">
+            <section class="recent-shoots">
                 <div class="headline">
-                    <h2>Recent Posts</h2>
+                    <h2>Recent Shoots</h2>
                     <a href="/photography" class="pill pill-secondary" title="View All Photoshoots">View All</a>
                 </div>
 
                 <div class="shoots">
                     {allShoots.map(s => <ShootSnippet shoot={s} /> )}
                 </div>
-            </div>
-        </section>
-
-        <div class="container">
-            <Footer />
-        </div>
-    </main>
+            </section>
+        </Content>
+    </BaseLayout>
 </body>
 </html>

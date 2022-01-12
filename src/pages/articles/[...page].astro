@@ -4,9 +4,10 @@ import { SEO } from "astro-seo";
 
 // components
 import BaseHead from '@/components/BaseHead'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import PostSnippet from '@/components/articles/Snippet'
+import BaseLayout from '@/components/BaseLayout'
+import Heading from '@/components/Heading'
+import Content from '@/components/Content'
+import ArticleSnippet from '@/components/ArticleSnippet'
 import Pagination from '@/components/Pagination'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
@@ -22,9 +23,10 @@ export async function getStaticPaths({paginate, rss}) {
     return paginate(sortedPosts, { pageSize: Settings.pageSize });
 }
 
+// get all the posts and send to tag and category component
 const allPosts = await Astro.fetchContent("./*.md");
-const categories = [...new Set(allPosts.map(post => post.category))];
 const tags = [...new Set([].concat.apply([], allPosts.map(post => post.tags)))];
+const categories = [...new Set(allPosts.map(post => post.category))];
 
 const { page } = Astro.props;
 ---
@@ -40,36 +42,31 @@ const { page } = Astro.props;
 </head>
 
 <body>
-    <main>
-        <header class="container">
-            <Header />
+    <BaseLayout>
+        <Heading>Articles</Heading>
+        <Content>
+            <article>
+                <p>Occasionally you'll catch me writing down my thoughts on the intersection of <a href="articles/tags/code" title="Coding Articles">coding</a>, <a href="articles/tags/photography" title="Photography Articles">photography</a> and <a href="articles/tags/cars" title="Car Articles">cars</a> (as if there is such a thing).</p>
+            </article>
+            
+            <section class="posts">
+                {page.data.map(p =>
+                    <ArticleSnippet post={p} />
+                )}
+            </section>
 
-            <div class="constraint-sm">
-                <h1>Articles</h1>
-                <p>
-                    Occasionally you'll catch me writing down my thoughts on the intersection of <a href="articles/tags/code" title="Coding Articles">coding</a>, <a href="articles/tags/photography" title="Photography Articles">photography</a> and <a href="articles/tags/cars" title="Car Articles">cars</a> (as if there is such a thing).
-                </p>
+            <Pagination page={page} />
+        </Content>
+
+        <Sidebar>
+            <div>
+                <h4>Categories</h4>
+                <Categories categories={categories} base="articles" />
+                
+                <h4>Tags</h4>
+                <Tags tags={tags} base="articles" />
             </div>
-        </header>
-
-        <section class="container content">
-            <div class="constraint-sm">
-                <div class="posts" id="anchor">
-                    {page.data.map(p =>
-                        <PostSnippet post={p} />
-                    )}
-                </div>
-
-                <Pagination page={page} />
-            </div>
-
-            <Sidebar>
-                <Categories category={categories} url="articles" />
-                <Tags tag={tags} url="articles" />
-            </Sidebar>
-        </section>
-
-        <Footer />
-    </main>
+        </Sidebar>
+    </BaseLayout>
 </body>
 </html>

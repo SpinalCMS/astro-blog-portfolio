@@ -1,43 +1,38 @@
 ---
 // props
 export interface Props {
-    tag: object,
-    url: string
+    tags: object,
+    base: string
 }
-const { tag, url } = Astro.props;
+const { tags, base } = Astro.props;
 ---
 
-<div class="tags">
-    <h4>Tags</h4>
-    
-    <ul class="tag-list">
-        {tag.map(t =>
-            <li class="tag"><a href="/${url}/tags/${t}" title="Posts tagged '${t}'">{t}</a></li>
-        )}
-    </ul>
-</div>
+<ul class="tag-list">
+    {tags.map(t =>
+        <li class="tag">
+            <a href="/${base}/tags/${t}" title="Posts tagged '${t}'">{t}</a>
+        </li>
+    )}
+</ul>
 
 <style lang="scss">
     @use '../assets/styles/breakpoints' as *;
 
-    .tags {
-        h4 { margin: 0 0 var(--space-xs) 0; }
-        
-        ul {
-            list-style-type: none;
-            padding: 0;
-            
-            li {
-                display: inline;
-                font-size: var(--text-sm);
+    .tag-list {        
+        list-style-type: none;
+        padding: 0;
 
-                @include breakpoint(md) {
-                    font-size: var(--text-md);
-                }
+        .tag {
+            display: inline;
+            font-size: var(--text-sm);
+            
+            @include breakpoint(md) {
+                font-size: var(--text-md);
+            }
+
+            &:not(:last-child)::after {
+                content: ', '
             }
         }
-    }
-    .tag:not(:last-child)::after {
-        content: ', '
     }
 </style>

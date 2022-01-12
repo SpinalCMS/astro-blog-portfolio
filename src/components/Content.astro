@@ -1,0 +1,16 @@
+---
+// props
+export interface Props {
+    cols?: number
+}
+const { cols = 4 } = Astro.props;
+
+---
+
+<div style=`grid-column: span ${cols}`>
+    <slot />
+</div>
+
+<style lang="scss">
+    @use '../assets/styles/breakpoints' as *;
+</style>

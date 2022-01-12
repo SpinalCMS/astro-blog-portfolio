@@ -20,6 +20,9 @@
             ],
             "@/public/*": [
                 "public/*"
+            ],
+            "@/articles/*": [
+                "src/articles/*.md"
             ]
         }
     }

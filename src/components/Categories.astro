@@ -1,36 +1,26 @@
 ---
 // props
 export interface Props {
-    category: object,
-    url: string
+    categories: object,
+    base: string
 }
-const { category, url } = Astro.props;
+const { categories, base } = Astro.props;
 ---
-
-<div class="categories">
-    <h4>Categories</h4>
-    
-    <ul class="category-list">
-        {category.map(c =>
-            <li class="category"><a href="/${url}/categories/${c}" title="Posts categorized under '${c}'">{c}</a></li>
-        )}
-    </ul>
-</div>
+<ul class="category-list">
+    {categories.map(c =>
+        <li class="category">
+            <a href="/${base}/categories/${c}" title="Posts categorized under '${c}'">{c}</a>
+        </li>
+    )}
+</ul>
 
 <style lang="scss">
     @use '../assets/styles/breakpoints' as *;
 
-    .categories {
-        h4 { margin: 0 0 var(--space-xs) 0; }
-        
-        a:not(:last-child) {
-            margin-bottom: var(--space-xs);
-        }
-    }
-
-    ul {
+    .category-list {
+        list-style-type: none;
         padding: 0;
-        
+
         .category {
             display: block;
             text-transform: capitalize;

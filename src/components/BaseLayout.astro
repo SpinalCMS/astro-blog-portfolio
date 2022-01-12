@@ -1,0 +1,24 @@
+---
+// components
+import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
+---
+<main>
+    <Navigation />
+
+    <div class="container">
+        <div class="grid">
+            <slot />
+        </div>
+    </div>
+
+    <Footer />
+</main>
+
+<style lang="scss">
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        column-gap: var(--space-xxl);
+    }
+</style>

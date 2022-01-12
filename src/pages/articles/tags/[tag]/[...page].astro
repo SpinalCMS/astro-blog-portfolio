@@ -4,9 +4,10 @@ import { SEO } from "astro-seo";
 
 // components
 import BaseHead from '@/components/BaseHead'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import PostSnippet from '@/components/articles/Snippet'
+import BaseLayout from '@/components/BaseLayout'
+import Heading from '@/components/Heading'
+import Content from '@/components/Content'
+import ArticleSnippet from '@/components/ArticleSnippet'
 import Pagination from '@/components/Pagination'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
@@ -53,33 +54,27 @@ const { params } = Astro.request
 </head>
 
 <body>
-    <main>
-        <header class="container">
-            <Header />
+    <BaseLayout>
+        <Heading>Articles Tagged with "<span style="text-transform: capitalize">{params.tag}</span>"</Heading>
+        <Content>
+            <section class="posts">
+                {page.data.map(p =>
+                    <ArticleSnippet post={p} />
+                )}
+            </section>
 
-            <div class="constraint-sm">
-                <h1>Articles Tagged with "<span style="text-transform: capitalize">{params.tag}</span>"</h1>
+            <Pagination page={page} />
+        </Content>
+
+        <Sidebar>
+            <div>
+                <h4>Categories</h4>
+                <Categories categories={categories} base="articles" />
+
+                <h4>Tags</h4>
+                <Tags tags={tags} base="articles" />
             </div>
-        </header>
-
-        <section class="container content">
-            <div class="constraint-sm">
-                <div class="posts" id="anchor">
-                    {page.data.map(p =>
-                        <PostSnippet post={p} />
-                    )}
-                </div>
-
-                <Pagination page={page} />
-            </div>
-
-            <Sidebar>
-                <Categories category={categories} url="articles" />
-                <Tags tag={tags} url="articles" />
-            </Sidebar>
-        </section>
-
-        <Footer />
-    </main>
+        </Sidebar>
+    </BaseLayout>
 </body>
 </html>

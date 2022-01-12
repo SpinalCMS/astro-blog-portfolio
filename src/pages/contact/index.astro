@@ -3,9 +3,9 @@
 import { SEO } from "astro-seo";
 
 // components
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import BaseHead from '@/components/BaseHead'
+import BaseLayout from '@/components/BaseLayout'
+import Content from '@/components/Content'
 ---
 
 <!DOCTYPE html>
@@ -18,41 +18,42 @@ import BaseHead from '@/components/BaseHead'
     />
 
     <style lang="scss">
+        @use '../../assets/styles/breakpoints' as *;
+
         form {
             display: flex;
             flex-direction: column;
             gap: var(--space-lg);
-        }
-        .group {
-            display: flex;
-            flex-direction: column;
 
-            .optional {
+            .group {
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                flex-direction: column;
 
-                span {
-                    color: var(--color-grayscale-80);
-                    font-weight: 300;
+                .optional {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    span {
+                        color: var(--color-grayscale-80);
+                        font-weight: 300;
+                    }
                 }
+            }
+
+            button, button span {
+                width: 100%;
             }
         }
     </style>
 </head>
 
 <body>
-    <main>
-        <header class="container">
-            <Header />
+    <BaseLayout>
+        <Content>
+            <h1>Contact Me</h1>
 
-            <div class="constraint-sm">
-                <h1>Contact Me</h1>
-            </div>
-        </header>
-
-        <section class="container">
-            <div class="constraint-sm">
+            <section>
                 <form action="/contact/success/" name="Contact - Page" method="POST" data-netlify="true">
                     <div class="group">
                         <label for="name">Name</label>
@@ -82,16 +83,14 @@ import BaseHead from '@/components/BaseHead'
                         <textarea id="message" name="message" rows="4"></textarea>
                     </div>
 
-                    <div>
+                    <div class="group">
                         <button type="submit" class="btn btn-primary">
                             <span>Let's talk</span>
                         </button>
                     </div>
                 </form>
-            </div>
-        </section>
-
-        <Footer />
-    </main>
+            </section>
+        </Content>
+    </BaseLayout>
 </body>
 </html>

@@ -3,9 +3,9 @@
 import { SEO } from "astro-seo";
 
 // components
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import BaseHead from '@/components/BaseHead'
+import BaseLayout from '@/components/BaseLayout'
+import Content from '@/components/Content'
 ---
 
 <!DOCTYPE html>
@@ -19,19 +19,15 @@ import BaseHead from '@/components/BaseHead'
 </head>
 
 <body>
-    <main>
-        <header class="container">
-            <Header />
-
-            <div class="constraint-sm">
+    <BaseLayout>
+        <Content>
+            <article>
                 <h1>Thanks!</h1>
                 <p>I really appreciate you reaching out. I've received your email and I'm probably looking at it right now.</p>
                 <p>During the week I'm most likely busy with my day job, but I promise I'll get back to you as soon as I can.</p>
                 <p>Thanks again!</p>
-            </div>
-        </header>
-
-        <Footer />
-    </main>
+            </article>
+        </Content>
+    </BaseLayout>
 </body>
 </html>
