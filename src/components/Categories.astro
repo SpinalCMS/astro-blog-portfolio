@@ -10,9 +10,11 @@ const { category, url } = Astro.props;
 <div class="categories">
     <h4>Categories</h4>
     
-    {category.map(c =>
-        <a class="category" href="/${url}/categories/${c}">{c}</a>
-    )}
+    <ul class="category-list">
+        {category.map(c =>
+            <li class="category"><a href="/${url}/categories/${c}" title="Posts categorized under '${c}'">{c}</a></li>
+        )}
+    </ul>
 </div>
 
 <style lang="scss">
@@ -26,8 +28,17 @@ const { category, url } = Astro.props;
         }
     }
 
-    .category {
-        display: block;
-        text-transform: capitalize;
+    ul {
+        padding: 0;
+        
+        .category {
+            display: block;
+            text-transform: capitalize;
+            font-size: var(--text-sm);
+
+            @include breakpoint(md) {
+                font-size: var(--text-md);
+            }
+        }
     }
 </style>

@@ -10,11 +10,11 @@ const { tag, url } = Astro.props;
 <div class="tags">
     <h4>Tags</h4>
     
-    <div class="tag-list">
+    <ul class="tag-list">
         {tag.map(t =>
-            <a class="tag" href="/${url}/tags/${t}">{t}</a>
+            <li class="tag"><a href="/${url}/tags/${t}" title="Posts tagged '${t}'">{t}</a></li>
         )}
-    </div>
+    </ul>
 </div>
 
 <style lang="scss">
@@ -23,8 +23,18 @@ const { tag, url } = Astro.props;
     .tags {
         h4 { margin: 0 0 var(--space-xs) 0; }
         
-        div {
-            line-height: var(--space-md);
+        ul {
+            list-style-type: none;
+            padding: 0;
+            
+            li {
+                display: inline;
+                font-size: var(--text-sm);
+
+                @include breakpoint(md) {
+                    font-size: var(--text-md);
+                }
+            }
         }
     }
     .tag:not(:last-child)::after {

@@ -6,9 +6,10 @@ import { SEO } from "astro-seo";
 import BaseHead from '@/components/BaseHead'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Sidebar from '@/components/Sidebar'
 
 // functions
-import { timeAgo } from '@/functions/DateTime'
+import { fullDate } from '@/functions/DateTime'
 
 // props
 export interface Props {
@@ -35,22 +36,19 @@ const { content } = Astro.props;
             flex-direction: column;
             gap: var(--space-lg);
 
-            .meta {
-                display: flex;
-                flex-direction: row;
-                gap: var(--space-sm);
-                
-                .category {
-                    text-transform: capitalize;
-                }
-            }
-        
             h1, .description { margin: 0; }
             .description {
                 font-size: var(--text-2xl);
                 color: var(--color-grayscale-40);
                 line-height: var(--line-height-md);
                 font-weight: 300;
+            }
+        }
+
+        .meta {
+            p {
+                font-size: var(--text-md);
+                margin: 0;
             }
         }
         
@@ -69,20 +67,24 @@ const { content } = Astro.props;
             <Header />
 
             <div class="constraint-lg intro">
-                <div class="meta">
-                    <time datetime={content.date}>{timeAgo(content.date)}</time>
-                    <div class="category">{content.category}</div>
-                </div>
-
                 <h1>{content.title}</h1>
                 <p class="description">{content.description}</p>
             </div>
         </header>
 
-        <section class="container">
-            <div class="constraint-lg">
+        <section class="container content">
+            <div class="constraint-md">
                 <slot />
             </div>
+
+            <Sidebar>
+                <div class="meta">
+                    <h4>Post Meta</h4>
+                    
+                    <p>Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
+                    <p>Filed under <span style="text-transform: capitalize"><a href="/articles/categories/${content.category}" title="Posts categorized under '${content.category}'">{content.category}</a></span></p>
+                </div>
+            </Sidebar>
         </section>
 
         <Footer />
