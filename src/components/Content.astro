@@ -3,10 +3,10 @@
 export interface Props {
     fullWidth?: boolean
 }
-const { fullWidth } = Astro.props;
+const { fullWidth = false } = Astro.props;
 ---
 
-<div class=`${ fullWidth ? 'full-width' : '' }`>
+<div class=`${fullWidth ? 'full-width' : ''}`>
     <slot />
 </div>
 
@@ -25,11 +25,13 @@ const { fullWidth } = Astro.props;
             width: 100%;
         }
         @include breakpoint(lg) {
-            width: 60%;
+            width: 65%;
         }
     }
 
     div.full-width {
-        width: 100%;
+        @include breakpoint(lg) {
+            width: 100%;
+        }
     }
 </style>
