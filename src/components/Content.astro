@@ -1,16 +1,35 @@
 ---
 // props
 export interface Props {
-    cols?: number
+    fullWidth?: boolean
 }
-const { cols = 4 } = Astro.props;
-
+const { fullWidth } = Astro.props;
 ---
 
-<div style=`grid-column: span ${cols}`>
+<div class=`${ fullWidth ? 'full-width' : '' }`>
     <slot />
 </div>
 
 <style lang="scss">
     @use '../assets/styles/breakpoints' as *;
+
+    div {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+        width: 100%;
+        
+        @include breakpoint(md) {
+            flex-grow: 0;
+            flex-shrink: 0;
+            width: 100%;
+        }
+        @include breakpoint(lg) {
+            width: 60%;
+        }
+    }
+
+    div.full-width {
+        width: 100%;
+    }
 </style>

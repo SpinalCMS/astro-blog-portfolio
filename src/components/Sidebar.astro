@@ -6,12 +6,12 @@
     @use '../assets/styles/breakpoints' as *;
     
     .sidebar {   
-        grid-column: span 2;
-    
-        display: flex;
+        flex: 1;
         gap: var(--space-xl);
         top: var(--space-sm);
         align-self: start;
+
+        display: flex;
 
         @include breakpoint(md) {
             position: sticky;
