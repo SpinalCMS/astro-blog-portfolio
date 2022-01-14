@@ -17,9 +17,26 @@ import Categories from '@/components/Categories'
 // data
 import Settings from '@/data/settings'
 
-export async function getStaticPaths({paginate, rss}) {
+export async function getStaticPaths({rss, paginate}) {
     const posts = await Astro.fetchContent("./*.md");
     const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    rss({
+        title: 'Dons Blog',
+        description: 'An example blog on Astro',
+        customData: `<language>en-us</language>`,
+        // The list of items for your RSS feed, sorted.
+        items: sortedPosts.map(item => ({
+            title: item.title,
+            description: item.description,
+            link: item.url,
+            pubDate: item.date,
+        })),
+        
+        // Optional: Customize where the file is written to.
+        // Defaults to "/rss.xml"
+        //dest: "/my/custom/feed.xml",
+  });
 
     return paginate(sortedPosts, { pageSize: Settings.pageSize });
 }
