@@ -43,7 +43,7 @@ The 16-35mm was great and I loved it for interior shots. But sometimes I'd find 
     <picture>
         <Image
             file="/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg"
-            classes="solid-shadow-blue"
+            classes="solid-shadow-yellow"
         />
     </picture>
     <Caption file="/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg" />

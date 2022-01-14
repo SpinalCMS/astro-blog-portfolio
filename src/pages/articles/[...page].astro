@@ -30,6 +30,8 @@ const tags = [...new Set([].concat.apply([], allPosts.map(post => post.tags)))];
 const categories = [...new Set(allPosts.map(post => post.category))];
 
 const { page } = Astro.props;
+
+console.log(page);
 ---
 
 <!DOCTYPE html>
