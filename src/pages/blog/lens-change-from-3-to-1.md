@@ -26,7 +26,7 @@ I've got three great lenses right now, the Sony Zeiss 16-35, Sony Zeiss 35mm and
 <figure>
     <picture>
         <Image
-            file="/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_001.jpg"
+            file="shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_001.jpg"
             classes="solid-shadow-blue"
         />
     </picture>
@@ -42,7 +42,7 @@ The 16-35mm was great and I loved it for interior shots. But sometimes I'd find 
 <figure>
     <picture>
         <Image
-            file="/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg"
+            file="shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg"
             classes="solid-shadow-yellow"
         />
     </picture>
