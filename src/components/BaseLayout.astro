@@ -7,20 +7,8 @@ import Footer from '@/components/Footer'
     <Navigation />
 
     <div class="container">
-        <div class="flex">
-            <slot />
-        </div>
+        <slot />
     </div>
 
     <Footer />
 </main>
-
-<style lang="scss">
-    @use '../assets/styles/breakpoints' as *;
-
-    .flex {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: var(--space-xl);
-    }
-</style>

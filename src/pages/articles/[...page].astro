@@ -6,6 +6,7 @@ import { SEO } from "astro-seo";
 import BaseHead from '@/components/BaseHead'
 import BaseLayout from '@/components/BaseLayout'
 import Heading from '@/components/Heading'
+import Flex from '@/components/Flex'
 import Content from '@/components/Content'
 import ArticleSnippet from '@/components/ArticleSnippet'
 import Pagination from '@/components/Pagination'
@@ -43,30 +44,35 @@ const { page } = Astro.props;
 
 <body>
     <BaseLayout>
-        <Heading>Articles</Heading>
-        <Content>
-            <article>
-                <p>Occasionally you'll catch me writing down my thoughts on the intersection of <a href="articles/tags/code" title="Coding Articles">coding</a>, <a href="articles/tags/photography" title="Photography Articles">photography</a> and <a href="articles/tags/cars" title="Car Articles">cars</a> (as if there is such a thing).</p>
-            </article>
-            
-            <section class="posts">
-                {page.data.map(p =>
-                    <ArticleSnippet post={p} />
-                )}
-            </section>
-
-            <Pagination page={page} />
-        </Content>
-
-        <Sidebar>
-            <div>
-                <h4>Categories</h4>
-                <Categories categories={categories} base="articles" />
+        <Heading>
+            <h1>Articles</h1>
+        </Heading>
+        
+        <Flex>
+            <Content>
+                <article>
+                    <p>Occasionally you'll catch me writing down my thoughts on the intersection of <a href="articles/tags/code" title="Coding Articles">coding</a>, <a href="articles/tags/photography" title="Photography Articles">photography</a> and <a href="articles/tags/cars" title="Car Articles">cars</a> (as if there is such a thing).</p>
+                </article>
                 
-                <h4>Tags</h4>
-                <Tags tags={tags} base="articles" />
-            </div>
-        </Sidebar>
+                <section class="posts">
+                    {page.data.map(p =>
+                        <ArticleSnippet post={p} />
+                    )}
+                </section>
+
+                <Pagination page={page} />
+            </Content>
+
+            <Sidebar>
+                <div>
+                    <h4>Categories</h4>
+                    <Categories categories={categories} base="articles" />
+                    
+                    <h4>Tags</h4>
+                    <Tags tags={tags} base="articles" />
+                </div>
+            </Sidebar>
+        </Flex>
     </BaseLayout>
 </body>
 </html>

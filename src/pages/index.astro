@@ -27,7 +27,6 @@ const allShoots = await Astro.fetchContent("./photography/*.md").slice(0,4);
         @use '../assets/styles/breakpoints' as *;
 
         .intro {
-            text-align: center;
             padding-bottom: var(--section-spacing-sm);
 
             @include breakpoint(md) {
@@ -57,7 +56,6 @@ const allShoots = await Astro.fetchContent("./photography/*.md").slice(0,4);
 
             p {
                 max-width: 90%;
-                margin: 0 auto;
             }
 
             @include breakpoint(md) {

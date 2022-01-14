@@ -1,0 +1,17 @@
+<div class="flex">
+    <slot />
+</div>
+
+<style lang="scss">
+    @use '../assets/styles/breakpoints' as *;
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        column-gap: var(--space-xl);
+
+        @include breakpoint(lg) {
+            flex-direction: row;
+        }
+    }
+</style>

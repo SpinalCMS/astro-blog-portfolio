@@ -55,7 +55,10 @@ const { params } = Astro.request
 
 <body>
     <BaseLayout>
-        <Heading>Articles Categorized by "<span style="text-transform: capitalize">{params.category}</span>"</Heading>
+        <Heading>
+            <h1>Articles Categorized by "<span style="text-transform: capitalize">{params.category}</span>"</h1>
+        </Heading>
+        
         <Content>
             <section class="posts">
                 {page.data.map(p =>

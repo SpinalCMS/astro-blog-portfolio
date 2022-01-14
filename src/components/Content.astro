@@ -6,28 +6,14 @@ export interface Props {
 const { fullWidth = false } = Astro.props;
 ---
 
-<div class=`${fullWidth ? 'full-width' : ''}`>
+<div class=`${fullWidth ? 'full-width' : 'constraint-lg'}`>
     <slot />
 </div>
 
 <style lang="scss">
     @use '../assets/styles/breakpoints' as *;
 
-    div {
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: auto;
-        width: 100%;
-        
-        @include breakpoint(md) {
-            flex-grow: 0;
-            flex-shrink: 0;
-            width: 100%;
-        }
-        @include breakpoint(lg) {
-            width: 65%;
-        }
-    }
+    
 
     div.full-width {
         @include breakpoint(lg) {

@@ -4,8 +4,10 @@ import { SEO } from "astro-seo";
 
 // components
 import BaseHead from '@/components/BaseHead'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import BaseLayout from '@/components/BaseLayout'
+import Heading from '@/components/Heading'
+import Flex from '@/components/Flex'
+import Content from '@/components/Content'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
 
@@ -29,47 +31,19 @@ const { content } = Astro.props;
         title={content.title}
         description={content.description}
     />
-
-    <style lang="scss">
-        .intro {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-lg);
-
-            h1, .description { margin: 0; }
-        }
-
-        .meta {
-            p {
-                font-size: var(--text-md);
-                margin: 0;
-            }
-        }
-        
-        :global(img) {
-            margin-bottom: var(--space-sm);
-        }
-        :global(figure) {
-            margin: var(--space-xl) 0;
-        }
-    </style>
 </head>
 
 <body>
-    <main class="post">
-        <header class="container">
-            <Navigation />
+    <BaseLayout>
+        <Heading>
+            <h1>{content.title}</h1>
+            <p class="description">{content.excerpt}</p>
+        </Heading>
 
-            <div class="constraint-md intro">
-                <h1>{content.title}</h1>
-                <p class="description">{content.excerpt}</p>
-            </div>
-        </header>
-
-        <section class="container content">
-            <div class="constraint-md">
+        <Flex>
+            <Content>
                 <slot />
-            </div>
+            </Content>
 
             <Sidebar>
                 <div class="meta">
@@ -84,9 +58,7 @@ const { content } = Astro.props;
                     </div>
                 </div>
             </Sidebar>
-        </section>
-
-        <Footer />
-    </main>
+        </Flex>
+    </BaseLayout>
 </body>
 </html>

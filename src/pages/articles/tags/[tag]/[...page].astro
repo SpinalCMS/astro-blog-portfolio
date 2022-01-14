@@ -55,7 +55,10 @@ const { params } = Astro.request
 
 <body>
     <BaseLayout>
-        <Heading>Articles Tagged with "<span style="text-transform: capitalize">{params.tag}</span>"</Heading>
+        <Heading>
+            <h1>Articles Tagged with "<span style="text-transform: capitalize">{params.tag}</span>"</h1>
+        </Heading>
+        
         <Content>
             <section class="posts">
                 {page.data.map(p =>

@@ -5,6 +5,7 @@ import { SEO } from "astro-seo";
 // components
 import BaseHead from '@/components/BaseHead'
 import BaseLayout from '@/components/BaseLayout'
+import Heading from '@/components/Heading'
 import Content from '@/components/Content'
 import ShootSnippet from '@/components/ShootSnippet'
 import Pagination from '@/components/Pagination'
@@ -30,9 +31,12 @@ const { page } = Astro.props;
 
 <body>
     <BaseLayout>
+        <Heading>
+            <h1>Photography</h1>
+        </Heading>
+        
         <Content>
             <article>
-                <h1>Photography</h1>
                 <p>Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
                 <p>If I have some free time, you might catch me over at <a href="https://www.facebook.com/CoffeeWithCars/" title="Coffee With Cars in Dripping Springs">Coffee With Cars in Dripping Springs, TX</a>. It's currently hosted at Dreamland on the last Sunday of the month at 8am.</p>
                 <p>Currently I'm shooting with a Sony Alpha A7iii and a host of Zeiss Batis lenses. I'm also always on the lookout for new Peak Design gear, everything they make is incredible.</p>

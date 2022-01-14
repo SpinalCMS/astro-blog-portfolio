@@ -5,6 +5,7 @@ import { SEO } from "astro-seo";
 // components
 import BaseHead from '@/components/BaseHead'
 import BaseLayout from '@/components/BaseLayout'
+import Heading from '@/components/Heading'
 import Content from '@/components/Content'
 ---
 
@@ -20,9 +21,12 @@ import Content from '@/components/Content'
 
 <body>
     <BaseLayout>
+        <Heading>
+            <h1>About Me</h1>
+        </Heading>
+        
         <Content>
             <article>
-                <h1>About Me</h1>
                 <p>My name is Erik, and I'm a digital marketing expert in Austin, TX. I'm currently running the SEM and CRO operations for <a href="http://www.icgamerica.com" title="ICG America, Inc.">ICG America</a>.</p>
 
                 <h2>Digital Marketing</h2>
