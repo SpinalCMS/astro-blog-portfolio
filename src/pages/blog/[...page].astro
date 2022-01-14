@@ -8,7 +8,7 @@ import BaseLayout from '@/components/BaseLayout'
 import Heading from '@/components/Heading'
 import Flex from '@/components/Flex'
 import Content from '@/components/Content'
-import ArticleSnippet from '@/components/ArticleSnippet'
+import PostSnippet from '@/components/PostSnippet'
 import Pagination from '@/components/Pagination'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
@@ -37,7 +37,7 @@ const { page } = Astro.props;
 <head>
     <BaseHead />
     <SEO
-        title="Articles - Digital Marketing, Jamstack Programming and Car Photography"
+        title="Blog - Digital Marketing, Jamstack Programming and Car Photography"
         description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. He&#39;s also an automotive photographer shooting photos at Austin car shows."
     />
 </head>
@@ -45,18 +45,20 @@ const { page } = Astro.props;
 <body>
     <BaseLayout>
         <Heading>
-            <h1>Articles</h1>
+            <h1>Blog</h1>
         </Heading>
         
         <Flex>
             <Content>
-                <article>
-                    <p>Occasionally you'll catch me writing down my thoughts on the intersection of <a href="articles/tags/code" title="Coding Articles">coding</a>, <a href="articles/tags/photography" title="Photography Articles">photography</a> and <a href="articles/tags/cars" title="Car Articles">cars</a> (as if there is such a thing).</p>
-                </article>
+                {page.currentPage > 1 ? `` : 
+                    `<article>
+                        <p>Occasionally you'll catch me writing down my thoughts on the intersection of <a href="blog/tags/code" title="Coding Posts">coding</a>, <a href="blog/tags/photography" title="Photography Posts">photography</a> and <a href="blog/tags/cars" title="Car Posts">cars</a> (as if there is such a thing).</p>
+                    </article>`
+                }
                 
                 <section class="posts">
                     {page.data.map(p =>
-                        <ArticleSnippet post={p} />
+                        <PostSnippet post={p} />
                     )}
                 </section>
 
@@ -66,10 +68,10 @@ const { page } = Astro.props;
             <Sidebar>
                 <div>
                     <h4>Categories</h4>
-                    <Categories categories={categories} base="articles" />
+                    <Categories categories={categories} base="blog" />
                     
                     <h4>Tags</h4>
-                    <Tags tags={tags} base="articles" />
+                    <Tags tags={tags} base="blog" />
                 </div>
             </Sidebar>
         </Flex>

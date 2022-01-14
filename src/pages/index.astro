@@ -7,10 +7,10 @@ import BaseHead from '@/components/BaseHead'
 import BaseLayout from '@/components/BaseLayout'
 import Content from '@/components/Content'
 import Image from "@/components/image/Image"
-import ArticleSnippet from '@/components/ArticleSnippet'
+import PostSnippet from '@/components/PostSnippet'
 import ShootSnippet from '@/components/ShootSnippet'
 
-const allPosts = await Astro.fetchContent("./articles/*.md").slice(0,2);
+const allPosts = await Astro.fetchContent("./blog/*.md").slice(0,2);
 const allShoots = await Astro.fetchContent("./photography/*.md").slice(0,4);
 ---
 
@@ -156,12 +156,12 @@ const allShoots = await Astro.fetchContent("./photography/*.md").slice(0,4);
             <section class="recent-posts">
                 <div class="headline">
                     <h2>Recent Posts</h2>
-                    <a href="/articles" class="pill pill-primary" title="View All Articles">View All</a>
+                    <a href="/blog" class="pill pill-primary" title="View All Posts">View All</a>
                 </div>
 
                 <div class="posts">
                     {allPosts.map(p =>
-                        <ArticleSnippet post={p} />
+                        <PostSnippet post={p} />
                     )}
                 </div>
             </section>

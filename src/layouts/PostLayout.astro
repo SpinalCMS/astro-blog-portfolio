@@ -66,11 +66,11 @@ const { content } = Astro.props;
                     <h4>Post Meta</h4>
                     
                     <p>Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
-                    <p>Filed under <span style="text-transform: capitalize"><a href="/articles/categories/${content.category}" title="Posts categorized under '${content.category}'">{content.category}</a></span></p>
+                    <p>Filed under <span style="text-transform: capitalize"><a href="/blog/categories/${content.category}" title="Posts categorized under '${content.category}'">{content.category}</a></span></p>
 
                     <div>
                         <h5>Tags</h5>
-                        <Tags tags={content.tags} base="articles" />
+                        <Tags tags={content.tags} base="blog" />
                     </div>
                 </div>
             </Sidebar>

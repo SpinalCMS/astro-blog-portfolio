@@ -10,8 +10,8 @@
         "order": 2
     },
     {
-        "display": "Articles",
-        "url": "/articles",
+        "display": "Blog",
+        "url": "/blog",
         "order": 3
     },
     {

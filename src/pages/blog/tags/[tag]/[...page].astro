@@ -7,7 +7,7 @@ import BaseHead from '@/components/BaseHead'
 import BaseLayout from '@/components/BaseLayout'
 import Heading from '@/components/Heading'
 import Content from '@/components/Content'
-import ArticleSnippet from '@/components/ArticleSnippet'
+import PostSnippet from '@/components/PostSnippet'
 import Pagination from '@/components/Pagination'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
@@ -18,18 +18,18 @@ import Settings from '@/data/settings'
 
 export async function getStaticPaths({ paginate }) {
     const allPosts = Astro.fetchContent('../../*.md');
-    const allCategories = new Set();
+    const allTags = new Set();
     
     allPosts.map(post => {
-        allCategories.add(post.category.toLowerCase());
+        post.tags && post.tags.map(tag => allTags.add(tag.toLowerCase()))
     });
     
-    return Array.from(allCategories).map((category) => {
-        const filteredPosts = allPosts.filter((post) => post.category.includes(category));
+    return Array.from(allTags).map((tag) => {
+        const filteredPosts = allPosts.filter((post) => post.tags.includes(tag));
         const sortedPosts = filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
         
         return paginate(sortedPosts, {
-            params: { category },
+            params: { tag },
             pageSize: Settings.pageSize
         });
     });
@@ -48,7 +48,7 @@ const { params } = Astro.request
 <head>
     <BaseHead />
     <SEO
-        title="Articles - Digital Marketing, Jamstack Programming and Car Photography"
+        title="Blog - Digital Marketing, Jamstack Programming and Car Photography"
         description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. He&#39;s also an automotive photographer shooting photos at Austin car shows."
     />
 </head>
@@ -56,13 +56,13 @@ const { params } = Astro.request
 <body>
     <BaseLayout>
         <Heading>
-            <h1>Articles Categorized by "<span style="text-transform: capitalize">{params.category}</span>"</h1>
+            <h1>Posts Tagged with "<span style="text-transform: capitalize">{params.tag}</span>"</h1>
         </Heading>
         
         <Content>
             <section class="posts">
                 {page.data.map(p =>
-                    <ArticleSnippet post={p} />
+                    <PostSnippet post={p} />
                 )}
             </section>
 
@@ -71,11 +71,11 @@ const { params } = Astro.request
 
         <Sidebar>
             <div>
-                <h4>Categories</h4> 
-                <Categories categories={categories} base="articles" />
+                <h4>Categories</h4>
+                <Categories categories={categories} base="blog" />
 
                 <h4>Tags</h4>
-                <Tags tags={tags} base="articles" />
+                <Tags tags={tags} base="blog" />
             </div>
         </Sidebar>
     </BaseLayout>

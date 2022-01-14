@@ -16,7 +16,7 @@ const { post } = Astro.props;
     
     <div class="meta">
         <time>{timeAgo(post.date)}</time>
-        <a href=`/articles/categories/${post.category}` title={post.title} class="category">{post.category}</a>
+        <a href=`/blog/categories/${post.category}` title={post.title} class="category">{post.category}</a>
     </div>
 
     <p>{post.description}</p>
