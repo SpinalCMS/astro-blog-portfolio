@@ -31,6 +31,22 @@ const { content } = Astro.props;
         title={content.title}
         description={content.description}
     />
+
+    <style lang="scss">
+        .meta {
+            p {
+                font-size: var(--text-md);
+                margin: 0;
+            }
+        }
+        
+        :global(img) {
+            margin-bottom: var(--space-sm);
+        }
+        :global(figure) {
+            margin: var(--space-xl) 0;
+        }
+    </style>
 </head>
 
 <body>

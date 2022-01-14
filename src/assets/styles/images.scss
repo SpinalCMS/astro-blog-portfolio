@@ -1,5 +1,7 @@
 img {
     vertical-align: top; // remove spacing underneath image
+    width: 100%;
+    height: auto;
     border-radius: var(--site-radius);
 }
 
