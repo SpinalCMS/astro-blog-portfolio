@@ -102,11 +102,11 @@ Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in F
 
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
-        <figure>
+        <figure class="gallery-image">
             <picture>
                 <Image file={i} />
             </picture>
-            <Caption file={i} showDesc=true />
+            <Caption file={i} showDesc=false />
         </figure>
     )}
 </div>
@@ -119,7 +119,7 @@ Once we finished at CPR Classic, we hopped in our van and drove through beautifu
             <Image
                 file={i}
             />
-            <Caption file={i} showDesc=true />
+            <Caption file={i} showDesc="false" />
     )}
 </div>
 
