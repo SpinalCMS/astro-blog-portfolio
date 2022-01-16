@@ -1,17 +1,14 @@
 ---
-import { fullDate } from '@/functions/DateTime'
 import { getMetadata } from '@/functions/Image'
 
 // props
 export interface Props {
     file: string;
-    showDesc: boolean;
+    showDesc?: boolean;
 }
-const { file, showDesc = "false" } = Astro.props;
+const { file, showDesc = false } = Astro.props;
 
 const metadata = await getMetadata(file);
-
-console.log(showDesc);
 ---
 
 <style lang="scss">

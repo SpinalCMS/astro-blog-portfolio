@@ -23,8 +23,27 @@ let ratio = dimensions.width * rowHeight / dimensions.height;
 let padding = dimensions.height / dimensions.width * 100;
 
 ---
+
+<style lang="scss">
+    div { 
+        margin: 2px;
+        position: relative;
+
+        i {
+            display: block;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            vertical-align: bottom;
+        }
+    }
+</style>
+
 <div style={`width:${ratio}px; flex-grow:${ratio}`}>
-    <i style={`padding-bottom:${padding}%`}></i>
+    <!--<i style={`padding-bottom:${padding}%`}></i>-->
     
     <slot />
 </div>
+

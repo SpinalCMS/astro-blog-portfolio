@@ -4,6 +4,7 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
+  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -102,12 +103,9 @@ Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in F
 
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
-        <figure class="gallery-image">
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showDesc=false />
-        </figure>
+        <Gallery file={i}>
+            <Image file={i} />
+        </Gallery>
     )}
 </div>
 

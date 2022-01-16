@@ -21,6 +21,14 @@ img {
 }
 
 .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+
+    &::after {
+        content: '';
+        flex-grow: 999999999;
+    }
 }
 
 /* solid shadow styles */
