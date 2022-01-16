@@ -4,6 +4,7 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
+  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -87,37 +88,33 @@ gallery04:
 After a refreshing night stay at the Hilton Airport Hotel in Los Angeles (kidding, it was packed and crazy) we woke up ready to start day two at Callas Rennsport. It's interesting going to some of these shops. You pull into a no-name industrial area. It's not generally a great area, and yet, sitting in front of you is a Porsche 959, actually mulitple 959's in the parking lot. For those that don't know, a 959 is worth in excess of $1,000,000.
 
 <div class="gallery">
-	{frontmatter.gallery01.map(i =>
-            <Image
-                file={i}
-            />
-            <Caption file={i} showDesc=true />
+    {frontmatter.gallery01.map(i =>
+        <Gallery file={i}>
+            <Image file={i} />
+        </Gallery>
     )}
 </div>
 
 <div class="gallery">
-	{frontmatter.gallery02.map(i =>
-            <Image
-                file={i}
-            />
-            <Caption file={i} showDesc=true />
+    {frontmatter.gallery02.map(i =>
+        <Gallery file={i}>
+            <Image file={i} />
+        </Gallery>
     )}
 </div>
 
 <div class="gallery">
-	{frontmatter.gallery03.map(i =>
-            <Image
-                file={i}
-            />
-            <Caption file={i} showDesc=true />
+    {frontmatter.gallery03.map(i =>
+        <Gallery file={i}>
+            <Image file={i} />
+        </Gallery>
     )}
 </div>
 
 <div class="gallery">
-	{frontmatter.gallery04.map(i =>
-            <Image
-                file={i}
-            />
-            <Caption file={i} showDesc=true />
+    {frontmatter.gallery04.map(i =>
+        <Gallery file={i}>
+            <Image file={i} />
+        </Gallery>
     )}
 </div>

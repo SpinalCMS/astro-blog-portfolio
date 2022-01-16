@@ -32,7 +32,7 @@ let padding = dimensions.height / dimensions.width * 100;
         i {
             display: block;
         }
-        img {
+        :global(img) {
             position: absolute;
             top: 0;
             width: 100%;
@@ -42,7 +42,7 @@ let padding = dimensions.height / dimensions.width * 100;
 </style>
 
 <div style={`width:${ratio}px; flex-grow:${ratio}`}>
-    <!--<i style={`padding-bottom:${padding}%`}></i>-->
+    <i style={`padding-bottom:${padding}%`}></i>
     
     <slot />
 </div>

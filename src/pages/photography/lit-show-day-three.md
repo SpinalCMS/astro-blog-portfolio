@@ -4,6 +4,7 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
+  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -70,27 +71,24 @@ gallery03:
 
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
-            <Image
-                file={i}
-            />
-            <Caption file={i} showDesc=true />
+        <Gallery file={i}>
+            <Image file={i} />
+        </Gallery>
     )}
 </div>
 
 <div class="gallery">
     {frontmatter.gallery02.map(i =>
-            <Image
-                file={i}
-            />
-            <Caption file={i} showDesc=true />
+        <Gallery file={i}>
+            <Image file={i} />
+        </Gallery>
     )}
 </div>
 
 <div class="gallery">
     {frontmatter.gallery03.map(i =>
-            <Image
-                file={i}
-            />
-            <Caption file={i} showDesc=true />
+        <Gallery file={i}>
+            <Image file={i} />
+        </Gallery>
     )}
 </div>
