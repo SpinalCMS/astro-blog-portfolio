@@ -6,13 +6,18 @@ setup: |
   import Caption from "@/components/image/Caption"
 
 # meta
-tags:
-    - photography
-    - zeiss
-    - batis
+tags: 
+  - photography
+  - zeiss
+  - batis
 category: photography
 featured: true
 date: 2018-04-08
+
+# related
+related:
+  - /blog/sigma-art-ruined-me
+  - /blog/lens-change-from-3-to-1
 
 # content
 title: Out With the Batis, On to Zony

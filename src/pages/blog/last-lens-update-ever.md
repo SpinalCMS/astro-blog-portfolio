@@ -15,6 +15,11 @@ category: photography
 featured: true
 date: 2020-01-27
 
+# related
+related:
+    - /blog/car-photography-update
+    - /blog/new-camera-and-lenses
+
 # content
 title: My Last Lens Update, Ever
 description: 2 camera bodies and 11 lenses later, I've finally settled on a complete setup. I'm going full Batis

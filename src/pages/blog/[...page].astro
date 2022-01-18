@@ -22,8 +22,8 @@ export async function getStaticPaths({rss, paginate}) {
     const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     rss({
-        title: 'Dons Blog',
-        description: 'An example blog on Astro',
+        title: 'Erik S. Olsen',
+        description: 'Erik Olsen lives in Austin, Texas and is the Director of Digital Engagement at ICG America',
         customData: `<language>en-us</language>`,
         // The list of items for your RSS feed, sorted.
         items: sortedPosts.map(item => ({

@@ -21,6 +21,7 @@ description: Day one at LIT Show 2020 takes us to CPR Classic, Wholesale Califor
 related:
   - lit-show-day-two
   - lit-show-day-three
+  - lit-show-day-four
 
 # photos
 hero: shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_087.jpg

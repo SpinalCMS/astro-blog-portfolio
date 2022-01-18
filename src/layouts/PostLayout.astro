@@ -10,6 +10,7 @@ import Flex from '@/components/Flex'
 import Content from '@/components/Content'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
+import RelatedPosts from '@/components/RelatedPosts'
 
 // functions
 import { fullDate } from '@/functions/DateTime'
@@ -72,7 +73,11 @@ const { content } = Astro.props;
                         <h5>Tags</h5>
                         <Tags tags={content.tags} base="blog" />
                     </div>
+
+                    
                 </div>
+
+                <RelatedPosts posts={content.related} />
             </Sidebar>
         </Flex>
     </BaseLayout>
