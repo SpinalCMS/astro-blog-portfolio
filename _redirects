@@ -1,0 +1,14 @@
+# Netlify Redirects
+# Browser request > URL to serve > status code
+/blog/2017/01/11/new-camera-and-lenses              /blog/new-camera-and-lenses/                301
+/blog/2018/04/08/out-with-the-batis-on-to-zony      /blog/out-with-the-batis-on-to-zony/        301
+/blog/2018/08/11/car-photography-update             /blog/car-photography-update/               301
+/blog/2019/04/08/lens-change-from-3-to-1            /blog/lens-change-from-3-to-1/              301
+/blog/2019/08/07/sigma-art-ruined-me                /blog/sigma-art-ruined-me/                  301
+/blog/2020/01/27/my-last-lens-update-ever           /blog/my-last-lens-update-ever/             301
+/blog/2020/04/30/dynamic-bookmarks-in-google-chrome /blog/dynamic-bookmarks-in-google-chrome    301
+
+/resume /about  301
+
+# 404
+/* /404 404
