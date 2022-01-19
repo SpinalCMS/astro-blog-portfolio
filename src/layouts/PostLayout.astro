@@ -10,7 +10,6 @@ import Flex from '@/components/Flex'
 import Content from '@/components/Content'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
-import RelatedPosts from '@/components/RelatedPosts'
 
 // functions
 import { fullDate } from '@/functions/DateTime'
@@ -22,13 +21,6 @@ export interface Props {
     };
 }
 const { content } = Astro.props;
-
-const allPosts = await Astro.fetchContent("../pages/**/*.md"); // get all posts
-let testVar = content.related.map(featured => {
-    //return allPosts.filter(post => post.url.includes(featured));
-    return 1+1;
-});
-console.log(testVar);
 ---
 
 <!DOCTYPE html>
@@ -83,8 +75,6 @@ console.log(testVar);
 
                     
                 </div>
-
-                <!--<RelatedPosts posts={content.related} />-->
             </Sidebar>
         </Flex>
     </BaseLayout>
