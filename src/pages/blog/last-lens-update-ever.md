@@ -18,7 +18,6 @@ date: 2020-01-27
 # related
 related:
     - /blog/car-photography-update
-    - /blog/new-camera-and-lenses
 
 # content
 title: My Last Lens Update, Ever
