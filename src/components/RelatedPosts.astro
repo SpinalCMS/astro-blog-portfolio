@@ -7,14 +7,12 @@ const { posts } = Astro.props;
 
 const allPosts = await Astro.fetchContent("../pages/**/*.md"); // get all posts
 const featuredPosts = posts.map((featured) => {
-    return allPosts.filter((post) => post.url.includes(featured)).slice(0,1);
+    return allPosts.filter(post => post.url.includes(featured));
 });
-
-console.log(featuredPosts);
 ---
 
 <div>
-    {featuredPosts.map((posting) => (
+    {featuredPosts.map(posting => (
         <div>{posting}</div>
     ))}
 </div>
