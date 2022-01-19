@@ -5,14 +5,14 @@ export interface Props {
 }
 const { posts } = Astro.props;
 
-const allPosts = await Astro.fetchContent("../pages/**/*.md"); // get all posts
-const featuredPosts = posts.map((featured) => {
-    return allPosts.filter(post => post.url.includes(featured));
-});
+// const allPosts = await Astro.fetchContent("../pages/**/*.md"); // get all posts
+// const featuredPosts = posts.map((featured) => {
+//     return allPosts.filter(post => post.url.includes(featured));
+// });
 ---
 
-<div>
+<!-- <div>
     {featuredPosts.map(posting => (
         <div>{posting}</div>
     ))}
-</div>
+</div> -->
