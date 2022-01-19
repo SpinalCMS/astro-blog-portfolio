@@ -14,6 +14,11 @@ category: photography
 featured: true
 date: 2019-04-08
 
+# related
+related:
+  - /blog/sigma-art-ruined-me
+  - /blog/my-last-lens-update-ever
+
 # content
 title: Lens Change - From 3 to 1
 description: I'm currently loaded up with three awesome Sony Zeiss lenses. But it's time to downsize to one long zoom

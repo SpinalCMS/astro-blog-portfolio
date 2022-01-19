@@ -47,6 +47,12 @@ const { content } = Astro.props;
         :global(figure) {
             margin: var(--space-xl) 0;
         }
+
+        .tags {
+            p, :global(ul) {
+                display: inline;
+            }
+        }
     </style>
 </head>
 
@@ -68,13 +74,18 @@ const { content } = Astro.props;
                     <p>Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
                     <p>Filed under <span style="text-transform: capitalize"><a href="/blog/categories/${content.category}" title="Posts categorized under '${content.category}'">{content.category}</a></span></p>
                     
-                    <Tags tags={content.tags} base="blog" />
+                    <div class="tags">
+                        <p>Tagged in</p>
+                        <Tags tags={content.tags} base="blog" />
+                    </div>
                 </div>
 
-                <div>
-                    <h4>Related Posts</h4>
-                    <RelatedPost posts={content.related} />
-                </div>
+                {content.related ? 
+                    <div>
+                        <h4>Related Posts</h4>
+                        <RelatedPost posts={content.related} />
+                    </div>
+                 : ``}
             </Sidebar>
         </Flex>
     </BaseLayout>

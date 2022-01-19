@@ -17,7 +17,8 @@ date: 2020-01-27
 
 # related
 related:
-    - /blog/car-photography-update
+  - /blog/sigma-art-ruined-me
+  - /blog/lens-change-from-3-to-1
 
 # content
 title: My Last Lens Update, Ever

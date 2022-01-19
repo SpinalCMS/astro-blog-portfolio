@@ -15,6 +15,11 @@ category: photography
 featured: true
 date: 2018-08-11
 
+# related
+related:
+  - /blog/lens-change-from-3-to-1
+  - /blog/sigma-art-ruined-me
+
 # content
 title: Car Photography Update
 description: I've started shooting lots of cars for Bring a Trailer auctions. That means I'm in need of a lens upgrade!

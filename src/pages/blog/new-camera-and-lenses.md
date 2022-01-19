@@ -15,6 +15,11 @@ category: photography
 featured: true
 date: 2017-01-11
 
+# related
+related:
+  - /blog/out-with-the-batis-on-to-zony
+  - /blog/car-photography-update
+
 # content
 title: New Camera and Lenses
 description: As much as I love my A6000, it's time for an upgrade. I'm making the jump to a full frame Sony A7ii along with Zeiss Batis lenses.

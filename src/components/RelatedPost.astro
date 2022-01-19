@@ -8,7 +8,7 @@ const { posts } = Astro.props;
 // get all posts
 const allPosts = Astro.fetchContent('../pages/**/*.md');
 const relatedPosts = posts.map(r => {
-    return allPosts.filter((post) => post.url.includes(r));
+    return allPosts.find((post) => post.url.includes(r));
 });
 ---
 
@@ -18,8 +18,8 @@ const relatedPosts = posts.map(r => {
 </style>
 
 <div>
-    {relatedPosts[0].map(r => 
-        <h5>{r.title}</h5>
+    {relatedPosts.map(r => 
+        <a href={r.url} title={r.title}><h5>{r.title}</h5></a>
         <p>{r.description}</p>
     )}
 </div>

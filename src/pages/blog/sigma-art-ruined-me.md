@@ -14,6 +14,11 @@ category: photography
 featured: true
 date: 2019-08-07
 
+# related
+related:
+  - /blog/my-last-lens-update-ever
+  - /blog/lens-change-from-3-to-1
+
 # content
 title: Sigma Art Ruined Me
 description: On a whim I decided to try out a few of Sigma's Art Lenses. Now I have to own one. I'm blown away

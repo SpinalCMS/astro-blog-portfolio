@@ -16,7 +16,7 @@ date: 2018-04-08
 
 # related
 related:
-  - /blog/sigma-art-ruined-me
+  - /blog/car-photography-update
   - /blog/lens-change-from-3-to-1
 
 # content
