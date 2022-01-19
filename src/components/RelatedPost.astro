@@ -1,0 +1,25 @@
+---
+// props
+export interface Props {
+    posts: object,
+}
+const { posts } = Astro.props;
+
+// get all posts
+const allPosts = Astro.fetchContent('../pages/**/*.md');
+const relatedPosts = posts.map(r => {
+    return allPosts.filter((post) => post.url.includes(r));
+});
+---
+
+<style lang="scss">
+    h5 { margin-bottom: var(--space-sm); }
+    p { font-size: var(--text-sm); }
+</style>
+
+<div>
+    {relatedPosts[0].map(r => 
+        <h5>{r.title}</h5>
+        <p>{r.description}</p>
+    )}
+</div>

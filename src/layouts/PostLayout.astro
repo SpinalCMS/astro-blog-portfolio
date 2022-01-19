@@ -10,6 +10,7 @@ import Flex from '@/components/Flex'
 import Content from '@/components/Content'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
+import RelatedPost from '@/components/RelatedPost'
 
 // functions
 import { fullDate } from '@/functions/DateTime'
@@ -64,16 +65,15 @@ const { content } = Astro.props;
             <Sidebar>
                 <div class="meta">
                     <h4>Post Meta</h4>
-                    
                     <p>Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
                     <p>Filed under <span style="text-transform: capitalize"><a href="/blog/categories/${content.category}" title="Posts categorized under '${content.category}'">{content.category}</a></span></p>
-
-                    <div>
-                        <h5>Tags</h5>
-                        <Tags tags={content.tags} base="blog" />
-                    </div>
-
                     
+                    <Tags tags={content.tags} base="blog" />
+                </div>
+
+                <div>
+                    <h4>Related Posts</h4>
+                    <RelatedPost posts={content.related} />
                 </div>
             </Sidebar>
         </Flex>
