@@ -16,7 +16,7 @@ date: 2019-08-07
 
 # related
 related:
-  - /blog/my-last-lens-update-ever
+  - /blog/last-lens-update-ever
   - /blog/lens-change-from-3-to-1
 
 # content

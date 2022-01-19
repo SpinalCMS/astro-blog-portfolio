@@ -17,7 +17,7 @@ date: 2019-04-08
 # related
 related:
   - /blog/sigma-art-ruined-me
-  - /blog/my-last-lens-update-ever
+  - /blog/last-lens-update-ever
 
 # content
 title: Lens Change - From 3 to 1
