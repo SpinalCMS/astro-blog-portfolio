@@ -10,12 +10,20 @@ import Settings from '@/data/settings'
 <link rel="stylesheet" href={Astro.resolve('../assets/styles/_global.scss')}>
 
 <script>
-    window.GUMLET_CONFIG = {
-        hosts: [{
-            current: "https://eriksolsen.com",
-            gumlet: "https://eriksolsen.gumlet.io"
-        }],
-        lazy_load: true,
-    };
-    (function(){d=document;s=d.createElement("script");s.src="https://cdn.gumlet.com/gumlet.js/2.1/gumlet.min.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    (function(src, cb) {
+        var s = document.createElement('script');
+        s.setAttribute('src', src);
+        s.onload = cb;
+        (document.head || document.body).appendChild(s);
+    })('https://ucarecdn.com/libs/blinkloader/3.x/blinkloader.min.js', function() {
+        window.Blinkloader.optimize({
+            "pubkey": "0ca93eb51f9f128c47f5",
+            "responsive": true,
+            "smartCompression": true,
+            "retina": true,
+            "webp": true,
+            "fadeIn": true,
+            "lazyload": true
+        });
+    })
 </script>
