@@ -22,6 +22,9 @@
     --site-transition: .3s;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: var(--body-top-margin-sm) 0 0 0;
 
