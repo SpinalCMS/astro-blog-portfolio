@@ -1,26 +1,142 @@
+<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+
+<div class="mobile solid-shadow-yellow">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+</div>
+
 <aside class="sidebar">
     <slot />
 </aside>
 
 <style lang="scss">
     @use '../assets/styles/breakpoints' as *;
+
+    input[type=checkbox] {
+        transition: all 0.3s;
+        box-sizing: border-box;
+        display: none;
+    }
+    input[type=checkbox]:checked ~ .sidebar {
+        transform: translateX(0);
+    }
+    input[type=checkbox]:checked + .mobile label .horizontal {
+        transition: all 0.3s;
+        box-sizing: border-box;
+        opacity: 0;
+        color: red;
+    }
+    input[type=checkbox]:checked + .mobile label .diagonal.part-1 {
+        transition: all 0.3s;
+        box-sizing: border-box;
+        transform: rotate(135deg);
+        margin-top: 8px;
+    }
+    input[type=checkbox]:checked + .mobile label .diagonal.part-2 {
+        transition: all 0.3s;
+        box-sizing: border-box;
+        transform: rotate(-135deg);
+        margin-top: -9px;
+    }
     
     .sidebar {   
-        flex: 1;
-        gap: var(--space-xl);
-        top: var(--space-sm);
-        align-self: start;
-
         display: flex;
         flex-direction: column;
+        gap: var(--space-xl);
+        z-index: 99;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        background: var(--color-blue-10);
 
-        @include breakpoint(md) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100%;
+        padding: 0 var(--space-lg);
+        transform: translateX(350px);
+        transition: transform 250ms ease-in-out;
+
+        @include breakpoint(lg) {
             position: sticky;
+            top: var(--space-sm);
+            right: auto;
+            width: auto;
+            height: auto;
+            transform: none;
+            transition: none;
+            align-self: start;
+            padding: 0;
+            
+            flex: 1;
+            min-width: 200px;
         }
 
         :global(a) {
             text-decoration: underline;
             text-decoration-color: var(--color-grayscale-40);
+        }
+    }
+
+    .mobile {
+        position: fixed;
+        z-index: 100;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--color-blue-30);
+
+        width: 40px;
+        height: 40px;
+        border-radius: var(--site-radius);
+
+        &.solid-shadow-yellow {
+            box-shadow: 0.25rem 0.25rem var(--color-blue-60);
+        }
+
+        .sidebarIconToggle {
+            transition: all 0.3s;
+            width: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        .spinner {
+            transition: all 0.3s;
+            box-sizing: border-box;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background-color: var(--color-midnight-90);
+            border-radius: var(--site-radius);
+        }
+        .horizontal {
+            transition: all 0.3s;
+            box-sizing: border-box;
+            position: relative;
+            float: left;
+            margin-top: 3px;
+        }
+        .diagonal.part-1 {
+            position: relative;
+            transition: all 0.3s;
+            box-sizing: border-box;
+            float: left;
+        }
+        .diagonal.part-2 {
+            transition: all 0.3s;
+            box-sizing: border-box;
+            position: relative;
+            float: left;
+            margin-top: 3px;
+        }
+
+        @include breakpoint(lg) {
+            display: none;
         }
     }
 </style>

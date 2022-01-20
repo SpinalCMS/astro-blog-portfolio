@@ -9,26 +9,34 @@ const { headers } = Astro.props;
 <style lang="scss">
     ul {
         list-style-type: none;
-        padding: 0;
 
         display: flex;
         flex-direction: column;
         gap: var(--space-sm);
-    }
-    li {
 
+        li {
+            a {
+                text-decoration: none;
+            }
+            &.active {
+                font-weight: 500;
+                text-decoration: underline;
+            }
 
-        &.depth-3 {
-            margin-left: var(--space-md);
-        }
-        &.depth-4 {
-            margin-left: var(--space-lg);
+            &.depth-3 {
+                margin-left: var(--space-lg);
+                font-size: var(--text-sm);
+            }
+            &.depth-4 {
+                margin-left: var(--space-xl);
+                
+            }
         }
     }
 </style>
 
 <div>
-    <ul>
+    <ul class="toc">
         {headers.map(h => 
             <li class="depth-${h.depth}">
                 <a href="#${h.slug}">{h.text}</a>
@@ -36,3 +44,24 @@ const { headers } = Astro.props;
         )}
     </ul>
 </div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {                
+                const id = entry.target.getAttribute('id');
+
+                if (entry.intersectionRatio > 0) {
+                    document.querySelector(`ul.toc li a[href="#${id}"]`).parentElement.classList.add('active');
+                } else {
+                    document.querySelector(`ul.toc li a[href="#${id}"]`).parentElement.classList.remove('active');
+                }
+            });
+        });
+
+        // Track all sections that have an `id` applied
+        document.querySelectorAll('h2[id], h3[id], h4[id]').forEach((section) => {
+            observer.observe(section);
+        });
+    });
+</script>
