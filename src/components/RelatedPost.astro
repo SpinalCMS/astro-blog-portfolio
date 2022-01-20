@@ -6,7 +6,7 @@ export interface Props {
 const { posts } = Astro.props;
 
 // get all posts
-const allPosts = Astro.fetchContent('../pages/**/*.md');
+const allPosts = Astro.fetchContent('../pages/blog/new-camera-and-lenses.md');
 const relatedPosts = posts.map(r => {
     return allPosts.find((post) => post.url.includes(r));
 });
@@ -17,9 +17,9 @@ const relatedPosts = posts.map(r => {
     p { font-size: var(--text-sm); }
 </style>
 
-<div>
+<!-- <div>
     {relatedPosts.map(r => 
         <a href={r.url} title={r.title}><h5>{r.title}</h5></a>
         <p>{r.description}</p>
     )}
-</div>
+</div> -->
