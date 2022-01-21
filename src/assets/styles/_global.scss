@@ -38,7 +38,7 @@ body {
     }
     @include breakpoint(lg) {
         background-image:
-            radial-gradient(circle at top right, var(--color-pink-10) 50vw, transparent 100vw),
+            radial-gradient(circle at top right, var(--color-pink-10) 10vw, transparent 100vw),
             radial-gradient(circle at bottom left, var(--color-yellow-10) 40vw, transparent 100vw);
     }
 }
