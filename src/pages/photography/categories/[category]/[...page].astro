@@ -8,7 +8,7 @@ import BaseLayout from '@/components/BaseLayout'
 import Heading from '@/components/Heading'
 import Flex from '@/components/Flex'
 import Content from '@/components/Content'
-import PostSnippet from '@/components/PostSnippet'
+import ShootSnippet from '@/components/ShootSnippet'
 import Pagination from '@/components/Pagination'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
@@ -57,14 +57,14 @@ const { params } = Astro.request
 <body>
     <BaseLayout>
         <Heading>
-            <h1>Posts Categorized by "<span style="text-transform: capitalize">{params.category}</span>"</h1>
+            <h1>Shoots Categorized by "<span style="text-transform: capitalize">{params.category}</span>"</h1>
         </Heading>
         
         <Flex>
             <Content>
                 <section class="posts">
                     {page.data.map(p =>
-                        <PostSnippet post={p} />
+                        <ShootSnippet shoot={p} />
                     )}
                 </section>
 
@@ -74,10 +74,10 @@ const { params } = Astro.request
             <Sidebar>
                 <div>
                     <h4>Categories</h4> 
-                    <Categories categories={categories} base="blog" />
+                    <Categories categories={categories} base="photography" />
 
                     <h4>Tags</h4>
-                    <Tags tags={tags} base="blog" />
+                    <Tags tags={tags} base="photography" />
                 </div>
             </Sidebar>
         </Flex>

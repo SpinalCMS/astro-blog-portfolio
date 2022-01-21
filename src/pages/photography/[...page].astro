@@ -6,9 +6,13 @@ import { SEO } from "astro-seo";
 import BaseHead from '@/components/BaseHead'
 import BaseLayout from '@/components/BaseLayout'
 import Heading from '@/components/Heading'
+import Flex from '@/components/Flex'
 import Content from '@/components/Content'
 import ShootSnippet from '@/components/ShootSnippet'
 import Pagination from '@/components/Pagination'
+import Sidebar from '@/components/Sidebar'
+import Tags from '@/components/Tags'
+import Categories from '@/components/Categories'
 
 // data
 import Settings from '@/data/settings'
@@ -21,6 +25,11 @@ export async function getStaticPaths({ paginate }) {
 }
 
 const { page } = Astro.props;
+
+// get all the posts and send to tag and category component
+const allPosts = await Astro.fetchContent("./*.md");
+const tags = [...new Set([].concat.apply([], allPosts.map(post => post.tags)))];
+const categories = [...new Set(allPosts.map(post => post.category))];
 ---
 
 <!DOCTYPE html>
@@ -39,23 +48,35 @@ const { page } = Astro.props;
             <h1>Photography</h1>
         </Heading>
         
-        <Content>
-            {page.currentPage > 1 ? `` : 
-                `<article>
-                    <p>Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
-                    <p>If I have some free time, you might catch me over at <a href="https://www.facebook.com/CoffeeWithCars/" title="Coffee With Cars in Dripping Springs">Coffee With Cars in Dripping Springs, TX</a>. It's currently hosted at Dreamland on the last Sunday of the month at 8am.</p>
-                    <p>Currently I'm shooting with a Sony Alpha A7iii and a host of Zeiss Batis lenses. I'm also always on the lookout for new Peak Design gear, everything they make is incredible.</p>
-                </article>`
-            }
+        <Flex>
+            <Content>
+                {page.currentPage > 1 ? `` : 
+                    `<article>
+                        <p>Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
+                        <p>If I have some free time, you might catch me over at <a href="https://www.facebook.com/CoffeeWithCars/" title="Coffee With Cars in Dripping Springs">Coffee With Cars in Dripping Springs, TX</a>. It's currently hosted at Dreamland on the last Sunday of the month at 8am.</p>
+                        <p>Currently I'm shooting with a Sony Alpha A7iii and a host of Zeiss Batis lenses. I'm also always on the lookout for new Peak Design gear, everything they make is incredible.</p>
+                    </article>`
+                }
 
-            <section class="posts">
-                {page.data.map(s =>
-                    <ShootSnippet shoot={s} />
-                )}
-            </section>
+                <section class="posts">
+                    {page.data.map(s =>
+                        <ShootSnippet shoot={s} />
+                    )}
+                </section>
 
-            <Pagination page={page} />
-        </Content>
+                <Pagination page={page} />
+            </Content>
+
+            <Sidebar>
+                <div>
+                    <h4>Categories</h4>
+                    <Categories categories={categories} base="photography" />
+                    
+                    <h4>Tags</h4>
+                    <Tags tags={tags} base="photography" />
+                </div>
+            </Sidebar>
+        </Flex>
     </BaseLayout>
 </body>
 </html>

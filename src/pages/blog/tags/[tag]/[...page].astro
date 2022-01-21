@@ -6,6 +6,7 @@ import { SEO } from "astro-seo";
 import BaseHead from '@/components/BaseHead'
 import BaseLayout from '@/components/BaseLayout'
 import Heading from '@/components/Heading'
+import Flex from '@/components/Flex'
 import Content from '@/components/Content'
 import PostSnippet from '@/components/PostSnippet'
 import Pagination from '@/components/Pagination'
@@ -59,25 +60,27 @@ const { params } = Astro.request
             <h1>Posts Tagged with "<span style="text-transform: capitalize">{params.tag}</span>"</h1>
         </Heading>
         
-        <Content>
-            <section class="posts">
-                {page.data.map(p =>
-                    <PostSnippet post={p} />
-                )}
-            </section>
+        <Flex>
+            <Content>
+                <section class="posts">
+                    {page.data.map(p =>
+                        <PostSnippet post={p} />
+                    )}
+                </section>
 
-            <Pagination page={page} />
-        </Content>
+                <Pagination page={page} />
+            </Content>
 
-        <Sidebar>
-            <div>
-                <h4>Categories</h4>
-                <Categories categories={categories} base="blog" />
+            <Sidebar>
+                <div>
+                    <h4>Categories</h4>
+                    <Categories categories={categories} base="blog" />
 
-                <h4>Tags</h4>
-                <Tags tags={tags} base="blog" />
-            </div>
-        </Sidebar>
+                    <h4>Tags</h4>
+                    <Tags tags={tags} base="blog" />
+                </div>
+            </Sidebar>
+        </Flex>
     </BaseLayout>
 </body>
 </html>

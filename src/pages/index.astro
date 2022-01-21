@@ -27,10 +27,39 @@ const allShoots = await Astro.fetchContent("./photography/*.md").slice(0,4);
         @use '../assets/styles/breakpoints' as *;
 
         .intro {
-            padding-bottom: var(--section-spacing-sm);
+            padding-bottom: var(--section-spacing-lg);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: var(--space-md);
+            margin: 0 var(--space-md);
 
             @include breakpoint(md) {
-                padding-bottom: var(--section-spacing-md);
+                text-align: left;
+                margin: 0;
+            }
+
+            @include breakpoint(lg) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 1fr;
+
+                align-items: center;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-md);
+                
+                h1 { margin-bottom: 0; }
+                a { width: auto; }
+
+                @include breakpoint(md) {
+                    max-width: 400px;
+                    
+                    a { width: fit-content; }
+                }
             }
             
             figure {
@@ -39,42 +68,18 @@ const allShoots = await Astro.fetchContent("./photography/*.md").slice(0,4);
                     align-self: center;
                     justify-self: end;
                 }
-            }
-            :global(img) {
-                width: 150px;
-                height: 150px;
 
-                @include breakpoint(lg) {
-                    width: 220px;
-                    height: 220px;
+                :global(img) {
+                    min-width: 200px;
+                    max-width: 60%;
+
+                    @include breakpoint(md) {
+                        max-width: 250px;
+                    }
+                    @include breakpoint(lg) {
+                        max-width: 100%;
+                    }
                 }
-            }
-
-            *:not(:last-child) {
-                margin-bottom: 2rem;
-            }
-
-            p {
-                max-width: 90%;
-            }
-
-            @include breakpoint(md) {
-                text-align: left;
-
-                h1 {
-                    margin-top: 0;
-                }
-                p {
-                    max-width: 25rem;
-                    margin: 0;
-                }
-            }
-            @include breakpoint(lg) {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: 1fr;
-                grid-column-gap: 0px;
-                grid-row-gap: 0px;
             }
         }
 
@@ -145,11 +150,9 @@ const allShoots = await Astro.fetchContent("./photography/*.md").slice(0,4);
                         I'm a CRO &amp;<br />
                         SEM Expert.
                     </h1>
-                    <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
 
-                    <a href="/" class="btn btn-primary" title="Contact Me">
-                        <span>Contact Me</span>
-                    </a>
+                    <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
+                    <a href="/" class="btn btn-primary" title="Contact Me">Contact Me</a>
                 </div>
             </div>
 

@@ -4,7 +4,6 @@ import path from 'path';
 import sizeOf from 'image-size';
 import exifr from 'exifr'
 
-
 // build the public image url
 // relative to the web root
 export function buildPublicPath(file) {

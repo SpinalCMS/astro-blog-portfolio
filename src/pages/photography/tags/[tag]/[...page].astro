@@ -8,7 +8,7 @@ import BaseLayout from '@/components/BaseLayout'
 import Heading from '@/components/Heading'
 import Flex from '@/components/Flex'
 import Content from '@/components/Content'
-import PostSnippet from '@/components/PostSnippet'
+import ShootSnippet from '@/components/ShootSnippet'
 import Pagination from '@/components/Pagination'
 import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
@@ -19,18 +19,18 @@ import Settings from '@/data/settings'
 
 export async function getStaticPaths({ paginate }) {
     const allPosts = Astro.fetchContent('../../*.md');
-    const allCategories = new Set();
+    const allTags = new Set();
     
     allPosts.map(post => {
-        allCategories.add(post.category.toLowerCase());
+        post.tags && post.tags.map(tag => allTags.add(tag.toLowerCase()))
     });
     
-    return Array.from(allCategories).map((category) => {
-        const filteredPosts = allPosts.filter((post) => post.category.includes(category));
+    return Array.from(allTags).map((tag) => {
+        const filteredPosts = allPosts.filter((post) => post.tags.includes(tag));
         const sortedPosts = filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
         
         return paginate(sortedPosts, {
-            params: { category },
+            params: { tag },
             pageSize: Settings.pageSize
         });
     });
@@ -57,14 +57,14 @@ const { params } = Astro.request
 <body>
     <BaseLayout>
         <Heading>
-            <h1>Posts Categorized by "<span style="text-transform: capitalize">{params.category}</span>"</h1>
+            <h1>Shoots Tagged with "<span style="text-transform: capitalize">{params.tag}</span>"</h1>
         </Heading>
         
         <Flex>
             <Content>
                 <section class="posts">
                     {page.data.map(p =>
-                        <PostSnippet post={p} />
+                        <ShootSnippet shoot={p} />
                     )}
                 </section>
 
@@ -73,11 +73,11 @@ const { params } = Astro.request
 
             <Sidebar>
                 <div>
-                    <h4>Categories</h4> 
-                    <Categories categories={categories} base="blog" />
+                    <h4>Categories</h4>
+                    <Categories categories={categories} base="photography" />
 
                     <h4>Tags</h4>
-                    <Tags tags={tags} base="blog" />
+                    <Tags tags={tags} base="photography" />
                 </div>
             </Sidebar>
         </Flex>

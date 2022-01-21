@@ -26,10 +26,16 @@ html {
     scroll-behavior: smooth;
 }
 body {
+    background-color: var(--color-white);
+    background-image: radial-gradient(circle at top left, var(--color-yellow-20) 0, var(--color-yellow-10) 70vh, var(--color-white) 100vh);
+    background-repeat: no-repeat;
     margin: var(--body-top-margin-sm) 0 0 0;
 
     @include breakpoint(md) {
         margin: var(--body-top-margin-lg) 0 0 0;
+    }
+    @include breakpoint(lg) {
+        background-image: radial-gradient(circle at top left, var(--color-yellow-20) 20vw, var(--color-yellow-10) 50vw, var(--color-white) 60vw);
     }
 }
 a {

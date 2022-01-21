@@ -6,46 +6,20 @@
     font-weight: 500;
     font-size: var(--text-md);
     border-radius: var(--site-radius);
-    display: inline-flex;
-    
-    span {
-        border-radius: var(--site-radius);
-        border-style: solid;
-        padding: var(--space-sm) var(--space-md);
-        cursor: pointer;
-        
-        transform: translate3d(-.3em, -0.3em, 0);
-        transition: transform var(--site-transition) cubic-bezier(0.175, 0.885, 0.320, 1.275);
-        transition-delay: 150ms;
-    }
-    &:active, &.click {
-        span {
-            transform: translate3d(0, 0, 0);
-            transition: transform var(--site-transition) cubic-bezier(0.230, 1.000, 0.320, 1.000);
-        }
-    }  
-}
+    padding: var(--space-md);
+    width: fit-content;
+    transition: all .3s ease-in-out;
 
-.btn-primary {
-    background-color: var(--color-yellow);
-
-    span {
-        background-color: var(--color-yellow-30);
-        border-color: var(--color-yellow-30);
-        transition: var(--site-transition);
+    &.btn-primary {
+        background: var(--color-yellow-20);
+        box-shadow: .3rem .3rem var(--color-yellow);
 
         &:hover {
             background-color: var(--color-yellow-40);
-            border-color: var(--color-yellow-40);
         }
     }
-}
-.btn-secondary {
-    background-color: var(--color-pink);
-
-    span {
-        background-color: var(--color-yellow);
-        border-color: var(--color-yellow);
+    &.btn-secondary {
+        background-color: var(--color-pink);
     }
 }
 
