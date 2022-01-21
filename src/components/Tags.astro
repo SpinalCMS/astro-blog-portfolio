@@ -24,11 +24,7 @@ const { tags, base } = Astro.props;
 
         .tag {
             display: inline;
-            font-size: var(--text-sm);
-            
-            @include breakpoint(md) {
-                font-size: var(--text-md);
-            }
+            font-size: var(--text-md);
 
             &:not(:last-child)::after {
                 content: ', '
