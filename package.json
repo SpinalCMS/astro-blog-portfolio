@@ -9,12 +9,9 @@
         "preview": "astro preview"
     },
     "devDependencies": {
-        "astro": "0.22.16",
+        "astro": "0.22.17",
         "astro-seo": "^0.4.2",
         "exifr": "^7.1.3",
         "image-size": "^1.0.1"
-    },
-    "dependencies": {
-        "reactive-astro-sidebar": "^0.0.4"
     }
 }
