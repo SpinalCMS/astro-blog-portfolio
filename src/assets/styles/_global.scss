@@ -27,15 +27,19 @@ html {
 }
 body {
     background-color: var(--color-white);
-    background-image: radial-gradient(circle at top left, var(--color-yellow-20) 0, var(--color-yellow-10) 70vh, var(--color-white) 100vh);
     background-repeat: no-repeat;
+    background-image:
+            radial-gradient(circle at top right, var(--color-yellow-20), var(--color-yellow-10) 20%, transparent 40%),
+            radial-gradient(circle at bottom left, var(--color-blue-20), var(--color-blue-10) 10%, transparent 40%);
     margin: var(--body-top-margin-sm) 0 0 0;
 
     @include breakpoint(md) {
         margin: var(--body-top-margin-lg) 0 0 0;
     }
     @include breakpoint(lg) {
-        background-image: radial-gradient(circle at top left, var(--color-yellow-20) 20vw, var(--color-yellow-10) 50vw, var(--color-white) 60vw);
+        background-image:
+            radial-gradient(circle at top right, var(--color-pink-10) 50vw, transparent 100vw),
+            radial-gradient(circle at bottom left, var(--color-yellow-10) 40vw, transparent 100vw);
     }
 }
 a {
