@@ -105,7 +105,12 @@ Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in F
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
         <Gallery file={i}>
-            <Image file={i} />
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+                <Caption file={i} showDesc=true />
+            </figure>
         </Gallery>
     )}
 </div>

@@ -4,9 +4,10 @@ import { getMetadata } from '@/functions/Image'
 // props
 export interface Props {
     file: string;
+    showTitle?: boolean;
     showDesc?: boolean;
 }
-const { file, showDesc = false } = Astro.props;
+const { file, showTitle = false, showDesc = true } = Astro.props;
 
 const metadata = await getMetadata(file);
 ---
@@ -45,13 +46,16 @@ const metadata = await getMetadata(file);
 
 <figcaption>
     <div class="summary">
-        <div class="title">
-            {metadata.title}
-        </div>
+        {showTitle ? 
+            `<div class="title">
+                {metadata.title}
+            </div>` : `` 
+        }
 
         {showDesc ?
             `<div class="caption">
                 ${metadata.caption}
-            </div>` : `` }
+            </div>` : ``
+        }
     </div>
 </figcaption>
