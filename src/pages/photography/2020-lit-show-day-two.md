@@ -85,15 +85,26 @@ gallery04:
   - shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_052.jpg
 ---
 
-After a refreshing night stay at the Hilton Airport Hotel in Los Angeles (kidding, it was packed and crazy) we woke up ready to start day two at Callas Rennsport. It's interesting going to some of these shops. You pull into a no-name industrial area. It's not generally a great area, and yet, sitting in front of you is a Porsche 959, actually mulitple 959's in the parking lot. For those that don't know, a 959 is worth in excess of $1,000,000.
+After a refreshing night stay at the Hilton Airport Hotel in Los Angeles (kidding, it was packed and crazy) we woke up ready to start day two of our journey.
+
+### Callas Rennsport
+It's interesting going to some of these shops. You pull into a no-name industrial area. It's not generally a great area, and yet, sitting in front of you is a Porsche 959, actually mulitple 959's in the parking lot. For those that don't know, a 959 is worth in excess of $1,000,000.
 
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
         <Gallery file={i}>
-            <Image file={i} />
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+                <Caption file={i} showDesc=true />
+            </figure>
         </Gallery>
     )}
 </div>
+
+### AutoKennel
+Our next stop took us over to AutoKennel
 
 <div class="gallery">
     {frontmatter.gallery02.map(i =>

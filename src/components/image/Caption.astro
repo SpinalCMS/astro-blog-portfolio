@@ -21,25 +21,19 @@ const metadata = await getMetadata(file);
         @include breakpoint(md) {
             margin: 0 var(--space-sm);
         }
-    }
-    .summary {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-xs);
-        margin-top: var(--space-sm);
-        margin-bottom: var(--space-md);
-        font-size: var(--text-sm);
 
-        @include breakpoint(md) {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        
-        .title {
-            font-weight: 500;
-        }
-        .caption {
-            font-weight: 350;
+        .summary {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            margin-top: var(--space-sm);
+            margin-bottom: var(--space-md);
+            font-size: var(--text-sm);
+
+            @include breakpoint(md) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
     }
 </style>
@@ -53,7 +47,7 @@ const metadata = await getMetadata(file);
         }
 
         {showDesc ?
-            `<div class="caption">
+            `<div class="caption" style="font-weight: 340;">
                 ${metadata.caption}
             </div>` : ``
         }
