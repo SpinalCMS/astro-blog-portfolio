@@ -70,6 +70,7 @@ gallery03:
 ---
 
 ## Outside the Hotel
+Staying at the [LAX Hilton](https://www.hilton.com/en/hotels/laxahhh-hilton-los-angeles-airport/) in February 2020 was an interesting experience in early 2020. COVID was in the early stages and flights were arriving from hotspots across the world. However, none of that mattered when there was a Singer 911, 911R and a 996 GT2 parked out front!
 
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
@@ -85,6 +86,7 @@ gallery03:
 </div>
 
 ## CarParc USA
+[CarParc](https://carparcusa.com/) USA is an interesting place, it's one part Porsche, one part art gallery. The Gulf hot rod up front was amazing. Attention to detail was insane and I would have loved to take that car home with me. I loved the yellow 911S with red houndstooth as well, such a perfect combination of style. CarParc USA had a Celette machine as well, which was neat to see. There's not too many of those left around.
 
 <div class="gallery">
     {frontmatter.gallery02.map(i =>
@@ -100,6 +102,9 @@ gallery03:
 </div>
 
 ## Emory Motorsports Open House
+Rod Emory is to 356's as Singer is to 911's. They're buying a ton of restoration level 356's and modifiying them for their customers. I love the unique customizations that come out of tuners like this. The obvious star of the show was Emory's shop car, a 356 they modified to have rear mounted twin turbos.
+
+At the entrance to the shop Gunther brought along a mint green 400R. Absolutely insane.
 
 <div class="gallery">
     {frontmatter.gallery03.map(i =>
