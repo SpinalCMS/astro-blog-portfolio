@@ -87,7 +87,7 @@ gallery04:
 
 After a refreshing night stay at the Hilton Airport Hotel in Los Angeles (kidding, it was packed and crazy) we woke up ready to start day two of our journey.
 
-### Callas Rennsport
+## Callas Rennsport
 It's interesting going to some of these shops. You pull into a no-name industrial area. It's not generally a great area, and yet, sitting in front of you is a Porsche 959, actually mulitple 959's in the parking lot. For those that don't know, a 959 is worth in excess of $1,000,000.
 
 <div class="gallery">
@@ -103,29 +103,48 @@ It's interesting going to some of these shops. You pull into a no-name industria
     )}
 </div>
 
-### AutoKennel
+## AutoKennel
 Our next stop took us over to AutoKennel
 
 <div class="gallery">
     {frontmatter.gallery02.map(i =>
         <Gallery file={i}>
-            <Image file={i} />
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+                <Caption file={i} showDesc=true />
+            </figure>
         </Gallery>
     )}
 </div>
+
+## South Bay Porsche
 
 <div class="gallery">
     {frontmatter.gallery03.map(i =>
         <Gallery file={i}>
-            <Image file={i} />
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+                <Caption file={i} showDesc=true />
+            </figure>
         </Gallery>
     )}
 </div>
 
+## Pelican Parts Open House
+
 <div class="gallery">
     {frontmatter.gallery04.map(i =>
         <Gallery file={i}>
-            <Image file={i} />
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+                <Caption file={i} showDesc=true />
+            </figure>
         </Gallery>
     )}
 </div>
