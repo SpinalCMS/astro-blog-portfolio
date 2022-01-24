@@ -10,7 +10,7 @@ export interface Props {
     file: string;
     rowHeight?: number;
 }
-const { file, rowHeight = 300 } = Astro.props;
+const { file, rowHeight = 350 } = Astro.props;
 
 // build the file paths
 let localUrl = `${settings.image.directory.local}${file}`;

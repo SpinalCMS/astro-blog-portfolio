@@ -69,26 +69,47 @@ gallery03:
   - shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_041.jpg
 ---
 
+## Outside the Hotel
+
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
         <Gallery file={i}>
-            <Image file={i} />
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+                <Caption file={i} showDesc=true />
+            </figure>
         </Gallery>
     )}
 </div>
+
+## CarParc USA
 
 <div class="gallery">
     {frontmatter.gallery02.map(i =>
         <Gallery file={i}>
-            <Image file={i} />
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+                <Caption file={i} showDesc=true />
+            </figure>
         </Gallery>
     )}
 </div>
 
+## Emory Motorsports Open House
+
 <div class="gallery">
     {frontmatter.gallery03.map(i =>
         <Gallery file={i}>
-            <Image file={i} />
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+                <Caption file={i} showDesc=true />
+            </figure>
         </Gallery>
     )}
 </div>
