@@ -13,5 +13,6 @@
             "public": "images/"
         }
     },
-    "pageSize": 5
+    "pageSize": 5,
+    "siteRepo": "https://github.com/tusamni/astro-blog-portfolio"
 }

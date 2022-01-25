@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Digital Marketing",
+        "objects": [
+            "Search Engine Marketing",
+            "Search Engine Optimization",
+            "Data Analytics",
+            "Conversion Rate Optimization",
+            "Programming",
+            "Marketing Automation",
+            "Email Marketing"
+        ]
+    },
+    {
+        "title": "Tools & Tech",
+        "objects": [
+            "Supermetrics",
+            "Google Analytics",
+            "Google Data Studio",
+            "Google Tag Manager",
+            "VWO",
+            "Adobe Creative Cloud",
+            "HTML / SCSS",
+            "Javascript",
+            "Figma",
+            "VS Code",
+            "GitHub"
+        ]
+    }
+]

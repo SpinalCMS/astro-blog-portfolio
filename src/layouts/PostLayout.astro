@@ -91,10 +91,12 @@ const { content } = Astro.props;
                     </div>
                 </div>
 
-                <div class="toc">
-                    <h4>Contents</h4>
-                    <TOC headers={content.astro.headers} />
-                </div>
+                { content.astro.headers.length ?
+                   <div class="toc">
+                        <h4>Contents</h4>
+                        <TOC headers={content.astro.headers} />
+                    </div>
+                    : ``}
             </Sidebar>
         </Flex>
     </BaseLayout>
