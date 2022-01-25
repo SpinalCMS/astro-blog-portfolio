@@ -11,21 +11,16 @@ tags:
   - porsche
   - dripping springs
   - turbo
-category: for fun
-date: 2020-02-27
+category: car show
+date: 2021-06-23
 draft: true
 
 # content
-title: LIT Show 2020 Part 1
-description: Day one at LIT Show 2020 takes us to CPR Classic, Wholesale California and the Sierra Madre Collection open house.
-
-related:
-  - lit-show-day-two
-  - lit-show-day-three
-  - lit-show-day-four
+title: 930 Turbo Flachbau
+description: I switch from photographer to the driver seat to grab some rolling shots of a Porsche 930 Turbo.
 
 # photos
-hero: shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_087.jpg
+hero: shoots/2021/2021-06-23-porsche-930/porsche-930-2021_050.jpg
 gallery01:
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_003.jpg
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_006.jpg
