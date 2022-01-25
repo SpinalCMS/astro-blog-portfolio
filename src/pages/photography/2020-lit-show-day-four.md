@@ -49,10 +49,17 @@ gallery01:
   - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_022.jpg
 ---
 
+As our trip comes to a close, we made one final trip out to the [Petersen Museum](https://www.petersen.org/). 
+
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
         <Gallery file={i}>
-            <Image file={i} />
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+                <Caption file={i} showDesc=true />
+            </figure>
         </Gallery>
     )}
 </div>

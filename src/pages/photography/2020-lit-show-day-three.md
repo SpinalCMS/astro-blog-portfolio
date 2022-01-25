@@ -72,6 +72,8 @@ gallery03:
 ## Outside the Hotel
 Staying at the [LAX Hilton](https://www.hilton.com/en/hotels/laxahhh-hilton-los-angeles-airport/) in February 2020 was an interesting experience in early 2020. COVID was in the early stages and flights were arriving from hotspots across the world. However, none of that mattered when there was a Singer 911, 911R and a 996 GT2 parked out front!
 
+### Singer 911
+
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
         <Gallery file={i}>
