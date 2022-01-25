@@ -4,21 +4,20 @@
         "objects": [
             "Search Engine Marketing",
             "Search Engine Optimization",
-            "Data Analytics",
             "Conversion Rate Optimization",
-            "Programming",
-            "Marketing Automation",
-            "Email Marketing"
+            "Data Analytics",
+            "Email Marketing",
+            "Programming"
         ]
     },
     {
         "title": "Tools & Tech",
         "objects": [
-            "Supermetrics",
             "Google Analytics",
             "Google Data Studio",
             "Google Tag Manager",
-            "VWO",
+            "Supermetrics",
+            "Visual Website Optimizer",
             "Adobe Creative Cloud",
             "HTML / SCSS",
             "Javascript",
