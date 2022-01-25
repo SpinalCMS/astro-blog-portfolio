@@ -8,10 +8,10 @@ setup: |
 
 # meta
 tags:
-  - lit show
   - porsche
-  - los angeles
-category: car show
+  - dripping springs
+  - turbo
+category: for fun
 date: 2020-02-27
 draft: true
 
