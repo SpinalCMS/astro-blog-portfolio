@@ -115,37 +115,3 @@ Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in F
         </Gallery>
     )}
 </div>
-
-## Wholesale California
-Once we finished at CPR Classic, we hopped in our van and drove through beautiful LA (read: we sat in traffic) and made our way over to [Wholesale California](https://wholesalecalifornia.com/). Wholesale California is an auto dealer in Costa Mesa, CA. They've been in business for fifteen years locating great collector barn finds. Their storefront is unique to say the least. It's obviously a small home that was converted. Most of the cars for sale are stored in the backyard. I don't mean to say it's bad in anyway, it's unique. There was a choice Viper Green 911 hot rod that seemed well executed.
-
-<div class="gallery">
-    {frontmatter.gallery02.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showDesc=true />
-            </figure>
-        </Gallery>
-    )}
-</div>
-
-## Sierra Madre Collection
-Last on our list for day one was a trip to [Sierra Madre Collection](https://sierramadrecollection.com/) for their LIT Show open house. Located in Eagle Rock, CA, Sierra Madre Collection is a 15,000 sqft warehouse offering Porsche parts for nearly every model ever made. In addition to off the shelf parts, they're also in the business of manufacturing parts that enthusiasts need to complete their restorations.
-
-We arrived to the open house later in the day, so we missed some vehicles, but it was still a strong showing. The McCoppin 4.0 hot rod build caught my eye. I think it was a little over the top design wise, but still executed wonderfully. There were so many neat, intricate details. I wish I could have spent more time with it.
-
-<div class="gallery">
-    {frontmatter.gallery03.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showDesc=true />
-            </figure>
-        </Gallery>
-    )}
-</div>
