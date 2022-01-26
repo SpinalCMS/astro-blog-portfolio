@@ -5,21 +5,22 @@ setup: |
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
   import Gallery from "@/components/image/Gallery"
+  import Video from "@/components/video/Video"
 
 # meta
 tags:
   - porsche
   - dripping springs
   - turbo
-category: car show
+category: just for fun
 date: 2021-06-23
 
 # content
-title: 930 Turbo Flachbau
+title: 1989 930 Turbo Flachbau
 description: I switch from photographer to the driver seat to grab some rolling shots of a Porsche 930 Turbo.
 
 # photos
-hero: shoots/2021/2021-06-23-porsche-930/porsche-930-2021_050.jpg
+hero: shoots/2021/2021-06-23-porsche-930/porsche-930-2021_026.jpg
 gallery01:
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_001.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_002.jpg
@@ -74,6 +75,7 @@ gallery03:
 gallery04:
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_049.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_050.jpg
+video: shoots/2021/2021-06-23-porsche-930/1989-porsche-930-turbo-flachbau.mp4
 ---
 
 Ever since a friend snagged this incredible 930 Turbo I've been wanting to take it out for a drive. I'll be honest, I was nervous. When discussions take place around the 930, you'll always hear the term "Widowmaker". The cars were so much to handle, they had a reputation for killing the owners. That said, you'll also hear from others how amazing they are to drive.
@@ -122,7 +124,7 @@ Progressively you start to get more comfortable with the way the car builds powe
 
 Towards the end of the shoot we decided to pull over and give the car a rest and get some final shots as the sun set. We ended up on a beautiful stretch of empty road on [West Fitzhugh Road in Dripping Springs, TX](https://goo.gl/maps/tA78JHiVg4dXSwHp8).
 
-Branson was able to get some beautiful shots of the Lipstick Red interior on this 930 Turbo. It was originally loaded up with a black interior, but the owner decided since this car has high mileage, he'd rather throw originality out the window (although he still keeps the stuff around) and build a dream grey / red 930 Flachbau.
+Branson was able to get some shots of the Lipstick Red interior on this 930 Turbo. It was originally loaded up with a black interior, but the owner decided since this car has high mileage, he'd rather throw originality out the window (although he still keeps the stuff around) and build a dream grey / red 930 Flachbau.
 
 <div class="gallery">
     {frontmatter.gallery03.map(i =>
@@ -139,7 +141,7 @@ Branson was able to get some beautiful shots of the Lipstick Red interior on thi
 ## Missed Opportunity
 On our way back to the shop, we were presented with an outrageous Texas Hill Country sunset. If that wasn't enough, we also had the moon rising directly in front of us. Perfect photo opportunity!
 
-Unfortunately, I missed lining up the car perfectly on the road. You're so low in the car, it's actually hard to tell where you are placed on the lines. After seeing the photos I wished he had pulled over and planned better. But we were on a time crunch and there was traffic approaching behind us.
+Unfortunately, I missed lining up the car perfectly on the road. You're so low in the car, it's actually hard to tell where you are placed on the lines. After seeing the photos I wished we had pulled over and planned better. But we were on a time crunch and there was traffic approaching behind us.
 
 <div class="gallery">
     {frontmatter.gallery04.map(i =>
@@ -153,7 +155,10 @@ Unfortunately, I missed lining up the car perfectly on the road. You're so low i
     )}
 </div>
 
-## Conclusion
-I've had plenty of opportunities to drive 60's and 70's air cooled Porsches. I really do enjoy them. As good as they are, this car is just perfection. I love the styling, the widebody, the drama of the turbo flat-6.
+## Video
+The Hardcastles ended up doing an awesome job on the video for their first time shooting a car. The video was all their idea, minus the music choice, that was all me.
 
-**It's just a car made for me.**
+<Video file={frontmatter.video} />
+
+## Conclusion
+I've had plenty of opportunities to drive 60's and 70's air cooled Porsches. I really do enjoy them. As good as they are, this car is just perfection. I love the styling, the widebody and the drama of the turbo flat-6.

@@ -18,19 +18,19 @@ import Categories from '@/components/Categories'
 import Settings from '@/data/settings'
 
 export async function getStaticPaths({rss, paginate}) {
-    const posts = await Astro.fetchContent("./*.md");
-    const sortedPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const allPosts = await Astro.fetchContent("./*.md")
+                                .sort((a, b) => new Date(b.date) - new Date(a.date));
 
     rss({
         title: 'Erik S. Olsen',
         description: 'Erik Olsen lives in Austin, Texas and is the Director of Digital Engagement at ICG America',
         customData: `<language>en-us</language>`,
         // The list of items for your RSS feed, sorted.
-        items: sortedPosts.map(item => ({
-            title: item.title,
-            description: item.description,
-            link: item.url,
-            pubDate: item.date,
+        items: allPosts.map(p => ({
+            title: p.title,
+            description: p.description,
+            link: p.url,
+            pubDate: p.date,
         })),
         
         // Optional: Customize where the file is written to.
@@ -38,13 +38,13 @@ export async function getStaticPaths({rss, paginate}) {
         //dest: "/my/custom/feed.xml",
   });
 
-    return paginate(sortedPosts, { pageSize: Settings.pageSize });
+    return paginate(allPosts, { pageSize: Settings.pageSize });
 }
 
 // get all the posts and send to tag and category component
 const allPosts = await Astro.fetchContent("./*.md");
-const tags = [...new Set([].concat.apply([], allPosts.map(post => post.tags)))];
-const categories = [...new Set(allPosts.map(post => post.category))];
+const tags = [...new Set([].concat.apply([], allPosts.map(p => p.tags)))];
+const categories = [...new Set(allPosts.map(p => p.category))];
 
 const { page } = Astro.props;
 ---

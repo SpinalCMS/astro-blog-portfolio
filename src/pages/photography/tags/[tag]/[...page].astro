@@ -18,27 +18,27 @@ import Categories from '@/components/Categories'
 import Settings from '@/data/settings'
 
 export async function getStaticPaths({ paginate }) {
-    const allPosts = Astro.fetchContent('../../*.md');
+    const allShoots = Astro.fetchContent('../../*.md');
     const allTags = new Set();
     
-    allPosts.map(post => {
-        post.tags && post.tags.map(tag => allTags.add(tag.toLowerCase()))
+    allShoots.map(s => {
+        s.tags && s.tags.map(tag => allTags.add(tag.toLowerCase()))
     });
     
     return Array.from(allTags).map((tag) => {
-        const filteredPosts = allPosts.filter((post) => post.tags.includes(tag));
-        const sortedPosts = filteredPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const filteredShoots = allShoots.filter((post) => post.tags.includes(tag))
+                                       .sort((a, b) => new Date(b.date) - new Date(a.date));
         
-        return paginate(sortedPosts, {
+        return paginate(filteredShoots, {
             params: { tag },
             pageSize: Settings.pageSize
         });
     });
 }
 
-const allPosts = await Astro.fetchContent("../../*.md");
-const categories = [...new Set(allPosts.map(post => post.category))];
-const tags = [...new Set([].concat.apply([], allPosts.map(post => post.tags)))];
+const allShoots = await Astro.fetchContent("../../*.md");
+const categories = [...new Set(allShoots.map(s => s.category))];
+const tags = [...new Set([].concat.apply([], allShoots.map(s => s.tags)))];
 
 const { page } = Astro.props
 const { params } = Astro.request
@@ -63,8 +63,8 @@ const { params } = Astro.request
         <Flex>
             <Content>
                 <section class="posts">
-                    {page.data.map(p =>
-                        <ShootSnippet shoot={p} />
+                    {page.data.map(s =>
+                        <ShootSnippet shoot={s} />
                     )}
                 </section>
 

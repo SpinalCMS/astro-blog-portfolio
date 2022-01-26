@@ -10,8 +10,12 @@ import Image from "@/components/image/Image"
 import PostSnippet from '@/components/PostSnippet'
 import ShootSnippet from '@/components/ShootSnippet'
 
-const allPosts = await Astro.fetchContent("./blog/*.md").slice(0,2);
-const allShoots = await Astro.fetchContent("./photography/*.md").slice(0,4);
+const allPosts = await Astro.fetchContent("./blog/*.md")
+                            .sort((a, b) => new Date(b.date) - new Date(a.date))
+                            .slice(0,2);
+const allShoots = await Astro.fetchContent("./photography/*.md")
+                             .sort((a, b) => new Date(b.date) - new Date(a.date))
+                             .slice(0,4);
 ---
 
 <!DOCTYPE html>

@@ -64,6 +64,10 @@ const { content } = Astro.props;
                 }
             }
         }
+
+        :global(.gallery + h2) {
+            margin-top: var(--space-lg);
+        }
     </style>
 </head>
 
@@ -76,7 +80,9 @@ const { content } = Astro.props;
 
         <Flex>
             <Content>
-                <slot />
+                <div x-data="{ open: false }">
+                    <slot />
+                </div>
             </Content>
 
             <Sidebar>
