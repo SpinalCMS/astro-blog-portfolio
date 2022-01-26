@@ -80,9 +80,7 @@ const { content } = Astro.props;
 
         <Flex>
             <Content>
-                <div x-data="{ open: false }">
-                    <slot />
-                </div>
+                <slot />
             </Content>
 
             <Sidebar>
