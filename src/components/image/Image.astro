@@ -6,8 +6,9 @@ export interface Props {
     file: string;
     classes?: string;
     alt?: string;
+    lightbox?: boolean;
 }
-const { file, classes, alt } = Astro.props;
+const { file, classes, alt, lightbox } = Astro.props;
 
 const url = buildPublicPath(file);
 const dimensions = getDimensions(file); // get the image dimensions
@@ -17,6 +18,7 @@ if (typeof alt === 'undefined') {
     caption =  await getMetadata(file, "caption"); // grab the caption from the image to use as an alt tag
 }
 ---
+
 
 <img
     data-blink-src={url}

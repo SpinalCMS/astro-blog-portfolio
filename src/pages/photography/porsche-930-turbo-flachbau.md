@@ -85,11 +85,11 @@ Ever since a friend snagged this incredible 930 Turbo I've been wanting to take 
 So, when Britton and Branson Hardcastle over at [B Hardcastle Media](https://www.bhardcastle.com/) asked me if they could test shoot a car, I saw a perfect opportunity. So while *technically* these aren't my photos, I was helping on the shoot (or at least I think I was a help).
 
 <div class="gallery">
-    {frontmatter.gallery01.map(i =>
+    {frontmatter.gallery01.map((i, index) =>
         <Gallery file={i}>
             <figure>
                 <picture>
-                    <Image file={i} />
+                    <Image file={i} lightbox=true />
                 </picture>
             </figure>
         </Gallery>
