@@ -13,7 +13,6 @@ tags:
   - turbo
 category: car show
 date: 2021-06-23
-draft: true
 
 # content
 title: 930 Turbo Flachbau
@@ -26,6 +25,12 @@ gallery01:
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_002.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_003.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_004.jpg
+  - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_040.jpg
+  - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_041.jpg
+  - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_042.jpg
+  - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_043.jpg
+  - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_044.jpg
+gallery02:
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_005.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_006.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_007.jpg
@@ -51,6 +56,7 @@ gallery01:
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_027.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_028.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_029.jpg
+gallery03:
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_030.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_031.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_032.jpg
@@ -61,23 +67,20 @@ gallery01:
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_037.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_038.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_039.jpg
-  - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_040.jpg
-  - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_041.jpg
-  - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_042.jpg
-  - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_043.jpg
-  - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_044.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_045.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_046.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_047.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_048.jpg
+gallery04:
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_049.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_050.jpg
 ---
 
-If you're like me and have never heard of the [LIT Show](https://www.lalitandtoyshow.com/), it's a Porsche literature, toy and memorabilia show that takes place each year in Southern California. But that description from their website is selling it short. It's really a week long Porsche fest. Lots of cars everywhere, some for sale and most shops open their doors to enthusiasts. It's Porsche week in LA and it's glorious.
-    
-## Let's Get it Started
-Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in Fallbrook, CA. CPR has been in the Porsche restoration business for 40 years. Their facility is massive, spanning across multiple buildings. Each building holding numerous customer cars awaiting restoration.
+Ever since a friend snagged this incredible 930 Turbo I've been wanting to take it out for a drive. I'll be honest, I was nervous. When discussions take place around the 930, you'll always hear the term "Widowmaker". The cars were so much to handle, they had a reputation for killing the owners. That said, you'll also hear from others how amazing they are to drive.
+
+## The Hardcastles
+
+So, when Britton and Branson Hardcastle over at [B Hardcastle Media](https://www.bhardcastle.com/) asked me if they could test shoot a car, I saw a perfect opportunity. So while *technically* these aren't my photos, I was helping on the shoot (or at least I think I was a help).
 
 <div class="gallery">
     {frontmatter.gallery01.map(i =>
@@ -86,8 +89,71 @@ Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in F
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
             </figure>
         </Gallery>
     )}
 </div>
+
+## The Widowmaker
+
+After some static shots at a nearby cul-de-sac, it was time to get out on the road. I'll be the first to admit that I'm not capable or willing to push this car to it's limit. I've got a family to go home to and the owner probably would like to see his car back in the garage as well.
+
+I started off taking it easy. I've driven enough turbo cars to understand lag and how boost pressure builds (see my old 500whp Dodge Neon SRT-4). 
+
+### Getting Braver
+
+All while Branson was taking the beautiful photos you see here, Britton was filming footage to put together a short video. We needed some shots of the 930 flying by the camera car. That required me to dig a bit more into the throttle.
+
+Progressively you start to get more comfortable with the way the car builds power. It's absolutely not linear, but I wouldn't say it's as bad as a big turbo four cylinder either. I was conscious to never smash the throttle unless the wheels were pointed forward, which probably helped keep us out of a ditch.
+
+<div class="gallery">
+    {frontmatter.gallery02.map(i =>
+        <Gallery file={i}>
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+            </figure>
+        </Gallery>
+    )}
+</div>
+
+## Give It A Rest
+
+Towards the end of the shoot we decided to pull over and give the car a rest and get some final shots as the sun set. We ended up on a beautiful stretch of empty road on [West Fitzhugh Road in Dripping Springs, TX](https://goo.gl/maps/tA78JHiVg4dXSwHp8).
+
+Branson was able to get some beautiful shots of the Lipstick Red interior on this 930 Turbo. It was originally loaded up with a black interior, but the owner decided since this car has high mileage, he'd rather throw originality out the window (although he still keeps the stuff around) and build a dream grey / red 930 Flachbau.
+
+<div class="gallery">
+    {frontmatter.gallery03.map(i =>
+        <Gallery file={i}>
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+            </figure>
+        </Gallery>
+    )}
+</div>
+
+## Missed Opportunity
+On our way back to the shop, we were presented with an outrageous Texas Hill Country sunset. If that wasn't enough, we also had the moon rising directly in front of us. Perfect photo opportunity!
+
+Unfortunately, I missed lining up the car perfectly on the road. You're so low in the car, it's actually hard to tell where you are placed on the lines. After seeing the photos I wished he had pulled over and planned better. But we were on a time crunch and there was traffic approaching behind us.
+
+<div class="gallery">
+    {frontmatter.gallery04.map(i =>
+        <Gallery file={i}>
+            <figure>
+                <picture>
+                    <Image file={i} />
+                </picture>
+            </figure>
+        </Gallery>
+    )}
+</div>
+
+## Conclusion
+I've had plenty of opportunities to drive 60's and 70's air cooled Porsches. I really do enjoy them. As good as they are, this car is just perfection. I love the styling, the widebody, the drama of the turbo flat-6.
+
+**It's just a car made for me.**
