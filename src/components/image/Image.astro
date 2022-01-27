@@ -1,5 +1,9 @@
 ---
+// functions
 import { getDimensions, buildPublicPath, getMetadata } from '@/functions/Media'
+
+// data
+import Settings from '@/data/Settings'
 
 // props
 export interface Props {
@@ -21,6 +25,7 @@ if (typeof alt === 'undefined') {
 
 
 <img
+    data-blink-ops=`overlay-uuid: ${Settings.image.logo}; overlay-coordinates: 50%,100%`
     data-blink-src={url}
     class={classes}
     alt={alt ? alt : caption}

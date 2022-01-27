@@ -11,7 +11,8 @@
         "directory": {
             "local": "public/images/",
             "public": "images/"
-        }
+        },
+        "logo": "3dfc87c1-b295-4a75-b97d-ac75172e8eca"
     },
     "pageSize": 5,
     "siteRepo": "https://github.com/tusamni/astro-blog-portfolio"

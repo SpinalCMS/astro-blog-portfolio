@@ -9,8 +9,9 @@ import settings from "@/data/settings"
 export interface Props {
     file: string;
     rowHeight?: number;
+    watermark?: boolean;
 }
-const { file, rowHeight = 350 } = Astro.props;
+const { file, rowHeight = 350, watermark = true } = Astro.props;
 
 // build the file paths
 let localUrl = `${settings.image.directory.local}${file}`;
@@ -21,7 +22,6 @@ const dimensions = sizeOf(localUrl);
 // set the image ratio
 let ratio = dimensions.width * rowHeight / dimensions.height;
 let padding = dimensions.height / dimensions.width * 100;
-
 ---
 
 <style lang="scss">
