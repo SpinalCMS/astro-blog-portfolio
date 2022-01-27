@@ -15,7 +15,7 @@ const { shoot } = Astro.props;
 <div class="shoot">
     <div class="cover solid-shadow-yellow zoom">
         <a href={shoot.url} title={shoot.title}>
-            <Image file={shoot.hero} />
+            <Image file={shoot.hero} watermark=false />
         </a>
     </div>
 

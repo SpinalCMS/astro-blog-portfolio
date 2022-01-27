@@ -10,9 +10,9 @@ export interface Props {
     file: string;
     classes?: string;
     alt?: string;
-    lightbox?: boolean;
+    watermark?: boolean;
 }
-const { file, classes, alt, lightbox } = Astro.props;
+const { file, classes, alt, watermark = true } = Astro.props;
 
 const url = buildPublicPath(file);
 const dimensions = getDimensions(file); // get the image dimensions
@@ -24,7 +24,7 @@ if (typeof alt === 'undefined') {
 ---
 
 <img
-    data-blink-ops=`overlay-uuid: ${settings.image.logo}; overlay-dimensions25%25x25%25;`
+    { watermark ? `data-blink-ops=overlay-uuid: ${settings.image.logo}; overlay-dimensions: 15%25x10%25; overlay-coordinates: 50%25,98%25` : `` }
     data-blink-src={url}
     class={classes}
     alt={alt ? alt : caption}
