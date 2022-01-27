@@ -89,8 +89,9 @@ So, when Britton and Branson Hardcastle over at [B Hardcastle Media](https://www
         <Gallery file={i}>
             <figure>
                 <picture>
-                    <Image file={i} lightbox=true />
+                    <Image file={i} />
                 </picture>
+                <Caption file={i} showMeta={true} />
             </figure>
         </Gallery>
     )}
@@ -115,6 +116,7 @@ Progressively you start to get more comfortable with the way the car builds powe
                 <picture>
                     <Image file={i} />
                 </picture>
+                <Caption file={i} showMeta={true} />
             </figure>
         </Gallery>
     )}

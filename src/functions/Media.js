@@ -14,6 +14,11 @@ export function buildPublicPath(file) {
 export function buildLocalPath(file) {
     return `${Settings.image.directory.local}${file}`;
 }
+// I need the full file path minus the extension
+// for the single image detail pages
+export function buildFileDetailPath(file) {
+    return path.dirname(file) + "/" + path.basename(file, path.extname(file))
+}
 
 // get the width and height dimensions of an image
 export function getDimensions(file) {
@@ -53,7 +58,7 @@ export async function getMetadata(file, data = "all") {
         "aperture": metadata.FNumber,
         "iso": metadata.ISO,
         "focalLength": metadata.FocalLength,
-        "exposure": 1 / metadata.ExposureTime,
+        "shutterSpeed": 1 / metadata.ExposureTime,
     };
 
     // return the whole array if data isn't specified

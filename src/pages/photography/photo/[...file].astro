@@ -1,0 +1,97 @@
+---
+// modules
+import { SEO } from "astro-seo";
+import fg from 'fast-glob'
+
+// components
+import BaseHead from '@/components/BaseHead'
+import BaseLayout from '@/components/BaseLayout'
+import Heading from '@/components/Heading'
+import Flex from '@/components/Flex'
+import Content from '@/components/Content'
+import Image from '@/components/image/Image'
+
+// functions
+import { getMetadata, buildFileDetailPath } from '@/functions/Media'
+import { fullDate } from '@/functions/DateTime'
+
+export async function getStaticPaths() {
+    const files = fg.sync("./public/images/shoots/**/*.jpg");
+    const removePath = "./public/images/"
+    const removeChar = removePath.length;
+
+    const final = files.map(f => {
+        const fullPath = buildFileDetailPath(f);
+        return fullPath.slice(removeChar);
+    })
+
+    return final.map(f => ({ params: { file: f } }))
+}
+
+const { params } = Astro.request;
+
+const url = params.file + '.jpg'
+const metadata = await getMetadata(url); 
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <BaseHead />
+    <SEO
+        title="Blog - Digital Marketing, Jamstack Programming and Car Photography"
+        description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. He&#39;s also an automotive photographer shooting photos at Austin car shows."
+    />
+
+    <style lang="scss">
+        :global(img) {
+            box-shadow: var(--site-shadow);
+        }
+
+        .metadata {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            
+            ul { list-style-type: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <BaseLayout>
+        <Heading>
+            <h1>{metadata.title}</h1>
+        </Heading>
+        
+        <Flex>
+            <Content fullWidth=true>
+                <Image
+                    file={url}
+                    alt="Erik S. Olsen in Austin, TX"
+                    watermark={true}
+                />
+                <div>
+                    <h2 class="h3">{metadata.caption}</h2>
+                    
+                    <ul class="metadata">
+                        <li>Date: <date>{fullDate(metadata.date)}</date></li>
+                        <li>Camera: {metadata.cameraMake} {metadata.cameraModel}</li>
+                        <li>Lens: {metadata.lens}</li>
+                        <li>Camera Settings:
+                            <ul>
+                                <li>Aperture: f/{metadata.aperture}</li>
+                                <li>ISO: {metadata.iso}</li>
+                                <li>Focal Length: {metadata.focalLength}mm</li>
+                                <li>Exposure: {metadata.shutterSpeed}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+            </Content>
+        </Flex>
+    </BaseLayout>
+</body>
+</html>
