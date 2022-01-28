@@ -5,7 +5,9 @@
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
-        "build": "astro build --experimental-static-build",
+        "devExp": "astro dev --experimental-static-build",
+        "build": "astro build",
+        "buildExp": "astro build --experimental-static-build",
         "preview": "astro preview"
     },
     "devDependencies": {
