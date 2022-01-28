@@ -13,8 +13,11 @@ import Image from '@/components/image/Image'
 import Caption from '@/components/image/Caption'
 
 // functions
-import { getMetadata, buildFileDetailPath } from '@/functions/Media'
+import { getMetadata, buildPublicPath, buildFileDetailPath } from '@/functions/Media'
 import { fullDate } from '@/functions/DateTime'
+
+// data
+import Settings from '@/data/settings'
 
 export async function getStaticPaths() {
     const files = fg.sync("./public/images/shoots/**/*.jpg");
@@ -32,6 +35,7 @@ export async function getStaticPaths() {
 const { params } = Astro.request;
 
 const url = params.file + '.jpg'
+const ucr = buildPublicPath(params.file) + '.jpg';
 const metadata = await getMetadata(url); 
 ---
 
@@ -162,7 +166,7 @@ const metadata = await getMetadata(url);
                         </div>
                         <div class="actions">
                             <h4>Download &amp; Sharing</h4>
-                            <p><a href="" title="Download the full size image">Full Size</a> ({metadata.width} x {metadata.height})</p>
+                            <p><a href=`${Settings.image.ucEndpoint}/-/overlay/${Settings.image.logo}/10%25x10%25/50%25,98%25/${Settings.url}${ucr}` title="Download the full size image">Full Size</a> ({metadata.width} x {metadata.height})</p>
                         </div>
                     </div>
                 </div>
