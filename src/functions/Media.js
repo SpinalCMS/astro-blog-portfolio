@@ -44,10 +44,13 @@ export async function getMetadata(file, data = "all") {
     // read the image into fs
     const fsFile = fs.readFileSync(localPath); // read the image
     const metadata = await exifr.parse(fsFile, exifrOptions);
+    const dimensions = getDimensions(file);
 
     // return the array to hold all the image data
     const imageData = {
         "filename": path.basename(localPath, '.jpg'),
+        "width": dimensions.width,
+        "height": dimensions.height,
         "date": metadata.DateTimeOriginal,
         "title": metadata.ObjectName,
         "caption": metadata.Caption,

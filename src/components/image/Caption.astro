@@ -26,16 +26,12 @@ const metadata = await getMetadata(file);
 
         .summary {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: space-between;
             gap: var(--space-xs);
             margin-top: var(--space-md);
             margin-bottom: var(--space-md);
             font-size: var(--text-sm);
-
-            @include breakpoint(md) {
-                flex-direction: row;
-                justify-content: space-between;
-            }
 
             .caption {
                 font-weight: 340;

@@ -10,6 +10,7 @@ import Heading from '@/components/Heading'
 import Flex from '@/components/Flex'
 import Content from '@/components/Content'
 import Image from '@/components/image/Image'
+import Caption from '@/components/image/Caption'
 
 // functions
 import { getMetadata, buildFileDetailPath } from '@/functions/Media'
@@ -44,17 +45,47 @@ const metadata = await getMetadata(url);
     />
 
     <style lang="scss">
+        @use '../../../assets/styles/breakpoints' as *;
+
         :global(img) {
             box-shadow: var(--site-shadow);
         }
 
-        .metadata {
-            list-style-type: none;
+        .flex {
             display: flex;
             flex-direction: column;
-            gap: var(--space-xs);
-            
-            ul { list-style-type: none; }
+            justify-content: space-between;
+            gap: var(--space-lg);
+
+            @include breakpoint(lg) {
+                flex-direction: row;
+            }
+        }
+
+        .metadata {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+
+            @include breakpoint(lg) {
+                flex-direction: row;
+            }
+
+            table {
+                border-collapse: collapse;
+
+                tr {
+                    border: 1px solid var(--color-grayscale-10);
+                }
+                td:first-child {
+                    border-right: 1px solid var(--color-grayscale-10);
+                }
+                td {
+                    font-size: var(--text-md);
+                    font-weight: 300;
+                    padding: var(--space-md);
+                }
+            }
         }
     </style>
 </head>
@@ -66,30 +97,75 @@ const metadata = await getMetadata(url);
         </Heading>
         
         <Flex>
-            <Content fullWidth=true>
-                <Image
-                    file={url}
-                    alt="Erik S. Olsen in Austin, TX"
-                    watermark={true}
-                />
-                <div>
-                    <h2 class="h3">{metadata.caption}</h2>
-                    
-                    <ul class="metadata">
-                        <li>Date: <date>{fullDate(metadata.date)}</date></li>
-                        <li>Camera: {metadata.cameraMake} {metadata.cameraModel}</li>
-                        <li>Lens: {metadata.lens}</li>
-                        <li>Camera Settings:
-                            <ul>
-                                <li>Aperture: f/{metadata.aperture}</li>
-                                <li>ISO: {metadata.iso}</li>
-                                <li>Focal Length: {metadata.focalLength}mm</li>
-                                <li>Exposure: {metadata.shutterSpeed}</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+            <Content fullWidth={true}>
+                <figure>
+                    <picture>
+                        <Image
+                            file={url}
+                            alt="Erik S. Olsen in Austin, TX"
+                        />
+                    </picture>
+                    <Caption file={url} />
+                </figure>
                 
+                <div>                    
+                    <div class="flex">
+                        <div class="metadata">
+                            <div>
+                                <h4>Camera Metadata</h4>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Date</td>
+                                            <td>
+                                                <date>{fullDate(metadata.date)}</date>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Author</td>
+                                            <td>{metadata.author}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Camera</td>
+                                            <td>{metadata.cameraMake} {metadata.cameraModel}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lens</td>
+                                            <td>{metadata.lens}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <h4>Photo Metadata</h4>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Aperture</td>
+                                            <td>f/{metadata.aperture}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ISO</td>
+                                            <td>{metadata.iso}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Focal Length</td>
+                                            <td>{metadata.focalLength}mm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shutter Speed</td>
+                                            <td>{metadata.shutterSpeed}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <h4>Download &amp; Sharing</h4>
+                            <p><a href="">Full Size</a> ({metadata.width} x {metadata.height})</p>
+                        </div>
+                    </div>
+                </div>
             </Content>
         </Flex>
     </BaseLayout>
