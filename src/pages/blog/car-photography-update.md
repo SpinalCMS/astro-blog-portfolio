@@ -12,7 +12,6 @@ tags:
     - zeiss
     - cars
 category: photography
-featured: true
 date: 2018-08-11
 
 # related
@@ -24,9 +23,6 @@ related:
 title: Car Photography Update
 description: I've started shooting lots of cars for Bring a Trailer auctions. That means I'm in need of a lens upgrade!
 excerpt: I've started shooting lots of cars for Bring a Trailer auctions. That means I'm in need of a lens upgrade! One single 35mm Sony Zeiss wasn't going to cut it. It's too wide for exteriors and not wide enough for interiors. I'm thinking one around the 50mm mark and something down around the 20mm mark.
-
-# images
-imageFolder: "/shoots/2018/2018-08-26_coffee-with-cars/"
 ---
 
 ## I've Made a Huge Mistake
@@ -35,11 +31,14 @@ Over the past few months I've started shooting cars for Bring a Trailer auctions
 <figure>
     <picture>
         <Image
-            file="/shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_004.jpg"
+            file="shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_004.jpg"
             classes="solid-shadow-blue"
         />
     </picture>
-    <Caption file="/shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_004.jpg" />
+    <Caption
+        file="shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_004.jpg"
+        showMeta={true}
+    />
 </figure>
 
 This is where I look back and shake my head when I made the foolish decision to get rid of my Zeiss Batis lenses. 25mm and 85mm would have been perfect. Rather than going back to that setup, I'll add two new lenses to my bag. I'm thinking the Sony Zeiss 16-35mm f/4 and the Sony Zeiss 55mm f/1.8.
@@ -47,11 +46,14 @@ This is where I look back and shake my head when I made the foolish decision to 
 <figure>
     <picture>
         <Image
-            file="/shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_006.jpg"
+            file="shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_006.jpg"
             classes="solid-shadow-blue"
         />
     </picture>
-    <Caption file="/shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_006.jpg" />
+    <Caption
+        file="shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_006.jpg"
+        showMeta={true}
+    />
 </figure>
 
 I also would like to start shooting more video. Turns out the A7iii was just released and it's a serious video upgrade over the A7ii.

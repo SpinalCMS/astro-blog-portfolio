@@ -109,7 +109,7 @@ Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in F
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}
@@ -125,7 +125,7 @@ Once we finished at CPR Classic, we hopped in our van and drove through beautifu
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}
@@ -143,7 +143,7 @@ We arrived to the open house later in the day, so we missed some vehicles, but i
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}

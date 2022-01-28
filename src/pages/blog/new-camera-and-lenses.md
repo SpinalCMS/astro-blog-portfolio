@@ -12,7 +12,6 @@ tags:
     - zeiss
     - batis
 category: photography
-featured: true
 date: 2017-01-11
 
 # related

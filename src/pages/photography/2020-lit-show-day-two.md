@@ -97,7 +97,7 @@ It's interesting going to some of these shops. [Callas Rennsport](https://www.ca
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}
@@ -115,7 +115,7 @@ We actually arrived the same time as Magnus Walker. We said a quick "hello".  He
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}
@@ -130,7 +130,7 @@ I'm embarassed to say that I've never been to the Austin area Porsche dealer. I'
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}
@@ -148,7 +148,7 @@ Another car that caught my eye was the blue 914-6. 914's were never my favorite 
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}

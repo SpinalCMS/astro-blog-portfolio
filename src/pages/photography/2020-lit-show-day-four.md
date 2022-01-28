@@ -64,7 +64,7 @@ It was a nice way to end the trip. I saw so many incredible current model Porsch
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}

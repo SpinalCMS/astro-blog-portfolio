@@ -81,7 +81,7 @@ Staying at the [LAX Hilton](https://www.hilton.com/en/hotels/laxahhh-hilton-los-
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}
@@ -97,7 +97,7 @@ Staying at the [LAX Hilton](https://www.hilton.com/en/hotels/laxahhh-hilton-los-
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}
@@ -115,7 +115,7 @@ At the entrance to the shop [Gunther Werks](https://www.guntherwerks.com/) broug
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showDesc=true />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}

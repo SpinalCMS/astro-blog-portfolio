@@ -12,7 +12,6 @@ tags:
     - batis
     - sony
 category: photography
-featured: true
 date: 2020-01-27
 
 # related
@@ -32,11 +31,14 @@ There's a common saying in the photography world, "Marry your lenses, date your 
 <figure>
     <picture>
         <Image
-            file="/shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg"
+            file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg"
             classes="solid-shadow-yellow"
         />
     </picture>
-    <Caption file="/shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" />
+    <Caption
+        file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg"
+        showMeta={true}
+    />
 </figure>
 
 Over the last three years I've had two bodies, but owned eleven different lenses. I've even owned some of them twice, I'm not a smart man. So allow me to impart some wisdom on anyone reading this. **Rent your lenses!**
@@ -48,11 +50,14 @@ Luckily for me, my lenses held their value pretty well, so I didn't spend a fort
 <figure>
     <picture>
         <Image
-            file="/shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg"
+            file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg"
             classes="solid-shadow-yellow"
         />
     </picture>
-    <Caption file="/shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" />
+    <Caption
+        file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg"
+        showMeta={true}
+    />
 </figure>
 
 In the end, I shoot cars. That means I'm traveling to my destination. As much as I fell in love with the Sigma ART line, I just can't justify carrying those behemoths around. Not to mention I started using a Zhiyun Weebill-S gimbal and the 50mm Sigma f/1.4 pushes it's motors to the limits.
@@ -67,11 +72,14 @@ In the end, the Zeiss Batis lineup was the best fit. They're small-ish, relative
 <figure>
     <picture>
         <Image
-            file="/shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_012.jpg"
+            file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_012.jpg"
             classes="solid-shadow-yellow"
         />
     </picture>
-    <Caption file="/shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_012.jpg" />
+    <Caption
+        file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_012.jpg"
+        showMeta={true}
+    />
 </figure>
 
 ### Final Setup

@@ -91,7 +91,7 @@ So, when Britton and Branson Hardcastle over at [B Hardcastle Media](https://www
                 <picture>
                     <Image file={i} />
                 </picture>
-                <Caption file={i} showMeta={true} />
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}
@@ -135,6 +135,7 @@ Branson was able to get some shots of the Lipstick Red interior on this 930 Turb
                 <picture>
                     <Image file={i} />
                 </picture>
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}
@@ -152,6 +153,7 @@ Unfortunately, I missed lining up the car perfectly on the road. You're so low i
                 <picture>
                     <Image file={i} />
                 </picture>
+                <Caption file={i} showMeta={true}>
             </figure>
         </Gallery>
     )}
