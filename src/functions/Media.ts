@@ -5,7 +5,7 @@ import sizeOf from 'image-size';
 import exifr from 'exifr'
 
 // config
-import { imageConfig } from '../config.ts'
+import { imageConfig } from '../config'
 
 // build the public image url
 // relative to the web root

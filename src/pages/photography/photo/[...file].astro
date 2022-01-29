@@ -2,6 +2,7 @@
 // modules
 import { SEO } from "astro-seo";
 import fg from 'fast-glob'
+import path from 'path'
 
 // components
 import BaseHead from '@/components/BaseHead'
@@ -20,12 +21,13 @@ import { fullDate } from '@/functions/DateTime'
 import { siteConfig, imageConfig } from '@/src/config.ts'
 
 export async function getStaticPaths() {
-    const files = fg.sync("./public/images/shoots/**/*.jpg");
-    const removePath = "./public/images/"
-    const removeChar = removePath.length;
+    const files = fg.sync("./public/images/shoots/**/*.jpg"); // glob to get all the photo shoots
+    const removePath = "./public/images/" // we need to remove the string from the file path above
+    const removeChar = removePath.length;  // how many characters to trim off the file path
 
     const final = files.map(f => {
         const fullPath = buildFileDetailPath(f);
+
         return fullPath.slice(removeChar);
     })
 
@@ -34,8 +36,8 @@ export async function getStaticPaths() {
 
 const { params } = Astro.request;
 
-const url = params.file + '.jpg'
-const ucr = buildPublicPath(params.file) + '.jpg';
+const url = params.file + '.jpg' // add the filename back to the file param
+const ucr = buildPublicPath(params.file) + '.jpg'; // the url of the image to create the download links
 const metadata = await getMetadata(url); 
 ---
 
@@ -165,7 +167,7 @@ const metadata = await getMetadata(url);
                             </div>
                         </div>
                         <div class="actions">
-                            <h4>Download &amp; Sharing</h4>
+                            <h4>Download</h4>
                             <p><a href=`${imageConfig.ucEndpoint}/-/overlay/${imageConfig.logo}/10%25x10%25/50%25,98%25/${siteConfig.url}${ucr}` title="Download the full size image">Full Size</a> ({metadata.width} x {metadata.height})</p>
                         </div>
                     </div>

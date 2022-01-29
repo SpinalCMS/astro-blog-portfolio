@@ -14,8 +14,8 @@ import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
 import Categories from '@/components/Categories'
 
-// data
-import Settings from '@/data/settings'
+// config
+import { pageSize } from '@/src/config.ts'
 
 export async function getStaticPaths({rss, paginate}) {
     const allPosts = await Astro.fetchContent("./*.md")
@@ -38,7 +38,7 @@ export async function getStaticPaths({rss, paginate}) {
         //dest: "/my/custom/feed.xml",
   });
 
-    return paginate(allPosts, { pageSize: Settings.pageSize });
+    return paginate(allPosts, { pageSize: pageSize });
 }
 
 // get all the posts and send to tag and category component
