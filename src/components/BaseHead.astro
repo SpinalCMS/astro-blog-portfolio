@@ -1,11 +1,11 @@
 ---
 // data
-import Settings from '@/data/settings'
+import { siteConfig } from '@/src/config.ts'
 ---
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content={Settings.name} />
+<meta name="author" content={siteConfig.name} />
 
 <style global lang="scss">
     @import "../assets/styles/_global.scss";

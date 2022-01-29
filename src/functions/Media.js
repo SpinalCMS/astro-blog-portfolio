@@ -1,18 +1,21 @@
-import Settings from '@/data/settings'
+// modules
 import fs from 'fs'
 import path from 'path';
 import sizeOf from 'image-size';
 import exifr from 'exifr'
 
+// config
+import { imageConfig } from '../config.ts'
+
 // build the public image url
 // relative to the web root
 export function buildPublicPath(file) {
-    return `/${Settings.image.directory.public}${file}`;
+    return `/${imageConfig.directory.public}${file}`;
 }
 // build the local path
 // relative to the 'public' directory
 export function buildLocalPath(file) {
-    return `${Settings.image.directory.local}${file}`;
+    return `${imageConfig.directory.local}${file}`;
 }
 // I need the full file path minus the extension
 // for the single image detail pages

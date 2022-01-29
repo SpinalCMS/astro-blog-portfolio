@@ -3,7 +3,7 @@
 import { getDimensions, buildPublicPath, getMetadata } from '@/functions/Media'
 
 // data
-import settings from "@/data/settings"
+import { imageConfig } from "@/src/config.ts"
 
 // props
 export interface Props {
@@ -24,7 +24,7 @@ if (typeof alt === 'undefined') {
 ---
 
 <img
-    data-blink-ops={ watermark ? `overlay-uuid: ${settings.image.logo}; overlay-dimensions: 15%25x15%25; overlay-coordinates: 50%25,90%25` : `` }
+    data-blink-ops={ watermark ? `overlay-uuid: ${imageConfig.logo}; overlay-dimensions: 15%25x15%25; overlay-coordinates: 50%25,90%25` : `` }
     data-blink-src={url}
     class={classes}
     alt={alt ? alt : caption}

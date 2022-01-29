@@ -3,18 +3,17 @@
 import sizeOf from "image-size";
 
 // data
-import settings from "@/data/settings"
+import { imageConfig } from "@/src/config.ts"
 
 // props
 export interface Props {
     file: string;
     rowHeight?: number;
-    watermark?: boolean;
 }
-const { file, rowHeight = 350, watermark = true } = Astro.props;
+const { file, rowHeight = 350 } = Astro.props;
 
 // build the file paths
-let localUrl = `${settings.image.directory.local}${file}`;
+let localUrl = `${imageConfig.directory.local}${file}`;
 
 // get the image dimensions
 const dimensions = sizeOf(localUrl);

@@ -15,7 +15,7 @@ import Tags from '@/components/Tags'
 import Categories from '@/components/Categories'
 
 // data
-import Settings from '@/data/settings'
+import { pageSize } from '@/src/config.ts'
 
 export async function getStaticPaths({ paginate }) {
     const allShoots = Astro.fetchContent('../../*.md');
@@ -27,11 +27,11 @@ export async function getStaticPaths({ paginate }) {
     
     return Array.from(allCategories).map((category) => {
         const filteredShoots = allShoots.filter((post) => post.category.includes(category))
-                                       .sort((a, b) => new Date(b.date) - new Date(a.date));
+                                        .sort((a, b) => new Date(b.date) - new Date(a.date));
         
         return paginate(filteredShoots, {
             params: { category },
-            pageSize: Settings.pageSize
+            pageSize: pageSize
         });
     });
 }

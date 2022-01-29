@@ -14,14 +14,14 @@ import Sidebar from '@/components/Sidebar'
 import Tags from '@/components/Tags'
 import Categories from '@/components/Categories'
 
-// data
-import Settings from '@/data/settings'
+// config
+import { pageSize } from '@/src/config.ts'
 
 export async function getStaticPaths({ paginate }) {
     const allShoots = await Astro.fetchContent("./*.md")
                                  .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    return paginate(allShoots, { pageSize: Settings.pageSize });
+    return paginate(allShoots, { pageSize: pageSize });
 }
 
 const { page } = Astro.props;
