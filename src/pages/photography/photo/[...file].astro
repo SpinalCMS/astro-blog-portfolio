@@ -36,9 +36,15 @@ export async function getStaticPaths() {
 
 const { params } = Astro.request;
 
-const url = params.file + '.jpg' // add the filename back to the file param
-const ucr = buildPublicPath(params.file) + '.jpg'; // the url of the image to create the download links
-const metadata = await getMetadata(url); 
+// add the filename back to the file param
+// this is the local file
+const url = params.file + '.jpg'
+
+// the url of the image to create the download links
+const ucr = buildPublicPath(params.file) + '.jpg';
+
+// get the metadata for the file
+const metadata = await getMetadata(url);
 ---
 
 <!DOCTYPE html>

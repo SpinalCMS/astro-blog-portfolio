@@ -6,7 +6,7 @@ export interface Props {
 const { fullWidth = false } = Astro.props;
 ---
 
-<div class=`${fullWidth ? 'full-width' : 'constraint-lg'}`>
+<div class={ fullWidth ? `full-width` : `constraint-lg`}>
     <slot />
 </div>
 

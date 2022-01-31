@@ -26,7 +26,7 @@ const { shoot } = Astro.props;
         
         <div class="meta">
             <time>{timeAgo(shoot.date)}</time>
-            <a class="category" href=`/photography/categories/${shoot.category}` title=`${shoot.category}`>{shoot.category}</a>
+            <a class="category" href={`/photography/categories/${shoot.category}`} title={shoot.category}>{shoot.category}</a>
         </div>
 
         <p>{shoot.description}</p>

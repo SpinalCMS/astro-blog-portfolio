@@ -12,6 +12,7 @@ tags:
   - porsche
   - dripping springs
   - turbo
+  - slantnose
 category: just for fun
 date: 2021-06-23
 
