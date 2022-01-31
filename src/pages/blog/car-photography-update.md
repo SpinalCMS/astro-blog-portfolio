@@ -31,12 +31,12 @@ Over the past few months I've started shooting cars for Bring a Trailer auctions
 <figure>
     <picture>
         <Image
-            file="shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_004.jpg"
+            file="shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_004.jpg"
             classes="solid-shadow-blue"
         />
     </picture>
     <Caption
-        file="shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_004.jpg"
+        file="shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_004.jpg"
         showMeta={true}
     />
 </figure>
@@ -46,12 +46,12 @@ This is where I look back and shake my head when I made the foolish decision to 
 <figure>
     <picture>
         <Image
-            file="shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_006.jpg"
+            file="shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_006.jpg"
             classes="solid-shadow-blue"
         />
     </picture>
     <Caption
-        file="shoots/2018/2018-08-26_coffee-with-cars/coffee-with-cars-2018_006.jpg"
+        file="shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_006.jpg"
         showMeta={true}
     />
 </figure>

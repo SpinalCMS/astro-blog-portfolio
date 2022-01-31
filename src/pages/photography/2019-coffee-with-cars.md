@@ -44,7 +44,7 @@ gallery01:
   - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_020.jpg
 ---
 
-After my [move from three lenses to one large zoom](http://localhost:3000/blog/lens-change-from-3-to-1), I wanted to test it out. Every month, [Greater Goods](https://greatergoodsroasting.com/) hosts a car show in Dripping Springs, TX. It's a great mix of vehicles, some new, some old, some trucks.
+After my [move from three lenses to one large zoom](/blog/lens-change-from-3-to-1), I wanted to test it out. Every month, [Greater Goods](https://greatergoodsroasting.com/) hosts a car show in Dripping Springs, TX. It's a great mix of vehicles, some new, some old, some trucks.
 
 The 24-105mm Sony for full frame E-mount lenses is such a great and versatile lens for car photography. If you're okay with the limited, minimum aperture of f/4, it's the perfect zoom. 24mm is just enough to grab nice interiors, 105mm gives you great depth of field, even at f/4.
 
