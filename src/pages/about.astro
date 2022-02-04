@@ -10,7 +10,7 @@ import Flex from "@/components/Flex"
 import Content from "@/components/Content"
 import Container from "@/components/Container"
 import Image from "@/components/image/Image"
-import Gallery from "@/components/image/Gallery"
+import Caption from "@/components/image/Caption"
 import Sidebar from "@/components/Sidebar"
 
 // data
@@ -39,8 +39,8 @@ import { siteConfig } from "@/src/config.ts"
             }
         }
 
-        :global(img) {
-            margin-bottom: var(--section-spacing-sm);
+        figure {
+            margin-bottom: var(--section-spacing-md);
         }
     </style>
 </head>
@@ -55,7 +55,10 @@ import { siteConfig } from "@/src/config.ts"
         </Container>
         
         <Container width="lg">
-            <Image file="shoots/2021/2021-06-23-porsche-930/porsche-930-2021_007.jpg" />
+            <figure>
+                <Image file="shoots/2021/2021-06-23-porsche-930/porsche-930-2021_007.jpg" />
+                <Caption file="shoots/2021/2021-06-23-porsche-930/porsche-930-2021_007.jpg" />
+            </figure>
         </Container>
 
         <Container>

@@ -8,6 +8,7 @@ import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
 import Flex from "@/components/Flex"
 import Content from "@/components/Content"
+import Container from "@/components/Container"
 import ShootSnippet from "@/components/ShootSnippet"
 import Pagination from "@/components/Pagination"
 import Sidebar from "@/components/Sidebar"
@@ -40,43 +41,54 @@ const categories = [...new Set(allShoots.map(s => s.category))];
         title="Car Photography in Austin, TX"
         description="During the summer months you'll catch me shootin photos at Cars and Coffee at COTA or Coffee With Cars in Dripping Springs. I also do freelance photography for Bring a Trailer auctions."
     />
+
+    <style lang="scss">
+        section.posts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    </style>
 </head>
 
 <body>
     <BaseLayout>
-        <Heading>
-            <h1>Photography</h1>
-        </Heading>
+        <Container>
+            <Heading>
+                <h1 slot="heading">Photos</h1>
+            </Heading>
+        </Container>
         
-        <Flex>
-            <Content>
-                {page.currentPage === 1 ? 
-                    <article>
-                        <p>Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
-                        <p>If I have some free time, you might catch me over at <a href="https://www.facebook.com/CoffeeWithCars/" title="Coffee With Cars in Dripping Springs">Coffee With Cars in Dripping Springs, TX</a>. It's currently hosted at Dreamland on the last Sunday of the month at 8am.</p>
-                        <p>Currently I'm shooting with a Sony Alpha A7iii and a host of Zeiss Batis lenses. I'm also always on the lookout for new Peak Design gear, everything they make is incredible.</p>
-                    </article> : ``
-                }
+        <Container>
+            <Flex>
+                <Content>
+                    {page.currentPage === 1 ? 
+                        <article>
+                            <p>Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
+                            <p>If I have some free time, you might catch me over at <a href="https://www.facebook.com/CoffeeWithCars/" title="Coffee With Cars in Dripping Springs">Coffee With Cars in Dripping Springs, TX</a>. It's currently hosted at Dreamland on the last Sunday of the month at 8am.</p>
+                            <p>Currently I'm shooting with a Sony Alpha A7iii and a host of Zeiss Batis lenses. I'm also always on the lookout for new Peak Design gear, everything they make is incredible.</p>
+                        </article> : ``
+                    }
 
-                <section class="posts">
-                    {page.data.map(s =>
-                        <ShootSnippet shoot={s} />
-                    )}
-                </section>
+                    <section class="posts">
+                        {page.data.map(s =>
+                            <ShootSnippet shoot={s} />
+                        )}
+                    </section>
 
-                <Pagination page={page} />
-            </Content>
+                    <Pagination page={page} />
+                </Content>
 
-            <Sidebar>
-                <div>
-                    <h4>Categories</h4>
-                    <Categories categories={categories} base="photography" />
-                    
-                    <h4>Tags</h4>
-                    <Tags tags={tags} base="photography" />
-                </div>
-            </Sidebar>
-        </Flex>
+                <Sidebar>
+                    <div>
+                        <h4>Categories</h4>
+                        <Categories categories={categories} base="photography" />
+                        
+                        <h4>Tags</h4>
+                        <Tags tags={tags} base="photography" />
+                    </div>
+                </Sidebar>
+            </Flex>
+        </Container>
     </BaseLayout>
 </body>
 </html>

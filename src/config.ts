@@ -19,4 +19,4 @@ export const imageConfig = {
     ucEndpoint: "https://0ca93eb51f9f128c47f5.ucr.io"
 }
 
-export const pageSize = 5
+export const pageSize = 6

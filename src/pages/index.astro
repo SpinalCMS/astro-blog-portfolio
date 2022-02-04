@@ -32,6 +32,10 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
     <style lang="scss">
         @use "../assets/styles/breakpoints" as *;
 
+        :global(.intro) {
+            margin-bottom: var(--section-spacing-xl) !important;
+        }
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);

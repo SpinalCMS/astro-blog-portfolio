@@ -8,6 +8,8 @@ import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
 import Flex from "@/components/Flex"
 import Content from "@/components/Content"
+import Container from "@/components/Container"
+import Image from "@/components/image/Image"
 import Sidebar from "@/components/Sidebar"
 import Tags from "@/components/Tags"
 import TOC from "@/components/TableOfContents"
@@ -33,19 +35,29 @@ const { content } = Astro.props;
         description={content.description}
     />
 
-    <style lang="scss">
+    <style lang="scss">        
+        :global(.intro) {
+            grid-template-columns: 1fr !important;
+            text-align: center;
+        }
+        
+        p.description {
+            font-size: var(--text-3xl);
+            font-weight: 300;
+            line-height: var(--space-lg);
+            color: var(--color-grayscale-90);
+            padding-left: var(--space-sm);
+            border-left: 5px solid var(--color-pink);
+        }
+        .hero {
+            margin-bottom: var(--section-spacing-md);
+        }
+
         .meta {
             p {
                 font-size: var(--text-md);
                 margin: 0;
             }
-        }
-        
-        :global(img) {
-            margin-bottom: var(--space-sm);
-        }
-        :global(figure) {
-            //margin: var(--space-xl) 0;
         }
 
         .tags {
@@ -108,36 +120,49 @@ const { content } = Astro.props;
 
 <body>
     <BaseLayout>
-        <Heading>
-            <h1>{content.title}</h1>
-            <p class="description">{content.excerpt}</p>
-        </Heading>
+        <Container width="sm">
+            <Heading>
+                <h1 slot="heading">{content.title}</h1>
+            </Heading>
+        </Container>
 
-        <Flex>
-            <Content>
-                <slot />
-            </Content>
+        { content.hero ? 
+            <Container width="lg">
+                <figure class="hero">
+                    <Image file={content.hero} />
+                </figure>
+            </Container>
+        : `` }
 
-            <Sidebar>
-                <div class="meta">
-                    <h4>Post Meta</h4>
-                    <p>Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
-                    <p>Filed under <span style="text-transform: capitalize"><a href={`/blog/categories/${content.category}`} title={`Posts categorized under ${content.category}`}>{content.category}</a></span></p>
-                    
-                    <div class="tags">
-                        <p>Tagged in</p>
-                        <Tags tags={content.tags} base="blog" />
+        <Container>
+            <Flex>
+                <Content>
+                    <p class="description">{content.description}</p>
+
+                    <slot />
+                </Content>
+
+                <Sidebar>
+                    <div class="meta">
+                        <h4>Post Meta</h4>
+                        <p>Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
+                        <p>Filed under <span style="text-transform: capitalize"><a href={`/blog/categories/${content.category}`} title={`Posts categorized under ${content.category}`}>{content.category}</a></span></p>
+                        
+                        <div class="tags">
+                            <p>Tagged in</p>
+                            <Tags tags={content.tags} base="blog" />
+                        </div>
                     </div>
-                </div>
 
-                { content.astro.headers.length ?
-                   <div class="toc">
-                        <h4>Contents</h4>
-                        <TOC headers={content.astro.headers} />
-                    </div>
-                    : ``}
-            </Sidebar>
-        </Flex>
+                    { content.astro.headers.length ?
+                    <div class="toc">
+                            <h4>Contents</h4>
+                            <TOC headers={content.astro.headers} />
+                        </div>
+                        : ``}
+                </Sidebar>
+            </Flex>
+        </Container>
     </BaseLayout>
 </body>
 </html>

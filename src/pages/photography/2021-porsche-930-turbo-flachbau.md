@@ -5,6 +5,7 @@ setup: |
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
   import Gallery from "@/components/image/Gallery"
+  import Video from "@/components/video/Video"
 
 # meta
 tags:
@@ -20,7 +21,7 @@ title: 1989 930 Turbo Flachbau
 description: I switch from photographer to the driver seat to grab some rolling shots of a Porsche 930 Turbo.
 
 # photos
-hero: shoots/2021/2021-06-23-porsche-930/porsche-930-2021_026.jpg
+hero: shoots/2021/2021-06-23-porsche-930/porsche-930-2021_043.jpg
 gallery01:
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_001.jpg
   - shoots/2021/2021-06-23-porsche-930/porsche-930-2021_002.jpg

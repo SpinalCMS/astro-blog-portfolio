@@ -8,14 +8,14 @@ export interface Props {
     showTitle?: boolean;
     showMeta?: boolean;
 }
-const { file, showTitle = false, showMeta = false } = Astro.props;
+const { file, showTitle = false, showMeta = true } = Astro.props;
 
 const metadata = await getMetadata(file); // get the metadata for the caption
 ---
 
 <figcaption>
     <div class="summary">
-        {showTitle ? <div class="title">${metadata.title}</div> : <div class="caption">${metadata.caption}</div> }
+        {showTitle ? <div class="title">{metadata.title}</div> : <div class="caption">{metadata.caption}</div> }
         {showMeta ? 
             <a href="/photography/photo/${buildFileDetailPath(file)}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-square" viewBox="0 0 16 16">
@@ -34,20 +34,20 @@ const metadata = await getMetadata(file); // get the metadata for the caption
         margin: 0;
 
         @include breakpoint(md) {
-            margin: 0 var(--space-sm);
+            margin: 0 var(--space-lg);
         }
 
         .summary {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            gap: var(--space-xs);
-            margin-top: var(--space-md);
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
             margin-bottom: var(--space-md);
             font-size: var(--text-sm);
 
             .caption {
-                font-weight: 340;
+                font-weight: 300;
                 font-size: var(--text-sm);
                 display: -webkit-box;
                 -webkit-line-clamp: 1;

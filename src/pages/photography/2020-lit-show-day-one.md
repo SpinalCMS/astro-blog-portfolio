@@ -24,7 +24,7 @@ related:
   - lit-show-day-four
 
 # photos
-hero: shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_087.jpg
+hero: shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_013.jpg
 gallery01:
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_003.jpg
   - shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_006.jpg

@@ -8,6 +8,7 @@ import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
 import Flex from "@/components/Flex"
 import Content from "@/components/Content"
+import Container from "@/components/Container"
 import PostSnippet from "@/components/PostSnippet"
 import Pagination from "@/components/Pagination"
 import Sidebar from "@/components/Sidebar"
@@ -57,41 +58,45 @@ const { page } = Astro.props;
         title="Blog - Digital Marketing, Jamstack Programming and Car Photography"
         description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. He&#39;s also an automotive photographer shooting photos at Austin car shows."
     />
+
+    <style lang="scss">
+        section.posts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    </style>
 </head>
 
 <body>
     <BaseLayout>
-        <Heading>
-            <h1>Blog</h1>
-        </Heading>
-        
-        <Flex>
-            <Content>
-                {page.currentPage === 1 ?  
-                    <article>
-                        <p>Occasionally you'll catch me writing down my thoughts on the intersection of <a href="blog/tags/code" title="Coding Posts">coding</a>, <a href="blog/tags/photography" title="Photography Posts">photography</a> and <a href="blog/tags/cars" title="Car Posts">cars</a> (as if there is such a thing).</p>
-                    </article> : ``
-                }
-                
-                <section class="posts">
-                    {page.data.map(p =>
-                        <PostSnippet post={p} />
-                    )}
-                </section>
+        <Container>
+            <Heading>
+                <h1 slot="heading">Blog</h1>
+                <p>Occasionally you'll catch me writing down my thoughts on the intersection of <a href="blog/tags/code" title="Coding Posts">coding</a>, <a href="blog/tags/photography" title="Photography Posts">photography</a> and <a href="blog/tags/cars" title="Car Posts">cars</a> (as if there is such a thing).</p>
+            </Heading>
 
-                <Pagination page={page} />
-            </Content>
+            <Flex>
+                <Content>                
+                    <section class="posts">
+                        {page.data.map(p =>
+                            <PostSnippet post={p} />
+                        )}
+                    </section>
 
-            <Sidebar>
-                <div>
-                    <h4>Categories</h4>
-                    <Categories categories={categories} base="blog" />
-                    
-                    <h4>Tags</h4>
-                    <Tags tags={tags} base="blog" />
-                </div>
-            </Sidebar>
-        </Flex>
+                    <Pagination page={page} />
+                </Content>
+
+                <Sidebar>
+                    <div>
+                        <h4>Categories</h4>
+                        <Categories categories={categories} base="blog" />
+                        
+                        <h4>Tags</h4>
+                        <Tags tags={tags} base="blog" />
+                    </div>
+                </Sidebar>
+            </Flex>
+        </Container>
     </BaseLayout>
 </body>
 </html>
