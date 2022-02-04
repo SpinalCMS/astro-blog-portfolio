@@ -1,6 +1,6 @@
 ---
 // functions
-import { timeAgo } from '@/functions/DateTime'
+import { timeAgo } from "@/functions/DateTime"
 
 // props
 export interface Props {
@@ -16,14 +16,14 @@ const { post } = Astro.props;
     
     <div class="meta">
         <time>{timeAgo(post.date)}</time>
-        <a href=`/blog/categories/${post.category}` title={post.title} class="category">{post.category}</a>
+        <a href={`/blog/categories/${post.category}`} title={post.title} class="category">{post.category}</a>
     </div>
 
     <p>{post.description}</p>
 </div>
 
 <style lang="scss">
-    @use '../assets/styles/breakpoints' as *;
+    @use "../assets/styles/breakpoints" as *;
 
     .post {
         display: flex;

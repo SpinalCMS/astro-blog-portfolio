@@ -1,34 +1,34 @@
 ---
 // components
-import Container from '@/components/Container'
+import Container from "@/components/Container"
 
 // data
-import Navigation from '@/data/navigation'
+import Navigation from "@/data/navigation"
 ---
 
 <Container>
     <header>
+        <!-- logo -->
         <div>
             <a href="/" title="Homepage">
                 <img src="/images/logo-black.svg" />
             </a>
         </div>
 
+        <!-- navigation items -->
         <nav>        
             {Navigation.map((item) => (
                 <a href={item.url} title={item.display}>
                     {item.display}
                 </a>
             ))}
-            <a href="/contact" class="btn btn-primary" title="Contact Me">
-                Contact
-            </a>
+            <a href="/contact" class="btn btn-primary" title="Contact Me">Contact</a>
         </nav>
     </header>
 </Container>
 
 <style lang="scss">
-    @use '../assets/styles/breakpoints' as *;
+    @use "../assets/styles/breakpoints" as *;
 
     header {        
         display: flex;

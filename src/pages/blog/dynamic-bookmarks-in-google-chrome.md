@@ -4,7 +4,7 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
-  import { Prism } from 'astro/components';
+  import { Prism } from "astro/components";
 
 # meta
 tags:

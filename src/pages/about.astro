@@ -3,56 +3,41 @@
 import { SEO } from "astro-seo";
 
 // components
-import BaseHead from '@/components/BaseHead'
-import BaseLayout from '@/components/BaseLayout'
-import Heading from '@/components/Heading'
-import Flex from '@/components/Flex'
-import Content from '@/components/Content'
-import Container from '@/components/Container'
-import Image from '@/components/image/Image'
-import Gallery from '@/components/image/Gallery'
-import Sidebar from '@/components/Sidebar'
+import BaseHead from "@/components/BaseHead"
+import BaseLayout from "@/components/BaseLayout"
+import Heading from "@/components/Heading"
+import Flex from "@/components/Flex"
+import Content from "@/components/Content"
+import Container from "@/components/Container"
+import Image from "@/components/image/Image"
+import Gallery from "@/components/image/Gallery"
+import Sidebar from "@/components/Sidebar"
 
 // data
-import Skills from '@/data/resume'
+import Skills from "@/data/resume"
 
 // config
-import { siteConfig } from '@/src/config.ts'
+import { siteConfig } from "@/src/config.ts"
 
 const gallery = [
     {
-        url: 'pages/about/me_01.jpg',
-        alt: 'The Ritz Carlton at Half Moon Bay'
+        url: "pages/about/me_01.jpg",
+        alt: "The Ritz Carlton at Half Moon Bay"
     },
     {
-        url: 'pages/about/me_02.jpg',
-        alt: 'Summer Outdoor Church'
+        url: "pages/about/me_02.jpg",
+        alt: "Summer Outdoor Church"
     },
     {
-        url: 'pages/about/me_03.jpg',
-        alt: 'The Beach at Matagorda, TX'
+        url: "pages/about/me_03.jpg",
+        alt: "The Beach at Matagorda, TX"
     },
     {
-        url: 'pages/about/me_04.jpg',
-        alt: 'The Ritz Carlton at Half Moon Bay'
+        url: "pages/about/me_04.jpg",
+        alt: "The Ritz Carlton at Half Moon Bay"
     },
 ]
 ---
-
-<style lang="scss">
-    ul {
-        list-style-type: none;
-        padding: 0;
-
-        li {
-            font-size: var(--text-sm);
-        }
-    }
-
-    :global(img) {
-        filter: grayscale(100%);
-    }
-</style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,6 +47,21 @@ const gallery = [
         title="Erik S. Olsen - I'm a Digital Marketing Expert located in Austin, TX"
         description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. My expertise is designing and creating large-scale, data-driven marketing campaigns for e-commerce businesses."
     />
+
+    <style lang="scss">
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                font-size: var(--text-sm);
+            }
+        }
+
+        :global(img) {
+            filter: grayscale(100%);
+        }
+    </style>
 </head>
 
 <body>

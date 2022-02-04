@@ -6,8 +6,30 @@ export interface Props {
 const { page } = Astro.props;
 ---
 
+<div class="pagination">
+    <div class="count">
+        {page.start + 1} to {page.end + 1} of {page.total}
+    </div>
+
+    <div class="action">
+        <div>
+            { page.url.prev ? 
+                <a href=${page.url.prev}#anchor class="pill pill-secondary">Previous</a> :
+                <span class="pill pill-disabled">Previous</span>
+            }
+        </div>
+
+        <div>
+            { page.url.next ? 
+                <a href=${page.url.next} class="pill pill-secondary">Next</a> :
+                <span class="pill pill-disabled">Next</span>
+            }
+        </div>
+    </div>
+</div>
+
 <style lang="scss">
-    @use '../assets/styles/breakpoints' as *;
+    @use "../assets/styles/breakpoints" as *;
     
     .pagination {
         margin-top: var(--space-xl);
@@ -27,25 +49,3 @@ const { page } = Astro.props;
         }
     }
 </style>
-
-<div class="pagination">
-    <div class="count">
-        {page.start + 1} to {page.end + 1} of {page.total}
-    </div>
-
-    <div class="action">
-        <div>
-            { page.url.prev ? 
-                `<a href=${page.url.prev}#anchor class="pill pill-secondary">Previous</a>` :
-                `<span class="pill pill-disabled">Previous</span>`
-            }
-        </div>
-
-        <div>
-            { page.url.next ? 
-                `<a href=${page.url.next} class="pill pill-secondary">Next</a>` :
-                `<span class="pill pill-disabled">Next</span>`
-            }
-        </div>
-    </div>
-</div>

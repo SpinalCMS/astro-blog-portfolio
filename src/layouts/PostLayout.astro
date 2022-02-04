@@ -3,17 +3,17 @@
 import { SEO } from "astro-seo";
 
 // components
-import BaseHead from '@/components/BaseHead'
-import BaseLayout from '@/components/BaseLayout'
-import Heading from '@/components/Heading'
-import Flex from '@/components/Flex'
-import Content from '@/components/Content'
-import Sidebar from '@/components/Sidebar'
-import Tags from '@/components/Tags'
-import TOC from '@/components/TableOfContents'
+import BaseHead from "@/components/BaseHead"
+import BaseLayout from "@/components/BaseLayout"
+import Heading from "@/components/Heading"
+import Flex from "@/components/Flex"
+import Content from "@/components/Content"
+import Sidebar from "@/components/Sidebar"
+import Tags from "@/components/Tags"
+import TOC from "@/components/TableOfContents"
 
 // functions
-import { fullDate } from '@/functions/DateTime'
+import { fullDate } from "@/functions/DateTime"
 
 // props
 export interface Props {
@@ -122,7 +122,7 @@ const { content } = Astro.props;
                 <div class="meta">
                     <h4>Post Meta</h4>
                     <p>Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
-                    <p>Filed under <span style="text-transform: capitalize"><a href="/blog/categories/${content.category}" title="Posts categorized under '${content.category}'">{content.category}</a></span></p>
+                    <p>Filed under <span style="text-transform: capitalize"><a href={`/blog/categories/${content.category}`} title={`Posts categorized under ${content.category}`}>{content.category}</a></span></p>
                     
                     <div class="tags">
                         <p>Tagged in</p>

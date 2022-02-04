@@ -1,6 +1,6 @@
 ---
 // functions
-import { getDimensions, buildPublicPath, getMetadata } from '@/functions/Media'
+import { getDimensions, getMetadata, buildPublicPath } from '@/functions/Media'
 
 // data
 import { imageConfig } from "@/src/config.ts"
@@ -14,7 +14,6 @@ export interface Props {
 }
 const { file, classes, alt, watermark = false } = Astro.props;
 
-const url = buildPublicPath(file);
 const dimensions = getDimensions(file); // get the image dimensions
 
 let caption = '';
@@ -25,9 +24,9 @@ if (typeof alt === 'undefined') {
 
 <img
     data-blink-ops={ watermark ? `overlay-uuid: ${imageConfig.logo}; overlay-dimensions: 15%25x15%25; overlay-coordinates: 50%25,90%25` : `` }
-    data-blink-src={url}
-    class={classes}
-    alt={alt ? alt : caption}
-    width={dimensions.width}
-    height={dimensions.height}
+    data-blink-src={ buildPublicPath(file) }
+    class={ classes }
+    alt={ alt ? alt : caption }
+    width={ dimensions.width }
+    height={ dimensions.height }
 >

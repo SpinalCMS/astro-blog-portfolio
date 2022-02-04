@@ -3,27 +3,27 @@
 import { SEO } from "astro-seo";
 
 // components
-import BaseHead from '@/components/BaseHead'
-import BaseLayout from '@/components/BaseLayout'
-import Heading from '@/components/Heading'
-import Flex from '@/components/Flex'
-import Content from '@/components/Content'
-import PostSnippet from '@/components/PostSnippet'
-import Pagination from '@/components/Pagination'
-import Sidebar from '@/components/Sidebar'
-import Tags from '@/components/Tags'
-import Categories from '@/components/Categories'
+import BaseHead from "@/components/BaseHead"
+import BaseLayout from "@/components/BaseLayout"
+import Heading from "@/components/Heading"
+import Flex from "@/components/Flex"
+import Content from "@/components/Content"
+import PostSnippet from "@/components/PostSnippet"
+import Pagination from "@/components/Pagination"
+import Sidebar from "@/components/Sidebar"
+import Tags from "@/components/Tags"
+import Categories from "@/components/Categories"
 
 // config
-import { pageSize } from '@/src/config.ts'
+import { pageSize } from "@/src/config.ts"
 
 export async function getStaticPaths({rss, paginate}) {
     const allPosts = await Astro.fetchContent("./*.md")
                                 .sort((a, b) => new Date(b.date) - new Date(a.date));
 
     rss({
-        title: 'Erik S. Olsen',
-        description: 'Erik Olsen lives in Austin, Texas and is the Director of Digital Engagement at ICG America',
+        title: "Erik S. Olsen",
+        description: "Erik Olsen lives in Austin, Texas and is the Director of Digital Engagement at ICG America",
         customData: `<language>en-us</language>`,
         // The list of items for your RSS feed, sorted.
         items: allPosts.map(p => ({
@@ -67,10 +67,10 @@ const { page } = Astro.props;
         
         <Flex>
             <Content>
-                {page.currentPage > 1 ? `` : 
-                    `<article>
+                {page.currentPage === 1 ?  
+                    <article>
                         <p>Occasionally you'll catch me writing down my thoughts on the intersection of <a href="blog/tags/code" title="Coding Posts">coding</a>, <a href="blog/tags/photography" title="Photography Posts">photography</a> and <a href="blog/tags/cars" title="Car Posts">cars</a> (as if there is such a thing).</p>
-                    </article>`
+                    </article> : ``
                 }
                 
                 <section class="posts">

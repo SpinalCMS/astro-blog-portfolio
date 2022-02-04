@@ -6,6 +6,16 @@ export interface Props {
 const { headers } = Astro.props;
 ---
 
+<div>
+    <ul class="toc">
+        {headers.map(h => 
+            <li class={`depth-${h.depth}`}>
+                <a href={`#${h.slug}`}>{h.text}</a>
+            </li>
+        )}
+    </ul>
+</div>
+
 <style lang="scss">
     ul {
         list-style-type: none;
@@ -35,16 +45,6 @@ const { headers } = Astro.props;
         }
     }
 </style>
-
-<div>
-    <ul class="toc">
-        {headers.map(h => 
-            <li class="depth-${h.depth}">
-                <a href="#${h.slug}">{h.text}</a>
-            </li>
-        )}
-    </ul>
-</div>
 
 <script>
     window.addEventListener('DOMContentLoaded', () => {

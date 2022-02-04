@@ -1,24 +1,23 @@
 ---
 // modules
 import { SEO } from "astro-seo";
-import fg from 'fast-glob'
-import path from 'path'
+import fg from "fast-glob"
 
 // components
-import BaseHead from '@/components/BaseHead'
-import BaseLayout from '@/components/BaseLayout'
-import Heading from '@/components/Heading'
-import Flex from '@/components/Flex'
-import Content from '@/components/Content'
-import Image from '@/components/image/Image'
-import Caption from '@/components/image/Caption'
+import BaseHead from "@/components/BaseHead"
+import BaseLayout from "@/components/BaseLayout"
+import Heading from "@/components/Heading"
+import Flex from "@/components/Flex"
+import Content from "@/components/Content"
+import Image from "@/components/image/Image"
+import Caption from "@/components/image/Caption"
 
 // functions
-import { getMetadata, buildPublicPath, buildFileDetailPath } from '@/functions/Media'
-import { fullDate } from '@/functions/DateTime'
+import { getMetadata, buildPublicPath, buildFileDetailPath } from "@/functions/Media"
+import { fullDate } from "@/functions/DateTime"
 
 // config
-import { siteConfig, imageConfig } from '@/src/config.ts'
+import { siteConfig, imageConfig } from "@/src/config.ts"
 
 export async function getStaticPaths() {
     const files = fg.sync("./public/images/shoots/**/*.jpg"); // glob to get all the photo shoots
@@ -38,10 +37,10 @@ const { params } = Astro.request;
 
 // add the filename back to the file param
 // this is the local file
-const url = params.file + '.jpg'
+const url = params.file + ".jpg"
 
 // the url of the image to create the download links
-const ucr = buildPublicPath(params.file) + '.jpg';
+const ucr = buildPublicPath(params.file) + ".jpg";
 
 // get the metadata for the file
 const metadata = await getMetadata(url);
@@ -57,7 +56,7 @@ const metadata = await getMetadata(url);
     />
 
     <style lang="scss">
-        @use '../../../assets/styles/breakpoints' as *;
+        @use "../../../assets/styles/breakpoints" as *;
 
         :global(img) {
             box-shadow: var(--site-shadow);
@@ -174,7 +173,7 @@ const metadata = await getMetadata(url);
                         </div>
                         <div class="actions">
                             <h4>Download</h4>
-                            <p><a href=`${imageConfig.ucEndpoint}/-/overlay/${imageConfig.logo}/10%25x10%25/50%25,98%25/${siteConfig.url}${ucr}` title="Download the full size image">Full Size</a> ({metadata.width} x {metadata.height})</p>
+                            <p><a href={`${imageConfig.ucEndpoint}/-/overlay/${imageConfig.logo}/10%25x10%25/50%25,98%25/${siteConfig.url}${ucr}`} title="Download the full size image">Full Size</a>({metadata.width} x {metadata.height})</p>
                         </div>
                     </div>
                 </div>

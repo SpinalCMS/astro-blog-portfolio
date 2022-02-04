@@ -5,7 +5,6 @@ setup: |
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
   import Gallery from "@/components/image/Gallery"
-  import Video from "@/components/video/Video"
 
 # meta
 tags:

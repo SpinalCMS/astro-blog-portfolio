@@ -6,16 +6,17 @@ export interface Props {
 }
 const { categories, base } = Astro.props;
 ---
+    
 <ul class="category-list">
     {categories.map(c =>
         <li class="category">
-            <a href="/${base}/categories/${c}" title="Posts categorized under '${c}'">{c}</a>
+            <a href={`/${base}/categories/${c}`} title={`Posts categorized under ${c}`}>{c}</a>
         </li>
     )}
 </ul>
 
 <style lang="scss">
-    @use '../assets/styles/breakpoints' as *;
+    @use "../assets/styles/breakpoints" as *;
 
     .category-list {
         list-style-type: none;

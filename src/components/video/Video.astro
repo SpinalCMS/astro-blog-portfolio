@@ -1,5 +1,5 @@
 ---
-import { buildPublicPath } from '@/functions/Media'
+import { buildPublicPath } from "@/functions/Media"
 
 // props
 export interface Props {
@@ -7,9 +7,13 @@ export interface Props {
     classes?: string;
 }
 const { file, classes } = Astro.props;
-
-const url = buildPublicPath(file);
 ---
+
+<video width="100%" height="auto" controls>
+    <source src={buildPublicPath(file)} type="video/mp4">
+    
+    Your browser does not support the HTML video tag.
+</video>
 
 <style lang="scss">
     video {
@@ -17,9 +21,3 @@ const url = buildPublicPath(file);
         box-shadow: var(--site-shadow);
     }
 </style>
-
-<video width="100%" height="auto" controls>
-    <source src={url} type="video/mp4">
-    
-    Your browsers does not support the video tag.
-</video>

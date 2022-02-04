@@ -10,13 +10,13 @@ const { tags, base } = Astro.props;
 <ul class="tag-list">
     {tags.map(t =>
         <li class="tag">
-            <a href="/${base}/tags/${t}" title="Posts tagged '${t}'">{t}</a>
+            <a href={`/${base}/tags/${t}`} title={`Posts tagged ${t}`}>{t}</a>
         </li>
     )}
 </ul>
 
 <style lang="scss">
-    @use '../assets/styles/breakpoints' as *;
+    @use "../assets/styles/breakpoints" as *;
 
     .tag-list {        
         list-style-type: none;

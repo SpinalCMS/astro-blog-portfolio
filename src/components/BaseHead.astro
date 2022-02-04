@@ -1,18 +1,16 @@
 ---
 // data
-import { siteConfig } from '@/src/config.ts'
+import { siteConfig } from "@/src/config.ts"
 ---
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content={siteConfig.name} />
 
-<link rel="stylesheet" type="text/css" href={Astro.resolve('../assets/styles/_global.scss')} />
-<!--
+<!--<link rel="stylesheet" type="text/css" href={Astro.resolve('../assets/styles/_global.scss')} />-->
 <style global lang="scss">
     @import "../assets/styles/_global.scss";
 </style>
--->
 
 <script>
     (function(src, cb) {

@@ -1,11 +1,11 @@
 // modules
-import fs from 'fs'
-import path from 'path';
-import sizeOf from 'image-size';
-import exifr from 'exifr'
+import fs from "fs"
+import path from "path"
+import sizeOf from "image-size"
+import exifr from "exifr"
 
 // config
-import { imageConfig } from '../config'
+import { imageConfig } from "../config"
 
 // build the public image url
 // relative to the web root
@@ -38,9 +38,9 @@ export async function getMetadata(file, data = "all") {
 
     // collect all the exif, iptc and ifd0 data from the image
     const exifrOptions = {
-        iptc: ['ObjectName', 'Caption', 'Byline'],
-        exif: ['LensModel', 'FNumber', 'ISO', 'ExposureTime', 'DateTimeOriginal', 'FocalLength'],
-        ifd0: ['Make', 'Model'],
+        iptc: ["ObjectName", "Caption", "Byline"],
+        exif: ["LensModel", "FNumber", "ISO", "ExposureTime", "DateTimeOriginal", "FocalLength"],
+        ifd0: ["Make", "Model"],
         gps: false,
         mergeOutput: true,
     }
@@ -51,7 +51,7 @@ export async function getMetadata(file, data = "all") {
 
     // return the array to hold all the image data
     const imageData = {
-        "filename": path.basename(localPath, '.jpg'),
+        "filename": path.basename(localPath, ".jpg"),
         "width": dimensions.width,
         "height": dimensions.height,
         "date": metadata.DateTimeOriginal,
