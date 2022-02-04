@@ -1,9 +1,36 @@
-<div class="constraint-lg">
-    <slot />
+<div class="intro">
+    <slot name="heading" />
+
+    <div>
+        <slot />
+    </div>
 </div>
 
 <style lang="scss">
-    div {
-        width: 100%;
+    .intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+        gap: var(--space-md);
+        margin: var(--section-spacing-xl) 0;
+            
+        :global(h1) {
+            font-size: 144px;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        div {
+            :global(p) {
+                font-weight: 300;
+                font-size: var(--text-xl);
+            }
+            
+            :last-child {
+                margin-bottom: var(--space-xs);
+            }
+            
+        }
+        
     }
 </style>

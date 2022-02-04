@@ -23,7 +23,7 @@ pre[class*='language-'] {
 	-ms-hyphens: none;
 	hyphens: none;
 
-	font-family: 'Operator Mono', 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: "Operator Mono", "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 	font-weight: 400;
 	font-size: var(--text-xs);
 	line-height: 25px;
@@ -194,5 +194,5 @@ code.language-css .token.selector > .token.pseudo-element {
 
 .line-highlight.line-highlight:before,
 .line-highlight.line-highlight[data-end]:after {
-	content: '';
+	content: "";
 }

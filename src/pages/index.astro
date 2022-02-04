@@ -6,7 +6,8 @@ import { SEO } from "astro-seo";
 import BaseHead from "@/components/BaseHead"
 import BaseLayout from "@/components/BaseLayout"
 import Content from "@/components/Content"
-import Container from '@/components/Container'
+import Container from "@/components/Container"
+import Heading from "@/components/Heading"
 import Image from "@/components/image/Image"
 import PostSnippet from "@/components/PostSnippet"
 import ShootSnippet from "@/components/ShootSnippet"
@@ -30,27 +31,6 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
 
     <style lang="scss">
         @use "../assets/styles/breakpoints" as *;
-
-        .intro {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: end;
-            gap: var(--space-md);
-            margin: var(--section-spacing-xl) 0;
-               
-            h1 {
-                font-size: 144px;
-                font-weight: 800;
-                margin: 0;
-            }
-            p {
-                font-weight: 300;
-                font-size: var(--text-xl)
-            }
-            p:last-of-type { 
-                margin-bottom: var(--space-xs);
-            }
-        }
 
         .gallery {
             display: grid;
@@ -108,13 +88,12 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
     <BaseLayout>
         <Content fullWidth={true}>
             <Container>
-                <div class="intro">
-                    <h1>Hey<br />there.</h1>
-                    <div>
-                        <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
-                        <p>I'm also a car photographer in Austin, TX. I've shot dozens of cars for Bring a Trailer auctions.</p>
-                    </div>
-                </div>
+                <Heading>
+                    <h1 slot="heading">Hey<br />there.</h1>
+                    
+                    <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
+                    <p>I'm also a car photographer in Austin, TX. I've shot dozens of cars for Bring a Trailer auctions.</p>
+                </Heading>
             </Container>
 
             <Container width="lg">
