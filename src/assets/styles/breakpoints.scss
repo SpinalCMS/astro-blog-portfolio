@@ -1,6 +1,9 @@
-$site-width: 1024px; // max width of the container
-$bp-lg: 768px; // large breakpoint
-$bp-md: 480px; // tablet breakpoint
+$site-width: 1400px; // max width of the container
+
+$bp-xl: 1280px;
+$bp-lg: 1024px;
+$bp-md: 768px;
+$bp-sm: 640px;
 
 /* declare breakpoints */
 @mixin breakpoint($width) {
@@ -9,5 +12,8 @@ $bp-md: 480px; // tablet breakpoint
     }
     @else if $width == lg {
         @media (min-width: $bp-lg) { @content; }
+    }
+    @else if $width == xl {
+        @media (min-width: $bp-xl) { @content; }
     }
 }

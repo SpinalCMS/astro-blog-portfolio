@@ -18,30 +18,25 @@
 }
 
 :root {
-    --site-radius: 0.3rem;
+    --site-radius-sm: 0.35rem;
+    --site-radius-md: 0.7rem;
+    --site-radius-lg: 1rem;
+    
     --site-transition: .3s;
     --site-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 html {
     scroll-behavior: smooth;
+
+    @media (prefers-reduced-motion) {
+        scroll-behavior: auto;
+    }
 }
+
 body {
     background-color: var(--color-white);
-    background-repeat: no-repeat;
-    background-image:
-            radial-gradient(circle at top center, var(--color-yellow-20) 0, transparent 60vh),
-            radial-gradient(circle at bottom left, var(--color-pink-20) 0, transparent 60vh);
-    margin: var(--body-top-margin-sm) 0 0 0;
-
-    @include breakpoint(md) {
-        margin: var(--body-top-margin-lg) 0 0 0;
-    }
-    @include breakpoint(lg) {
-        background-image:
-            radial-gradient(circle at top center, var(--color-yellow-30) 0, transparent 30vw),
-            radial-gradient(circle at bottom right, var(--color-pink-20) 0, transparent 60vw);
-    }
+    margin-top: var(--space-xxl);
 }
 a {
     color: var(--color-link);
@@ -53,14 +48,6 @@ a {
 figure {
     margin: 0;
     padding: 0;
-}
-
-header {
-    margin-bottom: var(--section-spacing-sm);
-    
-    @include breakpoint(md) {
-        margin-bottom: var(--section-spacing-md);
-    }
 }
 
 /* post display */
@@ -83,6 +70,5 @@ header {
 
     @include breakpoint(md) {
         flex-direction: row;
-        //justify-content: space-between;
     }
 }

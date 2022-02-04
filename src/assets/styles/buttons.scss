@@ -1,52 +1,51 @@
-:root {
-    --btn-font-size: var(--text-md);
-}
-
 .btn {
     font-weight: 500;
     font-size: var(--text-md);
-    border-radius: var(--site-radius);
+    border-radius: var(--site-radius-sm);
     padding: var(--space-md);
-    width: fit-content;
-    transition: all .3s ease-in-out;
+
+    transition: all var(--site-transition) ease-in-out;
 
     &.btn-primary {
-        background: var(--color-yellow-20);
-        box-shadow: .3rem .3rem var(--color-yellow);
+        color: var(--color-white);
+        background: var(--color-pink);
 
         &:hover {
-            background-color: var(--color-yellow-40);
+            background: var(--color-pink-80);
         }
     }
     &.btn-secondary {
-        background-color: var(--color-pink);
+        color: var(--color-white);
+        background: var(--color-midnight);
+
+        &:hover {
+            background: var(--color-midnight-80);
+        }
     }
 }
 
 .pill {
-    border-radius: var(--site-radius);
-    padding: var(--space-xs) var(--space-sm);
     font-weight: 500;
-    transition: all var(--site-transition);
-}
-
-a.pill-primary {
-    color: var(--color-white) !important;
-    background-color: var(--color-blue-60);
+    border-radius: var(--site-radius-lg);
+    padding: var(--space-xs) var(--space-sm);
     
-    &:hover {
-        background-color: var(--color-blue-50);
-    }
-}
-a.pill-secondary {
-    color: var(--color-black) !important;
-    background-color: var(--color-yellow-50);
+    transition: all var(--site-transition) ease-in-out;
 
-    &:hover {
-        background-color: var(--color-yellow-40);
+    &.pill-primary {
+        color: var(--color-white);
+        background: var(--color-pink);
+        
+        &:hover {
+            background: var(--color-pink-80);
+        }
     }
-}
-a.pill-disabled {
-    color: var(--color-grayscale-60) !important;
-    background-color: none;
+
+    &.pill-secondary {
+        color: var(--color-black);
+        background: var(--color-yellow);
+
+        &:hover {
+            background: var(--color-yellow-80);
+        }
+    }
 }

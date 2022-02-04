@@ -6,13 +6,15 @@ import { SEO } from "astro-seo";
 import BaseHead from '@/components/BaseHead'
 import BaseLayout from '@/components/BaseLayout'
 import Content from '@/components/Content'
+import Container from '@/components/Container'
 import Image from "@/components/image/Image"
+import Caption from "@/components/image/Caption"
 import PostSnippet from '@/components/PostSnippet'
 import ShootSnippet from '@/components/ShootSnippet'
 
 const allPosts = await Astro.fetchContent("./blog/*.md")
                             .sort((a, b) => new Date(b.date) - new Date(a.date))
-                            .slice(0,2);
+                            .slice(0,6);
 const allShoots = await Astro.fetchContent("./photography/*.md")
                              .sort((a, b) => new Date(b.date) - new Date(a.date))
                              .slice(0,4);
@@ -31,58 +33,41 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
         @use '../assets/styles/breakpoints' as *;
 
         .intro {
-            padding-bottom: var(--section-spacing-lg);
-            display: flex;
-            flex-direction: column;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
             gap: var(--space-md);
-            margin: 0 var(--space-md);
-
-            @include breakpoint(md) {
-                text-align: left;
+            margin: var(--section-spacing-xl) 0;
+               
+            h1 {
+                font-size: 144px;
+                font-weight: 800;
                 margin: 0;
             }
-
-            @include breakpoint(lg) {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: 1fr;
-
-                align-items: center;
+            p {
+                font-weight: 300;
+                font-size: var(--text-xl)
             }
-
-            div {
-                display: flex;
-                flex-direction: column;
-                gap: var(--space-md);
-                
-                h1 { margin-bottom: 0; }
-                a { width: auto; }
-
-                @include breakpoint(md) {
-                    max-width: 400px;
-                    
-                    a { width: fit-content; }
-                }
+            p:last-of-type { 
+                margin-bottom: var(--space-xs);
             }
-            
-            figure {
-                @include breakpoint(lg) {
-                    order: 1;
-                    align-self: center;
-                    justify-self: end;
-                }
+        }
 
-                :global(img) {
-                    min-width: 200px;
-                    max-width: 60%;
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: var(--space-lg);
 
-                    @include breakpoint(md) {
-                        max-width: 250px;
-                    }
-                    @include breakpoint(lg) {
-                        max-width: 100%;
-                    }
+            margin-bottom: var(--section-spacing-xl);
+
+            :global(img) {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+                &.span {
+                    grid-area: 1 / 2 / 3 / 3;
                 }
             }
         }
@@ -100,35 +85,21 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
             }
 
             h2 { margin: 0; }
-            a {
-                width: max-content;
-                height: max-content;
-                color: var(--text-blue-80);
-                font-weight: 500;
-            }
         }
 
         .recent-posts {
-            background-color: var(--color-blue-10);
-            padding: var(--space-xl) var(--space-lg);
-            border-radius: var(--site-radius);
-
-            @include breakpoint(md) {
-                padding: var(--space-xxl) var(--space-xl);
-            }
-
+            margin-bottom: var(--section-spacing-xl);
+            
             .posts {
                 @include breakpoint(lg) {
-                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-columns: repeat(3, 1fr);
                 }
             }
         }
 
         .recent-shoots {
-            padding-top: var(--section-spacing-sm);
-
-            @include breakpoint(md) {
-                padding-top: var(--section-spacing-md);
+            .shoots {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -137,52 +108,51 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
 <body>
     <BaseLayout>
         <Content fullWidth={true}>
-            <div class="intro">
-                <figure>
-                    <picture>
-                        <Image
-                            file="me.jpg"
-                            classes="solid-shadow-pink"
-                            alt="Erik S. Olsen in Austin, TX"
-                        />
-                    </picture>
-                </figure>
-
-                <div>
-                    <h1>
-                        Hey there!<br />
-                        I'm a CRO &amp;<br />
-                        SEM Expert.
-                    </h1>
-
-                    <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
-                    <a href="/contact" class="btn btn-primary" title="Contact Me">Contact Me</a>
+            <Container>
+                <div class="intro">
+                    <h1>Hey<br />there.</h1>
+                    <div>
+                        <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
+                        <p>I'm also a car photographer in Austin, TX. I've shot dozens of cars for Bring a Trailer auctions.</p>
+                    </div>
                 </div>
-            </div>
+            </Container>
 
-            <section class="recent-posts">
-                <div class="headline">
-                    <h2>Recent Posts</h2>
-                    <a href="/blog" class="pill pill-primary" title="View All Posts">View All</a>
+            <Container width="lg">
+                <div class="gallery">
+                    <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" />
+                    <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" />
+                    <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" classes="span" />
                 </div>
+            </Container>
 
-                <div class="posts">
-                    {allPosts.map(p =>
-                        <PostSnippet post={p} />
-                    )}
-                </div>
-            </section>
+            <Container>
+                <section class="recent-posts">
+                    <div class="headline">
+                        <h2>Recent Posts</h2>
+                        <a href="/blog" class="pill pill-primary" title="View All Posts">View All</a>
+                    </div>
 
-            <section class="recent-shoots">
-                <div class="headline">
-                    <h2>Recent Shoots</h2>
-                    <a href="/photography" class="pill pill-secondary" title="View All Photoshoots">View All</a>
-                </div>
+                    <div class="posts">
+                        {allPosts.map(p =>
+                            <PostSnippet post={p} />
+                        )}
+                    </div>
+                </section>
+            </Container>
 
-                <div class="shoots">
-                    {allShoots.map(s => <ShootSnippet shoot={s} /> )}
-                </div>
-            </section>
+            <Container>
+                <section class="recent-shoots">
+                    <div class="headline">
+                        <h2>Recent Shoots</h2>
+                        <a href="/photography" class="pill pill-primary" title="View All Photoshoots">View All</a>
+                    </div>
+
+                    <div class="shoots">
+                        {allShoots.map(s => <ShootSnippet shoot={s} /> )}
+                    </div>
+                </section>
+            </Container>
         </Content>
     </BaseLayout>
 </body>
