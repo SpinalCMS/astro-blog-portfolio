@@ -28,6 +28,7 @@
     font-weight: 500;
     border-radius: var(--site-radius-lg);
     padding: var(--space-xs) var(--space-sm);
+    width: max-content;
     
     transition: all var(--site-transition) ease-in-out;
 

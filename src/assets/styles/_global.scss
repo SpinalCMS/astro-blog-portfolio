@@ -36,7 +36,11 @@ html {
 
 body {
     background-color: var(--color-white);
-    margin-top: var(--space-xxl);
+    margin-top: var(--space-xl);
+
+    @include breakpoint(md) {
+        margin-top: var(--space-xxl);
+    }
 }
 a {
     color: var(--color-link);
@@ -48,6 +52,9 @@ a {
 figure {
     margin: 0;
     padding: 0;
+}
+main {
+    margin: 0 var(--side-margins-lg);
 }
 
 /* post display */

@@ -73,14 +73,22 @@ import { siteConfig } from "@/src/config.ts"
             align-items: center;
             gap: var(--space-sm);
 
-            @include breakpoint(md) {
+            @include breakpoint(sm) {
+                gap: var(--space-xl);
                 justify-content: flex-start;
             }
-            @include breakpoint(lg) {
-                gap: var(--space-lg);
+
+            :first-child {
+                display: none;
+
+                @include breakpoint(md) {
+                    display: block;
+                }
             }
 
-            img { height: 30px; }
+            img {
+                height: 30px;
+            }
         }
         nav a {
             font-weight: 300;

@@ -7,6 +7,9 @@ $bp-sm: 640px;
 
 /* declare breakpoints */
 @mixin breakpoint($width) {
+    @if $width == sm { 
+        @media (min-width: $bp-sm) { @content; }
+    }
     @if $width == md {
         @media (min-width: $bp-md) { @content; }
     }

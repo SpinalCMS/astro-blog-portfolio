@@ -7,16 +7,24 @@
 </div>
 
 <style lang="scss">
+    @use "../assets/styles/breakpoints" as *;
+
     .intro {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         align-items: end;
-        gap: var(--space-md);
-        margin: var(--section-spacing-xl) 0 var(--section-spacing-md) 0;
-            
+        gap: var(--space-xs);
+        margin: 0 0 var(--section-spacing-md);
+
+        @include breakpoint(md) {
+            grid-template-columns: 1fr 1fr;
+            margin-top: var(--section-spacing-xl);
+        }
+        @include breakpoint(lg) {
+            margin-bottom: var(--section-spacing-lg);
+        }
+
         :global(h1) {
-            font-size: 144px;
-            font-weight: 800;
             margin: 0;
         }
 

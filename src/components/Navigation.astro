@@ -36,11 +36,7 @@ import Navigation from "@/data/navigation"
         gap: var(--space-md);
         margin-bottom: var(--section-spacing-lg);
 
-        @include breakpoint(md) {
-            margin-bottom: var(--section-spacing-xl);
-            align-items: start;
-        }
-        @include breakpoint(lg) {
+        @include breakpoint(sm) {
             flex-direction: row;
             justify-content: space-between;
             justify-items: center;
@@ -49,6 +45,7 @@ import Navigation from "@/data/navigation"
 
         img {
             max-height: 35px;
+            margin-bottom: var(--space-md);
         }
 
         nav {
@@ -56,24 +53,33 @@ import Navigation from "@/data/navigation"
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            gap: var(--space-xl);
+            gap: var(--space-sm);
 
-            @include breakpoint(md) {
-                justify-content: flex-start;
+            @include breakpoint(sm) {
+                justify-content: flex-end;
+                gap: var(--space-xl);
                 
                 a:last-child { margin-right: 0; }
             }
 
-            @include breakpoint(lg) {
-                justify-content: flex-end;
-            }
-
             a {
                 font-weight: 300;
-                font-size: var(--text-md);
+                font-size: var(--text-sm);
 
                 @include breakpoint(md) {
+                    font-size: var(--text-md);
                     font-weight: 400;
+                }
+
+                &.btn-primary {
+                    padding: var(--space-xs);
+
+                    @include breakpoint(sm) {
+                        padding: var(--space-sm);
+                    }
+                    @include breakpoint(md) {
+                        padding: var(--space-sm) var(--space-md);
+                    }
                 }
             }
         }
