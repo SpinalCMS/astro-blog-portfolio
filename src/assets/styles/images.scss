@@ -37,6 +37,12 @@ img {
 .solid-shadow-blue { box-shadow: .5rem .5rem var(--color-blue); }
 .solid-shadow-midnight { box-shadow: .5rem .5rem var(--color-midnight); }
 
+div.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xl) var(--space-lg);
+}
+
 main.post, main.shoot {
     img {
         width: 100%;
