@@ -55,6 +55,7 @@ const categories = [...new Set(allShoots.map(s => s.category))];
         <Container>
             <Heading>
                 <h1 slot="heading">Photos</h1>
+                <p>Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
             </Heading>
         </Container>
         
@@ -63,7 +64,6 @@ const categories = [...new Set(allShoots.map(s => s.category))];
                 <Content>
                     {page.currentPage === 1 ? 
                         <article>
-                            <p>Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
                             <p>If I have some free time, you might catch me over at <a href="https://www.facebook.com/CoffeeWithCars/" title="Coffee With Cars in Dripping Springs">Coffee With Cars in Dripping Springs, TX</a>. It's currently hosted at Dreamland on the last Sunday of the month at 8am.</p>
                             <p>Currently I'm shooting with a Sony Alpha A7iii and a host of Zeiss Batis lenses. I'm also always on the lookout for new Peak Design gear, everything they make is incredible.</p>
                         </article> : ``

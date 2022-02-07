@@ -13,12 +13,13 @@
         display: grid;
         grid-template-columns: 1fr;
         align-items: end;
-        gap: var(--space-xs);
+        gap: var(--space-lg);
         margin: 0 0 var(--section-spacing-md);
 
         @include breakpoint(md) {
             grid-template-columns: 1fr 1fr;
             margin-top: var(--section-spacing-xl);
+            gap: var(--space-xl);
         }
         @include breakpoint(lg) {
             margin-bottom: var(--section-spacing-lg);
@@ -32,6 +33,10 @@
             :global(p) {
                 font-weight: 300;
                 font-size: var(--text-xl);
+
+                @include breakpoint(md) {
+                    font-size: var(--text-xl);
+                }
             }
             
             :last-child {

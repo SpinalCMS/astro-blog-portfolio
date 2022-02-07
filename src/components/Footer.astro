@@ -56,7 +56,6 @@ import { siteConfig } from "@/src/config.ts"
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
         gap: var(--space-lg);
 
         margin-top: var(--section-spacing-xl);
@@ -81,7 +80,7 @@ import { siteConfig } from "@/src/config.ts"
             :first-child {
                 display: none;
 
-                @include breakpoint(md) {
+                @include breakpoint(sm) {
                     display: block;
                 }
             }

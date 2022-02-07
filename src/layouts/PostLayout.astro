@@ -35,12 +35,7 @@ const { content } = Astro.props;
         description={content.description}
     />
 
-    <style lang="scss">        
-        :global(.intro) {
-            grid-template-columns: 1fr !important;
-            text-align: center;
-        }
-        
+    <style lang="scss">       
         p.description {
             font-size: var(--text-3xl);
             font-weight: 300;
