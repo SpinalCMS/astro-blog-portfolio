@@ -43,9 +43,15 @@ const categories = [...new Set(allShoots.map(s => s.category))];
     />
 
     <style lang="scss">
+        @use "../../assets/styles/breakpoints" as *;
+
         section.posts {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
+
+            @include breakpoint(sm) {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
