@@ -19,8 +19,15 @@ const { width = "md" } = Astro.props;
         &.sm { max-width: 1000px; }
         &.md {
             max-width: 1200px;
-            padding: 0 var(--space-sm);
+            padding: 0 var(--space-lg);
+
+            @include breakpoint(md) {
+                padding: 0 var(--space-xl);
+            }
         }
-        &.lg { max-width: $site-width; }
+        &.lg {
+            max-width: $site-width;
+            padding: 0 var(--space-lg);
+        }
     }
 </style>
