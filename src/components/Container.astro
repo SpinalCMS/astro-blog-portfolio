@@ -17,8 +17,10 @@ const { width = "md" } = Astro.props;
         margin: 0 auto;
 
         &.sm { max-width: 1000px; }
-        &.md { max-width: 1200px; }
+        &.md {
+            max-width: 1200px;
+            padding: 0 var(--space-sm);
+        }
         &.lg { max-width: $site-width; }
-        
     }
 </style>
