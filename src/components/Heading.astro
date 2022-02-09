@@ -14,15 +14,13 @@
         grid-template-columns: 1fr;
         align-items: end;
         gap: var(--space-lg);
-        margin: 0 0 var(--section-spacing-sm) 0;
+        margin: 0 0 var(--section-spacing-xs) 0;
 
         @include breakpoint(lg) {
-            margin-top: var(--section-spacing-xl);
-            gap: var(--space-xl);
-        }
-        @include breakpoint(lg) {
             grid-template-columns: 1fr 1fr;
-            margin-bottom: var(--section-spacing-lg);
+            margin-top: var(--section-spacing-xl);
+            margin-bottom: var(--section-spacing-md);
+            gap: var(--space-xl);
         }
 
         :global(h1) {
