@@ -34,49 +34,6 @@ const { content } = Astro.props;
         title={content.title}
         description={content.description}
     />
-
-    <style lang="scss">       
-        p.description {
-            font-size: var(--text-3xl);
-            font-weight: 300;
-            line-height: var(--space-lg);
-            color: var(--color-grayscale-90);
-            padding-left: var(--space-sm);
-            border-left: 5px solid var(--color-pink);
-            margin-bottom: var(--section-spacing-md);
-        }
-        .hero {
-            margin-bottom: var(--section-spacing-md);
-        }
-
-        .meta {
-            p {
-                font-size: var(--text-md);
-                margin: 0;
-            }
-        }
-
-        .tags {
-            p, :global(ul) {
-                display: inline;
-            }
-        }
-
-        .reactive {
-            ul {
-                margin: 0;
-                
-                li {
-                    list-style: none;
-                    list-style-type: none;
-                }
-            }
-        }
-
-        :global(.gallery + h2) {
-            margin-top: var(--space-lg);
-        }
-    </style>
 </head>
 
 <body>

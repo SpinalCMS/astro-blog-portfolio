@@ -28,22 +28,3 @@ let padding = dimensions.height / dimensions.width * 100;
 
     <slot />
 </div>
-
-<style lang="scss">
-    div { 
-        //margin: 2px;
-        position: relative;
-
-        i {
-            display: block;
-        }
-        :global(img) {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            vertical-align: bottom;
-
-            box-shadow: var(--site-shadow);
-        }
-    }
-</style>

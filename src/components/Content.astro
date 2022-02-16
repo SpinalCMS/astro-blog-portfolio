@@ -9,13 +9,3 @@ const { fullWidth = false } = Astro.props;
 <div class={ fullWidth ? `full-width` : `constraint-lg`}>
     <slot />
 </div>
-
-<style lang="scss">
-    @use "../assets/styles/breakpoints" as *;
-
-    div.full-width {
-        @include breakpoint(lg) {
-            width: 100%;
-        }
-    }
-</style>

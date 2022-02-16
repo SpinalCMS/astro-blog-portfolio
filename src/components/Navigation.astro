@@ -7,16 +7,16 @@ import Navigation from "@/data/navigation"
 ---
 
 <Container>
-    <header>
+    <header class="flex flex-row items-center py-8">
         <!-- logo -->
-        <div>
-            <a href="/" title="Homepage">
-                <img src="/images/logo-black.svg" />
+        <div class="w-48">
+            <a class="font-extrabold tracking-tighter text-3xl uppercase" href="/" title="Homepage">
+                ErikOlsen
             </a>
         </div>
 
         <!-- navigation items -->
-        <nav>        
+        <nav>
             {Navigation.map((item) => (
                 <a href={item.url} title={item.display}>
                     {item.display}
@@ -26,63 +26,3 @@ import Navigation from "@/data/navigation"
         </nav>
     </header>
 </Container>
-
-<style lang="scss">
-    @use "../assets/styles/breakpoints" as *;
-
-    header {        
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-md);
-        margin-top: var(--section-spacing-md);
-        margin-bottom: var(--section-spacing-lg);
-
-        @include breakpoint(sm) {
-            flex-direction: row;
-            justify-content: space-between;
-            justify-items: center;
-            align-items: center;
-        }
-
-        img {
-            max-height: 35px;
-            margin-bottom: var(--space-md);
-        }
-
-        nav {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            gap: var(--space-sm);
-
-            @include breakpoint(sm) {
-                justify-content: flex-end;
-                gap: var(--space-xl);
-                
-                a:last-child { margin-right: 0; }
-            }
-
-            a {
-                font-weight: 300;
-                font-size: var(--text-sm);
-
-                @include breakpoint(md) {
-                    font-size: var(--text-md);
-                    font-weight: 400;
-                }
-
-                &.btn-primary {
-                    padding: var(--space-xs);
-
-                    @include breakpoint(sm) {
-                        padding: var(--space-sm);
-                    }
-                    @include breakpoint(md) {
-                        padding: var(--space-sm) var(--space-md);
-                    }
-                }
-            }
-        }
-    }
-</style>

@@ -14,21 +14,3 @@ const { tags, base } = Astro.props;
         </li>
     )}
 </ul>
-
-<style lang="scss">
-    @use "../assets/styles/breakpoints" as *;
-
-    .tag-list {        
-        list-style-type: none;
-        padding: 0;
-
-        .tag {
-            display: inline;
-            font-size: var(--text-sm);
-
-            &:not(:last-child)::after {
-                content: ', '
-            }
-        }
-    }
-</style>

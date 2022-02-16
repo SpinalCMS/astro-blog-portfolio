@@ -27,25 +27,3 @@ const { page } = Astro.props;
         </div>
     </div>
 </div>
-
-<style lang="scss">
-    @use "../assets/styles/breakpoints" as *;
-    
-    .pagination {
-        margin-top: var(--space-xl);
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-        .action {
-            display: flex;
-            flex-direction: row;
-            gap: var(--space-sm);
-
-            @include breakpoint(md) {
-                gap: var(--space-xl);
-            }
-        }
-    }
-</style>

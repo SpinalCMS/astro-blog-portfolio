@@ -41,19 +41,6 @@ const categories = [...new Set(allShoots.map(s => s.category))];
         title="Car Photography in Austin, TX"
         description="During the summer months you'll catch me shootin photos at Cars and Coffee at COTA or Coffee With Cars in Dripping Springs. I also do freelance photography for Bring a Trailer auctions."
     />
-
-    <style lang="scss">
-        @use "../../assets/styles/breakpoints" as *;
-
-        section.posts {
-            display: grid;
-            grid-template-columns: 1fr;
-
-            @include breakpoint(sm) {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>

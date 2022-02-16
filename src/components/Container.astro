@@ -3,31 +3,9 @@
 export interface Props {
     width?: string
 }
-const { width = "md" } = Astro.props;
+const { width = "sm" } = Astro.props;
 ---
 
-<div class={`container ${width}`}>
+<div class="container mx-auto">
     <slot />
 </div>
-
-<style lang="scss">
-    @use "../assets/styles/breakpoints" as *;
-
-    .container {
-        margin: 0 auto;
-
-        &.sm { max-width: 1000px; }
-        &.md {
-            max-width: 1200px;
-            padding: 0 var(--space-lg);
-
-            @include breakpoint(md) {
-                padding: 0 var(--space-xl);
-            }
-        }
-        &.lg {
-            max-width: $site-width;
-            padding: 0 var(--space-lg);
-        }
-    }
-</style>

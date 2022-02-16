@@ -14,7 +14,7 @@ import ShootSnippet from "@/components/ShootSnippet"
 
 const allPosts = await Astro.fetchContent("./blog/*.md")
                             .sort((a, b) => new Date(b.date) - new Date(a.date))
-                            .slice(0,6);
+                            .slice(0,4);
 const allShoots = await Astro.fetchContent("./photography/*.md")
                              .sort((a, b) => new Date(b.date) - new Date(a.date))
                              .slice(0,4);
@@ -28,80 +28,6 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
         title="I'm a Digital Marketing Expert and Car Photographer in Austin, TX"
         description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. He's also an automotive photographer shooting photos at Austin car shows."
     />
-
-    <style lang="scss">
-        @use "../assets/styles/breakpoints" as *;
-
-        .gallery {
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: auto;
-            gap: var(--space-xl);
-            margin-bottom: var(--section-spacing-md);
-
-            @include breakpoint(md) {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-                gap: var(--space-lg);
-                margin-bottom: var(--section-spacing-lg);
-            }
-
-            :global(img) {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-
-                @include breakpoint(md) {
-                    &.span {
-                        grid-area: 1 / 2 / 3 / 3;
-                    }
-                }
-                
-            }
-        }
-
-        .headline {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-xs);
-            margin-bottom: var(--space-xl);
-
-            @include breakpoint(md) {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            h2 { margin: 0; }
-        }
-
-        .recent-posts {
-            margin-bottom: var(--section-spacing-md);
-            
-            @include breakpoint(md) {
-                margin-bottom: var(--section-spacing-xl);
-            }
-            
-            .posts {
-                @include breakpoint(sm) {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                @include breakpoint(md) {
-                    grid-template-columns: repeat(3, 1fr);
-                }
-            }
-        }
-
-        .recent-shoots {
-            .shoots {
-                grid-template-columns: 1fr;
-
-                @include breakpoint(md) {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -109,7 +35,7 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
         <Content fullWidth={true}>
             <Container>
                 <Heading>
-                    <h1 slot="heading">Hey<br />there.</h1>
+                    <h1 slot="heading">Hey there.</h1>
                     
                     <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
                 </Heading>

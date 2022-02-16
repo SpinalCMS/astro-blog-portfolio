@@ -14,22 +14,3 @@ const { categories, base } = Astro.props;
         </li>
     )}
 </ul>
-
-<style lang="scss">
-    @use "../assets/styles/breakpoints" as *;
-
-    .category-list {
-        list-style-type: none;
-        padding: 0;
-
-        .category {
-            display: block;
-            text-transform: capitalize;
-            font-size: var(--text-sm);
-
-            @include breakpoint(md) {
-                font-size: var(--text-md);
-            }
-        }
-    }
-</style>
