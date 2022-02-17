@@ -7,22 +7,27 @@ import Navigation from "@/data/navigation"
 ---
 
 <Container>
-    <header class="flex flex-row items-center py-8">
-        <!-- logo -->
-        <div class="w-48">
-            <a class="font-extrabold tracking-tighter text-3xl uppercase" href="/" title="Homepage">
-                ErikOlsen
-            </a>
+    <header class="flex flex-row py-8 justify-between items-center">
+        <div class="flex flex-row items-center">
+            <!-- logo -->
+            <div class="w-48">
+                <a class="font-extrabold tracking-tighter text-3xl uppercase" href="/" title="Homepage">
+                    ErikOlsen
+                </a>
+            </div>
+
+            <!-- navigation items -->
+            <nav class="gap-x-6">
+                {Navigation.map((item) => (
+                    <a href={item.url} title={item.display}>
+                        {item.display}
+                    </a>
+                ))}
+            </nav>
         </div>
 
-        <!-- navigation items -->
-        <nav>
-            {Navigation.map((item) => (
-                <a href={item.url} title={item.display}>
-                    {item.display}
-                </a>
-            ))}
+        <div>
             <a href="/contact" class="btn btn-primary" title="Contact Me">Contact</a>
-        </nav>
+        </div>
     </header>
 </Container>
