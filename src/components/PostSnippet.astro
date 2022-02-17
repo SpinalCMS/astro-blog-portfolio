@@ -9,15 +9,17 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<div class="post">
-    <a href={post.url} title={post.title}>
-        <h2 class="h4">{post.title}</h2>
-    </a>
-    
-    <div class="meta">
-        <time>{timeAgo(post.date)}</time>
-        <a href={`/blog/categories/${post.category}`} title={post.title} class="category">{post.category}</a>
+<div class="space-y-4">
+    <div class="space-y-2">
+        <a href={post.url} title={post.title}>
+            <h3 class="font-normal text-3xl">{post.title}</h3>
+        </a>
+        <div class="flex gap-2 text-stone-500 font-light">
+            <time>{timeAgo(post.date)}</time>
+            <a href={`/blog/categories/${post.category}`} title={post.title} class="category">{post.category}</a>
+        </div>
+        
     </div>
-
+    
     <p>{post.description}</p>
 </div>

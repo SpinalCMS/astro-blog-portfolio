@@ -1,7 +1,11 @@
-<div class="intro">
-    <slot name="heading" />
-
-    <div>
-        <slot />
+<div class="my-24">
+    <div class="space-y-6 w-2/5">
+        <div>
+            <slot name="heading" />
+        </div>
+        
+        <div class="text-xl text-stone-700 font-light leading-relaxed">
+            <slot name="description" />
+        </div>
     </div>
 </div>

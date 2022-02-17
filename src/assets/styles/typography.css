@@ -1,0 +1,10 @@
+h1, h2, h3,
+h4, h5, h6 {
+    @apply
+        lowercase
+        tracking-tighter;
+}
+
+h1 { @apply text-7xl font-black; }
+h2 { @apply text-5xl font-extrabold; }
+h3 { @apply text-4xl font-bold; }

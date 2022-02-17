@@ -1,0 +1,12 @@
+figure { @apply relative; }
+figure > figcaption {
+    @apply
+        absolute
+        bottom-0
+        right-0
+        text-white
+        pr-4
+        pb-4
+        w-1/2
+        text-right;
+}
