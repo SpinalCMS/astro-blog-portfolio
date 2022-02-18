@@ -42,7 +42,7 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
             </Container>
 
             <Container width="lg">
-                <div class="grid grid-cols-2 grid-flow-col gap-4 max-h-screen">
+                <div class="grid grid-cols-2 grid-flow-col gap-4">
                     <figure>
                         <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" classes="object-cover h-full w-full rounded shadow-2xl" />
                         <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" showTitle={true} />
@@ -85,7 +85,6 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
                     </div>
                 </section>
             </Container>
-            -->
         </Content>
     </BaseLayout>
 </body>
