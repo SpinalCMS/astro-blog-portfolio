@@ -1,0 +1,48 @@
+---
+// components
+import Container from "@/components/Container"
+---
+
+<div class="bg-slate-100 border-t border-slate-200 text-slate-800 py-24">
+    <Container>
+        <h2>Contact Me</h2>
+
+        <div class="flex justify-between mt-8 gap-8">
+            <div>
+                <div class="space-y-6 text-xl">
+                    <div class="flex items-center gap-3">
+                        <a class="font-semibold" href="mailto:erik@eriksolsen.com">erik@eriksolsen.com</a>
+                        |
+                        <a class="font-semibold" href="tel:8605142743">(860) 514-2743</a>
+                    </div>
+                    <p class="font-light leading-relaxed">Looking for help with car photography?<br />Have questions about digital marketing?</p>
+                    <p class="font-light leading-relaxed">Fill out the form and I'll get back to you ASAP.</p>
+                </div>
+            </div>
+            
+
+            <div class="w-1/2">
+                <form action="/contact/success/" name="Contact - Page" method="POST" data-netlify="true" class="grid grid-cols-1 gap-y-6">
+                    <div>
+                        <label for="name" class="sr-only">Full name</label>
+                        <input type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 px-4 placeholder-gray-500 rounded focus:ring-1 focus:ring-slate-400 outline-0" placeholder="Your name" required>
+                    </div>
+
+                    <div>
+                        <label for="email" class="sr-only">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" class="block w-full py-3 px-4 placeholder-gray-500 rounded focus:ring-1 focus:ring-slate-400 outline-0" placeholder="Email" required>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="sr-only">Message</label>
+                        <textarea id="message" name="message" rows="4" class="block w-full py-3 px-4 placeholder-gray-500 rounded focus:ring-1 focus:ring-slate-400 outline-0" placeholder="Message"></textarea>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" class="btn-contact">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </Container>
+</div>

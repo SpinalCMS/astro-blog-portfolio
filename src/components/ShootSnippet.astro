@@ -12,23 +12,50 @@ export interface Props {
 const { shoot } = Astro.props;
 ---
 
-<div class="space-y-4">
+<style>
+    .content {
+        @apply
+            p-8
+            space-y-4
+            absolute
+            bottom-0
+            left-0
+            w-3/4
+            bg-gradient-to-tr
+            from-white
+            via-white
+            rounded-tr-3xl
+            border-t-4
+            border-amber-300
+            duration-500
+            transition-all
+            group-hover:translate-y-1/2
+    }
+</style>
+
+<div class="space-y-2 relative group overflow-hidden rounded">
     <div>
         <a href={shoot.url} title={shoot.title}>
-            <Image classes="rounded shadow-2xl" file={shoot.hero} />
+            <Image classes="shadow-2xl opacity-80 group-hover:opacity-100 duration-700" file={shoot.hero} />
         </a>
     </div>
 
-    <div class="content">
-        <a href={shoot.url} title={shoot.title}>
-            <h2 class="h4">{shoot.title}</h2>
-        </a>
-        
-        <div class="meta">
-            <time>{timeAgo(shoot.date)}</time>
-            <a class="category" href={`/photography/categories/${shoot.category}`} title={shoot.category}>{shoot.category}</a>
+    <div class="content group-hover:origin-bottom-left transition-all duration-500">
+        <div class="space-y-1">
+            <a href={shoot.url} title={shoot.title}>
+                <h3>{shoot.title}</h3>
+            </a>
+            
+            <div class="flex gap-2 text-stone-600 font-light">
+                <time>{timeAgo(shoot.date)}</time>
+                <a class="category" href={`/photography/categories/${shoot.category}`} title={shoot.category}>{shoot.category}</a>
+            </div>
         </div>
 
         <p>{shoot.description}</p>
     </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-white absolute bottom-5 right-5 w-8 h-8 duration-500 opacity-0 group-hover:opacity-100" viewBox="0 0 16 16">
+        <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
+    </svg>
 </div>

@@ -33,7 +33,7 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
 
 <body>
     <BaseLayout>
-        <Content fullWidth={true}>
+        <Content>
             <Container>
                 <Heading>
                     <h1 slot="heading">Hey there.</h1>
@@ -44,22 +44,22 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
             <Container width="lg">
                 <div class="grid grid-cols-2 grid-flow-col gap-4">
                     <figure>
-                        <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" classes="object-cover h-full w-full rounded shadow-2xl" />
-                        <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" showTitle={true} />
+                        <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" classes="object-cover h-full w-full" />
+                        <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" />
                     </figure>
                     <figure>
-                        <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" classes="object-cover h-full w-full rounded shadow-2xl" />
-                        <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" showTitle={true} />
+                        <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" classes="object-cover h-full w-full" />
+                        <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" />
                     </figure>
                     <figure class="row-span-2">
-                        <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" classes="object-cover h-full w-full rounded shadow-2xl" />
+                        <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" classes="object-cover h-full w-full" />
                         <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" />
                     </figure>
                 </div>
             </Container>
 
             <Container>
-                <section class="mt-24">
+                <section>
                     <div class="flex justify-between mb-12">
                         <h2>Recent Posts</h2>
                         <div><a class="btn-secondary" href="/blog" title="View All Posts">View All</a></div>
@@ -74,7 +74,7 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
             </Container>
             
             <Container>
-                <section class="mt-24">
+                <section>
                     <div class="flex justify-between mb-12">
                         <h2>Recent Shoots</h2>
                         <div><a class="btn-secondary" href="/photography" title="View All Photoshoots">View All</a></div>

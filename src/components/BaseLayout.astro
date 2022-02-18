@@ -1,13 +1,17 @@
 ---
 // components
+import Contact from "@/components/Contact"
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 ---
 
-<main>
+<main class="space-y-32">
     <Navigation />
 
     <slot />
 
-    <!-- <Footer /> -->
+    <div>
+        <Contact />
+        <Footer />
+    </div>
 </main>
