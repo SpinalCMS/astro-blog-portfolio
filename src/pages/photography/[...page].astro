@@ -64,14 +64,12 @@ const categories = [...new Set(allShoots.map(s => s.category))];
                     <Pagination page={page} />
                 </Content>
 
-                <Sidebar>
-                    <div>
-                        <h4>Categories</h4>
-                        <Categories categories={categories} base="photography" />
-                        
-                        <h4>Tags</h4>
-                        <Tags tags={tags} base="photography" />
-                    </div>
+                <Sidebar>                    
+                    <h4>Categories</h4>
+                    <Categories categories={categories} base="photography" />
+                    
+                    <h4>Tags</h4>
+                    <Tags tags={tags} base="photography" />
                 </Sidebar>
             </Flex>
         </Container>

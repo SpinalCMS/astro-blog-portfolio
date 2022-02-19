@@ -6,8 +6,20 @@ export interface Props {
 }
 const { tags, base } = Astro.props;
 ---
+<style lang="scss">
+    li {
+        @apply
+            inline
+            p-0
+    }
+    li:nth-of-type(n + 2):not(:last-child) {
+        &::before {
+            content: ",";
+        }
+    }
+</style>
 
-<ul class="tag-list">
+<ul>
     {tags.map(t =>
         <li class="tag">
             <a href={`/${base}/tags/${t}`} title={`Posts tagged ${t}`}>{t}</a>
