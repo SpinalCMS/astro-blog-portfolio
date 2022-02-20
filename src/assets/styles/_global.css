@@ -4,8 +4,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import './buttons.css';
-@import './images.css';
-@import './typography.css';
+@import './buttons.scss';
+@import './images.scss';
+@import './typography.scss';
+@import './spacing.scss';
 
 html { font-family: 'Inter var', sans-serif; }
