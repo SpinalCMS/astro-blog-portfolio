@@ -1,12 +1,11 @@
 h1, h2, h3,
 h4, h5, h6 {
     @apply
-        lowercase
         tracking-tighter
 }
 
-h1 { @apply font-black }
-h2 { @apply font-extrabold }
-h3 { @apply font-bold }
-h4 { @apply font-semibold }
-h5 { @apply font-medium }
+h1, .h1 { @apply text-5xl sm:text-6xl md:text-8xl font-black }
+h2, .h2 { @apply text-4xl sm:text-5xl md:text-6xl font-extrabold }
+h3, .h3 { @apply text-3xl sm:text-4xl md:text-5xl font-bold }
+h4, .h4 { @apply text-2xl sm:text-3xl md:text-4xl font-semibold }
+h5, .h5 { @apply text-2xl md:text-3xl font-medium }

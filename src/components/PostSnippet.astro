@@ -11,7 +11,7 @@ const { post } = Astro.props;
 
 <a class="p-6 space-y-4 rounded border border-gray-200 transition-colors duration-300 group" href={post.url} title={post.title}>
     <div class="space-y-2">
-        <h3 class="font-normal text-3xl group-hover:underline w-fit">{post.title}</h3>
+        <h3 class="h5 group-hover:underline w-fit">{post.title}</h3>
         
         <div class="flex gap-2 text-stone-500 font-light">
             <time>{timeAgo(post.date)}</time>

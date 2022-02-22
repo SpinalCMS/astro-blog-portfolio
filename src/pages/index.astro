@@ -60,8 +60,10 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
 
             <Container>
                 <section>
-                    <div class="flex justify-between items-center mb-12">
-                        <h2>Recent Posts</h2>
+                    <div class="flex gap-6 flex-col sm:flex-row sm:justify-between items-center mb-12">
+                        <div>
+                            <h2>Recent Posts</h2>
+                        </div>
                         <div><a class="shrink-0 whitespace-nowrap btn-secondary" href="/blog" title="View All Posts">View All</a></div>
                     </div>
 
@@ -76,8 +78,10 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
             
             <Container>
                 <section>
-                    <div class="flex justify-between items-center mb-12">
-                        <h2>Recent Shoots</h2>
+                    <div class="flex gap-6 flex-col sm:flex-row sm:justify-between items-center mb-12">
+                        <div class="prose prose-2xl">
+                            <h2>Recent Shoots</h2>
+                        </div>
                         <div><a class="shrink-0 whitespace-nowrap btn-secondary" href="/photography" title="View All Photoshoots">View All</a></div>
                     </div>
 

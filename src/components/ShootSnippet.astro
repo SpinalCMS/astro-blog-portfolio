@@ -17,15 +17,14 @@ const { shoot } = Astro.props;
         @apply
             p-3
             pt-6
-            sm:p-8
             space-y-4
             sm:absolute
             sm:bottom-0
             sm:left-0
             sm:w-3/4
             sm:bg-gradient-to-tr
-            from-white
-            via-white
+            sm:from-white
+            sm:via-white
             sm:rounded-tr-3xl
             border-t-4
             border-amber-300
@@ -42,15 +41,15 @@ const { shoot } = Astro.props;
         </a>
     </div>
 
-    <div class="content group-hover:origin-bottom-left transition-all duration-500">
-        <div class="space-y-1">
+    <div class="content group-hover:origin-bottom-left">
+        <div class="space-y-2">
             <a href={shoot.url} title={shoot.title}>
-                <h3>{shoot.title}</h3>
+                <h3 class="h4">{shoot.title}</h3>
             </a>
             
             <div class="flex gap-2 text-stone-600 font-light">
                 <time>{timeAgo(shoot.date)}</time>
-                <a class="category" href={`/photography/categories/${shoot.category}`} title={shoot.category}>{shoot.category}</a>
+                in {shoot.category}
             </div>
         </div>
 
