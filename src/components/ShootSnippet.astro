@@ -15,28 +15,30 @@ const { shoot } = Astro.props;
 <style>
     .content {
         @apply
-            p-8
+            p-3
+            pt-6
+            sm:p-8
             space-y-4
-            absolute
-            bottom-0
-            left-0
-            w-3/4
-            bg-gradient-to-tr
+            sm:absolute
+            sm:bottom-0
+            sm:left-0
+            sm:w-3/4
+            sm:bg-gradient-to-tr
             from-white
             via-white
-            rounded-tr-3xl
+            sm:rounded-tr-3xl
             border-t-4
             border-amber-300
-            duration-500
-            transition-all
-            group-hover:translate-y-1/2
+            sm:duration-500
+            sm:transition-all
+            sm:group-hover:translate-y-1/2
     }
 </style>
 
-<div class="space-y-2 relative group overflow-hidden rounded">
+<div class="sm:space-y-2 relative group overflow-hidden rounded">
     <div>
         <a href={shoot.url} title={shoot.title}>
-            <Image classes="shadow-2xl opacity-80 group-hover:opacity-100 duration-700" file={shoot.hero} />
+            <Image classes="shadow-none sm:shadow-2xl rounded-none sm:rounded sm:opacity-80 sm:group-hover:opacity-100 sm:duration-700" file={shoot.hero} />
         </a>
     </div>
 
