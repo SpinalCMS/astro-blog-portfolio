@@ -41,11 +41,12 @@ const { content } = Astro.props;
         <Container>
             <Heading>
                 <h1 slot="heading">{content.title}</h1>
+                <p slot="description">{content.description}</p>
             </Heading>
         </Container>
 
         { content.hero ? 
-            <Container width="lg">
+            <Container>
                 <figure class="hero">
                     <Image file={content.hero} />
                 </figure>
@@ -55,9 +56,9 @@ const { content } = Astro.props;
         <Container>
             <Flex>
                 <Content>
-                    <p class="description">{content.description}</p>
-
-                    <slot />
+                    <div class="prose lg:prose-xl max-w-none">
+                        <slot />
+                    </div>
                 </Content>
 
                 <Sidebar>
