@@ -85,7 +85,7 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
                         <div><a class="shrink-0 whitespace-nowrap btn-secondary" href="/photography" title="View All Photoshoots">View All</a></div>
                     </div>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
                         {allShoots.map(s => <ShootSnippet shoot={s} /> )}
                     </div>
                 </section>
