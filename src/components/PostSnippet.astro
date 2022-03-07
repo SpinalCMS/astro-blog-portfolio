@@ -9,7 +9,7 @@ export interface Props {
 const { post } = Astro.props;
 ---
 
-<a class="p-6 space-y-4 rounded border border-gray-200 transition-colors duration-300 group" href={post.url} title={post.title}>
+<a class="space-y-4 group" href={post.url} title={post.title}>
     <div class="space-y-2">
         <h3 class="h5 group-hover:underline w-fit">{post.title}</h3>
         
@@ -19,5 +19,5 @@ const { post } = Astro.props;
         </div>
     </div>
     
-    <p>{post.description}</p>
+    <p class="font-light">{post.description}</p>
 </a>

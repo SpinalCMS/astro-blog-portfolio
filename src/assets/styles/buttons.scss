@@ -34,3 +34,10 @@
         text-slate-800
         hover:bg-slate-200
 }
+
+.btn-disabled {
+    @apply
+        bg-stone-50
+        text-stone-200
+        !important
+}

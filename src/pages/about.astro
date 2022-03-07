@@ -28,6 +28,13 @@ import { siteConfig } from "@/src/config.ts"
         title="Erik S. Olsen - I'm a Digital Marketing Expert located in Austin, TX"
         description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. My expertise is designing and creating large-scale, data-driven marketing campaigns for e-commerce businesses."
     />
+
+    <style>
+        article {
+            @apply space-y-6 font-light max-w-screen-md
+        }
+        article p { @apply text-xl leading-9 }
+    </style>
 </head>
 
 <body>
@@ -38,18 +45,11 @@ import { siteConfig } from "@/src/config.ts"
                 <p slot="description">My name is Erik, and I'm a digital marketing expert in Austin, TX. I'm currently running the SEM and CRO operations for <a href="http://www.icgamerica.com" title="ICG America, Inc.">ICG America</a>.</p>
             </Heading>
         </Container>
-        
-        <Container>
-            <figure>
-                <Image classes="object-cover object-center rounded h-[40rem]" file="shoots/2021/2021-06-23-porsche-930/porsche-930-2021_007.jpg" />
-                <Caption file="shoots/2021/2021-06-23-porsche-930/porsche-930-2021_007.jpg" />
-            </figure>
-        </Container>
 
         <Container>
             <Flex>
                 <Content>
-                    <article class="prose lg:prose-xl">
+                    <article>
                         <h2>Digital Marketing</h2>
                         <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
                         <p>Finding creative ways to combine cutting-edge tools, deep targeting and personalized messaging is what drives me each day at work. It's what has allowed me to build, scale and maintain high-performing acquisition campaigns. Whatever the marketing channel, my approach is always the same: use a data-driven approach with a dash of automation to quickly scale successful marketing campaigns.</p>

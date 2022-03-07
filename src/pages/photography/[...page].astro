@@ -29,7 +29,7 @@ const { page } = Astro.props;
 
 // get all the posts and send to tag and category component
 const allShoots = await Astro.fetchContent("./*.md");
-const tags = [...new Set([].concat.apply([], allShoots.map(s => s.tags)))];
+const tags = [...new Set([].concat.apply([], allShoots.map(s => s.tags)))].slice(0,10);
 const categories = [...new Set(allShoots.map(s => s.category))];
 ---
 
@@ -55,7 +55,7 @@ const categories = [...new Set(allShoots.map(s => s.category))];
         <Container>
             <Flex>
                 <Content>
-                    <section class="grid grid-cols-2 gap-8">
+                    <section class="grid grid-cols-1 gap-12">
                         {page.data.map(s =>
                             <ShootSnippet shoot={s} />
                         )}

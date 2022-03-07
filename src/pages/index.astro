@@ -18,7 +18,7 @@ const allPosts = await Astro.fetchContent("./blog/*.md")
                             .slice(0,6);
 const allShoots = await Astro.fetchContent("./photography/*.md")
                              .sort((a, b) => new Date(b.date) - new Date(a.date))
-                             .slice(0,4);
+                             .slice(0,6);
 ---
 
 <!DOCTYPE html>
@@ -42,6 +42,13 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
             </Container>
 
             <Container width="lg">
+                <div class="flex gap-6 flex-col sm:flex-row sm:justify-between items-center mb-12">
+                    <div>
+                        <h2>Recent Photos</h2>
+                    </div>
+                    <div><a class="shrink-0 whitespace-nowrap btn-secondary" href="/photography" title="View All Photos">View All</a></div>
+                </div>
+                
                 <div class="grid grid-cols-1 sm:grid-cols-2 grid-flow-row sm:grid-flow-col gap-4">
                     <figure>
                         <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" classes="object-cover h-full w-full" />
@@ -71,22 +78,6 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
                         {allPosts.map(p =>
                             <PostSnippet post={p} />
                         )}
-                    </div>
-                </section>
-            </Container>
-
-            
-            <Container>
-                <section>
-                    <div class="flex gap-6 flex-col sm:flex-row sm:justify-between items-center mb-12">
-                        <div>
-                            <h2>Recent Shoots</h2>
-                        </div>
-                        <div><a class="shrink-0 whitespace-nowrap btn-secondary" href="/photography" title="View All Photoshoots">View All</a></div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
-                        {allShoots.map(s => <ShootSnippet shoot={s} /> )}
                     </div>
                 </section>
             </Container>
