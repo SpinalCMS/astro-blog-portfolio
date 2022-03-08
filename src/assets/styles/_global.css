@@ -10,3 +10,11 @@
 @import './spacing.scss';
 
 html { font-family: 'Inter var', sans-serif; }
+
+a {
+    text-decoration: underline 0.15rem rgba(0, 0, 0, 0);
+    transition: text-decoration-color 300ms;
+}
+a:hover {
+    text-decoration-color: currentColor;
+}

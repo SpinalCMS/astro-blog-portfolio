@@ -9,7 +9,7 @@ import Navigation from "@/data/navigation"
 import { siteConfig } from "@/src/config.ts"
 ---
 
-<div class="bg-slate-200 border-t border-slate-300">
+<div class="bg-neutral-200 border-t border-neutral-300">
 <Container>
     <footer class="flex flex-col md:flex-row justify-between py-12 md:items-center gap-4">
         <nav class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
@@ -23,11 +23,11 @@ import { siteConfig } from "@/src/config.ts"
             <!-- navigation items -->
             <div class="flex gap-x-6 lowercase">
                 {Navigation.map((item) => (
-                    <a class="hover:underline" href={item.url} title={item.display}>
+                    <a class="no-underline" href={item.url} title={item.display}>
                         {item.display}
                     </a>
                 ))}
-                <a class="hover:underline" href="/contact" title="Contact Me">Contact</a>
+                <a class="no-underline" href="/contact" title="Contact Me">Contact</a>
             </div>
         </nav>
 

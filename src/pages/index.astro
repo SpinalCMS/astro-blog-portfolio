@@ -37,7 +37,7 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
             <Container>
                 <Heading>
                     <h1 slot="heading">Hey there.</h1>
-                    <p slot="description">For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
+                    <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
                 </Heading>
             </Container>
 
@@ -74,7 +74,7 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
                         <div><a class="shrink-0 whitespace-nowrap btn-secondary" href="/blog" title="View All Posts">View All</a></div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
                         {allPosts.map(p =>
                             <PostSnippet post={p} />
                         )}

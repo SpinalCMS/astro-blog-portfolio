@@ -85,7 +85,7 @@ const metadata = await getMetadata(url);
             <Container>
                 <div>
                     <div class="flex justify-between">
-                        <div class="space-y-8 w-1/2">
+                        <div class="flex flex-col md:flex-row gap-8">
                             <div class="space-y-8">
                                 <h4>Camera Metadata</h4>
                                 <table class="border-collapse table-auto">
@@ -134,11 +134,10 @@ const metadata = await getMetadata(url);
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-
-                        <div class="actions">
-                            <h4>Download</h4>
-                            <p><a href={`${imageConfig.ucEndpoint}/-/overlay/${imageConfig.logo}/10%25x10%25/50%25,98%25/${siteConfig.url}${ucr}`} title="Download the full size image">Full Size</a>({metadata.width} x {metadata.height})</p>
+                            <div class="space-y-8">
+                                <h4>Download</h4>
+                                <p><a href={`${imageConfig.ucEndpoint}/-/overlay/${imageConfig.logo}/10%25x10%25/50%25,98%25/${siteConfig.url}${ucr}`} title="Download the full size image">Full Size</a> ({metadata.width} x {metadata.height})</p>
+                            </div>
                         </div>
                     </div>
                 </div>
