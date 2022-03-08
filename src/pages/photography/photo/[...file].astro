@@ -55,6 +55,15 @@ const metadata = await getMetadata(url);
         title={`${metadata.title} Photo - Erik S. Olsen`}
         description={`${metadata.caption}`}
     />
+
+    <style>
+        table, tr, td {
+            @apply border
+        }
+        td {
+            @apply px-4 py-2
+        }
+    </style>
 </head>
 
 <body>
@@ -63,11 +72,11 @@ const metadata = await getMetadata(url);
             <Container>
                 <Heading>
                     <h1 slot="heading">{metadata.title}</h1>
-                    <p>{metadata.caption}</p>
+                    <p slot="description">{metadata.caption}</p>
                 </Heading>
             </Container>
 
-            <Container width="lg">
+            <Container>
                 <Image
                     file={url}
                 />
@@ -75,11 +84,11 @@ const metadata = await getMetadata(url);
 
             <Container>
                 <div>
-                    <div class="flex">
-                        <div class="metadata">
-                            <div>
+                    <div class="flex justify-between">
+                        <div class="space-y-8 w-1/2">
+                            <div class="space-y-8">
                                 <h4>Camera Metadata</h4>
-                                <table>
+                                <table class="border-collapse table-auto">
                                     <tbody>
                                         <tr>
                                             <td>Date</td>
@@ -102,7 +111,7 @@ const metadata = await getMetadata(url);
                                     </tbody>
                                 </table>
                             </div>
-                            <div>
+                            <div class="space-y-8">
                                 <h4>Photo Metadata</h4>
                                 <table>
                                     <tbody>
