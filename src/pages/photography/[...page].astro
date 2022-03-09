@@ -46,7 +46,7 @@ const categories = [...new Set(allShoots.map(s => s.category))];
         <Container>
             <Heading>
                 <h1 slot="heading">Photos</h1>
-                <p slot="description">Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
+                <p>Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
             </Heading>
         </Container>
         
@@ -61,11 +61,17 @@ const categories = [...new Set(allShoots.map(s => s.category))];
                 <Pagination page={page} />
             </Content>
 
-            <h4>Categories</h4>
-            <Categories categories={categories} base="photography" />
+            <div class="flex flex-row gap-8">
+                <div class="w-fit">
+                    <h4>Categories</h4>
+                    <Categories categories={categories} base="photography" />
+                </div>
             
-            <h4>Tags</h4>
-            <Tags tags={tags} base="photography" />
+                <div class="w-fit">
+                    <h4>Tags</h4>
+                    <Tags tags={tags} base="photography" />
+                </div>
+            </div>
         </Container>
     </BaseLayout>
 </body>
