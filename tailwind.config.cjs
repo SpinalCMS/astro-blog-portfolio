@@ -14,9 +14,9 @@ module.exports = {
             fontSize: {
                 base: ['18px', '34px'],
             }
-        }
-    },
-    plugins: [
-        require('@tailwindcss/typography'),
-    ],
+        },
+        plugins: [
+            require('@tailwindcss/typography'),
+        ],
+    }
 };

@@ -18,17 +18,20 @@ const { shoot } = Astro.props;
     </a>
 
     <div class="lg:p-6 py-8">
-        <div class="space-y-2">
-            <a href={shoot.url} title={shoot.title}>
-                <h2>{shoot.title}</h2>
-            </a>
-            
-            <div class="flex gap-2 text-stone-600 font-light">
-                <time>{timeAgo(shoot.date)}</time>
-                in {shoot.category}
+        <div class="space-y-4">
+            <div>
+                <a class="thick-underline" href={shoot.url} title={shoot.title}>
+                    <h2>{shoot.title}</h2>
+                </a>
+                
+                <div class="flex gap-2 text-stone-600 font-light">
+                    <time>{timeAgo(shoot.date)}</time>
+                    in {shoot.category}
+                </div>
             </div>
 
-            <p>{shoot.description}</p>
+            <p class="font-light">{shoot.description}</p>
+            <p><a href={shoot.url} class="thin-underline">Keep Reading &rarr;</a></p>
         </div>
     </div>
 </div>

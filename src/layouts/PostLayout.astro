@@ -40,45 +40,48 @@ const { content } = Astro.props;
         <Container>
             <Heading>
                 <h1 slot="heading">{content.title}</h1>
-                <p slot="description">{content.description}</p>
+                <p>{content.description}</p>
             </Heading>
         </Container>
 
         { content.hero ? 
             <Container>
                 <figure>
-                    <Image file={content.hero} />
-                    <figcaption>
-                        <Caption file={content.hero} />
-                    </figcaption>
+                    <picture>
+                        <Image file={content.hero} />
+                    </picture>
+                    
+                    <Caption file={content.hero} />
                 </figure>
             </Container>
         : `` }
 
         <Container>
+            <div class="flex flex-col md:flex-row gap-12">
                 <Content>
-                    <div class="prose md:prose-lg xl:prose-xl">
+                    <div class="prose prose-lg">
                         <slot />
                     </div>
                 </Content>
 
-                <div class="meta">
-                    <h4>Post Meta</h4>
-                    <p>Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
-                    <p>Filed under <span style="text-transform: capitalize"><a href={`/blog/categories/${content.category}`} title={`Posts categorized under ${content.category}`}>{content.category}</a></span></p>
-                    
-                    <div class="tags">
-                        <p>Tagged in</p>
-                        <Tags tags={content.tags} base="blog" />
-                    </div>
-                </div>
+                <div class="h-screen space-y-8 sticky top-12">
+                    <div class="space-y-4">
+                        <h4>Meta</h4>
+                        <p class="font-light">Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
 
-                { content.astro.headers.length ?
-                <div class="toc">
+                        <div class="font-light">
+                            Tagged in <Tags tags={content.tags} base="blog" />
+                        </div>
+                    </div>
+
+                    { content.astro.headers.length ?
+                    <div class="space-y-4">
                         <h4>Contents</h4>
                         <TOC headers={content.astro.headers} />
                     </div>
                     : ``}
+                </div>
+            </div>
         </Container>
     </BaseLayout>
 </body>

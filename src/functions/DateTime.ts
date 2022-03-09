@@ -29,7 +29,7 @@ export function timeAgo(date) {
 
 export function fullDate(date) {
     const badDate = new Date(date);
-    const formatted = badDate.toDateString();
+    const formatted = Intl.DateTimeFormat('en-US').format(badDate);
 
     return formatted;
 }

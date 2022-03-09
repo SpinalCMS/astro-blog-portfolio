@@ -11,10 +11,15 @@
 
 html { font-family: 'Inter var', sans-serif; }
 
-a {
-    text-decoration: underline 0.15rem rgba(0, 0, 0, 0);
+a.thick-underline {
+    text-decoration: underline 0.2rem rgba(0, 0, 0, 0);
+}
+a.thin-underline {
+    text-decoration: underline 0.1rem rgba(0, 0, 0, 0);
+}
+a.thick-underline, a.thin-underline {
     transition: text-decoration-color 300ms;
 }
-a:hover {
+a.thick-underline:hover, a.thin-underline:hover {
     text-decoration-color: currentColor;
 }

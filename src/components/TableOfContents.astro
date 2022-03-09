@@ -6,11 +6,21 @@ export interface Props {
 const { headers } = Astro.props;
 ---
 
+<style>
+    .depth-3 {
+        @apply ml-4;
+    }
+    .depth-4 {
+        @apply ml-8;
+    }
+    .active { @apply font-semibold}
+</style>
+
 <div>
-    <ul class="toc">
+    <ul class="space-y-2 toc">
         {headers.map(h => 
-            <li class={`depth-${h.depth}`}>
-                <a href={`#${h.slug}`}>{h.text}</a>
+            <li class={`depth-${h.depth} font-light`}>
+                <a class="thin-underline" href={`#${h.slug}`}>{h.text}</a>
             </li>
         )}
     </ul>

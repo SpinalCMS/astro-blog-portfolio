@@ -37,47 +37,59 @@ const allShoots = await Astro.fetchContent("./photography/*.md")
             <Container>
                 <Heading>
                     <h1 slot="heading">Hey there.</h1>
-                    <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
+                    <div class="space-y-6">
+                        <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at <a href="http://www.icgamerica.com" title="ICG America, Inc">ICG America</a>, generating $50 million in direct-to-consumer sales.</p>
+                        <p>Oh yeah, I also shoot <a href="/photography" title="Car Photography in Austin, TX">car photography</a>.</p>
+                    </div>
                 </Heading>
             </Container>
 
-            <Container width="lg">
-                <div class="flex gap-6 flex-col sm:flex-row sm:justify-between items-center mb-12">
-                    <div>
-                        <h2>Recent Photos</h2>
+            <Container>
+                <section class="space-y-10">
+                    <div class="grid grid-cols-3 gap-10">
+                        <h2 class="col-span-2">Recent Photos</h2>
+                        
+                        <div class="col-span-3 sm:col-span-1 sm:justify-self-end order-3 sm:order-2">
+                            <a class="w-full sm:w-fit btn-secondary" href="/photography" title="View All Photos">More Photos</a>
+                        </div>
+                        
+                        <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 sm:grid-cols-2 grid-flow-row sm:grid-flow-col gap-5">
+                            <figure>
+                                <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" classes="object-cover h-full w-full" />
+                                <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" />
+                            </figure>
+                            <figure>
+                                <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" classes="object-cover h-full w-full" />
+                                <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" />
+                            </figure>
+                            <figure class="row-span-2">
+                                <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" classes="object-cover h-full w-full" />
+                                <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" />
+                            </figure>
+                        </div>
+
                     </div>
-                    <div><a class="shrink-0 whitespace-nowrap btn-secondary" href="/photography" title="View All Photos">View All</a></div>
-                </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 grid-flow-row sm:grid-flow-col gap-4">
-                    <figure>
-                        <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" classes="object-cover h-full w-full" />
-                        <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" />
-                    </figure>
-                    <figure>
-                        <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" classes="object-cover h-full w-full" />
-                        <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" />
-                    </figure>
-                    <figure class="row-span-2">
-                        <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" classes="object-cover h-full w-full" />
-                        <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" />
-                    </figure>
-                </div>
+                    
+                    <div class="flex gap-6 flex-col sm:flex-row sm:justify-between">
+                            
+                    </div>
+                </section>
             </Container>
 
             <Container>
-                <section>
-                    <div class="flex gap-6 flex-col sm:flex-row sm:justify-between items-center mb-12">
-                        <div>
-                            <h2>Recent Posts</h2>
+                <section class="space-y-10">
+                    <div class="grid grid-cols-3 gap-10">
+                        <h2 class="col-span-2">Recent Posts</h2>
+                        
+                        <div class="col-span-3 sm:col-span-1 sm:justify-self-end order-3 sm:order-2">
+                            <a class="w-full sm:w-fit btn-secondary" href="/blog" title="View All Posts">More Posts</a>
                         </div>
-                        <div><a class="shrink-0 whitespace-nowrap btn-secondary" href="/blog" title="View All Posts">View All</a></div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
-                        {allPosts.map(p =>
-                            <PostSnippet post={p} />
-                        )}
+                        
+                        <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 md:grid-cols-2 gap-10">
+                            {allPosts.map(p =>
+                                <PostSnippet post={p} />
+                            )}
+                        </div>
                     </div>
                 </section>
             </Container>
