@@ -7,7 +7,6 @@
 @import './typography.scss';
 @import './spacing.scss';
 
-<<<<<<< HEAD
 @font-face {
   font-family: 'Inter';
   font-style:  normal;
@@ -182,7 +181,7 @@ html { font-family: 'Inter', sans-serif; }
 @supports (font-variation-settings: normal) {
     html { font-family: 'Inter var', sans-serif; }
 }
-=======
+
 html { font-family: 'Inter var', sans-serif; }
 
 a.thick-underline {
@@ -197,4 +196,3 @@ a.thick-underline, a.thin-underline {
 a.thick-underline:hover, a.thin-underline:hover {
     text-decoration-color: currentColor;
 }
->>>>>>> 23c2578616203bf223bfbaab94c1069b44696bd0
