@@ -40,27 +40,18 @@ const { content } = Astro.props;
         <Container>
             <Heading>
                 <h1 slot="heading">{content.title}</h1>
-<<<<<<< HEAD
-                <p slot="description">{content.description}</p>
-=======
                 <p>{content.description}</p>
->>>>>>> 23c2578616203bf223bfbaab94c1069b44696bd0
             </Heading>
         </Container>
 
         { content.hero ? 
             <Container>
-<<<<<<< HEAD
-                <figure class="hero">
-                    <Image file={content.hero} />
-=======
                 <figure>
                     <picture>
                         <Image file={content.hero} />
                     </picture>
                     
                     <Caption file={content.hero} />
->>>>>>> 23c2578616203bf223bfbaab94c1069b44696bd0
                 </figure>
             </Container>
         : `` }
@@ -68,11 +59,7 @@ const { content } = Astro.props;
         <Container>
             <div class="flex flex-col md:flex-row gap-12">
                 <Content>
-<<<<<<< HEAD
-                    <div class="prose lg:prose-xl max-w-none">
-=======
                     <div class="prose prose-lg">
->>>>>>> 23c2578616203bf223bfbaab94c1069b44696bd0
                         <slot />
                     </div>
                 </Content>
