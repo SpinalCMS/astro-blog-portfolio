@@ -13,6 +13,18 @@ module.exports = {
             },
             fontSize: {
                 base: ['18px', '34px'],
+            },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        p: {
+                            fontWeight: 300,
+                        },
+                        li: {
+                            fontWeight: 300,
+                        }
+                    }
+                }
             }
         }
     },
