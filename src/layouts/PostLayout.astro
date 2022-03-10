@@ -6,11 +6,10 @@ import { SEO } from "astro-seo";
 import BaseHead from "@/components/BaseHead"
 import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
-import Flex from "@/components/Flex"
 import Content from "@/components/Content"
 import Container from "@/components/Container"
 import Image from "@/components/image/Image"
-import Sidebar from "@/components/Sidebar"
+import Caption from "@/components/Image/Caption"
 import Tags from "@/components/Tags"
 import TOC from "@/components/TableOfContents"
 
@@ -41,46 +40,61 @@ const { content } = Astro.props;
         <Container>
             <Heading>
                 <h1 slot="heading">{content.title}</h1>
+<<<<<<< HEAD
                 <p slot="description">{content.description}</p>
+=======
+                <p>{content.description}</p>
+>>>>>>> 23c2578616203bf223bfbaab94c1069b44696bd0
             </Heading>
         </Container>
 
         { content.hero ? 
             <Container>
+<<<<<<< HEAD
                 <figure class="hero">
                     <Image file={content.hero} />
+=======
+                <figure>
+                    <picture>
+                        <Image file={content.hero} />
+                    </picture>
+                    
+                    <Caption file={content.hero} />
+>>>>>>> 23c2578616203bf223bfbaab94c1069b44696bd0
                 </figure>
             </Container>
         : `` }
 
         <Container>
-            <Flex>
+            <div class="flex flex-col md:flex-row gap-12">
                 <Content>
+<<<<<<< HEAD
                     <div class="prose lg:prose-xl max-w-none">
+=======
+                    <div class="prose prose-lg">
+>>>>>>> 23c2578616203bf223bfbaab94c1069b44696bd0
                         <slot />
                     </div>
                 </Content>
 
-                <Sidebar>
-                    <div class="meta">
-                        <h4>Post Meta</h4>
-                        <p>Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
-                        <p>Filed under <span style="text-transform: capitalize"><a href={`/blog/categories/${content.category}`} title={`Posts categorized under ${content.category}`}>{content.category}</a></span></p>
-                        
-                        <div class="tags">
-                            <p>Tagged in</p>
-                            <Tags tags={content.tags} base="blog" />
+                <div class="h-screen space-y-8 sticky top-12">
+                    <div class="space-y-4">
+                        <h4>Meta</h4>
+                        <p class="font-light">Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
+
+                        <div class="font-light">
+                            Tagged in <Tags tags={content.tags} base="blog" />
                         </div>
                     </div>
 
                     { content.astro.headers.length ?
-                    <div class="toc">
-                            <h4>Contents</h4>
-                            <TOC headers={content.astro.headers} />
-                        </div>
-                        : ``}
-                </Sidebar>
-            </Flex>
+                    <div class="space-y-4">
+                        <h4>Contents</h4>
+                        <TOC headers={content.astro.headers} />
+                    </div>
+                    : ``}
+                </div>
+            </div>
         </Container>
     </BaseLayout>
 </body>

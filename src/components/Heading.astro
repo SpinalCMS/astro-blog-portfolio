@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div>
     <div class="space-y-10 md:w-3/4 lg:w-1/2">
         <div>
@@ -7,5 +8,24 @@
         <div class="leading-7 text-lg sm:text-xl sm:leading-9 text-stone-700 font-light">
             <slot name="description" />
         </div>
+=======
+<style lang="scss">
+    .description {
+        @apply text-lg md:text-2xl leading-8 md:leading-10 text-stone-700 font-light;
+
+        :global(a) {
+            @apply bg-amber-100 p-1 no-underline italic;
+        }
+    }
+</style>
+
+<div class="space-y-10 md:w-3/4">
+    <slot name="heading" />
+
+    <hr class="bg-neutral-900 w-24" />
+    
+    <div class="description">
+        <slot />
+>>>>>>> 23c2578616203bf223bfbaab94c1069b44696bd0
     </div>
-</div> 
+</div>

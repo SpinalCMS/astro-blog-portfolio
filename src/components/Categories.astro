@@ -6,7 +6,12 @@ export interface Props {
 }
 const { categories, base } = Astro.props;
 ---
-    
+<style>
+li a {
+    @apply font-light
+}
+</style>
+
 <ul class="category-list">
     {categories.map(c =>
         <li class="category">

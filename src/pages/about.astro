@@ -6,15 +6,8 @@ import { SEO } from "astro-seo";
 import BaseHead from "@/components/BaseHead"
 import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
-import Flex from "@/components/Flex"
 import Content from "@/components/Content"
 import Container from "@/components/Container"
-import Image from "@/components/image/Image"
-import Caption from "@/components/image/Caption"
-import Sidebar from "@/components/Sidebar"
-
-// data
-import Skills from "@/data/resume"
 
 // config
 import { siteConfig } from "@/src/config.ts"
@@ -28,6 +21,12 @@ import { siteConfig } from "@/src/config.ts"
         title="Erik S. Olsen - I'm a Digital Marketing Expert located in Austin, TX"
         description="Erik Olsen is the Director of Digital Engagement at ICG America in Austin, TX. My expertise is designing and creating large-scale, data-driven marketing campaigns for e-commerce businesses."
     />
+
+    <style>
+        article {
+            @apply space-y-8 font-light
+        }
+    </style>
 </head>
 
 <body>
@@ -35,51 +34,29 @@ import { siteConfig } from "@/src/config.ts"
         <Container>
             <Heading>
                 <h1 slot="heading">About</h1>
-                <p slot="description">My name is Erik, and I'm a digital marketing expert in Austin, TX. I'm currently running the SEM and CRO operations for <a href="http://www.icgamerica.com" title="ICG America, Inc.">ICG America</a>.</p>
+                <p>My name is Erik, and I'm a digital marketing expert in Austin, TX. I'm currently running the SEM and CRO operations for <a href="http://www.icgamerica.com" title="ICG America, Inc.">ICG America</a>.</p>
             </Heading>
         </Container>
-        
-        <Container>
-            <figure>
-                <Image classes="object-cover object-center rounded h-[40rem]" file="shoots/2021/2021-06-23-porsche-930/porsche-930-2021_007.jpg" />
-                <Caption file="shoots/2021/2021-06-23-porsche-930/porsche-930-2021_007.jpg" />
-            </figure>
-        </Container>
 
         <Container>
-            <Flex>
-                <Content>
-                    <article class="prose lg:prose-xl">
-                        <h2>Digital Marketing</h2>
-                        <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
-                        <p>Finding creative ways to combine cutting-edge tools, deep targeting and personalized messaging is what drives me each day at work. It's what has allowed me to build, scale and maintain high-performing acquisition campaigns. Whatever the marketing channel, my approach is always the same: use a data-driven approach with a dash of automation to quickly scale successful marketing campaigns.</p>
-                        <p>Recently I've created an automated reporting system using Google Sheets and the Analytics & Ads API add-ons. I've also taken our CRO program in-house and we're running 3-5 large scale tests each month.</p>
+            <Content>
+                <article class="prose prose-lg">
+                    <h2>Digital Marketing</h2>
+                    <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at ICG America, generating $50 million in direct-to-consumer sales.</p>
+                    <p>Finding creative ways to combine cutting-edge tools, deep targeting and personalized messaging is what drives me each day at work. It's what has allowed me to build, scale and maintain high-performing acquisition campaigns. Whatever the marketing channel, my approach is always the same: use a data-driven approach with a dash of automation to quickly scale successful marketing campaigns.</p>
+                    <p>Recently I've created an automated reporting system using Google Sheets and the Analytics & Ads API add-ons. I've also taken our CRO program in-house and we're running 3-5 large scale tests each month.</p>
 
-                        <h2>Other Stuff</h2>
-                        <p>Outside of work you'll usually find me with my family. I love spending time with them and watching my son grow up.</p>
+                    <h2>Other Stuff</h2>
+                    <p>Outside of work you'll usually find me with my family. I love spending time with them and watching my son grow up.</p>
 
-                        <h3>Car Photography</h3>
-                        <p>If I somehow have any free time after that I love shooting pictures of cars around Austin, TX. I'll try and visit <a href="https://www.facebook.com/CoffeeWithCars/" title="Coffee With Cars Dripping Springs">Coffee With Cars</a> in Dripping Springs during the warmer months. I also do freelance photography for <a href="https://bringatrailer.com/" title="Bring a Trailer">Bring a Trailer</a> auctions.</p>
+                    <h3>Car Photography</h3>
+                    <p>If I somehow have any free time after that I love shooting pictures of cars around Austin, TX. I'll try and visit <a href="https://www.facebook.com/CoffeeWithCars/" title="Coffee With Cars Dripping Springs">Coffee With Cars</a> in Dripping Springs during the warmer months. I also do freelance photography for <a href="https://bringatrailer.com/" title="Bring a Trailer">Bring a Trailer</a> auctions.</p>
 
-                        <h3>Coding</h3>
-                        <p>If I can find the time I always enjoy teaching myself new web technologies. Currently I'm relearning SCSS after spending some time with Tailwind. I love Tailwind, but plain CSS has become so powerful, it's really fun to be working with it again.</p>
-                        <p>Occasionally I'll publish something to GitHub. If you're intersted in the backend, of this site, why not <a href={siteConfig.siteRepo} title="Astro Portfolio and Blog">check out the repo</a>.</p>
-                    </article>
-                </Content>
-
-                <Sidebar>
-                    <div>
-                        {Skills.map(s => 
-                            <h4>{s.title}</h4>
-                            <ul>
-                                {s.objects.map(o =>
-                                    <li>{o}</li>
-                                )}
-                            </ul>
-                        )}
-                    </div>
-                </Sidebar>
-            </Flex>
+                    <h3>Coding</h3>
+                    <p>If I can find the time I always enjoy teaching myself new web technologies. Currently I'm relearning SCSS after spending some time with Tailwind. I love Tailwind, but plain CSS has become so powerful, it's really fun to be working with it again.</p>
+                    <p>Occasionally I'll publish something to GitHub. If you're intersted in the backend, of this site, why not <a href={siteConfig.siteRepo} title="Astro Portfolio and Blog">check out the repo</a>.</p>
+                </article>
+            </Content>
         </Container>
     </BaseLayout>
 </body>

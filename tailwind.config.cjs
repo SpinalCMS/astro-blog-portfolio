@@ -10,10 +10,25 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+            },
+            fontSize: {
+                base: ['18px', '34px'],
+            },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        p: {
+                            fontWeight: 300,
+                        },
+                        li: {
+                            fontWeight: 300,
+                        }
+                    }
+                }
             }
         }
     },
     plugins: [
         require('@tailwindcss/typography'),
-    ],
+    ]
 };

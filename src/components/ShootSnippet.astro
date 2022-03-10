@@ -12,6 +12,7 @@ export interface Props {
 const { shoot } = Astro.props;
 ---
 
+<<<<<<< HEAD
 <style>
     .content {
         @apply
@@ -32,30 +33,28 @@ const { shoot } = Astro.props;
             border-amber-300
     }
 </style>
+=======
+<div class="group lg:grid grid-flow-col items-center gap-x-6">
+    <a class="lg:w-64 xl:w-96" href={shoot.url} title={shoot.title}>
+        <Image classes="h-60 w-full object-cover" file={shoot.hero} />
+    </a>
+>>>>>>> 23c2578616203bf223bfbaab94c1069b44696bd0
 
-<div class="sm:space-y-2 relative group overflow-hidden rounded">
-    <div>
-        <a href={shoot.url} title={shoot.title}>
-            <Image classes="shadow-none sm:shadow-2xl rounded-none sm:rounded sm:opacity-80 sm:group-hover:opacity-100 sm:duration-700" file={shoot.hero} />
-        </a>
-    </div>
-
-    <div class="content group-hover:origin-bottom-left">
-        <div class="space-y-2">
-            <a href={shoot.url} title={shoot.title}>
-                <h3 class="h4">{shoot.title}</h3>
-            </a>
-            
-            <div class="flex gap-2 text-stone-600 font-light">
-                <time>{timeAgo(shoot.date)}</time>
-                in {shoot.category}
+    <div class="lg:p-6 py-8">
+        <div class="space-y-4">
+            <div>
+                <a class="thick-underline" href={shoot.url} title={shoot.title}>
+                    <h2>{shoot.title}</h2>
+                </a>
+                
+                <div class="flex gap-2 text-stone-600 font-light">
+                    <time>{timeAgo(shoot.date)}</time>
+                    in {shoot.category}
+                </div>
             </div>
+
+            <p class="font-light">{shoot.description}</p>
+            <p><a href={shoot.url} class="thin-underline">Keep Reading &rarr;</a></p>
         </div>
-
-        <p>{shoot.description}</p>
     </div>
-
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-white absolute bottom-5 right-5 w-8 h-8 duration-500 opacity-0 group-hover:opacity-100" viewBox="0 0 16 16">
-        <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
-    </svg>
 </div>

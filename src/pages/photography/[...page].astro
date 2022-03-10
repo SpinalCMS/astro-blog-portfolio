@@ -6,12 +6,10 @@ import { SEO } from "astro-seo";
 import BaseHead from "@/components/BaseHead"
 import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
-import Flex from "@/components/Flex"
 import Content from "@/components/Content"
 import Container from "@/components/Container"
 import ShootSnippet from "@/components/ShootSnippet"
 import Pagination from "@/components/Pagination"
-import Sidebar from "@/components/Sidebar"
 import Tags from "@/components/Tags"
 import Categories from "@/components/Categories"
 
@@ -29,7 +27,7 @@ const { page } = Astro.props;
 
 // get all the posts and send to tag and category component
 const allShoots = await Astro.fetchContent("./*.md");
-const tags = [...new Set([].concat.apply([], allShoots.map(s => s.tags)))];
+const tags = [...new Set([].concat.apply([], allShoots.map(s => s.tags)))].slice(0,10);
 const categories = [...new Set(allShoots.map(s => s.category))];
 ---
 
@@ -48,30 +46,32 @@ const categories = [...new Set(allShoots.map(s => s.category))];
         <Container>
             <Heading>
                 <h1 slot="heading">Photos</h1>
-                <p slot="description">Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
+                <p>Lately, I've been shooting lots of cars for Bring a Trailer auctions. If you're in the Austin area and are interested in having your car photographed for an online auction site, <a href="/contact" title="Contact Me">let's chat!</a></p>
             </Heading>
         </Container>
         
         <Container>
-            <Flex>
-                <Content>
-                    <section class="grid grid-cols-2 gap-8">
-                        {page.data.map(s =>
-                            <ShootSnippet shoot={s} />
-                        )}
-                    </section>
+            <Content>
+                <section class="grid grid-cols-1 gap-12">
+                    {page.data.map(s =>
+                        <ShootSnippet shoot={s} />
+                    )}
+                </section>
 
-                    <Pagination page={page} />
-                </Content>
+                <Pagination page={page} />
+            </Content>
 
-                <Sidebar>                    
+            <div class="flex flex-row gap-8">
+                <div class="w-fit">
                     <h4>Categories</h4>
                     <Categories categories={categories} base="photography" />
-                    
+                </div>
+            
+                <div class="w-fit">
                     <h4>Tags</h4>
                     <Tags tags={tags} base="photography" />
-                </Sidebar>
-            </Flex>
+                </div>
+            </div>
         </Container>
     </BaseLayout>
 </body>

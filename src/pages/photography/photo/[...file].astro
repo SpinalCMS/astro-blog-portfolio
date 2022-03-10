@@ -7,11 +7,9 @@ import fg from "fast-glob"
 import BaseHead from "@/components/BaseHead"
 import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
-import Flex from "@/components/Flex"
 import Content from "@/components/Content"
 import Container from "@/components/Container"
 import Image from "@/components/image/Image"
-import Caption from "@/components/image/Caption"
 
 // functions
 import { getMetadata, buildPublicPath, buildFileDetailPath } from "@/functions/Media"
@@ -55,6 +53,15 @@ const metadata = await getMetadata(url);
         title={`${metadata.title} Photo - Erik S. Olsen`}
         description={`${metadata.caption}`}
     />
+
+    <style>
+        table, tr, td {
+            @apply border
+        }
+        td {
+            @apply px-4 py-2
+        }
+    </style>
 </head>
 
 <body>
@@ -67,7 +74,7 @@ const metadata = await getMetadata(url);
                 </Heading>
             </Container>
 
-            <Container width="lg">
+            <Container>
                 <Image
                     file={url}
                 />
@@ -75,61 +82,62 @@ const metadata = await getMetadata(url);
 
             <Container>
                 <div>
-                    <div class="flex">
-                        <div class="metadata">
-                            <div>
+                    <div class="flex justify-between">
+                        <div class="flex flex-col justify-between md:flex-row gap-8">
+                            <div class="space-y-8">
                                 <h4>Camera Metadata</h4>
-                                <table>
+                                <table class="border-collapse table-auto">
                                     <tbody>
                                         <tr>
                                             <td>Date</td>
-                                            <td>
+                                            <td class="font-light">
                                                 <date>{fullDate(metadata.date)}</date>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Author</td>
-                                            <td>{metadata.author}</td>
+                                            <td class="font-light">{metadata.author}</td>
                                         </tr>
                                         <tr>
                                             <td>Camera</td>
-                                            <td>{metadata.cameraMake} {metadata.cameraModel}</td>
+                                            <td class="font-light">{metadata.cameraMake} {metadata.cameraModel}</td>
                                         </tr>
                                         <tr>
                                             <td>Lens</td>
-                                            <td>{metadata.lens}</td>
+                                            <td class="font-light">{metadata.lens}</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div>
+
+                            <div class="space-y-8">
                                 <h4>Photo Metadata</h4>
                                 <table>
                                     <tbody>
                                         <tr>
                                             <td>Aperture</td>
-                                            <td>f/{metadata.aperture}</td>
+                                            <td class="font-light">f/{metadata.aperture}</td>
                                         </tr>
                                         <tr>
                                             <td>ISO</td>
-                                            <td>{metadata.iso}</td>
+                                            <td class="font-light">{metadata.iso}</td>
                                         </tr>
                                         <tr>
                                             <td>Focal Length</td>
-                                            <td>{metadata.focalLength}mm</td>
+                                            <td class="font-light">{metadata.focalLength}mm</td>
                                         </tr>
                                         <tr>
                                             <td>Shutter Speed</td>
-                                            <td>{metadata.shutterSpeed}</td>
+                                            <td class="font-light">{metadata.shutterSpeed}</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
 
-                        <div class="actions">
+                        <div class="space-y-8">
                             <h4>Download</h4>
-                            <p><a href={`${imageConfig.ucEndpoint}/-/overlay/${imageConfig.logo}/10%25x10%25/50%25,98%25/${siteConfig.url}${ucr}`} title="Download the full size image">Full Size</a>({metadata.width} x {metadata.height})</p>
+                            <p><a href={`${imageConfig.ucEndpoint}/-/overlay/${imageConfig.logo}/10%25x10%25/50%25,98%25/${siteConfig.url}${ucr}`} title="Download the full size image">Full Size</a> ({metadata.width} x {metadata.height})</p>
                         </div>
                     </div>
                 </div>

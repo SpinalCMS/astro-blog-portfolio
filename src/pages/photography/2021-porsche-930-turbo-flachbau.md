@@ -4,7 +4,6 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
-  import Gallery from "@/components/image/Gallery"
   import Video from "@/components/video/Video"
 
 # meta
@@ -85,16 +84,14 @@ Ever since a friend snagged this incredible 930 Turbo I've been wanting to take 
 
 So, when Britton and Branson Hardcastle over at [B Hardcastle Media](https://www.bhardcastle.com/) asked me if they could test shoot a car, I saw a perfect opportunity. So while *technically* these aren't my photos, I was helping on the shoot (or at least I think I was a help).
 
-<div class="gallery">
-    {frontmatter.gallery01.map((i, index) =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+<div>
+    {frontmatter.gallery01.map(i =>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>
 
@@ -110,16 +107,14 @@ All while Branson was taking the beautiful photos you see here, Britton was film
 
 Progressively you start to get more comfortable with the way the car builds power. It's absolutely not linear, but I wouldn't say it's as bad as a big turbo four cylinder either. I was conscious to never smash the throttle unless the wheels were pointed forward, which probably helped keep us out of a ditch.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery02.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true} />
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true} />
+        </figure>
     )}
 </div>
 
@@ -129,16 +124,14 @@ Towards the end of the shoot we decided to pull over and give the car a rest and
 
 Branson was able to get some shots of the Lipstick Red interior on this 930 Turbo. It was originally loaded up with a black interior, but the owner decided since this car has high mileage, he'd rather throw originality out the window (although he still keeps the stuff around) and build a dream grey / red 930 Flachbau.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery03.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>
 
@@ -147,16 +140,14 @@ On our way back to the shop, we were presented with an outrageous Texas Hill Cou
 
 Unfortunately, I missed lining up the car perfectly on the road. You're so low in the car, it's actually hard to tell where you are placed on the lines. After seeing the photos I wished we had pulled over and planned better. But we were on a time crunch and there was traffic approaching behind us.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery04.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>
 
