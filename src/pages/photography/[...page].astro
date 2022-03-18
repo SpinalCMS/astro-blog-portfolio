@@ -60,18 +60,6 @@ const categories = [...new Set(allShoots.map(s => s.category))];
 
                 <Pagination page={page} />
             </Content>
-
-            <div class="flex flex-row gap-8">
-                <div class="w-fit">
-                    <h4>Categories</h4>
-                    <Categories categories={categories} base="photography" />
-                </div>
-            
-                <div class="w-fit">
-                    <h4>Tags</h4>
-                    <Tags tags={tags} base="photography" />
-                </div>
-            </div>
         </Container>
     </BaseLayout>
 </body>
