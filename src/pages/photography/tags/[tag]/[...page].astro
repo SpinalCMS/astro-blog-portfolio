@@ -7,10 +7,9 @@ import BaseHead from "@/components/BaseHead"
 import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
 import Content from "@/components/Content"
+import Container from "@/components/Container"
 import ShootSnippet from "@/components/ShootSnippet"
 import Pagination from "@/components/Pagination"
-import Tags from "@/components/Tags"
-import Categories from "@/components/Categories"
 
 // config
 import { pageSize } from "@/src/config.ts"
@@ -34,10 +33,6 @@ export async function getStaticPaths({ paginate }) {
     });
 }
 
-const allShoots = await Astro.fetchContent("../../*.md");
-const categories = [...new Set(allShoots.map(s => s.category))];
-const tags = [...new Set([].concat.apply([], allShoots.map(s => s.tags)))];
-
 const { page } = Astro.props
 const { params } = Astro.request
 ---
@@ -54,27 +49,23 @@ const { params } = Astro.request
 
 <body>
     <BaseLayout>
-        <Heading>
-            <h1>Shoots Tagged with "<span style="text-transform: capitalize">{params.tag}</span>"</h1>
-        </Heading>
+        <Container>
+            <Heading>
+                <h1>Shoots Tagged with "<span style="text-transform: capitalize">{params.tag}</span>"</h1>
+            </Heading>
+        </Container>
         
-        <Content>
-            <section class="posts">
-                {page.data.map(s =>
-                    <ShootSnippet shoot={s} />
-                )}
-            </section>
+        <Container>
+            <Content>
+                <section class="grid grid-cols-1 gap-12">
+                    {page.data.map(s =>
+                        <ShootSnippet shoot={s} />
+                    )}
+                </section>
 
-            <Pagination page={page} />
-        </Content>
-
-        <div>
-            <h4>Categories</h4>
-            <Categories categories={categories} base="photography" />
-
-            <h4>Tags</h4>
-            <Tags tags={tags} base="photography" />
-        </div>
+                <Pagination page={page} />
+            </Content>
+        </Container>
     </BaseLayout>
 </body>
 </html>

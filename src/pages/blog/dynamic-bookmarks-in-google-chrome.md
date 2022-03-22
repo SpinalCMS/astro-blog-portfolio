@@ -8,9 +8,9 @@ setup: |
 
 # meta
 tags:
-    - marketing
-    - code
-    - chrome
+  - marketing
+  - code
+  - chrome
 category: coding
 date: 2020-04-30
 
@@ -21,6 +21,7 @@ excerpt: As a digital marketer, I'm constantly loading Google Analytics to view 
 ---
 
 ## The Issue
+
 As a digital marketer, I'm constantly loading Google Analytics to view site performance metrics. I have very specific requirements when looking at performance data in Analytics:
 
 - I need to compare year-over-year data, ie: 2020 vs. 2019
@@ -29,6 +30,7 @@ As a digital marketer, I'm constantly loading Google Analytics to view site perf
 This can be time consuming when using Google Analytics daily. You've got to load Analytics, get to the property, select the report and set your date ranges. After frustration set in, I resolved to figure out a method to build dynamic bookmarks in Google Chrome.
 
 ### What's the Fix?
+
 Let's assume that we want to populate a Google Analytics report with the date range for the current day, versus the same day of the week last year. As I'm writing this on Thursday (4/30/2020), the script will compare to the same Thursday last year (5/02/2019).
 
 ## Getting Started
@@ -45,16 +47,21 @@ var start_mm = start_date.getMonth() + 1;
 var start_yyyy = start_date.getFullYear();
 // analytics requires leading zeros for day and month
 
-if (start_dd < 10) { start_dd = '0' + start_dd; }
-if (start_mm < 10) { start_mm = '0' + start_mm; }
+if (start_dd < 10) {
+  start_dd = "0" + start_dd;
+}
+if (start_mm < 10) {
+  start_mm = "0" + start_mm;
+}
 
-// this is the final start date string    
-var start = '' + start_yyyy + start_mm + start_dd;
+// this is the final start date string
+var start = "" + start_yyyy + start_mm + start_dd;
 ```
 
 Cool, now we've got a date that looks like:
+
 ```js
-20200430
+20200430;
 ```
 
 Next we need to do something similiar, but move back exactly one year to the same day of the week.
@@ -68,10 +75,14 @@ var end_dd = end_date.getDate();
 var end_mm = end_date.getMonth() + 1;
 var end_yyyy = end_date.getFullYear();
 // analytics requires leading zeros for day and month
-if (end_dd < 10) { end_dd = '0' + end_dd; }
-if (end_mm < 10) { end_mm = '0' + end_mm; }
+if (end_dd < 10) {
+  end_dd = "0" + end_dd;
+}
+if (end_mm < 10) {
+  end_mm = "0" + end_mm;
+}
 // the final comparison date string
-var end = '' + end_yyyy + end_mm + end_dd;
+var end = "" + end_yyyy + end_mm + end_dd;
 ```
 
 Now we've got the current date and comparison date, properly formattted for Analytics. Next let's build the URL necessary to load the report.
@@ -79,39 +90,43 @@ Now we've got the current date and comparison date, properly formattted for Anal
 ```js
 // insert the url of the report you'd like to load
 // I save custom reports and use those as the base url
-return
-    'https://analytics.google.com/analytics/web/#my-reports/**REPORTID**/%3F_u.date00%3D'
-    + start
-    + '%26_u.date01%3D'
-    + start
-    + '%26_u.date10%3D'
-    + end
-    + '%26_u.date11%3D'
-    + end
-    + '/'; 
+return;
+"https://analytics.google.com/analytics/web/#my-reports/**REPORTID**/%3F_u.date00%3D" +
+  start +
+  "%26_u.date01%3D" +
+  start +
+  "%26_u.date10%3D" +
+  end +
+  "%26_u.date11%3D" +
+  end +
+  "/";
 ```
 
 There's one final piece of the puzzle. We need to wrap all the prior code in a function, then call that function to open a new tab.
 
 ```js
-javascript:function url() {
-    // all the previous code
-    // gets loaded here
-};
+javascript: function url() {
+  // all the previous code
+  // gets loaded here
+}
 
 //tell chrome to open the window
 window.open(url(), "_self");
 ```
 
 ### Bugs and Things to Note
+
 - As of the time of writing this code, Google Chrome didn't like any comments. I assume that's because the bookmark in Google Chrome gets converted to one long string, so any comment in your code comments the rest of the code out.
 - For some reason if you open a new tab, then try to load the bookmark, nothing happens. If you try the bookmark in a loaded tab, it's fine. If you right click and open in a new tab, it's fine. Anyone have a fix for this?
 
 ## Get the Code
+
 If you want to see the full code, I've created a [GitHub Gist](https://gist.github.com/tusamni/1007292a8566ac5a7f7268626ee5f8ae).
 
 ### What's Next?
+
 In part two, I'll show you how to adopt this code to allow for other date ranges:
+
 - Yesterday
 - Last seven days
 - Month to date

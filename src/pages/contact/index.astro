@@ -7,6 +7,7 @@ import BaseHead from "@/components/BaseHead"
 import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
 import Content from "@/components/Content"
+import Container from "@/components/Container"
 ---
 
 <!DOCTYPE html>
@@ -20,22 +21,20 @@ import Content from "@/components/Content"
 
     <style lang="scss">
         form {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-lg);
+            @apply flex flex-col space-y-6;
 
             .group {
-                display: flex;
-                flex-direction: column;
+                @apply flex flex-col space-y-1;
+
+                input, textarea {
+                    @apply rounded border border-neutral-300 font-light
+                }
 
                 .optional {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
+                    @apply flex flex-row justify-between;
 
                     span {
-                        color: var(--color-grayscale-80);
-                        font-weight: 300;
+                        @apply text-neutral-500 font-light;
                     }
                 }
             }
@@ -49,49 +48,53 @@ import Content from "@/components/Content"
 
 <body>
     <BaseLayout>
-        <Heading>
-            <h1>Contact Me</h1>
-        </Heading>
+        <Container>
+            <Heading>
+                <h1>Contact Me</h1>
+            </Heading>
+        </Container>
 
-        <Content>
-            <section>
-                <form action="/contact/success/" name="Contact - Page" method="POST" data-netlify="true">
-                    <div class="group">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name" autocomplete="name" placeholder="Your name" required>
-                    </div>
+        <Container>
+            <Content>
+                <section class="prose">
+                    <form action="/contact/success/" name="Contact - Page" method="POST" data-netlify="true">
+                        <div class="group">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" autocomplete="name" placeholder="Your name" required>
+                        </div>
 
-                    <div class="group">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required>
-                    </div>
+                        <div class="group">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required>
+                        </div>
 
-                    <div class="group">
-                        <div class="optional">
-                            <label for="phone">Phone Number</label>
-                            <span>Optional</span>
+                        <div class="group">
+                            <div class="optional">
+                                <label for="phone">Phone Number</label>
+                                <span>Optional</span>
+                            </div>
+                            
+                            <input type="text" name="phone" id="phone" autocomplete="tel" placeholder="(512) 867-5309">
                         </div>
                         
-                        <input type="text" name="phone" id="phone" autocomplete="tel" placeholder="(512) 867-5309">
-                    </div>
-                    
-                    <div class="group">
-                        <div class="optional">
-                            <label for="message">Message</label>
-                            <span>Optional</span>
+                        <div class="group">
+                            <div class="optional">
+                                <label for="message">Message</label>
+                                <span>Optional</span>
+                            </div>
+                            
+                            <textarea id="message" name="message" rows="4"></textarea>
                         </div>
-                        
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
 
-                    <div class="group">
-                        <button type="submit" class="btn btn-primary">
-                            <span>Let's talk</span>
-                        </button>
-                    </div>
-                </form>
-            </section>
-        </Content>
+                        <div class="group">
+                            <button type="submit" class="btn btn-primary">
+                                <span>Let's talk</span>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </Content>
+        </Container>
     </BaseLayout>
 </body>
 </html>

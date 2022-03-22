@@ -68,10 +68,6 @@ const { content } = Astro.props;
                     <div class="space-y-4">
                         <h4>Meta</h4>
                         <p class="font-light">Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
-
-                        <div class="font-light">
-                            Tagged in <Tags tags={content.tags} base="blog" />
-                        </div>
                     </div>
 
                     { content.astro.headers.length ?
