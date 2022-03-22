@@ -4,7 +4,6 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
-  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -28,15 +27,13 @@ gallery01:
 
 This isn't a major shoot, but I had a rented Sigma 50mm Art f/1.4 in my possession, so I hopped over to a friends shop to shoot a few of his colleciton.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery01.map((i, index) =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>

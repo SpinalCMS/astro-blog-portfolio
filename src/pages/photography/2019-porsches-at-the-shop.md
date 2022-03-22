@@ -4,7 +4,6 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
-  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -34,15 +33,13 @@ Up to this point I had been shooting with a 35mm Sony Zeiss f/2.8. I love that l
 
 In hindsight, it wasn't enough. I really needed another lens around the 85-100mm mark. But the Sony Zeiss series will always hold a special place in my heart.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery01.map((i, index) =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>

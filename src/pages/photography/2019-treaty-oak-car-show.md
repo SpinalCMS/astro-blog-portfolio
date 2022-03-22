@@ -4,7 +4,6 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
-  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -41,15 +40,13 @@ gallery01:
 
 Each year, Treaty Oak Distillery puts on a car show called the Rod Run. I'll be honest, I'm not terribly knowledgeable about classic American cars. But why wouldn't I go and listen to a bunch of large displacement V8's rumbling around the hill country?
 
-<div class="gallery">
+<div>
     {frontmatter.gallery01.map((i, index) =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>

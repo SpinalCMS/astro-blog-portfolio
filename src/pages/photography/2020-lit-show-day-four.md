@@ -4,7 +4,6 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
-  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -57,15 +56,13 @@ That said, the main attraction was the 1956 Porsche 550/1550 RS Spyder. To reali
 
 It was a nice way to end the trip. I saw so many incredible current model Porsches on this trip, yet we ended seeing one of the earliest prouction Porsches built. It's a true testament to the longevity of the brand and the passion that still exists in the community today.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery01.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>

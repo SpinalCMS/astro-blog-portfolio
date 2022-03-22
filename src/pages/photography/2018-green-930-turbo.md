@@ -4,7 +4,6 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
-  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -42,15 +41,13 @@ Looking back at this shoot years later, there are so many things I would have do
 
 But no matter what, 930's are one of my favorite Porsches, and in this color, who cares what the photos look like?
 
-<div class="gallery">
+<div>
     {frontmatter.gallery01.map((i, index) =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>

@@ -4,7 +4,6 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
-  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -46,15 +45,13 @@ What's not to love about this car: Pepita houndstooth and tan leather interior, 
 
 This car has yet to make it to Bring a Trailer though. It's still at the shop receiving the final touches. When it does get listed, it's going to the moon.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery01.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true} />
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true} />
+        </figure>
     )}
 </div>

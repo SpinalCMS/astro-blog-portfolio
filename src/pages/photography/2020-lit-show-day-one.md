@@ -4,7 +4,6 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
-  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -102,32 +101,28 @@ If you're like me and have never heard of the [LIT Show](https://www.lalitandtoy
 ## Let's Get it Started
 Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in Fallbrook, CA. CPR has been in the Porsche restoration business for 40 years. Their facility is massive, spanning across multiple buildings. Each building holding numerous customer cars awaiting restoration.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery01.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>
 
 ## Wholesale California
 Once we finished at CPR Classic, we hopped in our van and drove through beautiful LA (read: we sat in traffic) and made our way over to [Wholesale California](https://wholesalecalifornia.com/). Wholesale California is an auto dealer in Costa Mesa, CA. They've been in business for fifteen years locating great collector barn finds. Their storefront is unique to say the least. It's obviously a small home that was converted. Most of the cars for sale are stored in the backyard. I don't mean to say it's bad in anyway, it's unique. There was a choice Viper Green 911 hot rod that seemed well executed.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery02.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>
 
@@ -136,15 +131,13 @@ Last on our list for day one was a trip to [Sierra Madre Collection](https://sie
 
 We arrived to the open house later in the day, so we missed some vehicles, but it was still a strong showing. The McCoppin 4.0 hot rod build caught my eye. I think it was a little over the top design wise, but still executed wonderfully. There were so many neat, intricate details. I wish I could have spent more time with it.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery03.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>

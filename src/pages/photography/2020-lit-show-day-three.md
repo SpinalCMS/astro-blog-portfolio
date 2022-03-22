@@ -4,7 +4,6 @@ setup: |
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
-  import Gallery from "@/components/image/Gallery"
 
 # meta
 tags:
@@ -74,32 +73,28 @@ Staying at the [LAX Hilton](https://www.hilton.com/en/hotels/laxahhh-hilton-los-
 
 ### Singer 911
 
-<div class="gallery">
+<div>
     {frontmatter.gallery01.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>
 
 ## CarParc USA
 [CarParc](https://carparcusa.com/) USA is an interesting place, it's one part Porsche, one part art gallery. The Gulf hot rod up front was amazing. Attention to detail was insane and I would have loved to take that car home with me. I loved the yellow 911S with red houndstooth as well, such a perfect combination of style. CarParc USA had a Celette which was neat to see. There's not too many of those left around.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery02.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>
 
@@ -108,15 +103,13 @@ Rod Emory is to 356's as Singer is to 911's. They're buying a ton of restoration
 
 At the entrance to the shop [Gunther Werks](https://www.guntherwerks.com/) brought along a mint green 400R. Absolutely insane.
 
-<div class="gallery">
+<div>
     {frontmatter.gallery03.map(i =>
-        <Gallery file={i}>
-            <figure>
-                <picture>
-                    <Image file={i} />
-                </picture>
-                <Caption file={i} showMeta={true}>
-            </figure>
-        </Gallery>
+        <figure>
+            <picture>
+                <Image file={i} />
+            </picture>
+            <Caption file={i} showMeta={true}>
+        </figure>
     )}
 </div>
