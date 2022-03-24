@@ -50,8 +50,6 @@ const { content } = Astro.props;
                     <picture>
                         <Image file={content.hero} />
                     </picture>
-                    
-                    <Caption file={content.hero} />
                 </figure>
             </Container>
         : `` }
@@ -64,7 +62,7 @@ const { content } = Astro.props;
                     </div>
                 </Content>
 
-                <div class="h-screen space-y-8 sticky top-12">
+                <div class="h-auto md:h-screen space-y-8 sticky top-12">
                     <div class="space-y-4">
                         <h4>Meta</h4>
                         <p class="font-light">Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
