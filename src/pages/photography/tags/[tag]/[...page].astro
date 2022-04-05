@@ -15,7 +15,7 @@ import Pagination from "@/components/Pagination"
 import { pageSize } from "@/src/config.ts"
 
 export async function getStaticPaths({ paginate }) {
-    const allShoots = Astro.fetchContent("../../*.md");
+    const allShoots = Astro.glob("../../*.md");
     const allTags = new Set();
     
     allShoots.map(s => {

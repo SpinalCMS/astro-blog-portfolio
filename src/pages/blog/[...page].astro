@@ -15,7 +15,7 @@ import Pagination from "@/components/Pagination"
 import { pageSize } from "@/src/config.ts"
 
 export async function getStaticPaths({rss, paginate}) {
-    const allPosts = await Astro.fetchContent("./*.md")
+    const allPosts = await Astro.glob("./*.md")
                                 .sort((a, b) => new Date(b.date) - new Date(a.date));
 
     rss({

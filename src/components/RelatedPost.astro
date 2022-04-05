@@ -6,7 +6,7 @@ export interface Props {
 const { posts } = Astro.props;
 
 // get all posts
-const allPosts = Astro.fetchContent("../pages/blog/new-camera-and-lenses.md");
+const allPosts = Astro.glob("../pages/blog/new-camera-and-lenses.md");
 const relatedPosts = posts.map(r => {
     return allPosts.find((post) => post.url.includes(r));
 });

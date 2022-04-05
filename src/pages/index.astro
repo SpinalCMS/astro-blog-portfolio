@@ -13,10 +13,10 @@ import Caption from "@/components/image/Caption"
 import PostSnippet from "@/components/PostSnippet"
 import ShootSnippet from "@/components/ShootSnippet"
 
-const allPosts = await Astro.fetchContent("./blog/*.md")
+const allPosts = await Astro.glob("./blog/*.md")
                             .sort((a, b) => new Date(b.date) - new Date(a.date))
                             .slice(0,6);
-const allShoots = await Astro.fetchContent("./photography/*.md")
+const allShoots = await Astro.glob("./photography/*.md")
                              .sort((a, b) => new Date(b.date) - new Date(a.date))
                              .slice(0,6);
 ---
