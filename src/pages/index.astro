@@ -14,11 +14,7 @@ import PostSnippet from "@/components/PostSnippet"
 import ShootSnippet from "@/components/ShootSnippet"
 
 const allPosts = await Astro.glob("./blog/*.md")
-                            .sort((a, b) => new Date(b.date) - new Date(a.date))
-                            .slice(0,6);
-const allShoots = await Astro.glob("./photography/*.md")
-                             .sort((a, b) => new Date(b.date) - new Date(a.date))
-                             .slice(0,6);
+const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()).slice(0,6);
 ---
 
 <!DOCTYPE html>
@@ -86,7 +82,7 @@ const allShoots = await Astro.glob("./photography/*.md")
                         </div>
                         
                         <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 md:grid-cols-2 gap-10">
-                            {allPosts.map(p =>
+                            {filteredPosts.map(p =>
                                 <PostSnippet post={p} />
                             )}
                         </div>

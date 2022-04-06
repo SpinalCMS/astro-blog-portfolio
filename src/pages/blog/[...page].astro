@@ -16,26 +16,23 @@ import { pageSize } from "@/src/config.ts"
 
 export async function getStaticPaths({rss, paginate}) {
     const allPosts = await Astro.glob("./*.md")
-                                .sort((a, b) => new Date(b.date) - new Date(a.date));
+    const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
     rss({
         title: "Erik S. Olsen",
         description: "Erik Olsen lives in Austin, Texas and is the Director of Digital Engagement at ICG America",
         customData: `<language>en-us</language>`,
-        // The list of items for your RSS feed, sorted.
-        items: allPosts.map(p => ({
-            title: p.title,
-            description: p.description,
-            link: p.url,
-            pubDate: p.date,
-        })),
         
-        // Optional: Customize where the file is written to.
-        // Defaults to "/rss.xml"
-        //dest: "/my/custom/feed.xml",
+        // The list of items for your RSS feed, sorted.
+        items: filteredPosts.map(p => ({
+            title: p.frontmatter.title,
+            description: p.frontmatter.description,
+            link: p.url,
+            pubDate: p.frontmatter.date,
+        })),
   });
 
-    return paginate(allPosts, { pageSize: pageSize });
+    return paginate(filteredPosts, { pageSize: pageSize });
 }
 
 const { page } = Astro.props;
