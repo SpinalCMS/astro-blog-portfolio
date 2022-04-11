@@ -1,7 +1,6 @@
 ---
 // modules
 import { SEO } from "astro-seo";
-import fg from "fast-glob"
 
 // components
 import BaseHead from "@/components/BaseHead"
@@ -19,19 +18,27 @@ import { fullDate } from "@/functions/DateTime"
 import { siteConfig, imageConfig } from "@/src/config.ts"
 
 export async function getStaticPaths() {
-    const files = fg.sync("./public/images/shoots/**/*.jpg"); // glob to get all the photo shoots
-    const removePath = "./public/images/" // we need to remove the string from the file path above
-    const removeChar = removePath.length;  // how many characters to trim off the file path
-
-    const final = files.map(f => {
-        const fullPath = buildFileDetailPath(f);
-        return fullPath.slice(removeChar);
+    // create the array of all image URLs
+    const glob = await Astro.glob('/public/images/shoots/**/*.jpg'); // glob to get all the images
+    // convert the array / object into a simple array
+    const array = glob.map(result => {
+        const trim = "/public/images/".length; // remove the base from the URL
+        return result["default"].slice(trim);
+    })
+    
+    // build an array to contain the proper base URLs
+    const final = array.map(f => {
+        return buildFileDetailPath(f);
     })
 
-    return final.map(f => ({ params: { file: f } }))
+    return final.map(f => (
+        {
+            params: { file: f }
+        }
+    ))
 }
 
-const { params } = Astro.request;
+const params = Astro.params;
 
 // add the filename back to the file param
 // this is the local file
