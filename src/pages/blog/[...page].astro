@@ -12,7 +12,7 @@ import PostSnippet from "@/components/PostSnippet"
 import Pagination from "@/components/Pagination"
 
 // config
-import { pageSize } from "@/src/config.ts"
+import { postSize } from "@/src/config.ts"
 
 export async function getStaticPaths({rss, paginate}) {
     const allPosts = await Astro.glob("./*.md")
@@ -32,7 +32,7 @@ export async function getStaticPaths({rss, paginate}) {
         })),
   });
 
-    return paginate(filteredPosts, { pageSize: pageSize });
+    return paginate(filteredPosts, { pageSize: postSize });
 }
 
 const { page } = Astro.props;

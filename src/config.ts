@@ -20,3 +20,5 @@ export const imageConfig = {
 }
 
 export const pageSize = 6
+export const postSize = 6 // how many posts per page
+export const photoSize = 4 // how many photo galleries per page

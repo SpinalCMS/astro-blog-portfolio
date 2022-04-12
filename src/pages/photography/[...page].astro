@@ -12,13 +12,13 @@ import ShootSnippet from "@/components/ShootSnippet"
 import Pagination from "@/components/Pagination"
 
 // config
-import { pageSize } from "@/src/config.ts"
+import { photoSize } from "@/src/config.ts"
 
 export async function getStaticPaths({ paginate }) {
     const allShoots = await Astro.glob("./*.md")
     const filteredShoots = allShoots.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
-    return paginate(filteredShoots, { pageSize: pageSize });
+    return paginate(filteredShoots, { pageSize: photoSize });
 }
 
 const { page } = Astro.props;
