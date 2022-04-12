@@ -1,9 +1,15 @@
 ---
 // components
 import Container from "@/components/Container"
+
+// functions
+import { buildPublicPath } from "@/functions/Media"
+
+const bg = buildPublicPath("shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg")
 ---
 
-<div class="text-neutral-800 py-24 bg-gradient-to-r from-slate-100 to-slate-200">
+<div class="text-neutral-800 py-24">
+    <div class="bg-white bg-opacity-50" data-blink-src={bg}>
     <Container>
         <div class="flex flex-col lg:flex-row justify-between mt-8 gap-8">
             <div class="grid grid-cols-2 gap-8 items-center">
@@ -35,4 +41,6 @@ import Container from "@/components/Container"
             </div>
         </div>
     </Container>
+    </div>
+</div>
 </div>
