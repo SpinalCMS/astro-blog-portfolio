@@ -8,36 +8,38 @@ import { buildPublicPath } from "@/functions/Media"
 const bg = buildPublicPath("shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg")
 ---
 
-<div class="py-24 bg-white bg-blend-lighten bg-opacity-90" data-blink-src={bg}>
+<div class="bg-white bg-blend-lighten bg-opacity-90 relative" data-blink-src={bg}>
     <Container>
-        <h2 class="h1">Contact Me</h2>
-        
-        <div class="flex flex-col lg:flex-row justify-between mt-8 gap-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div class="space-y-6">
-                    <p class="font-light text-xl leading-loose">Looking for help with car photography or have questions about digital marketing? Fill out the form and I'll get back to you ASAP.</p>
-                </div>
-                
-                <form action="/contact/success/" name="Contact - Page" method="POST" data-netlify="true" class="grid grid-cols-1 gap-y-6 w-full">
-                    <div>
-                        <label for="name" class="sr-only">Full name</label>
-                        <input type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 px-4 placeholder-gray-500 rounded border border-slate-300 focus:ring-1 focus:ring-slate-300 outline-0" placeholder="Your name" required>
+        <div class="py-24">
+            <h2 class="h1">Contact Me</h2>
+            
+            <div class="flex flex-col lg:flex-row justify-between mt-8 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <p class="font-light text-xl leading-loose">Looking for help with car photography or have questions about digital marketing? Fill out the form and I'll get back to you ASAP.</p>
                     </div>
+                    
+                    <form action="/contact/success/" name="Contact - Page" method="POST" data-netlify="true" class="grid grid-cols-1 gap-y-6 w-full">
+                        <div>
+                            <label for="name" class="sr-only">Full name</label>
+                            <input type="text" name="name" id="name" autocomplete="name" class="block w-full py-3 px-4 placeholder-gray-500 rounded border border-slate-300 focus:ring-1 focus:ring-slate-300 outline-0" placeholder="Your name" required>
+                        </div>
 
-                    <div>
-                        <label for="email" class="sr-only">Email</label>
-                        <input id="email" name="email" type="email" autocomplete="email" class="block w-full py-3 px-4 placeholder-gray-500 rounded border border-slate-300 focus:ring-1 focus:ring-slate-300 outline-0" placeholder="Email" required>
-                    </div>
-                    
-                    <div>
-                        <label for="message" class="sr-only">Message</label>
-                        <textarea id="message" name="message" rows="4" class="block w-full py-3 px-4 placeholder-gray-500 rounded focus:ring-1 border border-slate-300 focus:ring-slate-300 outline-0" placeholder="Message"></textarea>
-                    </div>
-                    
-                    <div>
-                        <button type="submit" class="btn-secondary !capitalize">Send Message</button>
-                    </div>
-                </form>
+                        <div>
+                            <label for="email" class="sr-only">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" class="block w-full py-3 px-4 placeholder-gray-500 rounded border border-slate-300 focus:ring-1 focus:ring-slate-300 outline-0" placeholder="Email" required>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea id="message" name="message" rows="4" class="block w-full py-3 px-4 placeholder-gray-500 rounded focus:ring-1 border border-slate-300 focus:ring-slate-300 outline-0" placeholder="Message"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="btn-secondary !capitalize">Send Message</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </Container>
