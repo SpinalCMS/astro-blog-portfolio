@@ -29,14 +29,6 @@
         border
         text-sm
 }
-.btn-contact {
-    @apply
-        font-semibold
-        border
-        border-slate-400
-        text-slate-800
-        hover:bg-slate-200
-}
 
 .btn-disabled {
     @apply
