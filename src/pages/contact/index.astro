@@ -8,6 +8,11 @@ import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
 import Content from "@/components/Content"
 import Container from "@/components/Container"
+
+// functions
+import { buildPublicPath } from "@/functions/Media"
+
+const bg = buildPublicPath("shoots/2021/2021-06-23-porsche-930/porsche-930-2021_014.jpg")
 ---
 
 <!DOCTYPE html>
@@ -51,47 +56,65 @@ import Container from "@/components/Container"
         <Container>
             <Heading>
                 <h1 slot="heading">Contact Me</h1>
+                <p>Want to get in touch?</p>
             </Heading>
         </Container>
 
         <Container>
             <Content>
-                <section class="prose">
-                    <form action="/contact/success/" name="Contact - Page" method="POST" data-netlify="true">
-                        <div class="group">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" id="name" autocomplete="name" placeholder="Your name" required>
-                        </div>
-
-                        <div class="group">
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required>
-                        </div>
-
-                        <div class="group">
-                            <div class="optional">
-                                <label for="phone">Phone Number</label>
-                                <span>Optional</span>
+                <section>
+                    <div class="relative bg-white">
+                        <div class="lg:absolute lg:inset-0">
+                            <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+                                <img class="h-56 w-full object-cover lg:absolute lg:h-full" data-blink-src={bg} alt="">
                             </div>
-                            
-                            <input type="text" name="phone" id="phone" autocomplete="tel" placeholder="(512) 867-5309">
-                        </div>
-                        
-                        <div class="group">
-                            <div class="optional">
-                                <label for="message">Message</label>
-                                <span>Optional</span>
-                            </div>
-                            
-                            <textarea id="message" name="message" rows="4"></textarea>
                         </div>
 
-                        <div class="group">
-                            <button type="submit" class="btn btn-primary">
-                                <span>Let's talk</span>
-                            </button>
+                        <div class="relative lg:grid lg:grid-cols-2">
+                            <div class="lg:pr-8">
+                                <div class="max-w-md mx-auto sm:max-w-lg lg:mx-0">
+                                    <form  action="/contact/success/" name="Contact - Page" method="POST" data-netlify="true" class="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                                        <div>
+                                            <label for="name" class="block text-md font-medium text-gray-700">First name</label>
+                                            <div class="mt-1">
+                                                <input type="text" name="name" id="name" autocomplete="given-name" class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md" required>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="email" class="block text-md font-medium text-gray-700">E-mail</label>
+                                            <div class="mt-1">
+                                                <input type="email" name="email" id="email" autocomplete="email" class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md" required>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="flex justify-between">
+                                                <label for="tel" class="block text-md font-medium text-gray-700">Phone Number</label>
+                                                <span id="tel-optional" class="text-sm text-gray-500">Optional</span>
+                                            </div>
+                                            <div class="mt-1">
+                                                <input type="tel" name="phone" id="phone" aria-describedby="tel-optional" autocomplete="tel" class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md" required>
+                                            </div>
+                                        </div>
+                                        <div class="sm:col-span-2">
+                                            <div class="flex justify-between">
+                                                <label for="message" class="block text-sm font-medium text-gray-700">How can I help you?</label>
+                                                <span id="message-optional" class="text-sm text-gray-500">Optional</span>
+                                            </div>
+                                            <div class="mt-1">
+                                                <textarea id="message" name="message" aria-describedby="message-optional" rows="4" class="block w-full shadow-sm sm:text-sm focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"></textarea>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="text-right sm:col-span-2">
+                                            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </form>
+                    </div>
                 </section>
             </Content>
         </Container>
