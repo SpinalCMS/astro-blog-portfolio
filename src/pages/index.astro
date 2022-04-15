@@ -1,6 +1,7 @@
 ---
 // modules
-import { SEO } from "astro-seo";
+import { SEO } from "astro-seo"
+import { Picture } from "astro-imagetools/components"
 
 // components
 import BaseHead from "@/components/BaseHead"
@@ -49,18 +50,28 @@ const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).value
                         </div>
                         
                         <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 sm:grid-cols-2 grid-flow-row sm:grid-flow-col gap-5">
-                            <figure>
-                                <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" classes="object-cover h-full w-full" />
-                                <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" />
-                            </figure>
-                            <figure>
-                                <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" classes="object-cover h-full w-full" />
-                                <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" />
-                            </figure>
-                            <figure class="row-span-2">
-                                <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" classes="object-cover h-full w-full" />
-                                <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" />
-                            </figure>
+                            <Picture
+                                src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_013.jpg"
+                                alt="A landscape image"
+                                layout="fill"
+                            />
+                            <!-- <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" classes="object-cover h-full w-full" />
+                            <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_006.jpg" /> -->
+                            <Picture
+                                src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_035.jpg"
+                                alt="A landscape image"
+                                layout="fill"
+                            />
+                            <!-- <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" classes="object-cover h-full w-full" />
+                            <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg" /> -->
+                            <div class="row-span-2">
+                                <Picture
+                                    src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_049.jpg"
+                                    alt="A landscape image"
+                                />
+                                <!-- <Image file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" classes="object-cover h-full w-full" />
+                                <Caption file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg" /> -->
+                            </div>
                         </div>
 
                     </div>
