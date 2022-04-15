@@ -55,10 +55,10 @@ const metadata = await getMetadata(url);
 <html lang="en">
 <head>
     <BaseHead />
-    <SEO
+    <!-- <SEO
         title={`${metadata.title} Photo - Erik S. Olsen`}
         description={`${metadata.caption}`}
-    />
+    /> -->
 
     <style>
         table, tr, td {
@@ -75,15 +75,15 @@ const metadata = await getMetadata(url);
         <Content fullWidth={true}>
             <Container>
                 <Heading>
-                    <h1 slot="heading">{metadata.title}</h1>
-                    <p>{metadata.caption}</p>
+                    <!-- <h1 slot="heading">{metadata.title}</h1> -->
+                    <!-- <p>{metadata.caption}</p> -->
                 </Heading>
             </Container>
 
             <Container>
-                <Image
+                <!-- <Image
                     file={url}
-                />
+                /> -->
             </Container>
 
             <Container>
@@ -97,20 +97,20 @@ const metadata = await getMetadata(url);
                                         <tr>
                                             <td>Date</td>
                                             <td class="font-light">
-                                                <date>{fullDate(metadata.date)}</date>
+                                                <!-- <date>{fullDate(metadata.date)}</date> -->
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Author</td>
-                                            <td class="font-light">{metadata.author}</td>
+                                            <!-- <td class="font-light">{metadata.author}</td> -->
                                         </tr>
                                         <tr>
                                             <td>Camera</td>
-                                            <td class="font-light">{metadata.cameraMake} {metadata.cameraModel}</td>
+                                            <!-- <td class="font-light">{metadata.cameraMake} {metadata.cameraModel}</td> -->
                                         </tr>
                                         <tr>
                                             <td>Lens</td>
-                                            <td class="font-light">{metadata.lens}</td>
+                                            <!-- <td class="font-light">{metadata.lens}</td> -->
                                         </tr>
                                     </tbody>
                                 </table>
@@ -122,19 +122,19 @@ const metadata = await getMetadata(url);
                                     <tbody>
                                         <tr>
                                             <td>Aperture</td>
-                                            <td class="font-light">f/{metadata.aperture}</td>
+                                            <!-- <td class="font-light">f/{metadata.aperture}</td> -->
                                         </tr>
                                         <tr>
                                             <td>ISO</td>
-                                            <td class="font-light">{metadata.iso}</td>
+                                            <!-- <td class="font-light">{metadata.iso}</td> -->
                                         </tr>
                                         <tr>
                                             <td>Focal Length</td>
-                                            <td class="font-light">{metadata.focalLength}mm</td>
+                                            <!-- <td class="font-light">{metadata.focalLength}mm</td> -->
                                         </tr>
                                         <tr>
                                             <td>Shutter Speed</td>
-                                            <td class="font-light">{metadata.shutterSpeed}</td>
+                                            <!-- <td class="font-light">{metadata.shutterSpeed}</td> -->
                                         </tr>
                                     </tbody>
                                 </table>
@@ -143,7 +143,7 @@ const metadata = await getMetadata(url);
 
                         <div class="space-y-8">
                             <h4>Download</h4>
-                            <p><a href={`${imageConfig.ucEndpoint}/-/overlay/${imageConfig.logo}/10%25x10%25/50%25,98%25/${siteConfig.url}${ucr}`} title="Download the full size image">Full Size</a> ({metadata.width} x {metadata.height})</p>
+                            <!-- <p><a href={`${imageConfig.ucEndpoint}/-/overlay/${imageConfig.logo}/10%25x10%25/50%25,98%25/${siteConfig.url}${ucr}`} title="Download the full size image">Full Size</a> ({metadata.width} x {metadata.height})</p> -->
                         </div>
                     </div>
                 </div>

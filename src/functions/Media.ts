@@ -34,6 +34,7 @@ export function getDimensions(file) {
 }
 
 export async function getMetadata(file, data = "all") {
+    // console.log(file);
     const localPath = buildLocalPath(file);
 
     // collect all the exif, iptc and ifd0 data from the image
