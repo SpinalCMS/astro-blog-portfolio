@@ -6,7 +6,6 @@ import { Picture } from "astro-imagetools/components"
 // components
 import BaseHead from "@/components/BaseHead"
 import BaseLayout from "@/components/BaseLayout"
-import Content from "@/components/Content"
 import Container from "@/components/Container"
 import Heading from "@/components/Heading"
 import Image from "@/components/image/Image"
@@ -29,76 +28,73 @@ const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).value
 
 <body>
     <BaseLayout>
-        <Content>
-            <Container>
-                <Heading>
-                    <h1 slot="heading">Hey there.</h1>
-                    <div class="space-y-6">
-                        <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at <a href="http://www.icgamerica.com" title="ICG America, Inc">ICG America</a>, generating $50 million in direct-to-consumer sales.</p>
-                        <p>Oh yeah, I also shoot <a href="/photography" title="Car Photography in Austin, TX">car photography</a>.</p>
-                    </div>
-                </Heading>
-            </Container>
+        <Container>
+            <Heading>
+                <h1 slot="heading">Hey there.</h1>
+                <div class="space-y-6">
+                    <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at <a href="http://www.icgamerica.com" title="ICG America, Inc">ICG America</a>, generating $50 million in direct-to-consumer sales.</p>
+                    <p>Oh yeah, I also shoot <a href="/photography" title="Car Photography in Austin, TX">car photography</a>.</p>
+                </div>
+            </Heading>
 
-            <Container>
-                <section class="space-y-10">
-                    <div class="grid grid-cols-3 gap-10">
-                        <h2 class="col-span-3 sm:col-span-2">Recent Photos</h2>
-                        
-                        <div class="col-span-3 sm:col-span-1 sm:justify-self-end order-3 sm:order-2">
-                            <a class="w-full sm:w-fit btn-secondary" href="/photography" title="View All Photos">More Photos</a>
-                        </div>
-                        
-                        <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 sm:grid-cols-2 grid-flow-row sm:grid-flow-col gap-5">
+            <section class="space-y-10">
+                <div class="grid grid-cols-3 gap-10">
+                    <h2 class="col-span-3 sm:col-span-2">Recent Photos</h2>
+                    
+                    <div class="col-span-3 sm:col-span-1 sm:justify-self-end order-3 sm:order-2">
+                        <a class="w-full sm:w-fit btn-secondary" href="/photography" title="View All Photos">More Photos</a>
+                    </div>
+                    
+                    <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 sm:grid-cols-2 grid-flow-row sm:grid-flow-col gap-5">
+                        <Picture
+                            src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_013.jpg"
+                            alt="A landscape image"
+                            breakpoints={[200, 400, 500]}
+                            sizes="(min-width: 641px) 500px, 100vw"
+                            layout="fill"
+                            objectFit="cover"
+                            loading="eager"
+                        />
+                        <Picture
+                            src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_035.jpg"
+                            alt="A landscape image"
+                            breakpoints={[200, 400, 500]}
+                            sizes="(min-width: 641px) 500px, 100vw"
+                            layout="fill"
+                            objectFit="cover"
+                            loading="eager"
+                        />
+                        <div class="row-span-2">
                             <Picture
-                                src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_013.jpg"
+                                src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_049.jpg"
                                 alt="A landscape image"
                                 breakpoints={[200, 400, 500]}
                                 sizes="(min-width: 641px) 500px, 100vw"
                                 layout="fill"
                                 objectFit="cover"
+                                loading="eager"
                             />
-                            <Picture
-                                src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_035.jpg"
-                                alt="A landscape image"
-                                breakpoints={[200, 400, 500]}
-                                sizes="(min-width: 641px) 500px, 100vw"
-                                layout="fill"
-                                objectFit="cover"
-                            />
-                            <div class="row-span-2">
-                                <Picture
-                                    src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_049.jpg"
-                                    alt="A landscape image"
-                                    breakpoints={[200, 400, 500]}
-                                    sizes="(min-width: 641px) 500px, 100vw"
-                                    layout="fill"
-                                    objectFit="cover"
-                                />
-                            </div>
                         </div>
                     </div>
-                </section>
-            </Container>
+                </div>
+            </section>
 
-            <Container>
-                <section class="space-y-10">
-                    <div class="grid grid-cols-3 gap-10">
-                        <h2 class="col-span-3 sm:col-span-2">Recent Posts</h2>
-                        
-                        <div class="col-span-3 sm:col-span-1 sm:justify-self-end order-3 sm:order-2">
-                            <a class="w-full sm:w-fit btn-secondary" href="/blog" title="View All Posts">More Posts</a>
-                        </div>
-                        
-                        <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 md:grid-cols-2 gap-10">
-                            {filteredPosts.map(p =>
-                                <PostSnippet post={p} />
-                            )}
-                        </div>
+            <section class="space-y-10">
+                <div class="grid grid-cols-3 gap-10">
+                    <h2 class="col-span-3 sm:col-span-2">Recent Posts</h2>
+                    
+                    <div class="col-span-3 sm:col-span-1 sm:justify-self-end order-3 sm:order-2">
+                        <a class="w-full sm:w-fit btn-secondary" href="/blog" title="View All Posts">More Posts</a>
                     </div>
-                </section>
-            </Container>
-        </Content>
+                    
+                    <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 md:grid-cols-2 gap-10">
+                        {filteredPosts.map(p =>
+                            <PostSnippet post={p} />
+                        )}
+                    </div>
+                </div>
+            </section>
+        </Container>
     </BaseLayout>
 </body>
 </html>

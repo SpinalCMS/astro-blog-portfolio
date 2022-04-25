@@ -1,3 +1,11 @@
-<div class="px-4 md:px-8 max-w-screen-lg container mx-auto">
+---
+// props
+export interface Props {
+    classes?: string
+}
+const { classes = "space-y-24" } = Astro.props;
+---
+
+<div class={`px-4 md:px-8 max-w-screen-lg container mx-auto ${classes}`}>
     <slot />
 </div>

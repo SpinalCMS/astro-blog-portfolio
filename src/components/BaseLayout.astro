@@ -4,10 +4,16 @@ import Contact from "@/components/Contact"
 import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 
+// props
+export interface Props {
+    classes?: string
+}
+const { classes = "space-y-24" } = Astro.props;
+
 const contact = new URL(Astro.request.url).pathname.includes("contact");
 ---
 
-<main class="space-y-24">
+<main class={classes}>
     <Navigation />
 
     <slot />

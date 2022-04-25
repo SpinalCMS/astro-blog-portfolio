@@ -1,0 +1,3 @@
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    @apply block w-full py-3 px-4 placeholder-gray-500 border-slate-300 focus:ring-slate-400 focus:border-slate-400;
+}

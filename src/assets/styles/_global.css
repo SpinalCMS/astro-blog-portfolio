@@ -2,9 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import './buttons.scss';
-@import './images.scss';
-@import './typography.scss';
+@import './buttons.css';
+@import './forms.css';
+@import './typography.css';
+@import './spacing.css';
 
 @font-face {
     font-family: 'Inter';
@@ -203,7 +204,6 @@ html {
 a.thick-underline {
     text-decoration: underline 0.2rem rgba(0, 0, 0, 0);
 }
-
 a.thin-underline {
     text-decoration: underline 0.1rem rgba(0, 0, 0, 0);
 }
