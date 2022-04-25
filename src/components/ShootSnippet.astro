@@ -1,6 +1,6 @@
 ---
-// components
-import Image from "@/components/image/Image"
+// modules
+import { Picture } from "astro-imagetools/components"
 
 // functions
 import { timeAgo } from "@/functions/DateTime"
@@ -12,9 +12,17 @@ export interface Props {
 const { shoot } = Astro.props;
 ---
 
-<div class="group lg:grid grid-flow-col items-center gap-x-6">
+<div class="group grid grid-flow-col items-center gap-x-6">
     <a class="lg:w-64 xl:w-96" href={shoot.url} title={shoot.frontmatter.title}>
-        <Image classes="h-60 w-full object-cover" file={shoot.frontmatter.hero} />
+        <Picture
+            src={shoot.frontmatter.hero}
+            alt="A landscape image"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 640px) 500px, 100vw"
+            layout="fill"
+            objectFit="cover"
+        />
+        <!-- <Image classes="h-60 w-full object-cover" file={shoot.frontmatter.hero} /> -->
     </a>
 
     <div class="lg:p-6 py-8">

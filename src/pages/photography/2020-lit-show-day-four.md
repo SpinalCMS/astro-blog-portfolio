@@ -22,30 +22,30 @@ related:
   - lit-show-day-four
 
 # photos
-hero: shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_015.jpg
+hero: /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_015.jpg
 gallery01:
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_001.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_002.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_003.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_004.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_005.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_006.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_007.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_008.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_009.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_010.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_011.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_012.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_013.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_014.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_015.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_016.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_017.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_018.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_019.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_020.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_021.jpg
-  - shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_022.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_001.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_002.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_003.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_004.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_005.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_006.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_007.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_008.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_009.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_010.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_011.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_012.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_013.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_014.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_015.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_016.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_017.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_018.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_019.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_020.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_021.jpg
+  - /src/assets/images/shoots/2020/2020-03-01-lit-show-day-four/lit-show-2020_022.jpg
 ---
 
 As our trip comes to a close, we made one final trip out to the [Petersen Museum](https://www.petersen.org/). The museum bills itself as "one of the largest automotive collections in the world." They have a rotating collection and what you'll see differs year to year. During our trip they were featuring two major exhibitions, "Supercars: A Century of Spectacle and Speed" and "Hollywood Dream Machines: Vehicles of Science Fiction and Fantasy".

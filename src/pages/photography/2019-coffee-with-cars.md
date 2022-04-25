@@ -18,28 +18,28 @@ title: Coffee With Cars May 2019
 description: After picking up a Sony 24-105mm lens, I head to Coffee With Cars.
 
 # photos
-hero: shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_014.jpg
+hero: /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_014.jpg
 gallery01:
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_001.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_002.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_003.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_004.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_005.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_006.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_007.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_008.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_009.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_010.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_012.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_013.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_014.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_015.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_016.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_017.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_018.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_019.jpg
-  - shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_020.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_001.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_002.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_003.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_004.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_005.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_006.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_007.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_008.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_009.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_010.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_012.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_013.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_014.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_015.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_016.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_017.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_018.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_019.jpg
+  - /src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_020.jpg
 ---
 
 After my [move from three lenses to one large zoom](/blog/lens-change-from-3-to-1), I wanted to test it out. Every month, [Greater Goods](https://greatergoodsroasting.com/) hosts a car show in Dripping Springs, TX. It's a great mix of vehicles, some new, some old, some trucks.

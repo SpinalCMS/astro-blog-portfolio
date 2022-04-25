@@ -19,19 +19,19 @@ title: Paint to Sample Purple
 description: I get to help out with a magazine shoot for a custom Purple 911SC
 
 # photos
-hero: shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_009.jpg
+hero: /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_009.jpg
 gallery01:
-  - shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_001.jpg
-  - shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_002.jpg
-  - shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_003.jpg
-  - shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_004.jpg
-  - shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_005.jpg
+  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_001.jpg
+  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_002.jpg
+  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_003.jpg
+  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_004.jpg
+  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_005.jpg
 gallery02:
-  - shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_006.jpg
-  - shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_007.jpg
-  - shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_008.jpg
-  - shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_009.jpg
-  - shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_010.jpg
+  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_006.jpg
+  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_007.jpg
+  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_008.jpg
+  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_009.jpg
+  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_010.jpg
 ---
 
 ## Inside Shoot

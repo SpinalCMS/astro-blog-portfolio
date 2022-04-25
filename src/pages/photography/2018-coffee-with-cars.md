@@ -18,22 +18,22 @@ title: Coffee With Cars August 2019
 description: After picking up a Sony 24-105mm lens, I head to Coffee With Cars.
 
 # photos
-hero: shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_002.jpg
+hero: /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_002.jpg
 gallery01:
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_001.jpg
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_002.jpg
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_003.jpg
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_004.jpg
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_005.jpg
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_006.jpg
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_007.jpg
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_008.jpg
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_009.jpg
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_010.jpg
-  - shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_011.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_001.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_002.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_003.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_004.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_005.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_006.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_007.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_008.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_009.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_010.jpg
+  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_011.jpg
 ---
 
-After shooting my first Bring a Trailer auction, I figured I needed to get out and shoot more cars. Luckily [Coffee With Cars](https://www.facebook.com/CoffeeWithCars/) happens during the warmer months and it's not far from my house. 
+After shooting my first Bring a Trailer auction, I figured I needed to get out and shoot more cars. Luckily [Coffee With Cars](https://www.facebook.com/CoffeeWithCars/) happens during the warmer months and it's not far from my house.
 
 ## Demon in the Details
 
