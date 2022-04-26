@@ -1,6 +1,7 @@
 ---
 # imports
 setup: |
+  import { Picture } from "astro-imagetools/components";
   import Layout from "@/layouts/PostLayout"
   import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
@@ -29,11 +30,11 @@ I received an invite from a friend to visit Circuit of the Americas during the [
 
 <div>
     {frontmatter.gallery01.map((i, index) =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>

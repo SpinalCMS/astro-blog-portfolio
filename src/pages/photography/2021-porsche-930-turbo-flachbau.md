@@ -1,8 +1,8 @@
 ---
 # imports
 setup: |
+  import { Picture } from "astro-imagetools/components";
   import Layout from "@/layouts/PostLayout"
-  import Image from "@/components/image/Image"
   import Caption from "@/components/image/Caption"
   import Video from "@/components/video/Video"
 
@@ -75,7 +75,7 @@ gallery03:
 gallery04:
   - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_049.jpg
   - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_050.jpg
-video: shoots/2021/2021-06-23-porsche-930/1989-porsche-930-turbo-flachbau.mp4
+video: /src/assets/images/shoots/2021/2021-06-23-porsche-930/1989-porsche-930-turbo-flachbau.mp4
 ---
 
 Ever since a friend snagged this incredible 930 Turbo I've been wanting to take it out for a drive. I'll be honest, I was nervous. When discussions take place around the 930, you'll always hear the term "Widowmaker". The cars were so much to handle, they had a reputation for killing the owners. That said, you'll also hear from others how amazing they are to drive.
@@ -86,12 +86,12 @@ So, when Britton and Branson Hardcastle over at [B Hardcastle Media](https://www
 
 <div>
     {frontmatter.gallery01.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 
@@ -109,12 +109,7 @@ Progressively you start to get more comfortable with the way the car builds powe
 
 <div>
     {frontmatter.gallery02.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true} />
-        </figure>
+        <Picture src={i} alt="hi" />
     )}
 </div>
 
@@ -126,12 +121,7 @@ Branson was able to get some shots of the Lipstick Red interior on this 930 Turb
 
 <div>
     {frontmatter.gallery03.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture src={i} alt="hi" />
     )}
 </div>
 
@@ -143,12 +133,7 @@ Unfortunately, I missed lining up the car perfectly on the road. You're so low i
 
 <div>
     {frontmatter.gallery04.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture src={i} alt="hi" />
     )}
 </div>
 
