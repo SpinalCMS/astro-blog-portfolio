@@ -1,9 +1,8 @@
 ---
 # imports
 setup: |
-  import Layout from "@/layouts/PostLayout"
-  import Image from "@/components/image/Image"
-  import Caption from "@/components/image/Caption"
+  import Layout from "@/layouts/ShootLayout"
+  import { Picture } from "astro-imagetools/components"
 
 # meta
 tags:
@@ -92,12 +91,12 @@ It's interesting going to some of these shops. [Callas Rennsport](https://www.ca
 
 <div>
     {frontmatter.gallery01.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 
@@ -109,12 +108,12 @@ We actually arrived the same time as Magnus Walker. We said a quick "hello". He 
 
 <div>
     {frontmatter.gallery02.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 
@@ -124,12 +123,12 @@ I'm embarassed to say that I've never been to the Austin area Porsche dealer. I'
 
 <div>
     {frontmatter.gallery03.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 
@@ -141,11 +140,11 @@ Another car that caught my eye was the blue 914-6. 914's were never my favorite 
 
 <div>
     {frontmatter.gallery04.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>

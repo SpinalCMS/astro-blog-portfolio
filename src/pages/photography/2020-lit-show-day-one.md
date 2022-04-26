@@ -1,9 +1,8 @@
 ---
 # imports
 setup: |
-  import Layout from "@/layouts/PostLayout"
-  import Image from "@/components/image/Image"
-  import Caption from "@/components/image/Caption"
+  import Layout from "@/layouts/ShootLayout"
+  import { Picture } from "astro-imagetools/components"
 
 # meta
 tags:
@@ -104,12 +103,12 @@ Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in F
 
 <div>
     {frontmatter.gallery01.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 
@@ -119,12 +118,12 @@ Once we finished at CPR Classic, we hopped in our van and drove through beautifu
 
 <div>
     {frontmatter.gallery02.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 
@@ -136,11 +135,11 @@ We arrived to the open house later in the day, so we missed some vehicles, but i
 
 <div>
     {frontmatter.gallery03.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>

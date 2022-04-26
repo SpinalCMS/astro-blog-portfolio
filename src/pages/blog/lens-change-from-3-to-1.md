@@ -2,14 +2,13 @@
 # imports
 setup: |
   import Layout from "@/layouts/PostLayout"
-  import Image from "@/components/image/Image"
-  import Caption from "@/components/image/Caption"
+  import { Picture } from "astro-imagetools/components"
 
 # meta
 tags:
-    - photography
-    - sony
-    - zeiss
+  - photography
+  - sony
+  - zeiss
 category: photography
 date: 2019-04-08
 
@@ -25,20 +24,15 @@ excerpt: I'm currently loaded up with the awesome Sony Zeiss lenses, the 16-35mm
 ---
 
 ## Why the Change?
+
 I've got three great lenses right now, the Sony Zeiss 16-35, Sony Zeiss 35mm and Sony Zeiss 55mm. I shouldn't be complaining about these lenses. They're awesome, all around great performers and beside the 16-35mm, they're all pretty compact.
 
-<figure>
-    <picture>
-        <Image
-            file="shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_001.jpg"
-            classes="solid-shadow-blue"
-        />
-    </picture>
-    <Caption
-        file="shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_001.jpg"
-        showMeta={true}
-    />
-</figure>
+<Picture
+src="/src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_001.jpg"
+alt="hi"
+breakpoints={[400, 800, 1200]}
+sizes="(min-width: 1024px) 800px, 100vw"
+/>
 
 I felt that I was too heavy on the lower focal range. Three lenses under 55mm seemed like a waste. I wasn't using the 35mm f/2.8 as much as I should. I figured it'd be a great travel lens, small and lightweight. But, for most of my shoots, I'm driving to the location and don't have to worry about size and weight.
 
@@ -46,18 +40,12 @@ The 16-35mm was great and I loved it for interior shots. But sometimes I'd find 
 
 ## Down With the "G"
 
-<figure>
-    <picture>
-        <Image
-            file="shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg"
-            classes="solid-shadow-yellow"
-        />
-    </picture>
-    <Caption
-        file="shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg"
-        showMeta={true}
-    />
-</figure>
+<Picture
+src="/src/assets/images/shoots/2019/2019-05-26-coffee-with-cars/coffee-with-cars-2019_011.jpg"
+alt="hi"
+breakpoints={[400, 800, 1200]}
+sizes="(min-width: 1024px) 800px, 100vw"
+/>
 
 I've been eyeing the 24-70mm G Master. It seems too good to be true. But it's tough to stomach trading all my gear for a $2,300 lens. I'm not a professional, so I can't swallow that kind of price. Also, I'd be losing 8mm on the low side and only gaining about 15mm on the high side. Sure, it's nice having one lens instead of 3, but it's just not enough of an upgrade in regards to focal length.
 
@@ -66,5 +54,6 @@ I've been reading about the SEL24105G that Sony recently released. Yep, it won't
 The other lenses will be up for auction on eBay starting today.
 
 ### Current Setup
+
 - Sony A7iii
 - Sony 24-105 G f/4

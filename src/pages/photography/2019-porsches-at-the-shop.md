@@ -1,9 +1,8 @@
 ---
 # imports
 setup: |
-  import Layout from "@/layouts/PostLayout"
-  import Image from "@/components/image/Image"
-  import Caption from "@/components/image/Caption"
+  import Layout from "@/layouts/ShootLayout"
+  import { Picture } from "astro-imagetools/components"
 
 # meta
 tags:
@@ -35,11 +34,11 @@ In hindsight, it wasn't enough. I really needed another lens around the 85-100mm
 
 <div>
     {frontmatter.gallery01.map((i, index) =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>

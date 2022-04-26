@@ -2,15 +2,14 @@
 # imports
 setup: |
   import Layout from "@/layouts/PostLayout"
-  import Image from "@/components/image/Image"
-  import Caption from "@/components/image/Caption"
+  import { Picture } from "astro-imagetools/components"
 
 # meta
 tags:
-    - photography
-    - zeiss
-    - batis
-    - sony
+  - photography
+  - zeiss
+  - batis
+  - sony
 category: photography
 date: 2020-01-27
 
@@ -26,20 +25,15 @@ excerpt: In the last three years I've been through three camera bodies, eleven d
 ---
 
 ## Back to Batis
+
 There's a common saying in the photography world, "Marry your lenses, date your camera". That's a great piece of advice I could have used a long time ago, but I'm hoping that I've finally settled for the best, all-around lens setup for my style of photography.
 
-<figure>
-    <picture>
-        <Image
-            file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg"
-            classes="solid-shadow-yellow"
-        />
-    </picture>
-    <Caption
-        file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg"
-        showMeta={true}
-    />
-</figure>
+<Picture
+src="/src/assets/images/shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_002.jpg"
+alt="hi"
+breakpoints={[400, 800, 1200]}
+sizes="(min-width: 1024px) 800px, 100vw"
+/>
 
 Over the last three years I've had two bodies, but owned eleven different lenses. I've even owned some of them twice, I'm not a smart man. So allow me to impart some wisdom on anyone reading this. **Rent your lenses!**
 
@@ -47,42 +41,33 @@ Luckily for me, my lenses held their value pretty well, so I didn't spend a fort
 
 ## Size Matters
 
-<figure>
-    <picture>
-        <Image
-            file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg"
-            classes="solid-shadow-yellow"
-        />
-    </picture>
-    <Caption
-        file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg"
-        showMeta={true}
-    />
-</figure>
+<Picture
+src="/src/assets/images/shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_007.jpg"
+alt="hi"
+breakpoints={[400, 800, 1200]}
+sizes="(min-width: 1024px) 800px, 100vw"
+/>
 
 In the end, I shoot cars. That means I'm traveling to my destination. As much as I fell in love with the Sigma ART line, I just can't justify carrying those behemoths around. Not to mention I started using a Zhiyun Weebill-S gimbal and the 50mm Sigma f/1.4 pushes it's motors to the limits.
 
 ## The Finale
+
 In the end, I had to ask myself what was most important. I came up with two requirements:
+
 - Had to be a reasonable size and weight
 - Had to have a consistent photo style across the lineup
 
 In the end, the Zeiss Batis lineup was the best fit. They're small-ish, relatively lightweight with great build quality. Also, whether I'm shooting interiors with the 18mm or exteriors with the 85mm, every photo will have a consistent look and feel.
 
-<figure>
-    <picture>
-        <Image
-            file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_012.jpg"
-            classes="solid-shadow-yellow"
-        />
-    </picture>
-    <Caption
-        file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_012.jpg"
-        showMeta={true}
-    />
-</figure>
+<Picture
+src="/src/assets/images/shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_012.jpg"
+alt="hi"
+breakpoints={[400, 800, 1200]}
+sizes="(min-width: 1024px) 800px, 100vw"
+/>
 
 ### Final Setup
+
 - Sony A7iii
 - Zeiss Batis 18mm f/2.8
 - Zeiss Batis 25mm f/2.0

@@ -1,9 +1,8 @@
 ---
 # imports
 setup: |
-  import { Picture } from "astro-imagetools/components";
-  import Layout from "@/layouts/PostLayout"
-  import Caption from "@/components/image/Caption"
+  import Layout from "@/layouts/ShootLayout"
+  import { Picture } from "astro-imagetools/components"
   import Video from "@/components/video/Video"
 
 # meta

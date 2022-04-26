@@ -1,9 +1,8 @@
 ---
 # imports
 setup: |
-  import Layout from "@/layouts/PostLayout"
-  import Image from "@/components/image/Image"
-  import Caption from "@/components/image/Caption"
+  import Layout from "@/layouts/ShootLayout"
+  import { Picture } from "astro-imagetools/components";
 
 # meta
 tags:
@@ -76,12 +75,12 @@ Staying at the [LAX Hilton](https://www.hilton.com/en/hotels/laxahhh-hilton-los-
 
 <div>
     {frontmatter.gallery01.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 
@@ -91,12 +90,12 @@ Staying at the [LAX Hilton](https://www.hilton.com/en/hotels/laxahhh-hilton-los-
 
 <div>
     {frontmatter.gallery02.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 
@@ -108,11 +107,11 @@ At the entrance to the shop [Gunther Werks](https://www.guntherwerks.com/) broug
 
 <div>
     {frontmatter.gallery03.map(i =>
-        <figure>
-            <picture>
-                <Image file={i} />
-            </picture>
-            <Caption file={i} showMeta={true}>
-        </figure>
+        <Picture
+            src={i}
+            alt="hi"
+            breakpoints={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>

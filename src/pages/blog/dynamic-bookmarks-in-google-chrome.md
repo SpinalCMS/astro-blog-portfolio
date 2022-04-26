@@ -2,9 +2,6 @@
 # imports
 setup: |
   import Layout from "@/layouts/PostLayout"
-  import Image from "@/components/image/Image"
-  import Caption from "@/components/image/Caption"
-  import { Prism } from "astro/components";
 
 # meta
 tags:
@@ -91,15 +88,7 @@ Now we've got the current date and comparison date, properly formattted for Anal
 // insert the url of the report you'd like to load
 // I save custom reports and use those as the base url
 return;
-"https://analytics.google.com/analytics/web/#my-reports/**REPORTID**/%3F_u.date00%3D" +
-  start +
-  "%26_u.date01%3D" +
-  start +
-  "%26_u.date10%3D" +
-  end +
-  "%26_u.date11%3D" +
-  end +
-  "/";
+"https://analytics.google.com/analytics/web/#my-reports/**REPORTID**/%3F_u.date00%3D" + start + "%26_u.date01%3D" + start + "%26_u.date10%3D" + end + "%26_u.date11%3D" + end + "/";
 ```
 
 There's one final piece of the puzzle. We need to wrap all the prior code in a function, then call that function to open a new tab.

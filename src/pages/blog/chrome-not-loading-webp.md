@@ -2,7 +2,6 @@
 # imports
 setup: |
   import Layout from "@/layouts/PostLayout"
-  import { Code } from 'astro/components';
 
 # meta
 tags:
