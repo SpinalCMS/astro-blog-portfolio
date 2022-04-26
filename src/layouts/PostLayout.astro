@@ -33,9 +33,9 @@ const { content } = Astro.props;
 </head>
 
 <body>
-    <BaseLayout classes="space-y-0">
+    <BaseLayout classes="space-y-0 bg-neutral-100">
         <BackgroundPicture src={content.hero}>
-            <div class="bg-white bg-opacity-90 -z-10">
+            <div class="bg-gradient-to-b from-white/90 via-neutral-50/90 to-neutral-100/100 -z-10">
                 <Container classes="py-48">
                     <Heading>
                         <h1 slot="heading">{content.title}</h1>
@@ -45,7 +45,7 @@ const { content } = Astro.props;
             </div>
         </BackgroundPicture>
 
-        <Container classes="relative py-8 lg:py-16 !-mt-20 bg-white z-10 shadow-2xl">
+        <Container classes="relative py-8 lg:py-16 !-mt-20 bg-white z-10">
             <div class="flex flex-col md:flex-row gap-12">
                 <div class="prose prose-lg prose-code:before:content-none prose-code:after:content-none">
                     <slot />
