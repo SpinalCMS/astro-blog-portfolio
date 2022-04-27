@@ -2,7 +2,7 @@
 # imports
 setup: |
   import Layout from "@/layouts/ShootLayout"
-  import { Picture } from "astro-imagetools/components"\
+  import { Picture } from "astro-imagetools/components"
 
 # meta
 tags:

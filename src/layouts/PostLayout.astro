@@ -1,7 +1,6 @@
 ---
 // modules
 import { SEO } from "astro-seo";
-import { BackgroundPicture } from "astro-imagetools/components";
 
 // components
 import BaseHead from "@/components/BaseHead"
@@ -45,7 +44,7 @@ const { content } = Astro.props;
                     <slot />
                 </div>
 
-                <div class="h-auto md:h-screen space-y-8 sticky top-12">
+                <div class="h-full space-y-8 sticky top-12">
                     <div class="space-y-4">
                         <h4>Meta</h4>
                         <p class="font-light">Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>

@@ -28,19 +28,17 @@ excerpt: For the last year or so I've absolutely loved my Batis lenses. However,
 I've owned the A7ii and Batis lenses for just over a year now. Great camera and lens combo, but for some reason I'm finding the itch to go smaller.
 
 <Picture
-src="/src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_003.jpg"
-alt="hi"
-breakpoints={[400, 800, 1200]}
-sizes="(min-width: 1024px) 800px, 100vw"
+    src="/src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_003.jpg"
+    alt="hi"
+    sizes="(min-width: 1024px) 800px, 100vw"
 />
 
 I've decided to downgrade (?) to a Zeiss Sonnar T\* 35mm f/2.8. The form factor just can't be beat. I think that I'll be more apt to shoot if I'm not stuck carrying around a few primes. The Zony 35mm still has that Zeiss image and build quality, so I'm hopeful it won't feel like a "downgrade".
 
 <Picture
-src="/src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_005.jpg"
-alt="hi"
-breakpoints={[400, 800, 1200]}
-sizes="(min-width: 1024px) 800px, 100vw"
+    src="/src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_005.jpg"
+    alt="hi"
+    sizes="(min-width: 1024px) 800px, 100vw"
 />
 
 ### Current Setup

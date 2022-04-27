@@ -29,10 +29,9 @@ excerpt: While I'm very satisfied with my Sony 24-105 G, I had the opportunity t
 Yep, that's a click-bait title. I rented three Sigma Art and boy am I glad I did. They're stunning for car photography. They've got next level sharpness and at an f-stop of 1.4 an absolutely beautiful DOF for certain shots.
 
 <Picture
-src="/src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_001.jpg"
-alt="hi"
-breakpoints={[400, 800, 1200]}
-sizes="(min-width: 1024px) 800px, 100vw"
+    src="/src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_001.jpg"
+    alt="hi"
+    sizes="(min-width: 1024px) 800px, 100vw"
 />
 
 I only have one major complaint with the Art line. They're so good I had to own one. Scratch that, two issues. They're amazing but also giant and heavy.
@@ -46,17 +45,15 @@ That's technically true. I used LensRentals.com (plug for an awesome company) to
 - 24mm f/1.4 DG HSM Art
 
 <Picture
-src="/src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_0012.jpg"
-alt="hi"
-breakpoints={[400, 800, 1200]}
-sizes="(min-width: 1024px) 800px, 100vw"
+    src="/src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_012.jpg"
+    alt="hi"
+    sizes="(min-width: 1024px) 800px, 100vw"
 />
 
 <Picture
-src="/src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_008.jpg"
-alt="hi"
-breakpoints={[400, 800, 1200]}
-sizes="(min-width: 1024px) 800px, 100vw"
+    src="/src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_008.jpg"
+    alt="hi"
+    sizes="(min-width: 1024px) 800px, 100vw"
 />
 
 From the first shot I was hooked. If you're solely concerned with image quality, go for the Sigma's. Outside of the G-Master line there's not much else that competes. Yes, they're absolutely huge and heavy. The 85mm is ridiculous in length and weight, and Sigma makes a 135mm!
