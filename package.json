@@ -21,6 +21,6 @@
         "timeago.js": "^4.0.2"
     },
     "dependencies": {
-        "astro-imagetools": "^0.5.8"
+        "astro-imagetools": "^0.5.3"
     }
 }
