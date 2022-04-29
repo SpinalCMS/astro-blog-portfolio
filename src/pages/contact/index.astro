@@ -1,18 +1,15 @@
 ---
 // modules
-import { BackgroundPicture } from "astro-imagetools/components"
 import { SEO } from "astro-seo";
+
+// components
+import Image from "@/components/Image/image"
 
 // components
 import BaseHead from "@/components/BaseHead"
 import BaseLayout from "@/components/BaseLayout"
 import Heading from "@/components/Heading"
 import Container from "@/components/Container"
-
-// functions
-import { getPublicPath } from "@/functions/Media"
-
-const bg = getPublicPath("shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_087.jpg")
 ---
 
 <!DOCTYPE html>
@@ -26,7 +23,13 @@ const bg = getPublicPath("shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_
 </head>
 
 <body>
-    <BackgroundPicture src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_019.jpg">
+    <div class="relative overflow-hidden">
+        <Image
+            file="shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_019.jpg"
+            sizes="100vw"
+            classes="object-cover absolute -z-10 overflow-hidden"
+        />
+        
         <BaseLayout classes="space-y-0">
             <div class="bg-white bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-90 py-68">
                 <Container classes="py-24">
@@ -71,6 +74,6 @@ const bg = getPublicPath("shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_
                 </Container>
             </div>
         </BaseLayout>
-    </BackgroundPicture>
+    </div>
 </body>
 </html>

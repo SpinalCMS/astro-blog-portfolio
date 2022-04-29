@@ -2,7 +2,7 @@
 # imports
 setup: |
   import Layout from "@/layouts/PostLayout"
-  import { Picture } from "astro-imagetools/components"
+  import Image from "@/components/image/Image"
 
 # meta
 tags:
@@ -28,18 +28,18 @@ excerpt: I've started shooting lots of cars for Bring a Trailer auctions. That m
 
 Over the past few months I've started shooting cars for Bring a Trailer auctions. While I absolutely love shooting cars, my current 35mm setup isn't well suited to this. 35mm is a bit too wide to accurately shoot car exteriors and a bit too tight to get complete interior shots. Yup, time to change it up again.
 
-<Picture
-    src="/src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_004.jpg"
-    alt="hi"
+<Image
+    file="shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_004.jpeg"
     sizes="(min-width: 1024px) 800px, 100vw"
+    classes="rounded-md shadow-2xl"
 />
 
 This is where I look back and shake my head when I made the foolish decision to get rid of my Zeiss Batis lenses. 25mm and 85mm would have been perfect. Rather than going back to that setup, I'll add two new lenses to my bag. I'm thinking the Sony Zeiss 16-35mm f/4 and the Sony Zeiss 55mm f/1.8.
 
-<Picture
-    src="/src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_006.jpg"
-    alt="hi"
+<Image
+    file="shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_006.jpeg"
     sizes="(min-width: 1024px) 800px, 100vw"
+    classes="rounded-md shadow-2xl"
 />
 
 I also would like to start shooting more video. Turns out the A7iii was just released and it's a serious video upgrade over the A7ii.

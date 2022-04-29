@@ -9,6 +9,7 @@
         no-underline
         text-center
         whitespace-nowrap
+        rounded-md
 }
 
 .btn-primary {
