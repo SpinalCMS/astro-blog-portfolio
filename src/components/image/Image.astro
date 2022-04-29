@@ -1,32 +1,31 @@
 ---
 // functions
-import { getDimensions, getMetadata, buildPublicPath } from '@/functions/Media'
-
-// data
-import { imageConfig } from "@/src/config.ts"
+import {getMetadata, getExtension, getDirectory, getFilename, buildSrcSet} from '@/functions/Media'
 
 // props
 export interface Props {
     file: string;
     classes?: string;
+    sizes: string;
     alt?: string;
-    watermark?: boolean;
 }
-const { file, classes, alt, watermark = false } = Astro.props;
+const {file, classes, sizes, alt} = Astro.props;
 
-const dimensions = getDimensions(file); // get the image dimensions
-
-let caption = '';
-if (typeof alt === 'undefined') {
-    caption =  await getMetadata(file, "caption"); // grab the caption from the image to use as an alt tag
-}
+const imageData = getMetadata(file);
 ---
-
-<img
-    data-blink-ops={ watermark ? `overlay-uuid: ${imageConfig.logo}; overlay-dimensions: 15%25x15%25; overlay-coordinates: 50%25,90%25` : `` }
-    data-blink-src={ buildPublicPath(file) }
-    class={ classes }
-    alt={ alt ? alt : caption }
-    width={ dimensions.width }
-    height={ dimensions.height }
->
+<picture>
+    <source
+        type="image/webp"
+        srcset={buildSrcSet(file, ".webp")}
+        sizes={sizes}
+    />
+    <img
+        src={getDirectory(file) + "/" + getFilename(file) + "-w2000" + getExtension(file)}
+        srcset={buildSrcSet(file, getExtension(file))};
+        class={classes}
+        alt={imageData.caption}
+        width={imageData.width}
+        height={imageData.height}
+        sizes={sizes}
+    />
+</picture>

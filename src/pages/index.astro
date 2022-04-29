@@ -9,7 +9,6 @@ import BaseLayout from "@/components/BaseLayout"
 import Container from "@/components/Container"
 import Heading from "@/components/Heading"
 import Image from "@/components/image/Image"
-import Caption from "@/components/image/Caption"
 import PostSnippet from "@/components/PostSnippet"
 
 const allPosts = await Astro.glob("./blog/*.md")
@@ -46,33 +45,20 @@ const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).value
                     </div>
                     
                     <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 sm:grid-cols-2 grid-flow-row sm:grid-flow-col gap-5">
-                        <Picture
-                            src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_013.jpg"
-                            alt="A landscape image"
-                            breakpoints={[200, 400, 500]}
-                            sizes="(min-width: 641px) 500px, 100vw"
-                            layout="fill"
-                            objectFit="cover"
-                            loading="eager"
+                        <Image
+                            file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_037.jpeg"
+                            sizes="(min-width: 640px) 500px, 100vw"
+                            classes="object-cover h-full"
                         />
-                        <Picture
-                            src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_035.jpg"
-                            alt="A landscape image"
-                            breakpoints={[200, 400, 500]}
-                            sizes="(min-width: 641px) 500px, 100vw"
-                            layout="fill"
-                            objectFit="cover"
-                            loading="eager"
+                        <Image
+                            file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_009.jpeg"
+                            sizes="(min-width: 640px) 500px, 100vw"
+                            classes="object-cover h-full"
                         />
                         <div class="row-span-2">
-                            <Picture
-                                src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_049.jpg"
-                                alt="A landscape image"
-                                breakpoints={[200, 400, 500]}
-                                sizes="(min-width: 641px) 500px, 100vw"
-                                layout="fill"
-                                objectFit="cover"
-                                loading="eager"
+                            <Image
+                                file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_036.jpeg"
+                                sizes="(min-width: 640px) 500px, 100vw"
                             />
                         </div>
                     </div>

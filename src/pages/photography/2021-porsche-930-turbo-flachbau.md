@@ -2,7 +2,7 @@
 # imports
 setup: |
   import Layout from "@/layouts/ShootLayout"
-  import { Picture } from "astro-imagetools/components"
+  import Image from "@/components/image/Image"
   import Video from "@/components/video/Video"
 
 # meta
@@ -19,62 +19,62 @@ title: 1989 930 Turbo Flachbau
 description: I switch from photographer to the driver seat to grab some rolling shots of a Porsche 930 Turbo.
 
 # photos
-hero: /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_043.jpg
+hero: /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_043.jpg
 gallery01:
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_001.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_002.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_003.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_004.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_040.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_041.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_042.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_043.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_044.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_001.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_002.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_003.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_004.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_040.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_041.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_042.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_043.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_044.jpg
 gallery02:
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_005.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_006.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_007.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_008.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_009.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_010.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_011.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_012.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_013.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_014.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_015.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_016.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_017.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_018.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_019.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_020.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_021.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_022.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_023.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_024.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_025.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_026.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_027.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_028.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_029.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_005.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_006.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_007.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_008.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_009.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_010.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_011.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_012.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_013.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_014.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_015.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_016.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_017.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_018.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_019.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_020.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_021.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_022.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_023.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_024.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_025.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_026.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_027.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_028.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_029.jpg
 gallery03:
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_030.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_031.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_032.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_033.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_034.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_035.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_036.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_037.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_038.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_039.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_045.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_046.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_047.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_048.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_030.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_031.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_032.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_033.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_034.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_035.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_036.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_037.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_038.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_039.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_045.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_046.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_047.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_048.jpg
 gallery04:
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_049.jpg
-  - /src/assets/images/shoots/2021/2021-06-23-porsche-930/porsche-930-2021_050.jpg
-video: /src/assets/images/shoots/2021/2021-06-23-porsche-930/1989-porsche-930-turbo-flachbau.mp4
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_049.jpg
+  - /shoots/2021/2021-06-23-porsche-930/porsche-930-2021_050.jpg
+video: /shoots/2021/2021-06-23-porsche-930/1989-porsche-930-turbo-flachbau.mp4
 ---
 
 Ever since a friend snagged this incredible 930 Turbo I've been wanting to take it out for a drive. I'll be honest, I was nervous. When discussions take place around the 930, you'll always hear the term "Widowmaker". The cars were so much to handle, they had a reputation for killing the owners. That said, you'll also hear from others how amazing they are to drive.
@@ -85,10 +85,8 @@ So, when Britton and Branson Hardcastle over at [B Hardcastle Media](https://www
 
 <div>
     {frontmatter.gallery01.map(i =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}
@@ -108,7 +106,10 @@ Progressively you start to get more comfortable with the way the car builds powe
 
 <div>
     {frontmatter.gallery02.map(i =>
-        <Picture src={i} alt="hi" />
+        <Image
+            file={i}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 
@@ -120,7 +121,10 @@ Branson was able to get some shots of the Lipstick Red interior on this 930 Turb
 
 <div>
     {frontmatter.gallery03.map(i =>
-        <Picture src={i} alt="hi" />
+        <Image
+            file={i}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 
@@ -132,7 +136,10 @@ Unfortunately, I missed lining up the car perfectly on the road. You're so low i
 
 <div>
     {frontmatter.gallery04.map(i =>
-        <Picture src={i} alt="hi" />
+        <Image
+            file={i}
+            sizes="(min-width: 1024px) 800px, 100vw"
+        />
     )}
 </div>
 

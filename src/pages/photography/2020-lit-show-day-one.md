@@ -2,7 +2,7 @@
 # imports
 setup: |
   import Layout from "@/layouts/ShootLayout"
-  import { Picture } from "astro-imagetools/components"
+  import Image from "@/components/image/Image"
 
 # meta
 tags:
@@ -22,77 +22,77 @@ related:
   - lit-show-day-four
 
 # photos
-hero: /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_013.jpg
+hero: /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_013.jpg
 gallery01:
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_003.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_006.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_007.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_008.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_009.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_011.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_012.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_014.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_015.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_016.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_017.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_019.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_020.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_021.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_022.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_023.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_024.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_026.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_028.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_029.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_030.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_031.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_033.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_035.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_036.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_037.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_038.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_040.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_041.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_042.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_044.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_045.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_046.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_048.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_049.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_050.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_051.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_052.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_003.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_006.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_007.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_008.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_009.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_011.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_012.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_014.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_015.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_016.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_017.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_019.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_020.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_021.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_022.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_023.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_024.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_026.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_028.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_029.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_030.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_031.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_033.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_035.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_036.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_037.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_038.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_040.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_041.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_042.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_044.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_045.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_046.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_048.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_049.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_050.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_051.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_052.jpg
 gallery02:
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_053.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_054.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_055.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_056.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_057.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_058.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_059.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_053.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_054.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_055.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_056.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_057.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_058.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_059.jpg
 gallery03:
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_060.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_061.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_062.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_064.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_065.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_066.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_070.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_072.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_073.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_074.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_075.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_076.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_077.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_078.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_079.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_080.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_081.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_082.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_084.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_085.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_086.jpg
-  - /src/assets/images/shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_088.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_060.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_061.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_062.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_064.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_065.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_066.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_070.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_072.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_073.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_074.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_075.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_076.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_077.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_078.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_079.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_080.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_081.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_082.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_084.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_085.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_086.jpg
+  - /shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_088.jpg
 ---
 
 If you're like me and have never heard of the [LIT Show](https://www.lalitandtoyshow.com/), it's a Porsche literature, toy and memorabilia show that takes place each year in Southern California. But that description from their website is selling it short. It's really a week long Porsche fest. Lots of cars everywhere, some for sale and most shops open their doors to enthusiasts. It's Porsche week in LA and it's glorious.
@@ -103,10 +103,8 @@ Our trip started with a visit to [CPR Classic](https://www.cprclassic.com/) in F
 
 <div>
     {frontmatter.gallery01.map(i =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}
@@ -118,10 +116,8 @@ Once we finished at CPR Classic, we hopped in our van and drove through beautifu
 
 <div>
     {frontmatter.gallery02.map(i =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}
@@ -135,10 +131,8 @@ We arrived to the open house later in the day, so we missed some vehicles, but i
 
 <div>
     {frontmatter.gallery03.map(i =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}

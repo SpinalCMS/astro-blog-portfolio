@@ -15,8 +15,8 @@ export const imageConfig = {
         local: "public/images/",
         public: "images/"
     },
-    logo: "12d776dd-d1c9-4208-a891-ff3807b9668b",
-    ucEndpoint: "https://0ca93eb51f9f128c47f5.ucr.io"
+    imageFormats: ['avif', 'webp'],
+    imageSizes: [2000, 1440, 1080, 720, 480]
 }
 
 export const pageSize = 6

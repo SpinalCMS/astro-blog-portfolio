@@ -2,7 +2,7 @@
 # imports
 setup: |
   import Layout from "@/layouts/ShootLayout"
-  import { Picture } from "astro-imagetools/components"
+  import Image from "@/components/image/Image"
 
 # meta
 tags:
@@ -18,24 +18,24 @@ title: Signal Yellow 1973 911S Targa
 description: A gorgeous 911S Targa I shot for a future auction on Bring a Trailer.
 
 # photos
-hero: /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_001.jpg
+hero: /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_001.jpg
 gallery01:
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_001.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_002.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_003.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_004.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_005.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_006.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_007.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_008.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_009.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_010.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_011.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_012.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_013.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_014.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_015.jpg
-  - /src/assets/images/shoots/2019/2019-08-17-signal-yellow-911/911s-targa_016.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_001.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_002.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_003.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_004.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_005.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_006.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_007.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_008.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_009.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_010.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_011.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_012.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_013.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_014.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_015.jpg
+  - /shoots/2019/2019-08-17-signal-yellow-911/911s-targa_016.jpg
 ---
 
 A friend decided to list this gorgeous 911S Targa. It was a car owned by a well known member of the early Porsche community who sadly passed away. My friend was able to purchase this car from his estate with the intention on finishing the car to the standars of the previous owner.
@@ -46,10 +46,8 @@ This car has yet to make it to Bring a Trailer though. It's still at the shop re
 
 <div>
     {frontmatter.gallery01.map(i =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}

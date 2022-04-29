@@ -2,7 +2,7 @@
 # imports
 setup: |
   import Layout from "@/layouts/ShootLayout"
-  import { Picture } from "astro-imagetools/components"
+  import Image from "@/components/image/Image"
 
 # meta
 tags:
@@ -18,19 +18,19 @@ title: Paint to Sample Purple
 description: I get to help out with a magazine shoot for a custom Purple 911SC
 
 # photos
-hero: /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_009.jpg
+hero: /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_009.jpg
 gallery01:
-  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_001.jpg
-  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_002.jpg
-  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_003.jpg
-  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_004.jpg
-  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_005.jpg
+  - /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_001.jpg
+  - /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_002.jpg
+  - /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_003.jpg
+  - /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_004.jpg
+  - /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_005.jpg
 gallery02:
-  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_006.jpg
-  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_007.jpg
-  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_008.jpg
-  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_009.jpg
-  - /src/assets/images/shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_010.jpg
+  - /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_006.jpg
+  - /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_007.jpg
+  - /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_008.jpg
+  - /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_009.jpg
+  - /shoots/2019/2019-05-20-purple-porsche-shoot/purple-911sc-shoot_010.jpg
 ---
 
 ## Inside Shoot
@@ -43,10 +43,8 @@ I was able to tag along for a magazine shoot to feature the car. Most of the int
 
 <div>
     {frontmatter.gallery01.map((i, index) =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}
@@ -56,10 +54,8 @@ I was able to tag along for a magazine shoot to feature the car. Most of the int
 
 <div>
     {frontmatter.gallery02.map((i, index) =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}

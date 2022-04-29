@@ -201,6 +201,10 @@ html {
     font-family: 'Inter var', sans-serif;
 }
 
+::selection {
+    @apply bg-amber-200/50;
+}
+
 a.thick-underline {
     text-decoration: underline 0.2rem rgba(0, 0, 0, 0);
 }

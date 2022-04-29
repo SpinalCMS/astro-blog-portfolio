@@ -2,7 +2,7 @@
 # imports
 setup: |
   import Layout from "@/layouts/ShootLayout"
-  import { Picture } from "astro-imagetools/components"
+  import Image from "@/components/image/Image"
 
 # meta
 tags:
@@ -16,14 +16,14 @@ title: Porsches at the Shop
 description: New lenses, so it's time to take a trip to the shop to shoot some cars.
 
 # photos
-hero: /src/assets/images/shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_004.jpg
+hero: /shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_004.jpg
 gallery01:
-  - /src/assets/images/shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_001.jpg
-  - /src/assets/images/shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_002.jpg
-  - /src/assets/images/shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_003.jpg
-  - /src/assets/images/shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_004.jpg
-  - /src/assets/images/shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_005.jpg
-  - /src/assets/images/shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_006.jpg
+  - /shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_001.jpg
+  - /shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_002.jpg
+  - /shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_003.jpg
+  - /shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_004.jpg
+  - /shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_005.jpg
+  - /shoots/2019/2019-03-23-porsches-at-the-shop/2019-porsches-at-the-shop_006.jpg
 ---
 
 Armed with my new [Sony Zeiss 55mm f/1.8 and a Sony Zeiss 16-35mm f/4](/blog/car-photography-update), I header over to a friend's shop.
@@ -34,10 +34,8 @@ In hindsight, it wasn't enough. I really needed another lens around the 85-100mm
 
 <div>
     {frontmatter.gallery01.map((i, index) =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}

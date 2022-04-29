@@ -1,13 +1,13 @@
 ---
 // modules
 import { SEO } from "astro-seo";
-import { BackgroundPicture } from "astro-imagetools/components";
 
 // components
 import BaseHead from "@/components/BaseHead"
 import BaseLayout from "@/components/BaseLayout"
-import Heading from "@/components/Heading"
 import Container from "@/components/Container"
+import Heading from "@/components/Heading"
+import Image from "@/components/Image/image"
 import TOC from "@/components/TableOfContents"
 
 // functions
@@ -33,9 +33,18 @@ const { content } = Astro.props;
 </head>
 
 <body>
-    <BaseLayout classes="space-y-0 bg-neutral-100">
-        <!-- <BackgroundPicture src={content.hero}>
-            <div class="bg-gradient-to-b from-white/90 via-neutral-50/90 to-neutral-100/100 -z-10">
+    <BaseLayout classes="relative space-y-0 bg-neutral-100">
+        <div class="absolute">
+            <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-white/90 via-neutral-50/90 to-neutral-100/100"></div>
+            <Image
+                file={content.hero}
+                sizes="100vw"
+                classes="object-cover h-screen"
+            />
+        </div>
+            
+        </div>
+            <div class="relative">
                 <Container classes="py-48">
                     <Heading>
                         <h1 slot="heading">{content.title}</h1>
@@ -43,29 +52,31 @@ const { content } = Astro.props;
                     </Heading>
                 </Container>
             </div>
-        </BackgroundPicture> -->
 
-        <Container classes="relative py-8 lg:py-16 !-mt-20 bg-white z-10">
-            <div class="flex flex-col md:flex-row gap-12">
-                <div class="prose prose-lg prose-code:before:content-none prose-code:after:content-none">
-                    <slot />
-                </div>
-
-                <div class="h-auto md:h-screen space-y-8 sticky top-12">
-                    <div class="space-y-4">
-                        <h4>Meta</h4>
-                        <p class="font-light">Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
+            <Container classes="relative py-8 lg:py-16 !-mt-20 bg-white !mb-40">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="prose prose-lg prose-code:before:content-none prose-code:after:content-none">
+                        <slot />
                     </div>
 
-                    { content.astro.headers.length ?
-                    <div class="space-y-4">
-                        <h4>Contents</h4>
-                        <TOC headers={content.astro.headers} />
+                    <div class="h-auto md:h-screen space-y-8 sticky top-12">
+                        <div class="space-y-4">
+                            <h4>Meta</h4>
+                            <p class="font-light">Posted on <time datetime={content.date}>{fullDate(content.date)}</time></p>
+                        </div>
+
+                        { content.astro.headers.length ?
+                        <div class="space-y-4">
+                            <h4>Contents</h4>
+                            <TOC headers={content.astro.headers} />
+                        </div>
+                        : ``}
                     </div>
-                    : ``}
                 </div>
-            </div>
-        </Container>
+            </Container>
+        </div>
+
+        
     </BaseLayout>
 </body>
 </html>

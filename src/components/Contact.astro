@@ -3,10 +3,20 @@
 import { BackgroundPicture } from "astro-imagetools/components"
 
 // components
+import Image from '@/components/image/Image'
+
+// components
 import Container from "@/components/Container"
 ---
 
-<BackgroundPicture src="/src/assets/images/shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_019.jpg">
+<div class="relative overflow-hidden">
+    <div class="absolute">
+        <Image
+            file="shoots/2020/2020-02-28-lit-show-day-two/lit-show-2020_019.jpeg"
+            sizes="100vw"
+            class="object-cover"
+        />
+    </div>
     <div class="bg-white bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-90 py-40">
         <Container>
             <div>
@@ -43,4 +53,4 @@ import Container from "@/components/Container"
             </div>
         </Container>
     </div>
-</BackgroundPicture>
+</div>

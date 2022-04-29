@@ -2,7 +2,7 @@
 # imports
 setup: |
   import Layout from "@/layouts/ShootLayout"
-  import { Picture } from "astro-imagetools/components"
+  import Image from "@/components/image/Image"
 
 # meta
 tags:
@@ -17,19 +17,19 @@ title: 1976 Ice Metallic Green 930 Turbo
 description: My first shoot for Bring a Trailer is a pristine 930 Turbo.
 
 # photos
-hero: /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_006.jpg
+hero: /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_006.jpeg
 gallery01:
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_001.jpg
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_002.jpg
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_003.jpg
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_004.jpg
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_005.jpg
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_006.jpg
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_007.jpg
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_008.jpg
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_009.jpg
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_010.jpg
-  - /src/assets/images/shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_011.jpg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_001.jpeg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_002.jpeg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_003.jpeg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_004.jpeg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_005.jpeg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_006.jpeg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_007.jpeg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_008.jpeg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_009.jpeg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_010.jpeg
+  - /shoots/2018/2018-05-08-ice-metallic-green-930/porsche-930-2018_011.jpeg
 ---
 
 A friend with a rather large Porsche collection decided to start focusing strictly on air-cooled, early 911's. So unfortunately, his two 930 Turbo's had to go.
@@ -42,10 +42,8 @@ But no matter what, 930's are one of my favorite Porsches, and in this color, wh
 
 <div>
     {frontmatter.gallery01.map((i, index) =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}

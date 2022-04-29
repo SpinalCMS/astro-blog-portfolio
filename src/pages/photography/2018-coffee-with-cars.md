@@ -2,7 +2,7 @@
 # imports
 setup: |
   import Layout from "@/layouts/ShootLayout"
-  import { Picture } from "astro-imagetools/components"
+  import Image from "@/components/image/Image"
 
 # meta
 tags:
@@ -17,19 +17,19 @@ title: Coffee With Cars August 2019
 description: After picking up a Sony 24-105mm lens, I head to Coffee With Cars.
 
 # photos
-hero: /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_002.jpg
+hero: /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_002.jpg
 gallery01:
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_001.jpg
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_002.jpg
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_003.jpg
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_004.jpg
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_005.jpg
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_006.jpg
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_007.jpg
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_008.jpg
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_009.jpg
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_010.jpg
-  - /src/assets/images/shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_011.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_001.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_002.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_003.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_004.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_005.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_006.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_007.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_008.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_009.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_010.jpg
+  - /shoots/2018/2018-08-26-coffee-with-cars/coffee-with-cars-2018_011.jpg
 ---
 
 After shooting my first Bring a Trailer auction, I figured I needed to get out and shoot more cars. Luckily [Coffee With Cars](https://www.facebook.com/CoffeeWithCars/) happens during the warmer months and it's not far from my house.
@@ -42,10 +42,8 @@ The demon really is in all the details. It's a single purpose car and Dodge make
 
 <div>
     {frontmatter.gallery01.map((i, index) =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}

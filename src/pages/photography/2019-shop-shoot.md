@@ -2,7 +2,7 @@
 # imports
 setup: |
   import Layout from "@/layouts/ShootLayout"
-  import { Picture } from "astro-imagetools/components"
+  import Image from "@/components/image/Image"
 
 # meta
 tags:
@@ -16,22 +16,20 @@ title: Porsche Collection Shoot
 description: I'm in possession of a Sigma 50mm Art 1.4, so I need some cars to test shoot.
 
 # photos
-hero: /src/assets/images/shoots/2019/2019-12-28-shop-shoot/shop-shoot-2019_001.jpg
+hero: /shoots/2019/2019-12-28-shop-shoot/shop-shoot-2019_001.jpg
 gallery01:
-  - /src/assets/images/shoots/2019/2019-12-28-shop-shoot/shop-shoot-2019_001.jpg
-  - /src/assets/images/shoots/2019/2019-12-28-shop-shoot/shop-shoot-2019_002.jpg
-  - /src/assets/images/shoots/2019/2019-12-28-shop-shoot/shop-shoot-2019_003.jpg
-  - /src/assets/images/shoots/2019/2019-12-28-shop-shoot/shop-shoot-2019_004.jpg
+  - /shoots/2019/2019-12-28-shop-shoot/shop-shoot-2019_001.jpg
+  - /shoots/2019/2019-12-28-shop-shoot/shop-shoot-2019_002.jpg
+  - /shoots/2019/2019-12-28-shop-shoot/shop-shoot-2019_003.jpg
+  - /shoots/2019/2019-12-28-shop-shoot/shop-shoot-2019_004.jpg
 ---
 
 This isn't a major shoot, but I had a rented Sigma 50mm Art f/1.4 in my possession, so I hopped over to a friends shop to shoot a few of his colleciton.
 
 <div>
     {frontmatter.gallery01.map((i, index) =>
-        <Picture
-            src={i}
-            alt="hi"
-            breakpoints={[400, 800, 1200]}
+        <Image
+            file={i}
             sizes="(min-width: 1024px) 800px, 100vw"
         />
     )}
