@@ -1,8 +1,6 @@
 // modules
 import fs from "fs"
 import path from "path"
-import sharp from "sharp"
-import exifr from "exifr"
 
 // config
 import { imageConfig } from "../config"
@@ -29,15 +27,13 @@ export function getDirectory(file) {
 // get the base filename without the extension
 export function getFilename(file) {
     const localPath = getLocalPath(file);
-
     const extension = getExtension(file); // extension of the image file
+
     return path.basename(localPath, extension); // filename of the image minus the extension
 }
 
 // get the extension of the image
 export function getExtension(file) {
-    const localPath = getLocalPath(file);
-
     return path.extname(file); // extension of the image file
 }
 
