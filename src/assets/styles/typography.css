@@ -8,8 +8,8 @@ h6 {
 }
 
 h1, .h1 {
-    @apply text-5xl md:text-9xl uppercase;
-    font-variation-settings: "wght" 800;
+    @apply text-5xl md:text-8xl;
+    font-variation-settings: "wght" 1200;
     
 }
 
