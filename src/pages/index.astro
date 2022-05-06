@@ -25,7 +25,7 @@ const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).value
 </head>
 
 <body>
-    <BaseLayout>
+    <BaseLayout classes="space-y-24">
         <Container>
             <Heading>
                 <h1 slot="heading">Hey there.</h1>
@@ -34,37 +34,17 @@ const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).value
                     <p>Oh yeah, I also shoot <a href="/photography" title="Car Photography in Austin, TX">car photography</a>.</p>
                 </div>
             </Heading>
+        </Container>
 
-            <section class="space-y-10">
-                <div class="grid grid-cols-3 gap-10">
-                    <h2 class="col-span-3 sm:col-span-2">Recent Photos</h2>
-                    
-                    <div class="col-span-3 sm:col-span-1 sm:justify-self-end order-3 sm:order-2">
-                        <a class="w-full sm:w-fit btn-secondary" href="/photography" title="View All Photos">More Photos</a>
-                    </div>
-                    
-                    <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 sm:grid-cols-2 grid-flow-row sm:grid-flow-col gap-5">
-                        <Image
-                            file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_037.jpeg"
-                            sizes="(min-width: 640px) 500px, 100vw"
-                            classes="object-cover h-full rounded-md shadow-2xl"
-                        />
-                        <Image
-                            file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_009.jpeg"
-                            sizes="(min-width: 640px) 500px, 100vw"
-                            classes="object-cover h-full rounded-md shadow-2xl"
-                        />
-                        <div class="row-span-2">
-                            <Image
-                                file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_036.jpeg"
-                                sizes="(min-width: 640px) 500px, 100vw"
-                                classes="rounded-md shadow-2xl"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div>
+            <Image
+                file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_037.jpeg"
+                sizes="100vw"
+                classes="rounded-tl-md rounded-bl-md shadow-2xl"
+            />
+        </div>
 
+        <Container>
             <section class="space-y-10">
                 <div class="grid grid-cols-3 gap-10">
                     <h2 class="col-span-3 sm:col-span-2">Recent Posts</h2>

@@ -8,16 +8,16 @@ import Footer from "@/components/Footer"
 export interface Props {
     classes?: string
 }
-const { classes = "space-y-24" } = Astro.props;
+const { classes } = Astro.props;
 
 const contact = new URL(Astro.request.url).pathname.includes("contact");
 ---
 
-<main class={classes}>
+<main class="mt-24">
     <div class="flex">
         <Navigation />
 
-        <main class="mt-32">
+        <main class=`mt-12 ${classes}`>
             <slot />
 
             { !contact ?
