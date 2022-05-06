@@ -2,6 +2,7 @@
 // components
 import Contact from "@/components/Contact"
 import Navigation from "@/components/Navigation"
+import Heading from "@/components/Heading"
 import Footer from "@/components/Footer"
 
 // props
@@ -13,11 +14,26 @@ const { classes } = Astro.props;
 const contact = new URL(Astro.request.url).pathname.includes("contact");
 ---
 
-<main class="mt-24">
-    <div class="flex">
+<style lang="scss">
+    .main-grid {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: max-content 1fr;
+        grid-auto-rows: 1fr;
+        gap: 4rem;
+        grid-auto-flow: row;
+    }
+</style>
+
+<main class="mt-24 ml-12">
+    <div class="main-grid">
+        <div class="col-start-2">
+            <slot name="heading" />
+        </div>
+        
         <Navigation />
 
-        <main class=`mt-12 ${classes}`>
+        <main class={`${classes}`}>
             <slot />
 
             { !contact ?

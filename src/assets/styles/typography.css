@@ -8,25 +8,25 @@ h6 {
 }
 
 h1, .h1 {
-    @apply text-5xl md:text-8xl;
-    font-variation-settings: "wght" 1200;
+    @apply text-8xl;
+    font-variation-settings: "wght" 900;
     
 }
 
 h2, .h2 {
-    @apply text-3xl font-bold
+    @apply text-5xl font-bold
 }
 
 h3, .h3 {
-    @apply text-2xl font-semibold
+    @apply text-4xl font-semibold
 }
 
 h4, .h4 {
-    @apply text-xl font-semibold
+    @apply text-3xl font-semibold
 }
 
 h5, .h5 {
-    @apply text-lg font-medium
+    @apply text-2xl font-medium
 }
 
 article {

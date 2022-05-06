@@ -26,9 +26,9 @@ const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).value
 
 <body>
     <BaseLayout classes="space-y-24">
+        <h1 slot="heading">Hey there.</h1>
         <Container>
-            <Heading>
-                <h1 slot="heading">Hey there.</h1>
+            <Heading>         
                 <div class="space-y-6">
                     <p>For fifteen years, I've run digital marketing campaigns. Lately, I've been in charge of revenue growth at <a href="http://www.icgamerica.com" title="ICG America, Inc">ICG America</a>, generating $50 million in direct-to-consumer sales.</p>
                     <p>Oh yeah, I also shoot <a href="/photography" title="Car Photography in Austin, TX">car photography</a>.</p>
@@ -46,18 +46,10 @@ const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).value
 
         <Container>
             <section class="space-y-10">
-                <div class="grid grid-cols-3 gap-10">
-                    <h2 class="col-span-3 sm:col-span-2">Recent Posts</h2>
-                    
-                    <div class="col-span-3 sm:col-span-1 sm:justify-self-end order-3 sm:order-2">
-                        <a class="w-full sm:w-fit btn-secondary" href="/blog" title="View All Posts">More Posts</a>
-                    </div>
-                    
-                    <div class="order-2 sm:order-3 col-span-3 grid grid-cols-1 md:grid-cols-2 gap-10">
-                        {filteredPosts.map(p =>
-                            <PostSnippet post={p} />
-                        )}
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    {filteredPosts.map(p =>
+                        <PostSnippet post={p} />
+                    )}
                 </div>
             </section>
         </Container>

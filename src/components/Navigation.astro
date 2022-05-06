@@ -1,25 +1,21 @@
 ---
-// components
-import Container from "@/components/Container"
-
 // data
 import Navigation from "@/data/navigation"
 ---
-<aside class="h-screen sticky top-0 w-fit pt-48 p-12">
-    <header class="flex flex-col justify-between h-full">
-        <!-- navigation items -->
+<aside>
+    <header class="flex flex-col gap-6">
+        <div>
+            <a class="tracking-tighter text-3xl lowercase" href="/" title="Homepage">
+                ErikOlsen
+            </a>
+        </div>
+
         <nav class="flex flex-col gap-2">
             {Navigation.map((item) => (
-                <a class="lowercase no-underline" href={item.url} title={item.display}>
+                <a class="lowercase thin-underline text-lg" href={item.url} title={item.display}>
                     {item.display}
                 </a>
             ))}
         </nav>
-
-        <div>
-            <a class="font-extrabold tracking-tighter text-3xl lowercase" href="/" title="Homepage">
-                ErikOlsen
-            </a>
-        </div>
     </header>
 </aside>
