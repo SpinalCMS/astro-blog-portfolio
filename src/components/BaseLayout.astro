@@ -1,8 +1,6 @@
 ---
 // components
-import Contact from "@/components/Contact"
 import Navigation from "@/components/Navigation"
-import Heading from "@/components/Heading"
 import Footer from "@/components/Footer"
 
 // props
@@ -10,8 +8,6 @@ export interface Props {
     classes?: string
 }
 const { classes } = Astro.props;
-
-const contact = new URL(Astro.request.url).pathname.includes("contact");
 ---
 
 <style lang="scss">
@@ -35,11 +31,6 @@ const contact = new URL(Astro.request.url).pathname.includes("contact");
 
         <main class={`${classes}`}>
             <slot />
-
-            { !contact ?
-                <Contact /> :
-                ``
-            }
             
             <Footer />
         </main>

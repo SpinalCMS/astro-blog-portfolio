@@ -12,20 +12,8 @@ import { siteConfig } from "@/src/config.ts"
 <meta name="author" content={siteConfig.name} />
 
 <script>
-    (function(src, cb) {
-        var s = document.createElement('script');
-        s.setAttribute('src', src);
-        s.onload = cb;
-        (document.head || document.body).appendChild(s);
-    })('https://ucarecdn.com/libs/blinkloader/3.x/blinkloader.min.js', function() {
-        window.Blinkloader.optimize({
-            pubkey: "0ca93eb51f9f128c47f5",
-            responsive: true,
-            smartCompression: true,
-            retina: true,
-            webp: true,
-            fadeIn: true,
-            lazyload: true
-        });
-    })
+    import Alpine from 'alpinejs';
+    
+    window.Alpine = Alpine;
+    Alpine.start();
 </script>

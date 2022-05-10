@@ -8,10 +8,13 @@ import BaseLayout from "@/components/BaseLayout"
 import Container from "@/components/Container"
 import Heading from "@/components/Heading"
 import Image from "@/components/image/Image"
+import Caption from "@/components/image/Caption"
 import PostSnippet from "@/components/PostSnippet"
 
 const allPosts = await Astro.glob("./blog/*.md")
-const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()).slice(0,6);
+const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()).slice(0,4);
+
+const activeSlide = 1;
 ---
 
 <!DOCTYPE html>
@@ -37,20 +40,43 @@ const filteredPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).value
         </Container>
 
         <div>
-            <Image
-                file="shoots/2020/2020-02-29-lit-show-day-three/lit-show-2020_037.jpeg"
-                sizes="100vw"
-                classes="rounded-tl-md rounded-bl-md shadow-2xl"
-            />
+            <div class="relative">
+                <div x-show="activeSlide === 1"
+                    <Image
+                        file="shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_073.jpeg"
+                        sizes="100vw"
+                        classes="rounded-tl-md rounded-bl-md shadow-2xl h-[80vh] object-cover w-full"
+                    />
+                </div>
+                <div x-show="activeSlide === 2"
+                    <Image
+                        file="shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_055.jpeg"
+                        sizes="100vw"
+                        classes="rounded-tl-md rounded-bl-md shadow-2xl h-[80vh] object-cover w-full"
+                    />
+                </div>
+                <div x-show="activeSlide === 3"
+                    <Image
+                        file="shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_038.jpeg"
+                        sizes="100vw"
+                        classes="rounded-tl-md rounded-bl-md shadow-2xl h-[80vh] object-cover w-full"
+                    />
+                </div>
+
+                <div class="flex flex-row items-center p-4">
+                    <div class="flex flex-row gap-2">
+                        <button x-on:click="activeSlide--" class="text-xl text-neutral-600 flex items-center justify-center h-8 w-8 bg-neutral-50 hover:bg-neutral-100 rounded-md border border-neutral-300">&lt;</button>
+                        <button x-on:click="activeSlide++" class="text-xl text-neutral-600 hover:text-neutral-800 flex items-center justify-center h-8 w-8 bg-neutral-50 hover:bg-neutral-100 rounded-md border border-neutral-300">&gt;</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <Container>
-            <section class="space-y-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    {filteredPosts.map(p =>
-                        <PostSnippet post={p} />
-                    )}
-                </div>
+            <section class="space-y-20">
+                {filteredPosts.map(p =>
+                    <PostSnippet post={p} />
+                )}
             </section>
         </Container>
     </BaseLayout>
