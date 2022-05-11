@@ -40,33 +40,36 @@ const activeSlide = 1;
         </Container>
 
         <div>
-            <div class="relative">
-                <div x-show="activeSlide === 1"
+            <div class="relative" x-data=`{ activeSlide: ${activeSlide}, slides: [1, 2, 3] }`>
+                <div x-show="activeSlide === 1">
                     <Image
                         file="shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_073.jpeg"
                         sizes="100vw"
                         classes="rounded-tl-md rounded-bl-md shadow-2xl h-[80vh] object-cover w-full"
                     />
+                    <Caption file="shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_073.jpeg" />
                 </div>
-                <div x-show="activeSlide === 2"
+                <div x-show="activeSlide === 2">
                     <Image
                         file="shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_055.jpeg"
                         sizes="100vw"
                         classes="rounded-tl-md rounded-bl-md shadow-2xl h-[80vh] object-cover w-full"
                     />
+                    <Caption file="shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_055.jpeg" />
                 </div>
-                <div x-show="activeSlide === 3"
+                <div x-show="activeSlide === 3">
                     <Image
                         file="shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_038.jpeg"
                         sizes="100vw"
                         classes="rounded-tl-md rounded-bl-md shadow-2xl h-[80vh] object-cover w-full"
                     />
+                    <Caption file="shoots/2020/2020-02-27-lit-show-day-one/lit-show-2020_038.jpeg" />
                 </div>
 
                 <div class="flex flex-row items-center p-4">
                     <div class="flex flex-row gap-2">
-                        <button x-on:click="activeSlide--" class="text-xl text-neutral-600 flex items-center justify-center h-8 w-8 bg-neutral-50 hover:bg-neutral-100 rounded-md border border-neutral-300">&lt;</button>
-                        <button x-on:click="activeSlide++" class="text-xl text-neutral-600 hover:text-neutral-800 flex items-center justify-center h-8 w-8 bg-neutral-50 hover:bg-neutral-100 rounded-md border border-neutral-300">&gt;</button>
+                        <button x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1" class="text-xl text-neutral-600 flex items-center justify-center h-8 w-8 bg-neutral-50 hover:bg-neutral-100 rounded-md border border-neutral-300">&lt;</button>
+                        <button x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1" class="text-xl text-neutral-600 hover:text-neutral-800 flex items-center justify-center h-8 w-8 bg-neutral-50 hover:bg-neutral-100 rounded-md border border-neutral-300">&gt;</button>
                     </div>
                 </div>
             </div>
